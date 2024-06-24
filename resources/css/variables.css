@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* Colors */
+:root {
+  --primary       : #F16122;
+  --secondary-1   : #EDEDED;
+  --secondary-2   : #FFE3D6;
+  --secondary-3   : #E7E7E7;
+  --secondary-4   : #CDCDCD;
+  --grays-1       : #111111;
+  --grays-2       : #666666;
+  --grays-3       : #888888;
+  --grays-4       : #CCCCCC;
+  --grays-5       : #DDDDDD;
+  --grays-6       : #F4F4F5;
+  --system-1      : #E80000;
+  --system-2      : #FFAA00;
+  --system-3      : #00A04A;
+}

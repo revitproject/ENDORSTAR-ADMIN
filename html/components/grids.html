@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 가이드</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="component" data-lnb-index="5"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Grids</h1>
+      <h2 class="component-title">Default</h2>
+      <div class="component-link"><a href="https://nhn.github.io/tui.grid/latest/Grid" target="_blank" class="link">API/Examples</a></div>
+      <div class="tbl-head">
+        <select class="inp-select">
+          <option value="" selected>10개씩 보기</option>
+          <option value="">옵션1</option>
+          <option value="">옵션1</option>
+          <option value="">옵션1</option>
+        </select>
+        <button type="button" class="btn is-ico is-excel" onclick="saveExcel();"><span class="ico-excel">엑셀다운</span></button>
+      </div>
+
+      <!--  Grid 테이블 생성, 하기 set grid 스크립트 필요 -->
+      <div id="grid" class="grid"></div> 
+
+<pre>
+<code class="language-Markup">&lt;script>
+  // TUI Grid 초기화
+  let Grid = tui.Grid;
+
+  // 언어 설정
+  Grid.setLanguage('ko', {
+    display: {
+      noData: '검색 결과가 없습니다.'
+    }
+  });
+
+  // Grid 생성
+  Grid = new tui.Grid({
+    el: document.getElementById('grid'),
+    scrollX: false, // 가로 스크롤
+    scrollY: false, // 세로 스크롤
+    minRowHeight: '48', // grid cell 높이
+    minBodyHeight: '240', // grid body 높이
+    contextMenu: null, // grid 우클릭 막기
+    pageOptions: {
+      useClient: true,
+      perPage: 5 // 화면에 보여주는 리스트 개수
+    },
+    columnOptions: {
+      resizable: true
+    },
+    rowHeaders: ['rowNum', 'checkbox'], // 행 번호와 체크박스
+    header: {
+      height: 48 // header 영역 높이
+    },
+    columns: [
+      {
+        header: '헤더1',
+        name: '헤더1',
+        align: 'center',
+        ellipsis: 'true', // 내용 말줄임 표시
+        sortable: true // 정렬 기능
+      },
+      {
+        header: '헤더2',
+        name: '헤더2',
+        align: 'center',
+        ellipsis: 'true'
+      },
+      {
+        header: '헤더3',
+        name: '헤더3',
+        align: 'center',
+        ellipsis: 'true'
+      },
+      {
+        header: '헤더4',
+        name: '헤더4',
+        align: 'center',
+        ellipsis: 'true'
+      },
+      {
+        header: '헤더5',
+        name: '헤더5',
+        align: 'center',
+        ellipsis: 'true'
+      },
+      {
+        header: '헤더6',
+        name: '헤더6',
+        align: 'center',
+        ellipsis: 'true'
+      },
+      {
+        header: '헤더7',
+        name: '헤더7',
+        align: 'center',
+        ellipsis: 'true'
+      }
+    ],
+    data: [
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+        _attributes: { checkDisabled: true } // 체크박스 비활성화
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 1',
+        헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 6',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      }
+    ]
+  });
+
+  // 체크박스 체크 시 이벤트
+  Grid.on('check', (ev) => {
+    alert(`check: ${ev.rowKey}`);
+  });
+
+  // 체크박스 해제 시 이벤트
+  Grid.on('uncheck', (ev) => {
+    alert(`uncheck: ${ev.rowKey}`);
+  });
+
+  // Excel Export 기능
+  function saveExcel() {
+    const options = {
+      includeHiddenColumns: true, // 숨겨진 컬럼 포함 여부
+      onlySelected: true, // 선택한 영역만 내보내기
+      fileName: 'myExport', // 파일명
+      columnNames: ['헤더1', '헤더2', '헤더3', '헤더4', '헤더5', '헤더6'] // 내보낼 열 설정
+    };
+    Grid.export('xlsx', options);
+  }
+
+  // rowHeaders number renderer - custom
+  class RowNumberRenderer {
+    constructor(props) {
+      const el = document.createElement('span');
+      el.innerHTML = `NO.${props.formattedValue}`;
+      this.el = el;
+    }
+
+    getElement() {
+      return this.el;
+    }
+
+    render(props) {
+      this.el.innerHTML = `NO.${props.formattedValue}`;
+    }
+  }
+
+  // rowHeaders checkbox renderer - custom
+  class CheckboxRenderer {
+    constructor(props) {
+      const { grid, rowKey } = props;
+
+      const label = document.createElement('label');
+      label.className = 'checkbox tui-grid-row-header-checkbox';
+      label.setAttribute('for', String(rowKey));
+
+      const hiddenInput = document.createElement('input');
+      hiddenInput.className = 'hidden-input';
+      hiddenInput.id = String(rowKey);
+
+      const customInput = document.createElement('span');
+      customInput.className = 'custom-input';
+
+      label.appendChild(hiddenInput);
+      label.appendChild(customInput);
+
+      hiddenInput.type = 'checkbox';
+      label.addEventListener('click', (ev) => {
+        ev.preventDefault();
+
+        if (ev.shiftKey) {
+          grid[!hiddenInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
+          return;
+        }
+
+        grid[!hiddenInput.checked ? 'check' : 'uncheck'](rowKey);
+      });
+
+      this.el = label;
+      this.render(props);
+    }
+
+    getElement() {
+      return this.el;
+    }
+
+    render(props) {
+      const hiddenInput = this.el.querySelector('.hidden-input');
+      const checked = Boolean(props.value);
+      hiddenInput.checked = checked;
+    }
+  }
+&lt;/script></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+
+  <!-- set grid -->
+  <script>
+    // TUI Grid 초기화
+    let Grid = tui.Grid;
+
+    // 언어 설정
+    Grid.setLanguage('ko', {
+      display: {
+        noData: '검색 결과가 없습니다.'
+      }
+    });
+
+    // Grid 생성
+    Grid = new tui.Grid({
+      el: document.getElementById('grid'),
+      scrollX: false, // 가로 스크롤
+      scrollY: false, // 세로 스크롤
+      minRowHeight: '48', // grid cell 높이
+      minBodyHeight: '240', // grid body 높이
+      contextMenu: null, // grid 우클릭 막기
+      pageOptions: {
+        useClient: true,
+        perPage: 5 // 화면에 보여주는 리스트 개수
+      },
+      columnOptions: {
+        resizable: true
+      },
+      rowHeaders: ['rowNum', 'checkbox'], // 행 번호와 체크박스
+      header: {
+        height: 48 // header 영역 높이
+      },
+      columns: [
+        {
+          header: '헤더1',
+          name: '헤더1',
+          align: 'center',
+          ellipsis: 'true', // 내용 말줄임 표시
+          sortable: true // 정렬 기능
+        },
+        {
+          header: '헤더2',
+          name: '헤더2',
+          align: 'center',
+          ellipsis: 'true'
+        },
+        {
+          header: '헤더3',
+          name: '헤더3',
+          align: 'center',
+          ellipsis: 'true'
+        },
+        {
+          header: '헤더4',
+          name: '헤더4',
+          align: 'center',
+          ellipsis: 'true'
+        },
+        {
+          header: '헤더5',
+          name: '헤더5',
+          align: 'center',
+          ellipsis: 'true'
+        },
+        {
+          header: '헤더6',
+          name: '헤더6',
+          align: 'center',
+          ellipsis: 'true'
+        },
+        {
+          header: '헤더7',
+          name: '헤더7',
+          align: 'center',
+          ellipsis: 'true'
+        }
+      ],
+      data: [
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+          _attributes: { checkDisabled: true } // 체크박스 비활성화
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 1',
+          헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 6',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        }
+      ]
+    });
+
+    // 체크박스 체크 시 이벤트
+    Grid.on('check', (ev) => {
+      alert(`check: ${ev.rowKey}`);
+    });
+
+    // 체크박스 해제 시 이벤트
+    Grid.on('uncheck', (ev) => {
+      alert(`uncheck: ${ev.rowKey}`);
+    });
+
+    // Excel Export 기능
+    function saveExcel() {
+      const options = {
+        includeHiddenColumns: true, // 숨겨진 컬럼 포함 여부
+        onlySelected: true, // 선택한 영역만 내보내기
+        fileName: 'myExport', // 파일명
+        columnNames: ['헤더1', '헤더2', '헤더3', '헤더4', '헤더5', '헤더6'] // 내보낼 열 설정
+      };
+      Grid.export('xlsx', options);
+    }
+
+    // rowHeaders number renderer - custom
+    class RowNumberRenderer {
+      constructor(props) {
+        const el = document.createElement('span');
+        el.innerHTML = `NO.${props.formattedValue}`;
+        this.el = el;
+      }
+
+      getElement() {
+        return this.el;
+      }
+
+      render(props) {
+        this.el.innerHTML = `NO.${props.formattedValue}`;
+      }
+    }
+
+    // rowHeaders checkbox renderer - custom
+    class CheckboxRenderer {
+      constructor(props) {
+        const { grid, rowKey } = props;
+
+        const label = document.createElement('label');
+        label.className = 'checkbox tui-grid-row-header-checkbox';
+        label.setAttribute('for', String(rowKey));
+
+        const hiddenInput = document.createElement('input');
+        hiddenInput.className = 'hidden-input';
+        hiddenInput.id = String(rowKey);
+
+        const customInput = document.createElement('span');
+        customInput.className = 'custom-input';
+
+        label.appendChild(hiddenInput);
+        label.appendChild(customInput);
+
+        hiddenInput.type = 'checkbox';
+        label.addEventListener('click', (ev) => {
+          ev.preventDefault();
+
+          if (ev.shiftKey) {
+            grid[!hiddenInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
+            return;
+          }
+
+          grid[!hiddenInput.checked ? 'check' : 'uncheck'](rowKey);
+        });
+
+        this.el = label;
+        this.render(props);
+      }
+
+      getElement() {
+        return this.el;
+      }
+
+      render(props) {
+        const hiddenInput = this.el.querySelector('.hidden-input');
+        const checked = Boolean(props.value);
+        hiddenInput.checked = checked;
+      }
+    }
+  </script>
+</body>
+</html>

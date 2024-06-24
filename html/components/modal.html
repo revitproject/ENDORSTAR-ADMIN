@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 가이드</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="component" data-lnb-index="6"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Modal</h1>
+      <h2 class="component-title">Trigger</h2>
+      <div class="btnBox">
+        <a href="#modal1" class="btn is-grays-1" data-modal="open">a태그(href로 id값 전달)</a>
+        <button type="button" class="btn is-grays-1" data-modal="open" data-url="#modal1">button태그(data-url로 id값 전달)</button>
+        <button type="button" class="btn is-grays-1" onclick="customAlert.alert('알럿', '사용자에게 주의를 주거나 알림을<br> 일방적으로 주는 경우에 사용합니다.', 'trueFn()');">alert</button>
+        <button type="button" class="btn is-grays-1" onclick="customAlert.confirm('컨펌', '김해피님의 로그아웃을<br>처리하시겠어요?', 'trueFn()', 'falseFn()');">confirm</button>
+      </div>
+      
+<pre><code class="language-Markup">&lt;a href="#modal1" class="btn is-grays-1" data-modal="open">a tag&lt;/a>
+&lt;button type="button" class="btn is-grays-1" data-modal="open" data-url="#modal1">button tag(data-url로 id값 전달)&lt;/button>
+&lt;button type="button" class="btn is-grays-1" onclick="customAlert.alert('타이틀', '텍스트', '확인 실행 함수');">alert&lt;/button>
+&lt;button type="button" class="btn is-grays-1" onclick="customAlert.confirm('타이틀', '텍스트', '확인 실행 함수', '취소 실행 함수');">confirm&lt;/button></code>
+</pre>
+
+  <h2 class="component-title">Markup</h2>
+<pre>
+<code class="language-Markup">&lt;div id="modal1" class="modal" data-modal="target">
+  &lt;div class="modal-dimmed">&lt;/div>
+  &lt;div class="modal-inner" style="width: 450px;"> &lt;!-- 모달 크기 지정 --&gt;
+    &lt;div class="modal-header">
+      &lt;button class="modal-close" data-modal="close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+      &lt;strong class="modal-title">$모달 타이틀$&lt;/strong>
+    &lt;/div>
+    &lt;div class="modal-content">
+      &lt;!-- 모달 내용 입력 --&gt;
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;div id="alert" class="modal" data-modal="alert">
+  &lt;div class="modal-dimmed">&lt;/div>
+  &lt;div class="modal-inner has-alert">
+    &lt;div class="modal-header">
+      &lt;button class="modal-close" data-modal="close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+      &lt;strong class="modal-title" id="alert__tit">$알럿 타이틀$&lt;/strong>
+    &lt;/div>
+    &lt;div class="modal-content">
+      &lt;p class="alert-msg">$알럿 메시지$&lt;/p>
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;button type="button" class="btn is-footer is-false">취소&lt;/button>
+      &lt;button type="button" class="btn is-footer is-true">확인&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- modal -->
+  <div id="modal1" class="modal" data-modal="target">
+    <div class="modal-dimmed"></div>
+    <div class="modal-inner" style="width: 450px;">
+      <div class="modal-header">
+        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+        <strong class="modal-title">권한 수정이력 조회</strong>
+      </div>
+      <div class="modal-content has-scrollbar">
+        <div class="area-scroll">
+          <div class="scroll-content">
+            <table class="tbl-base has-result">
+              <colgroup>
+                <col style="width: 4.8rem;">
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>  
+                  <th>NO.</th>
+                  <th>이름</th>
+                  <th>권한수정일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>endorhappy050</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>endorhappy050</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>endorhappy050</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>endorhappy050</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>endorhappy050</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="alert" class="modal" data-modal="alert">
+    <div class="modal-dimmed"></div>
+    <div class="modal-inner has-alert">
+      <div class="modal-header">
+        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+        <strong class="modal-title" id="alert__tit">$타이틀$</strong>
+      </div>
+      <div class="modal-content">
+        <p class="alert-msg">$메시지$</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn is-footer is-false">취소</button>
+        <button type="button" class="btn is-footer is-true">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- /modal -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+</body>
+</html>

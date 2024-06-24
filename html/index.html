@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 관리자 - Markup List</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../resources/images/common/favicon.ico">
+  <style>
+    html {font-size: 62.5%;}
+    body {margin: 0; padding: 0 3rem 2rem; font-size: 1.4rem; font-family: -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;}
+    .table {table-layout: fixed; border-collapse: separate; min-width: 102.4rem; border-spacing: 0; border-top: .2rem solid #151515; border-bottom: .1rem solid #888; width: 100%;}
+    .table th {font-weight: normal; font-size: 1.8rem;}
+    .table thead th {padding: 1.2rem 1.5rem; color: #000;}
+    .table tbody th, .table tbody td {padding: 1rem 1.5rem; border-top: .1rem solid #e0e0e0;}
+    .table tbody th {color: #151515; text-align: left; vertical-align: top;}
+    .table tbody td {color: #333; border-left: .1rem solid #e0e0e0; word-break: break-all;}
+    .table tbody td a {color: #555;}
+    .table tbody td:last-child {text-align: center;}
+    .table tbody tr:hover td:not([rowspan]) {background-color: #EBF2FC;}
+    .table tbody tr:hover td:not([rowspan]), .table tbody tr:hover td:not([rowspan]) a {color: #000;}
+    .table tr.categories th, .table tr.categories td {border-top: .1rem solid #aaa;}
+    .table .ing {color: #f16122;} 
+    .table .modify {color: #04AA6D;} 
+    .table .finish {color: #007CEF;} 
+    .table .confirm {color: #E5493A;}
+    .table .align-center {text-align: center;}
+    .table .notice{margin-top:1rem;font-size:1.4rem;}
+    .table .notice p{position:relative;padding-left:1rem;margin:.3rem 0 0 0;}
+    .table .notice p::before{content:'';position:absolute;left:0;top:.7rem;width:4px;height:4px;border-radius:50%;background:#000;}
+    .table .notice .date{margin-bottom:.8rem;padding:0;}
+    .table .notice .date::before{display:none;}
+  </style>
+</head>
+<body>
+  <h1>엔돌스타 관리자</h1>
+  <table class="table">
+    <colgroup>
+      <col style="width: 10%;">
+      <col style="width: 12%;">
+      <col style="width: 12%;">
+      <col style="width: 12%;">
+      <col style="width: 16%;">
+      <col>
+      <col>
+      <col style="width: 120px;">
+      <col style="width: 120px;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="4">screen name</th>
+        <th>file path</th>
+        <th>비고</th>
+        <th>수정사항</th>
+        <th>완료일</th>
+        <th>상태</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="categories">
+        <th rowspan="10">Components</th>
+        <td colspan="3">Structure</td>
+        <td><a href="./components/structure.html" target="_blank">components/structure.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Naming</td>
+        <td><a href="./components/naming.html" target="_blank">components/naming.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Colors</td>
+        <td><a href="./components/colors.html" target="_blank">components/colors.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Buttons</td>
+        <td><a href="./components/buttons.html" target="_blank">components/buttons.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Tables</td>
+        <td><a href="./components/tables.html" target="_blank">components/tables.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Grids</td>
+        <td><a href="./components/grids.html" target="_blank">components/grids.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Modal</td>
+        <td><a href="./components/modal.html" target="_blank">components/modal.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Forms</td>
+        <td><a href="./components/forms.html" target="_blank">components/forms.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Pagination</td>
+        <td><a href="./components/pagination.html" target="_blank">components/pagination.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+      <tr>
+        <td colspan="3">Tabs</td>
+        <td><a href="./components/tabs.html" target="_blank">components/tabs.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-06-14</td>
+        <td class="finish">완료</td>
+      </tr>
+
+      <!-- 공통 -->
+      <tr class="categories">
+        <th>로그인</th>
+        <td colspan="3">로그인</td>
+        <td><a href="./login/login.html" target="_blank">login/login.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="finish">완료</td>
+      </tr>
+      <!-- <tr>
+        <td colspan="3">로그아웃</td>
+        <td><a href="./login/logout.html" target="_blank">login/logout.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">에러</td>
+        <td><a href="./login/error.html" target="_blank">login/error.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
+      <!-- //공통 -->
+
+      <!-- 대시보드 -->
+      <tr class="categories">
+        <th>대시보드</th>
+        <td colspan="3">대시보드</td>
+        <td><a href="#none" target="_blank">dashboard/Bo_Db_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr><!-- //대시보드 -->
+
+      <!-- 회원관리 -->
+      <tr class="categories">
+        <th rowspan="4">회원관리</th>
+        <td colspan="3">목록</td>
+        <td><a href="./merbers/Bo_MbMi_001.html" target="_blank">merbers/Bo_MbMi_001.html</a></td>
+        <td>디자인 미수급</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td colspan="3">회원정보 상세/수정</td>
+        <td><a href="./merbers/Bo_MbMi_002.html" target="_blank">merbers/Bo_MbMi_002.html</a></td>
+        <td>디자인 미수급</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td colspan="3">접속로그보기</td>
+        <td><a href="./merbers/Bo_MbMi_003.html" target="_blank">merbers/Bo_MbMi_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td colspan="3">회원수정이력 보기</td>
+        <td><a href="./merbers/Bo_MbMi_003_L.html" target="_blank">merbers/Bo_MbMi_003_L.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <!-- //회원관리 -->
+
+      <!-- 놀이동산관리 -->
+      <tr class="categories">
+        <th rowspan="15">놀이동산관리</th>
+        <td rowspan="6">오락실 관리</td>
+        <td rowspan="2">미니게임1</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiGa_001.html" target="_blank">mission/Bo_MiGa_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiGa_002.html" target="_blank">mission/Bo_MiGa_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td rowspan="2">미니게임2</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiGa_003.html" target="_blank">mission/Bo_MiGa_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiGa_004.html" target="_blank">mission/Bo_MiGa_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td rowspan="2">미니게임3</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiGa_005.html" target="_blank">mission/Bo_MiGa_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiGa_006.html" target="_blank">mission/Bo_MiGa_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class=""></td>
+      </tr>
+      <tr>
+        <td rowspan="8">챌린지 관리</td>
+        <td rowspan="2">출석체크</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiCh_001.html" target="_blank">mission/Bo_MiCh_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>포인트 상세</td>
+        <td><a href="./mission/Bo_MiCh_002.html" target="_blank">mission/Bo_MiCh_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">친구초대</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiCh_003.html" target="_blank">mission/Bo_MiCh_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiCh_004.html" target="_blank">mission/Bo_MiCh_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">기상챌린지</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiCh_005.html" target="_blank">mission/Bo_MiCh_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiCh_006.html" target="_blank">mission/Bo_MiCh_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">걷기</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiCh_007.html" target="_blank">mission/Bo_MiCh_007.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>상세 설정</td>
+        <td><a href="./mission/Bo_MiCh_008.html" target="_blank">mission/Bo_MiCh_008.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>랭킹보드 관리</td>
+        <td>주간랭킹 관리</td>
+        <td></td>
+        <td><a href="./mission/Bo_MiRb_001.html" target="_blank">mission/Bo_MiRb_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //놀이동산관리 -->
+
+      <!-- 마케팅관리 -->
+      <tr class="categories">
+        <th rowspan="8">마케팅관리</th>
+        <td rowspan="3">AD배너광고관리</td>
+        <td></td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkA1_001.html" target="_blank">maketing/Bo_MkA1_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>제휴광고관리 등록</td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkA1_002.html" target="_blank">maketing/Bo_MkA1_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>제휴광고관리 상세</td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkA1_003.html" target="_blank">maketing/Bo_MkA1_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="4">푸시 관리</td>
+        <td></td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkPu_001.html" target="_blank">maketing/Bo_MkPu_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>푸시 등록</td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkPu_002.html" target="_blank">maketing/Bo_MkPu_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>푸시 상세</td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkPu_003.html" target="_blank">maketing/Bo_MkPu_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>푸시 결과</td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkPu_004.html" target="_blank">maketing/Bo_MkPu_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>AD광고관리</td>
+        <td></td>
+        <td></td>
+        <td><a href="./maketing/Bo_MkPu_004.html" target="_blank">maketing/Bo_MkPu_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //마케팅관리 -->
+
+      <!-- 이벤트관리 -->
+      <tr class="categories">
+        <th rowspan="10">이벤트관리</th>
+        <td rowspan="4">이벤트</td>
+        <td>진행중이벤트</td>
+        <td></td>
+        <td><a href="./eventManager/Bo_EmEv_001.html" target="_blank">eventManager/Bo_EmEv_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td rowspan="3"></td>
+        <td>이벤트 등록</td>
+        <td><a href="./eventManager/Bo_EmEv_002.html" target="_blank">eventManager/Bo_EmEv_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>이벤트 상세</td>
+        <td><a href="./eventManager/Bo_EmEv_003.html" target="_blank">eventManager/Bo_EmEv_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>당첨자 관리</td>
+        <td><a href="./eventManager/Bo_EmEv_004.html" target="_blank">eventManager/Bo_EmEv_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="6">응모 상품 관리</td>
+        <td>해피캐시교환 관리</td>
+        <td>대시보드/목록</td>
+        <td><a href="./eventManager/Bo_EmEv_001.html" target="_blank">eventManager/Bo_EmEv_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>해피캐시교환 상세</td>
+        <td></td>
+        <td><a href="./eventManager/Bo_EmEv_002.html" target="_blank">eventManager/Bo_EmEv_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td rowspan="4">핫딜구매 관리</td>
+        <td>목록</td>
+        <td><a href="./eventManager/Bo_EmEv_003.html" target="_blank">eventManager/Bo_EmEv_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>핫딜 등록</td>
+        <td><a href="./eventManager/Bo_EmEv_004.html" target="_blank">eventManager/Bo_EmEv_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>핫딜 상세/수정</td>
+        <td><a href="./eventManager/Bo_EmEv_005.html" target="_blank">eventManager/Bo_EmEv_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td>스탬프관리</td>
+        <td><a href="./eventManager/Bo_EmEv_006.html" target="_blank">eventManager/Bo_EmEv_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //이벤트 관리 -->
+
+      <!-- 해피툰 -->
+      <tr class="categories">
+        <th rowspan="3">해피툰</th>
+        <td colspan="3">해피툰 목록</td>
+        <td><a href="./happyToon/Bo_Ht_001.html" target="_blank">happyToon/Bo_Ht_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td colspan="3">해피툰 등록</td>
+        <td><a href="./happyToon/Bo_Ht_002.html" target="_blank">happyToon/Bo_Ht_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>  
+        <td colspan="3">해피툰 수정/상세</td>
+        <td><a href="./happyToon/Bo_Ht_003.html" target="_blank">happyToon/Bo_Ht_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //해피툰 -->
+
+      <!-- 고객지원관리 -->
+      <tr class="categories">
+        <th rowspan="20">고객지원관리</th>
+        <td colspan="3">인증관리</td>
+        <td><a href="./customerManager/Bo_CmCt_001.html" target="_blank">customerManager/Bo_CmCt_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="6">고객센터</td>
+        <td rowspan="2">1:1문의 관리</td>
+        <td></td>
+        <td><a href="./customerManager/Bo_CmCs_001.html" target="_blank">customerManager/Bo_CmCs_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1:1문의 상세</td>
+        <td><a href="./customerManager/Bo_CmCs_002.html" target="_blank">customerManager/Bo_CmCs_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">FAQ관리</td>
+        <td></td>
+        <td><a href="./customerManager/Bo_CmCs_003.html" target="_blank">customerManager/Bo_CmCs_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>FAQ 상세</td>
+        <td><a href="./customerManager/Bo_CmCs_004.html" target="_blank">customerManager/Bo_CmCs_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">공지사항</td>
+        <td></td>
+        <td><a href="./customerManager/Bo_CmCs_005.html" target="_blank">customerManager/Bo_CmCs_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>공지사항 상세</td>
+        <td><a href="./customerManager/Bo_CmCs_006.html" target="_blank">customerManager/Bo_CmCs_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="13">이용가이드</td>
+        <td>엔도르핀, 골드헤머 이용안내</td>
+        <td></td>
+        <td><a href="./customerManager/Bo_CmCs_001.html" target="_blank">customerManager/Bo_CmCs_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">서비스 이용약관</td>
+        <td>목록</td>
+        <td><a href="./customerManager/Bo_CmGu_002.html" target="_blank">customerManager/Bo_CmGu_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>서비스 이용약관 신규등록</td>
+        <td><a href="./customerManager/Bo_CmGu_003.html" target="_blank">customerManager/Bo_CmGu_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>서비스 이용약관 상세/수정</td>
+        <td><a href="./customerManager/Bo_CmGu_004.html" target="_blank">customerManager/Bo_CmGu_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">엔도르핀 이용약관</td>
+        <td>목록</td>
+        <td><a href="./customerManager/Bo_CmGu_005.html" target="_blank">customerManager/Bo_CmGu_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>엔도르핀 신규등록</td>
+        <td><a href="./customerManager/Bo_CmGu_006.html" target="_blank">customerManager/Bo_CmGu_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>엔도르핀 상세/수정</td>
+        <td><a href="./customerManager/Bo_CmGu_007.html" target="_blank">customerManager/Bo_CmGu_007.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">개인정보 처리방침</td>
+        <td>목록</td>
+        <td><a href="./customerManager/Bo_CmGu_008.html" target="_blank">customerManager/Bo_CmGu_008.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>개인정보 처리방침 신규등록</td>
+        <td><a href="./customerManager/Bo_CmGu_009.html" target="_blank">customerManager/Bo_CmGu_009.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>개인정보 처리방침 상세/수정</td>
+        <td><a href="./customerManager/Bo_CmGu_010.html" target="_blank">customerManager/Bo_CmGu_010.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">청소년 보호정책</td>
+        <td>목록</td>
+        <td><a href="./customerManager/Bo_CmGu_011.html" target="_blank">customerManager/Bo_CmGu_011.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>청소년 보호정책 신규등록</td>
+        <td><a href="./customerManager/Bo_CmGu_012.html" target="_blank">customerManager/Bo_CmGu_012.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>청소년 보호정책 상세/수정</td>
+        <td><a href="./customerManager/Bo_CmGu_013.html" target="_blank">customerManager/Bo_CmGu_013.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //고객지원관리 -->
+
+      <!-- 통계관리 -->
+      <tr class="categories">
+        <th rowspan="8">통계관리</th>
+        <td rowspan="2">접속 통계</td>
+        <td></td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmAc_001.html" target="_blank">statisticsManagement/Bo_SmAc_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>접속통계 상세</td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmAc_002.html" target="_blank">statisticsManagement/Bo_SmAc_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">포인트 통계<br>(교환, 사용 등)</td>
+        <td></td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmRe_001.html" target="_blank">statisticsManagement/Bo_SmRe_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>포인트 통계 상세</td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmCv_002.html" target="_blank">statisticsManagement/Bo_SmCv_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">콘텐츠 이용 통계</td>
+        <td></td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmCv_001.html" target="_blank">statisticsManagement/Bo_SmCv_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>콘텐츠 이용 상세</td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmCv_002.html" target="_blank">statisticsManagement/Bo_SmCv_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">방문자 유형 통계</td>
+        <td></td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmVv_001.html" target="_blank">statisticsManagement/Bo_SmVv_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>방문자 유형 통계 상세</td>
+        <td></td>
+        <td><a href="./statisticsManagement/Bo_SmVv_002.html" target="_blank">statisticsManagement/Bo_SmVv_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <!-- //통계관리 -->
+
+      <!-- 시스템관리 -->
+      <tr class="categories">
+        <th rowspan="14">시스템관리</th>
+        <td rowspan="8">정책관리</td>
+        <td rowspan="3">포인트관리</td>
+        <td>목록</td>
+        <td><a href="./systemManager/Bo_SyPo_001.html" target="_blank">systemManager/Bo_SyPo_001.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>서비스 신규등록</td>
+        <td><a href="./systemManager/Bo_SyPo_002.html" target="_blank">systemManager/Bo_SyPo_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>서비스 상세/수정</td>
+        <td><a href="./systemManager/Bo_SyPo_003.html" target="_blank">systemManager/Bo_SyPo_003.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="5">엔돌스타 관리</td>
+        <td></td>
+        <td><a href="./systemManager/Bo_SyPo_004.html" target="_blank">systemManager/Bo_SyPo_004.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>등급(레벨)/경험치 관리</td>
+        <td><a href="./systemManager/Bo_SyPo_005.html" target="_blank">systemManager/Bo_SyPo_005.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>배경화면 관리</td>
+        <td><a href="./systemManager/Bo_SyPo_006.html" target="_blank">systemManager/Bo_SyPo_006.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>배경화면 신규등록</td>
+        <td><a href="./systemManager/Bo_SyPo_007.html" target="_blank">systemManager/Bo_SyPo_007.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>배경화면 상세/수정</td>
+        <td><a href="./systemManager/Bo_SyPo_008.html" target="_blank">systemManager/Bo_SyPo_008.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="6">권한관리</td>
+        <td>목록</td>
+        <td></td>
+        <td><a href="./systemManager/Bo_SyAu_001.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+        <td>기획 미수급(초안으로 작업)</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>검색결과</td>
+        <td><a href="./systemManager/Bo_SyAu_001_2.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+        <td>기획 미수급(초안으로 작업)</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>검색결과 없음</td>
+        <td><a href="./systemManager/Bo_SyAu_001_3.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+        <td>기획 미수급(초안으로 작업)</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td>직원 정보 상세</td>
+        <td></td>
+        <td><a href="./systemManager/Bo_SyAu_002.html" target="_blank">systemManager/Bo_SyAu_002.html</a></td>
+        <td></td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>직원 권한 등록</td>
+        <td></td>
+        <td><a href="./systemManager/Bo_SyAu_003.html" target="_blank">systemManager/Bo_SyAu_003.html</a></td>
+        <td>기획 미수급(초안으로 작업)</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <tr>
+        <td>수정이력 보기</td>
+        <td></td>
+        <td><a href="./systemManager/Bo_SyAu_004_L.html" target="_blank">systemManager/Bo_SyAu_004_L.html</a></td>
+        <td>기획 미수급(초안으로 작업)</td>
+        <td></td>
+        <td class="align-center">2024-08-31</td>
+        <td class="ing">진행 중</td>
+      </tr>
+      <!-- //시스템관리 -->
+    </tbody>
+  </table>
+</body>
+</html>

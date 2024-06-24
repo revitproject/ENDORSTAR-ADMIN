@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="8" data-sub-lnb-index="19"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">회원 관리</h1>
+      <div class="content-inner">
+        <div class="module-top">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">일반정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>이름</th>
+                    <td>김해피</td>
+                    <th>아이디</th>
+                    <td>endorhappy001</td>
+                    <th>생년월일</th>
+                    <td>2024-10-24</td>
+                    <th>성별</th>
+                    <td>남</td>
+                  </tr>
+                  <tr>
+                    <th>휴대폰번호</th>
+                    <td>010-7777-1111</td>
+                    <th>이메일</th>
+                    <td>happymong@happy.com</td>
+                    <th>회원유형</th>
+                    <td>일반회원</td>
+                    <th>연동정보/전환해머포인트</th>
+                    <td>해피머니/500(톤)</td>
+                  </tr>
+                  <tr>
+                    <th>등급</th>
+                    <td>소울스타</td>
+                    <th>레벨</th>
+                    <td>02</td>
+                    <th>닉네임</th>
+                    <td>진짜해피몽</td>
+                    <th>초대코드</th>
+                    <td>ABC122</td>
+                  </tr>
+                  <tr>
+                    <th>엔돌캐시</th>
+                    <td>1,000</td>
+                    <th>골드해머</th>
+                    <td>50,000</td>
+                    <th>최초가입일</th>
+                    <td>2024-02-26 15:00</td>
+                    <th>일반회원 전환일</th>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">마케팅정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>SMS 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox">선택 전</label>
+                      </div>
+                    </td>
+                    <th>이메일 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox">선택 전</label>
+                      </div>
+                    </td>
+                    <th>불량회원</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox">선택 전</label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">앱정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>푸시 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox">선택 전</label>
+                      </div>
+                    </td>
+                    <th>단말기 정보</th>
+                    <td>iPhone 12 Pro</td>
+                    <th>OS 버젼</th>
+                    <td>IOS 4.3.2</td>
+                    <th>앱 설치 버전</th>
+                    <td>Endor_v_0_ab</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <div class="tbl-btn-group is-center">
+              <button type="button" class="btn is-secondary-1">저장</button>
+              <button type="button" class="btn is-primary">확인</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-bottom">
+          <h2 class="tbl-title">이력정보</h2>
+          <div class="ui-tab">
+            <ul class="tab-menu">
+              <li class="tab-item is-active"> 
+                <a href="#" class="tab-link" data-tab="tab1">회원정보 변경이력</a>
+              </li>
+              <li class="tab-item">  
+                <a href="#" class="tab-link" data-tab="tab2">회원인증이력</a>
+              </li>
+              <li class="tab-item">
+                <a href="#" class="tab-link" data-tab="tab3">접속이력</a>
+              </li>
+            </ul>
+            <div class="tab-contents">
+              <div class="tab-content is-active" data-tab-content="tab1">
+                <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+                <div id="grid1" class="grid"></div>
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number count-number1"></em>건</span>
+                </div>
+              </div>
+              <div class="tab-content" data-tab-content="tab2">
+                <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+                <div id="grid2" class="grid"></div>
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number count-number2">00</em>건</span>
+                </div>
+              </div>
+              <div class="tab-content" data-tab-content="tab3">
+                <div class="wrap-table">
+                  <table class="tbl-base">
+                    <colgroup>
+                      <col style="width: 4.8rem;">
+                      <col style="width: 34rem;">
+                      <col>
+                      <col>
+                      <col style="width: 19.9rem;">
+                      <col style="width: 19.9rem;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>NO.</th>
+                        <th>단말기정보</th>
+                        <th>OS버젼</th>
+                        <th>앱 설치 버전</th>
+                        <th>접속시작</th>
+                        <th>접속종료</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>IOS 4.3.2</td>
+                        <td>Endor_v_0_ab</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="wrap-pagination">
+                    <div class="wrap-count">
+                      <span class="count-text">총 <em class="count-number">10</em>건</span>
+                    </div>
+                    <div class="pagination">
+                      <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                      <a href="#" class="pagination-link">2</a>
+                      <a href="#" class="pagination-link">3</a>
+                      <a href="#" class="pagination-link">4</a>
+                      <a href="#" class="pagination-link">5</a>
+                      <a href="#" class="pagination-link">6</a>
+                      <a href="#" class="pagination-link">7</a>
+                      <a href="#" class="pagination-link">8</a>
+                      <a href="#" class="pagination-link">9</a>
+                      <a href="#" class="pagination-link">10</a>
+                      <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                      <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+     
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // TUI Grid 초기화
+    let Grid = tui.Grid;
+
+    // 언어 설정
+    Grid.setLanguage('ko', {
+      display: {
+        noData: '검색 결과가 없습니다.'
+      }
+    });
+
+    // Grid data1 - 회원정보 변경이력
+    const gridData1 = [
+      {
+        처리유형: '고객직접변경',
+        처리자: 'endorhappy001',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: 'endorhappy002',
+        변경유형: '푸시 수신 상태 변경',
+        변경사유: '고객 요청으로 인한 수신 동의 처리',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: 'SMS 수신 상태 변경',
+        변경사유: '고객 요청으로 인한 수신 미동의 처리',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '휴대폰 번호 변경',
+        변경사유: 'CS요청_휴대폰번호 수기변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '불량회원 상태 변경',
+        변경사유: '불량회원 처리',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      },
+      {
+        처리유형: 'CS변경',
+        처리자: '황인상(서비스팀)',
+        변경유형: '비밀변경',
+        변경사유: '비밀번호 변경',
+        변경처리일: '2024-02-26 15:00',
+      }
+    ];
+
+    // Grid data2 - 회원인증이력
+    const gridData2 = [
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '마이페이지_회원정보변경_비밀번호 변경',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '점유인증',
+        변경사유: '회원가입_소셜회원(구글)_휴대폰번호 인증',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '로그인_비밀번호 찾기',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '로그인_중복로그인',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+      {
+        인증유형: '휴대폰본인인증',
+        변경사유: '회원가입',
+        인증일: '2024-02-26 15:00',
+      },
+    ];
+
+    // Grid1 생성 - 회원정보 변경이력
+    const grid1 = new tui.Grid({
+      el: document.getElementById('grid1'),
+      data: gridData1,
+      scrollX: false, // 가로 스크롤
+      scrollY: false, // 세로 스크롤
+      minRowHeight: '48', // grid cell 높이
+      minBodyHeight: '240', // grid body 높이
+      contextMenu: null, // grid 우클릭 막기
+      pagination: {
+        useClient: true,
+        perPage: 10 // 화면에 보여주는 리스트 개수
+      },
+      columnOptions: {
+        resizable: true
+      },
+      rowHeaders: [{ type: 'rowNum', header: 'NO.', renderer: RowNumberRenderer, width: 48 }],
+      header: {
+        height: 48 // header 영역 높이
+      },
+      columns: [
+        {
+          header: '처리유형',
+          name: '처리유형',
+          align: 'center',
+          width: 340,
+        },
+        {
+          header: '처리자',
+          name: '처리자',
+          align: 'center'
+        },
+        {
+          header: '변경유형',
+          name: '변경유형',
+          align: 'center',
+        },
+        {
+          header: '변경사유',
+          name: '변경사유',
+          align: 'center'
+        },
+        {
+          header: '변경처리일',
+          name: '변경처리일',
+          align: 'center',
+          width: 199,
+          sortable: true
+        }
+      ]
+    });
+
+    // Grid2 생성 - 회원인증이력
+    const grid2 = new tui.Grid({
+      el: document.getElementById('grid2'),
+      data: gridData2,
+      scrollX: false, // 가로 스크롤
+      scrollY: false, // 세로 스크롤
+      minRowHeight: '48', // grid cell 높이
+      minBodyHeight: '240', // grid body 높이
+      contextMenu: null, // grid 우클릭 막기
+      pagination: {
+        useClient: true,
+        perPage: 10 // 화면에 보여주는 리스트 개수
+      },
+      columnOptions: {
+        resizable: true
+      },
+      rowHeaders: [{ type: 'rowNum', header: 'NO.', renderer: RowNumberRenderer, width: 48 }],
+      header: {
+        height: 48 // header 영역 높이
+      },
+      columns: [
+        {
+          header: '인증유형',
+          name: '인증유형',
+          align: 'center',
+          width: 340,
+          sortable: true
+        },
+        {
+          header: '변경사유',
+          name: '변경사유',
+          align: 'center'
+        },
+        {
+          header: '변경유형',
+          name: '변경유형',
+          align: 'center',
+          width: 199,
+          sortable: true
+        },
+      ]
+    });
+
+    // 총 건수 업데이트 함수
+    function updateTotalCount() {
+      const totalCount1 = gridData1.length;
+      const totalCount2 = gridData2.length;
+      document.querySelector('.count-number1').textContent = totalCount1;
+      document.querySelector('.count-number2').textContent = totalCount2;
+    }
+
+    // 초기 총 건수 업데이트
+    updateTotalCount();
+
+    // 탭 클릭시 그리드 테이블 리프레시
+    $('.tab-link').on('click', function (e) {
+      e.preventDefault();
+      const target = $(this).data('tab');
+      $('.tab-link').removeClass('is-active');
+      $(this).addClass('is-active');
+      $('.tab-content').removeClass('is-active');
+      $(`[data-tab-content=${target}]`).addClass('is-active');
+
+      if (target === 'tab1') {
+        grid1.refreshLayout();
+      } else if (target === 'tab2') {
+        grid2.refreshLayout();
+      }
+    });
+
+    // 초기 탭 활성화 시 그리드 레이아웃 리프레시
+    grid1.refreshLayout();
+  </script>
+</body>
+</html>

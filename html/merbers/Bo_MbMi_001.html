@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="8" data-sub-lnb-index="19"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">회원 관리</h1>
+      <div class="content-inner">
+        <div class="form-searchbox">
+          <div class="wrap-searchbox">
+            <label for="select-date" class="lb-inp">회원유형</label>
+            <select id="select-date" class="inp-select">
+              <option value="">전체회원</option>
+              <option value="">일반회원</option>
+              <option value="">소셜회원</option>
+            </select>
+          </div>
+        
+          <div class="wrap-searchbox">
+            <label for="inp-name" class="lb-inp">이름</label>
+            <input type="text" id="inp-name" class="inp-base" placeholder="이름을 입력해주세요.">
+
+            <label for="inp-id" class="lb-inp">아이디</label>
+            <input type="text" id="inp-id" class="inp-base" placeholder="아이디를 입력해주세요.">
+          </div>
+        
+          <div class="wrap-searchbox inbtn">
+            <div class="searchbox-item">
+              <label for="select-search" class="lb-inp">검색어</label>
+              <select id="select-search" class="inp-select">
+                <option value="">휴대폰번호</option>
+                <option value="">이메일</option>
+              </select>
+          
+              <input type="text" id="inp-search" class="inp-base" placeholder="검색어를 입력해주세요.">
+            </div>
+            <div class="searchbox-btn">
+              <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+              <button type="button" class="btn is-search">검색</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-form">
+          <div class="tbl-head">
+            <select class="inp-select">
+              <option value="" selected>15개씩 보기</option>
+              <option value="">50개씩 보기</option>
+              <option value="">100개씩 보기</option>
+            </select>
+          </div>
+        
+          <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+          <div id="tblMember" class="grid"></div>
+          <div class="wrap-count">
+            <span class="count-text">총 <em class="count-number"></em>건</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+     
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // TUI Grid 초기화
+    let Grid = tui.Grid;
+
+    // 언어 설정
+    Grid.setLanguage('ko', {
+      display: {
+        noData: '검색 결과가 없습니다.'
+      }
+    });
+
+    // Grid 데이터 생성
+    const gridData = [
+      {
+        아이디: 'endorhappy001',
+        이름: '<a href="#none" class="link">김해피1</a>',
+        회원유형: '일반',
+        연동정보: '-',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy002',
+        이름: '<a href="#none" class="link">김해피2</a>',
+        회원유형: '일반',
+        연동정보: '해피머니',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '여',
+        최초가입일: '2024-02-27 15:00',
+      },
+      {
+        아이디: 'endorhappy003',
+        이름: '<a href="#none" class="link">김해피3</a>',
+        회원유형: '소셜',
+        연동정보: '네이버',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-28 15:00',
+      },
+      {
+        아이디: 'endorhappy004',
+        이름: '<a href="#none" class="link">김해피4</a>',
+        회원유형: '소셜',
+        연동정보: '카카오',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy005',
+        이름: '<a href="#none" class="link">김해피5</a>',
+        회원유형: '소셜',
+        연동정보: '구글',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy006',
+        이름: '<a href="#none" class="link">김해피6</a>',
+        회원유형: '일반',
+        연동정보: '소셜 전환',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy007',
+        이름: '<a href="#none" class="link">김해피7</a>',
+        회원유형: '일반',
+        연동정보: '소셜 전환',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '여',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy008',
+        이름: '<a href="#none" class="link">김해피8</a>',
+        회원유형: '일반',
+        연동정보: '소셜 전환',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy009',
+        이름: '<a href="#none" class="link">김해피9</a>',
+        회원유형: '일반',
+        연동정보: '해피머니',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy010',
+        이름: '<a href="#none" class="link">김해피10</a>',
+        회원유형: '일반',
+        연동정보: '-',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy011',
+        이름: '<a href="#none" class="link">김해피11</a>',
+        회원유형: '일반',
+        연동정보: '-',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+      {
+        아이디: 'endorhappy012',
+        이름: '<a href="#none" class="link">김해피12</a>',
+        회원유형: '일반',
+        연동정보: '-',
+        등급레벨: '소울스타 LV .01',
+        휴대폰번호: '010-7777-1111',
+        이메일: 'happymong@happy.com',
+        생년월일: '2024-10-24',
+        성별: '남',
+        최초가입일: '2024-02-26 15:00',
+      },
+    ];
+    
+    // Grid 생성
+    Grid = new tui.Grid({
+      el: document.getElementById('tblMember'),
+      data: gridData,
+      scrollX: false, // 가로 스크롤
+      scrollY: false, // 세로 스크롤
+      minRowHeight: '48', // grid cell 높이
+      minBodyHeight: '240', // grid body 높이
+      contextMenu: null, // grid 우클릭 막기
+      pageOptions: {
+        useClient: true,
+        perPage: 10 // 화면에 보여주는 리스트 개수
+      },
+      columnOptions: {
+        resizable: true
+      },
+      rowHeaders: [{ type: 'rowNum', header: 'NO.', renderer: RowNumberRenderer, width: 48 }],
+      header: {
+        height: 48 // header 영역 높이
+      },
+      columns: [
+        {
+          header: '아이디',
+          name: '아이디',
+          align: 'center',
+        },
+        {
+          header: '이름',
+          name: '이름',
+          align: 'center',
+          sortable: true
+        },
+        {
+          header: '회원유형',
+          name: '회원유형',
+          align: 'center',
+          width: 98, // width,
+        },
+        {
+          header: '연동정보',
+          name: '연동정보',
+          align: 'center',
+          width: 150,
+        },
+        {
+          header: '등급/레벨',
+          name: '등급레벨',
+          align: 'center',
+          width: 199,
+        },
+        {
+          header: '휴대폰번호',
+          name: '휴대폰번호',
+          align: 'center',
+          width: 199,
+        },
+        {
+          header: '이메일',
+          name: '이메일',
+          align: 'center',
+        },
+        {
+          header: '생년월일',
+          name: '생년월일',
+          align: 'center',
+        },
+        {
+          header: '성별',
+          name: '성별',
+          align: 'center',
+        },        
+        {
+          header: '최초가입일',
+          name: '최초가입일',
+          align: 'center',
+          sortable: true,
+        }
+      ]
+    });
+
+    // 총 건수 업데이트 함수
+    function updateTotalCount() {
+      const totalCount = gridData.length;
+      document.querySelector('.count-number').textContent = totalCount;
+    }
+
+    // 초기 총 건수 업데이트
+    updateTotalCount();
+  </script>
+</body>
+</html>

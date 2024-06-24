@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 가이드</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="component" data-lnb-index="9"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Tabs</h1> 
+      <!-- default -->
+      <h2 class="component-title">Default</h2>
+      <div class="ui-tab">
+        <ul class="tab-menu">
+          <li class="tab-item is-active"> <!-- 현재 활성화된 탭 -->
+            <a href="#" class="tab-link" data-tab="tab1">TAP01</a>
+          </li>
+          <li class="tab-item">  
+            <a href="#" class="tab-link" data-tab="tab2">TAP02</a>
+          </li>
+          <li class="tab-item">
+            <a href="#" class="tab-link" data-tab="tab3">TAP03</a>
+          </li>
+        </ul>
+        <div class="tab-contents">
+          <div class="tab-content is-active" data-tab-content="tab1">content1</div> <!-- 현재 활성화된 탭 컨텐츠 -->
+          <div class="tab-content" data-tab-content="tab2">content2</div>
+          <div class="tab-content" data-tab-content="tab3">content3</div>
+        </div>
+      </div>
+      <!-- //default -->
+  <pre><code class="language-Markup">
+&lt;div class="ui-tab">
+  &lt;ul class="tab-menu">
+    &lt;li class="tab-item is-active"> 
+      &lt;a href="#" class="tab-link" data-tab="tab1">TAP01&lt;/a>
+    &lt;/li>
+    &ltli class="tab-item">  
+      &lta href="#" class="tab-link" data-tab="tab2">TAP02&lt/a>
+    &lt/li>
+    &ltli class="tab-item">
+      &lta href="#" class="tab-link" data-tab="tab3">TAP03&lt/a>
+    &lt/li>
+  &lt/ul>
+  &ltdiv class="tab-contents">
+    &ltdiv class="tab-content is-active" data-tab-content="tab1">content1&lt/div>
+    &ltdiv class="tab-content" data-tab-content="tab2">content2&lt/div>
+    &ltdiv class="tab-content" data-tab-content="tab3">content3&lt/div>
+  &lt/div>
+&lt/div></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+   
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+</body>
+</html>

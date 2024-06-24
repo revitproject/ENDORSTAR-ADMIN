@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap login">
+    <!-- base-content -->
+    <main class="base-content">
+      <section>
+        <div class="login-logo">
+          <img src="../../resources/images/common/logo-white.svg" alt="endorstar">
+        </div>
+  
+        <div class="login-form">
+          <div class="login-head">
+            <h1 class="login-title">Endorstar Admin</h1>
+          </div>
+          <div class="login-body">
+            <form action="/login" method="post">
+              <div class="wrap-inp">
+                <label for="admin-id"><span class="hidden">아이디</span></label>
+                <input type="text" id="admin-id" class="inp-base" name="username" aria-label="아이디 입력" placeholder="아이디를 입력해주세요.">
+              </div>
+              <div class="wrap-inp">
+                <label for="admin-pw"><span class="hidden">비밀번호</span></label>
+                <input type="password" id="admin-pw" class="inp-base" name="password" maxlength="" aria-label="비밀번호 입력" placeholder="비밀번호를 입력해주세요.">
+              </div>
+              <div class="form-checkbox">
+                <label><input type="checkbox" class="inp-checkbox" name="remember">아이디 저장</label>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn is-grays-1" data-modal="open" data-url="#alert">로그인</button>
+              </div>
+            </form>
+            <div class="login-info">
+              <p class="login-text">
+                <a href="mailto:happymon@endor.com"><em>해피몽(happymon@endor.com)</em></a>
+                계정 관련 문의는 계정관리팀으로 문의주세요
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </section>
+    </main>
+    <!-- //base-content -->
+     
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">안내</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">
+            입력하신 아이디 또는 비밀번호가 맞지 않아요.<br>
+            확인 후 다시 입력해 주세요.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+</body>
+</html>

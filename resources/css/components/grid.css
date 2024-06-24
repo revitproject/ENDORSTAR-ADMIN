@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+.grid {
+  position: relative;
+  margin-top: 1rem;
+}
+.grid .tui-grid-header-area {
+  border-color: var(--grays-5);
+}
+/* scrollbar custom */
+.grid .tui-grid-container ::-webkit-scrollbar {
+  background-color: #f9f9f9 !important;
+  border-radius: 0;
+}
+.grid .tui-grid-scrollbar-right-top {
+  background-color: #EDEDED !important;
+  border-bottom: 0.1rem solid var(--grays-4) !important;
+  border-left: 1px solid #EDEDED !important;
+  border-right: 1px solid #EDEDED !important;
+}
+.grid .tui-grid-scrollbar-right-bottom {
+  background-color: #f9f9f9 !important;
+  border-left: 0;
+}
+.grid .tui-grid-scrollbar-frozen-border {
+  border: 0;
+}
+.grid .tui-grid-container,
+.grid .tui-grid-container input,
+.grid .tui-grid-container p,
+.grid .tui-grid-container textarea {
+  font-family: inherit;
+}
+.grid .tui-grid-cell-header,
+.grid .tui-grid-cell {
+  padding: .3rem 1.2rem;
+  color: var(--grays-2);
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+  text-align: center;
+  border-color: var(--secondary-3);
+  border-left: 0;
+  border-right: 0;
+}
+.grid .tui-grid-cell-header {
+  border-right: .1rem solid var(--grays-5);
+}
+.grid .tui-grid-lside-area .tui-grid-body-container:after {
+  right: -.1rem
+}
+.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table {
+  border-right-style: inherit !important;
+}
+.grid .tui-grid-cell-header {
+  color: var(--grays-1);
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: var(--grays-6);
+  border-top-color: var(--grays-3);
+}
+.grid .tui-grid-body-area {
+  background-color: transparent;
+}
+.grid .tui-grid-cell-has-input .tui-grid-cell-content {
+  padding: 0 .5rem !important;
+}
+.grid [data-column-name="_checked"] input[type=checkbox],
+.grid [data-column-name="_checked"] input[type=checkbox]::after {
+  width: 2rem;
+  height: 2rem;
+  border-radius: .4rem;
+}
+.grid [data-column-name="_checked"] input[type=checkbox] {
+  position: relative;
+  vertical-align: middle;
+  background-color: #fff;
+  border: .1rem solid var(--grays-5);
+  box-sizing: border-box;
+}
+.grid [data-column-name="_checked"] input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  top: -.1rem;
+  left: -.1rem; 
+  background-color: var(--primary);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.29412L4.46154 8L11 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  opacity: 0;
+}
+.grid [data-column-name="_checked"] input[type=checkbox]:checked::after {
+  opacity: 1;
+}
+.grid .tui-grid-cell-disabled input[type=checkbox] {
+  background-color: var(--secondary-3);
+}
+.grid .tui-grid-row-header-checkbox {
+  padding: 0;
+}
+.grid .tui-grid-border-line-top {
+  border-top: 0.2rem solid var(--grays-10);
+}
+.grid .tui-grid-cell-disabled {
+  background-color: #fff;
+}
+.grid .tui-grid-cell-summary {
+  border-bottom-width: 0;
+}
+
+/* grid selectbox */
+.tui-select-box-icon {
+  overflow-wrap: normal;
+}
+/* date picker & time picker */
+.tui-timepicker-column .tui-timepicker-check-area .tui-timepicker-check {
+  margin-top: 1rem;
+}
+/* grid checkbox render */
+.tui-grid-container .checkbox {
+  position: relative;
+  display: inline-block;
+}
+.tui-grid-container .hidden-input[type='checkbox'] {
+  display: none;
+  box-sizing: border-box;
+}
+.tui-grid-container .custom-input {
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: inline;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 2rem;
+}
+.tui-grid-container .custom-input:before {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background: #fff;
+  border: .1rem solid var(--grays-5);
+  border-radius: .4rem;
+  vertical-align: top;
+}
+.tui-grid-container .custom-input::after {
+  content: "";
+  position: absolute;
+  top: -.1rem;
+  left: -.1rem; 
+  background-color: var(--primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.29412L4.46154 8L11 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  opacity: 0;
+}
+.tui-grid-container .custom-input:checked::after {
+  opacity: 1;
+}
+.tui-grid-container .custom-input:disabled {
+  background-color: var(--secondary-3);
+}
+.tui-grid-container .custom-input:disabled::after {
+  background-color: var(--grays-5);
+}
+.tui-grid-pagination {
+  height: 2.4rem;
+  margin: 2.4rem 0 0;
+}
+.tui-grid-pagination .tui-page-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  color: var(--grays-3);
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 0;
+}
+.tui-grid-pagination .tui-page-btn:not(:first-child) {
+  margin-left: 0.4rem;
+}
+.tui-pagination .tui-prev {
+  margin-right: 0;
+}
+.tui-grid-pagination .tui-page-btn.tui-first,
+.tui-grid-pagination .tui-page-btn.tui-prev,
+.tui-grid-pagination .tui-page-btn.tui-next,
+.tui-grid-pagination .tui-page-btn.tui-last {
+  box-sizing: border-box;
+}
+.tui-grid-pagination .tui-first .tui-ico-first,
+.tui-grid-pagination .tui-prev .tui-ico-prev,
+.tui-grid-pagination .tui-next .tui-ico-next,
+.tui-grid-pagination .tui-last .tui-ico-last {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.tui-grid-pagination .tui-first .tui-ico-first {
+  background: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1L5 6L10 11' stroke='%23999999' stroke-linecap='square'/%3E%3Cpath d='M6 1L1 6L6 11' stroke='%23999999' stroke-linecap='square'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+}
+.tui-grid-pagination .tui-prev .tui-ico-prev {
+  background: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1L1 6L6 11' stroke='%23999999' stroke-linecap='square'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+}
+.tui-grid-pagination .tui-next .tui-ico-next {
+  background: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23999999' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23999999' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+}
+.tui-grid-pagination .tui-last .tui-ico-last {
+  background: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23999999' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M5 11L10 6L5 0.999999' stroke='%23999999' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+}
+.tui-grid-pagination .tui-first:hover:not(.tui-is-disabled) .tui-ico-first {
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1L5 6L10 11' stroke='%23111111' stroke-linecap='square'/%3E%3Cpath d='M6 1L1 6L6 11' stroke='%23111111' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+}
+.tui-grid-pagination .tui-prev:hover:not(.tui-is-disabled) .tui-ico-prev {
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1L1 6L6 11' stroke='%23111111' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+}
+.tui-grid-pagination .tui-next:hover:not(.tui-is-disabled) .tui-ico-next {
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.tui-grid-pagination .tui-last:hover:not(.tui-is-disabled) .tui-ico-last {
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M1 11L6 6L1 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M5 11L10 6L5 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M5 11L10 6L5 0.999999' stroke='%23111111' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.tui-pagination .tui-first-child.tui-is-selected,
+.tui-pagination .tui-last-child.tui-is-selected {
+  border: 0;
+}
+.tui-pagination .tui-is-selected,
+.tui-pagination strong,
+.tui-pagination .tui-page-btn:hover,
+.tui-pagination .tui-is-selected:hover {
+  background-color: transparent;
+  color: var(--grays-1);
+  font-weight: 700;
+}
+.tui-grid-container .btn {
+  box-sizing: border-box;
+}
+.tui-grid-no-scroll-x .tui-grid-border-line-bottom {
+  display: none;
+}
+
+/* nodata */
+.grid .tui-grid-layer-state p {
+  position: relative;
+  padding: 1.4rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--grays-3);
+  text-align: center;
+}
+.grid .tui-grid-layer-state p::before {
+  content: '';
+  position: absolute;
+  top: -8rem;
+  left: 50%;
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  background: url("../../images/ico/ico-nodata.png") no-repeat 50% 100% / 100%;
+  transform: translateX(-50%);
+}
+.tui-grid-layer-state-content {
+  position: relative;
+  padding: 9.4rem 0 10.8rem;
+  margin: 6rem 0;
+}

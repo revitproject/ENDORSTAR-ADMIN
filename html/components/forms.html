@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 가이드</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="component" data-lnb-index="6"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- content -->
+    <main class="base-content">
+      <h1 class="component-h1">Forms</h1>
+      <h2 class="component-title">Checkbox</h2>
+      <div class="wrap-group">
+        <div class="form-checkbox">
+          <label><input type="checkbox" class="inp-checkbox" checked>전체</label>
+          <label><input type="checkbox" class="inp-checkbox">선택 전</label>
+          <label><input type="checkbox" class="inp-checkbox" checked>선택 후</label>
+          <label><input type="checkbox" class="inp-checkbox" disabled>비활성화</label>
+        </div>
+      </div>
+<pre>
+<code class="language-Markup">&lt;div class="form-checkbox">
+  &lt;label>&lt;input type="checkbox" class="inp-checkbox">선택 전&lt;/label>
+  &lt;label>&lt;input type="checkbox" class="inp-checkbox" checked>선택 후&lt;/label>
+  &lt;label>&lt;input type="checkbox" class="inp-checkbox" disabled>비활성화&lt;/label>
+&lt;/div></code>
+</pre>
+<!-- //checkbox -->
+
+  <h2 class="component-title">Radio</h2>
+  <div class="wrap-group">
+    <div class="form-radio">
+      <label><input type="radio" name="appType" class="inp-radio">선택 전</label>
+      <label><input type="radio" name="appType" class="inp-radio" checked>선택 후</label>
+      <label><input type="radio" name="appType" class="inp-radio" disabled>비활성화</label>
+    </div>
+  </div>
+<pre>
+<code class="language-Markup">&lt;div class="form-radio">
+  &lt;label>&lt;input type="radio" name="appType" class="inp-radio">선택 전&lt;/label>
+  &lt;label>&lt;input type="radio" name="appType" class="inp-radio" checked>선택 후&lt;/label>
+  &lt;label>&lt;input type="radio" name="appType" class="inp-radio" disabled>비활성화&lt;/label>
+&lt;/div></code>
+</pre>
+<!-- // radio -->
+
+  <h2 class="component-title">Input Text</h2>
+  <div class="wrap-inp">
+    <input class="inp-base" type="text" maxlength="8" placeholder="텍스트" value="normal">
+    <input class="inp-base" type="text" maxlength="8" value="readonly" readonly>
+    <input class="inp-base" type="text" maxlength="8" value="disabled" disabled>
+    <input class="inp-base is-warning" type="text" maxlength="8" value="warning">
+  </div>
+<pre>
+<code class="language-Markup">&lt;input class="inp-base" type="text" maxlength="8" placeholder="텍스트" value="normal">
+&lt;input class="inp-base" type="text" maxlength="8" value="readonly" readonly>
+&lt;input class="inp-base" type="text" maxlength="8" value="disabled" disabled>
+&lt;input class="inp-base is-warning" type="text" maxlength="8" value="warning"></code>
+</pre>
+<!-- // input(text) -->
+
+  <h2 class="component-title">Input Password</h2>
+  <div class="wrap-inp">
+    <input class="inp-base" type="password" maxlength="8" placeholder="텍스트" value="normal">
+    <input class="inp-base" type="password" maxlength="8" value="readonly" readonly>
+    <input class="inp-base" type="password" maxlength="8" value="disabled" disabled>
+    <input class="inp-base is-warning" type="password" maxlength="8" value="warning">
+  </div>
+<pre>
+<code class="language-Markup">&lt;input class="inp-base" type="password" maxlength="8" placeholder="텍스트" value="normal">
+&lt;input class="inp-base" type="password" maxlength="8" value="readonly" readonly>
+&lt;input class="inp-base" type="password" maxlength="8" value="disabled" disabled>
+&lt;input class="inp-base is-warning" type="password" maxlength="8" value="warning"></code>
+</pre>
+<!-- // input(password) -->
+  
+  <h2 class="component-title">Select</h2>
+  <div class="wrap-group">
+    <select class="inp-select">
+      <option value="">셀렉트1</option>
+      <option value="">셀렉트2</option>
+      <option value="">셀렉트3</option>
+    </select>
+  </div>
+<pre>
+<code class="language-Markup">&lt;select class="inp-select">
+  &lt;option value="">셀렉트1&lt;/option>
+  &lt;option value="">셀렉트2&lt;/option>
+  &lt;option value="">셀렉트3&lt;/option>
+&lt;/select></code>
+</pre>
+<!-- // select -->
+
+  <h2 class="component-title">Dropdown</h2>
+  <div class="wrap-group">
+    <div class="area-dropdown">
+      <div class="wrap-dropdown">
+        <div class="ui-dropdown" data-input="#dropdown-value">
+          <div class="dropdown-title">선택 전</div>
+          <div class="dropdown-trigger">선택하기</div>
+          <div class="dropdown-menu">
+            <div class="dropdown-item" data-value="value1">이름 검색</div>
+            <div class="dropdown-item" data-value="value2">아이디 검색</div>
+            <div class="dropdown-item" data-value="value3">직원코드 검색</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap-dropdown">
+        <div class="ui-dropdown open" data-input="#dropdown-value">
+          <div class="dropdown-title">선택 중</div>
+          <div class="dropdown-trigger">선택하기</div>
+          <div class="dropdown-menu">
+            <div class="dropdown-item" data-value="value1">이름 검색</div>
+            <div class="dropdown-item" data-value="value2">아이디 검색</div>
+            <div class="dropdown-item" data-value="value3">직원코드 검색</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap-dropdown">
+        <div class="ui-dropdown" data-input="#dropdown-value">
+          <div class="dropdown-title">선택 후</div>
+          <div class="dropdown-trigger selected">선택하기</div>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item" data-value="value1">이름 검색</li>
+            <li class="dropdown-item" data-value="value2">아이디 검색</li>
+            <li class="dropdown-item" data-value="value3">직원코드 검색</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<pre><code class="language-Markup">&lt;div class="area-dropdown">
+    &lt;div class="wrap-dropdown">
+      &lt;div class="ui-dropdown" data-input="#dropdown-value">
+        &lt;div class="dropdown-title">선택 전&lt;/div>
+        &lt;div class="dropdown-trigger">선택하기&lt;/div>
+        &lt;div class="dropdown-menu">
+          &lt;div class="dropdown-item" data-value="value1">이름 검색&lt;/div>
+          &lt;div class="dropdown-item" data-value="value2">아이디 검색&lt;/div>
+          &lt;div class="dropdown-item" data-value="value3">직원코드 검색&lt;/div>
+        &lt;/div>
+      &lt;/div>  
+    &lt;/div>
+    &lt;div class="wrap-dropdown">
+      &lt;div class="dropdown open" data-input="#dropdown-value">
+        &lt;div class="dropdown-title">선택 중&lt;/div>
+        &lt;div class="dropdown-trigger">선택하기&lt;/div>
+        &lt;div class="dropdown-menu">
+          &lt;div class="dropdown-item" data-value="value1">이름 검색&lt;/div>
+          &lt;div class="dropdown-item" data-value="value2">아이디 검색&lt;/div>
+          &lt;div class="dropdown-item" data-value="value3">직원코드 검색&lt;/div>
+        &lt;/div>
+      &lt;/div> 
+    &lt;/div>
+    &lt;div class="wrap-dropdown">
+      &lt;div class="ui-dropdown" data-input="#dropdown-value">
+        &lt;div class="dropdown-title">선택 후&lt;/div>
+        &lt;div class="dropdown-trigger selected">선택하기&lt;/div>
+        &lt;ul class="dropdown-menu">
+          &lt;li class="dropdown-item" data-value="value1">이름 검색&lt;/li>
+          &lt;li class="dropdown-item" data-value="value2">아이디 검색&lt;/li>
+          &lt;li class="dropdown-item" data-value="value3">직원코드 검색&lt;/li>
+        &lt;/ul>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div></code>
+</pre>
+<!-- //dropdown -->
+
+  <h2 class="component-title">Date</h2>
+  <div class="wrap-group">
+    <div class="area-datepicker">
+      <!-- DatePicker -->
+      <div class="wrap-datepicker">
+        <div class="datePicker">
+          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+            <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+            <div id="startpicker-div1" class="datepicker-div"></div>
+          </div>
+        </div>
+        <span class="datepicker-to">~</span>
+        <div class="datePicker">
+          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+            <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+            <div id="endpicker-div1" class="datepicker-div"></div>
+          </div>
+        </div>
+      </div>
+      <!-- //DatePicker -->
+      <div class="btn-options">
+        <button type="button" class="btn is-secondary-1 is-active">전체</button>
+        <button type="button" class="btn is-secondary-1">오늘</button>
+        <button type="button" class="btn is-secondary-1">1주일</button>
+        <button type="button" class="btn is-secondary-1">1개월</button>
+        <button type="button" class="btn is-secondary-1">3개월</button>
+        <button type="button" class="btn is-secondary-1">6개월</button>
+      </div>
+    </div>
+  </div>
+<pre>
+<code class="language-Markup">&lt;div class="area-datepicker">
+  &lt;div class="wrap-datepicker">
+    &lt;div class="datePicker">
+      &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        &lt;input id="startpicker-inp1" type="text" aria-label="Date-Time">
+        &lt;div id="startpicker-div1" class="datepicker-div">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;span class="datepicker-to">~&lt;/span>
+    &lt;div class="datePicker">
+      &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        &lt;input id="endpicker-inp1" type="text" aria-label="Date-Time">
+        &lt;div id="endpicker-div1" class="datepicker-div">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="btn-options">
+    &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
+    &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
+    &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
+    &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
+    &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
+    &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+<!-- // datepicker -->
+
+<h2 class="component-title">Search form</h2>
+<div class="wrap-group">
+  <div class="form-searchbox">
+    <div class="wrap-searchbox">
+      <label for="select-date" class="lb-inp">기간</label>
+      <select id="select-date" class="inp-select">
+        <option value="" selected>등록일</option>
+        <option value="">옵션1</option>
+        <option value="">옵션1</option>
+        <option value="">옵션1</option>
+      </select>
+    
+      <div class="area-datepicker">
+        <!-- DatePicker -->
+        <div class="wrap-datepicker">
+          <div class="datePicker">
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+              <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+              <div id="startpicker-div2" class="datepicker-div"></div>
+            </div>
+          </div>
+          <span class="datepicker-to">~</span>
+          <div class="datePicker">
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+              <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+              <div id="endpicker-div2" class="datepicker-div"></div>
+            </div>
+          </div>
+        </div>
+        <!-- //DatePicker -->
+        <div class="btn-options">
+          <button type="button" class="btn is-secondary-1 is-active">전체</button>
+          <button type="button" class="btn is-secondary-1">오늘</button>
+          <button type="button" class="btn is-secondary-1">1주일</button>
+          <button type="button" class="btn is-secondary-1">1개월</button>
+          <button type="button" class="btn is-secondary-1">3개월</button>
+          <button type="button" class="btn is-secondary-1">6개월</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="wrap-searchbox">
+      <label for="inp-name" class="lb-inp">이름</label>
+      <input type="text" id="inp-name" class="inp-base" placeholder="">
+
+      <label for="inp-id" class="lb-inp">아이디</label>
+      <input type="text" id="inp-id" class="inp-base" placeholder="">
+    </div>
+  
+    <div class="wrap-searchbox inbtn">
+      <div class="searchbox-item">
+        <label for="select-search" class="lb-inp">검색어</label>
+        <select id="select-search" class="inp-select">
+          <option value="" selected>검색어</option>
+          <option value="">옵션1</option>
+          <option value="">옵션1</option>
+          <option value="">옵션1</option>
+        </select>
+    
+        <input type="text" id="inp-search" class="inp-base" placeholder="">
+      </div>
+      <div class="searchbox-btn">
+        <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+        <button type="button" class="btn is-search">검색</button>
+      </div>
+    </div>
+  </div>
+</div>
+<pre>
+<code class="language-Markup">&lt;div class="form-searchbox">
+  &lt;div class="wrap-searchbox">
+    &lt;label for="select-date" class="lb-inp">기간&lt;/label>
+    &lt;select id="select-date" class="inp-select">
+      &lt;option value="" selected>등록일&lt;/option>
+      &lt;option value="">옵션1&lt;/option>
+      &lt;option value="">옵션1&lt;/option>
+      &lt;option value="">옵션1&lt;/option>
+    &lt;/select>
+  
+    &lt;div class="area-datepicker">
+      &lt;div class="wrap-datepicker">
+        &lt;div class="datePicker">
+          &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+            &lt;input id="startpicker-inp2" type="text" aria-label="Date-Time">
+            &lt;div id="startpicker-div2" class="datepicker-div">&lt;/div>
+          &lt;/div>
+        &lt;/div>
+        &lt;span class="datepicker-to">~&lt;/span>
+        &lt;div class="datePicker">
+          &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+            &lt;input id="endpicker-inp2" type="text" aria-label="Date-Time">
+            &lt;div id="endpicker-div2" class="datepicker-div">&lt;/div>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="btn-options">
+        &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
+        &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
+        &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
+        &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
+        &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
+        &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+
+  &lt;div class="wrap-searchbox">
+    &lt;label for="inp-name" class="lb-inp">이름&lt;/label>
+    &lt;input type="text" id="inp-name" class="inp-base" placeholder="">
+
+    &lt;label for="inp-id" class="lb-inp">아이디&lt;/label>
+    &lt;input type="text" id="inp-id" class="inp-base" placeholder="">
+  &lt;/div>
+
+  &lt;div class="wrap-searchbox inbtn">
+    &lt;div class="searchbox-item">
+      &lt;label for="select-search" class="lb-inp">검색어&lt;/label>
+      &lt;select id="select-search" class="inp-select">
+        &lt;option value="" selected>검색어&lt;/option>
+        &lt;option value="">옵션1&lt;/option>
+        &lt;option value="">옵션1&lt;/option>
+        &lt;option value="">옵션1&lt;/option>
+      &lt;/select>
+  
+      &lt;input type="text" id="inp-search" class="inp-base" placeholder="">
+    &lt;/div>
+    &lt;div class="searchbox-btn">
+      &lt;button type="button" class="btn is-reset">&lt;span class="ico-reset">초기화&lt;/span>&lt;/button>
+      &lt;button type="button" class="btn is-search">검색&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+<!-- // searchform -->
+
+  <h2 class="component-title">Switch(Checkbox)</h2>
+  <div class="wrap-group">
+    <label class="switch"><input type="checkbox"></label>
+    <label class="switch"><input type="checkbox" checked></label>
+  </div>
+<pre>
+<code class="language-Markup">&lt;label class="switch">&lt;input type="checkbox">&lt;/label>
+&lt;label class="switch">&lt;input type="checkbox" checked>&lt;/label></code>
+</pre>
+
+  <h2 class="component-title">Switch Text(Checkbox)</h2>
+  <div class="wrap-group">
+    <label class="switch is-text"><input type="checkbox"><span class="false">off</span><span class="true">on</span></label>
+    <label class="switch is-text"><input type="checkbox" checked><span class="false">off</span><span class="true">on</span></label>
+  </div>
+<pre><code class="language-Markup">&lt;label class="switch is-text">&lt;input type="checkbox">&lt;span class="false">off&lt;/span>&lt;span class="true">on&lt;/span>&lt;/label>
+&lt;label class="switch is-text">&lt;input type="checkbox" checked>&lt;span class="false">off&lt;/span>&lt;span class="true">on&lt;/span>&lt;/label></code>
+</pre>
+<!-- // switch -->
+    </main>
+      <!-- //content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicke2r1 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    // UI 확인용 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+      }
+
+      startpicker.setDate(startDate);
+      endpicker.setDate(endDate);
+    });
+  </script>
+</body>
+</html>

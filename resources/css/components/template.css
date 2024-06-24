@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+body[data-route="component"] {
+  background: #fff !important;
+}
+body[data-route="component"] .language-markup {
+  margin-top: 2rem;
+}
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+  background: #F5F5F5 !important;
+}
+.component-h1 {
+  padding: 2rem 0;
+  color: var(--grays-1);
+  font-size: 4rem;
+  font-weight: 400;
+}
+.component-h2 {
+  margin: 5rem 0 1.2rem;
+  color: var(--grays-1);
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.component-h3 {
+  margin: 1.2rem 0 1rem;
+  color: var(--grays-1);
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.component-pre {
+  margin-top: 2rem !important;
+}
+.component-title {
+  margin: 3rem 0 .8rem;
+  color: var(--grays-1);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.component-title:first-child {
+  margin-top: 0;
+}
+.component-desc {
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.component-btn-group {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+.component-btn-group .btn:not(:first-child) {
+  margin-left: 1rem;
+}
+.component-link {
+  margin-bottom: 2rem;
+}
+.component-link .link {
+  color: var(--system-3);
+  font-size: 2rem;
+}
+
+/* color */
+.component .color,
+.component .textColor,
+.component .borderColor {
+  display: flex;
+}
+.component .color__item,
+.component .borderColor__item {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.component .color__item:not(:first-child),
+.component .borderColor__item:not(:first-child) {
+  margin-left: 2rem;
+}
+.component .color__item em {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+}
+.component .textColor__item {
+  margin-top: 2rem;
+}
+.component .textColor__item:not(:first-child) {
+  margin-left: 3rem;
+}
+.component .borderColor__item {
+  border-width: .2rem;
+  border-style: solid;
+}
+.component .wrap-group {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+.component .wrap-group .inp-base:not(:first-child),
+.component .wrap-group .switch:not(:first-child) {
+  margin-left: 1rem;
+}
+.component .component-area:not(:first-child) {
+  margin-top: 4rem;
+}
+.component .list-base li {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+.component .list-base[data-bullet=dot] > li::before {
+  top: 1.5rem;
+}
+.component .component-box {
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  background: var(--grays-6);
+  border-radius: 1rem;
+}
+.component .component-box em {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.component .component-box p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}

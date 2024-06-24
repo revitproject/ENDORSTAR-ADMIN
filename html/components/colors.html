@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타 가이드</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="component" data-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Color</h1>
+      <h2 class="component-title">Primary Color</h2>
+      <div class="color">
+        <div class="color__item bg-primary">
+          <em>E - Orange</em>#F16122
+        </div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bg-primary">&lt;/div></code>
+</pre>
+      <h2 class="component-title">Secondary Color</h2>
+      <div class="color">
+        <div class="color__item bg-secondary-1">
+          #C0E101
+        </div>
+        <div class="color__item bg-secondary-2">
+          #FFC501
+        </div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bg-secondary-1">&lt;/div>
+&lt;div class="bg-secondary-2">&lt;/div></code>
+</pre>
+      <h2 class="component-title">Gray Scale</h2>
+      <div class="color">
+        <div class="color__item bg-grays-1">
+          <em>Gray01</em>#111111
+        </div>
+        <div class="color__item bg-grays-2">
+          <em>Gray02</em>#666666
+        </div>
+        <div class="color__item bg-grays-3">
+          <em>Gray03</em>#888888
+        </div>
+        <div class="color__item bg-grays-4" style="color: #000;">
+          <em>Gray04</em>#CCCCCC
+        </div>
+        <div class="color__item bg-grays-5" style="color: #000;">
+          <em>Gray05</em>#DDDDDD
+        </div>
+        <div class="color__item bg-grays-6" style="color: #000;">
+          <em>Gray06</em>#F4F4F5
+        </div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bg-grays-1">&lt;/div>
+&lt;div class="bg-grays-2">&lt;/div>
+&lt;div class="bg-grays-3">&lt;/div>
+&lt;div class="bg-grays-4">&lt;/div>
+&lt;div class="bg-grays-5">&lt;/div>
+&lt;div class="bg-grays-6">&lt;/div></code>
+</pre>
+      <h2 class="component-title">System Color</h2>
+      <div class="color">
+        <div class="color__item bg-red-1">
+          <em>ERROR</em>#E80000
+        </div>
+        <div class="color__item bg-red-2">
+          <em>WARNING</em>#FFAA00
+        </div>
+        <div class="color__item bg-red-3">
+          <em>SUCCESS</em>#00A04A
+        </div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bg-red-1">&lt;/div>
+&lt;div class="bg-red-2">&lt;/div>
+&lt;div class="bg-green-1">&lt;/div></code>
+</pre>
+  <h2 class="component-title">Button Color</h2>
+      <div class="color">
+        <div class="color__item bg-grays-1">
+          #111111
+        </div>
+        <div class="color__item bg-primary">
+          #F16122
+        </div>
+        <div class="color__item bg-secondary-2">
+          #FFE3D6
+        </div>
+        <div class="color__item bg-secondary-3">
+          #E7E7E7
+        </div>
+        <div class="color__item bg-secondary-4">
+          <em>line</em>#CDCDCD
+        </div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bg-grays-1">&lt;/div>
+&lt;div class="bg-primary">&lt;/div>
+&lt;div class="bg-secondary-4">&lt;/div>
+&lt;div class="bg-secondary-5">&lt;/div>
+&lt;div class="bg-secondary-6">&lt;/div></code>
+</pre>
+</pre>
+      <h2 class="component-title">Text Color</h2>
+      <div class="textColor">
+        <div class="textColor__item text-primary">text-primary</div>
+        <div class="textColor__item text-grays-1">text-grays-1</div>
+        <div class="textColor__item text-grays-2">text-grays-2</div>
+        <div class="textColor__item text-red-1">text-red-1</div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="text-primary">&lt;/div>
+&lt;div class="text-grays-1">&lt;/div>
+&lt;div class="text-grays-2">&lt;/div>
+&lt;div class="text-red-1">&lt;/div></code>
+</pre>
+      <h2 class="component-title">Line Color</h2>
+      <div class="borderColor">
+        <div class="borderColor__item bd-primary"></div>
+        <div class="borderColor__item bd-grays-1"></div>
+      </div>
+<pre class="component-pre">
+<code class="language-Markup">&lt;div class="bd-primary">&lt;/div>
+&lt;div class="bd-grays-1">&lt;/div></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+</body>
+</html>

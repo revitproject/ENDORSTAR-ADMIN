@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+
+<body data-route="main" data-lnb-index="0" data-sub-lnb-index="0"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
+
+    <!-- base-content -->
+    <main class="base-content dashboard">
+      <section>
+        <h1 class="head-title">DASHBOARD</h1>
+        <div class="dashboard-info">
+          <div class="dashboard__card">
+            <span class="card-title">방문자수</span>
+            <span class="card-count"><strong class="card-number">1,000,000</strong>명</span>
+          </div>
+          <div class="dashboard__card">
+            <span class="card-title">앱 다운로드 수</span>
+            <span class="card-count"><strong class="card-number">1,000,000</strong>건</span>
+          </div>
+          <div class="dashboard__card">
+            <span class="card-title">챌린지 참여자수</span>
+            <span class="card-count"><strong class="card-number">1,000,000</strong>명</span>
+          </div>
+          <div class="dashboard__card">
+            <span class="card-title">해피캐시전환약</span>
+            <span class="card-count"><strong class="card-number">1,000,000</strong>원</span>
+          </div>
+        </div>
+        <div class="chart-form">
+          <h1 class="content-title">1:1문의 그래프</h1>
+          <div class="chart-group">
+            <div id="lineChart" class="chart"></div>
+            <div id="barChart" class="chart"></div>
+            <div id="pieChart" class="chart"></div>
+          </div>
+          <div class="chart-group">
+            <div id="stackBarChart" class="chart"></div>
+            <div id="stackAreaChart" class="chart"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/apexcharts.min.js"></script> <!-- chart -->
+  <!-- js common -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const chartsConfig = {
+        lineChart: {
+          selector: "#lineChart",
+          type: 'line',
+          options: {
+            series: [
+              { name: 'data1', data: [100, 200, 300, 400, 1200, 6000, 10000] },
+              { name: 'data2', data: [80, 180, 800, 380, 6800, 7000, 8000] },
+              { name: 'data3', data: [400, 1180, 980, 380, 280, 4000, 800] }
+            ],
+            xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
+            colors: ['#ff4560', '#00e396', '#999'],
+          }
+        },
+        barChart: {
+          selector: "#barChart",
+          type: 'bar',
+          options: {
+            series: [{ name: 'Sales', data: [10, 15, 9, 18, 10, 17, 12] }],
+            xaxis: { categories: ['data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7'] }
+          }
+        },
+        pieChart: {
+          selector: "#pieChart",
+          type: 'pie',
+          options: {
+            series: [44, 55, 13, 33],
+            labels: ['Online Shopping', 'Acquisition', 'Subscription', 'Other']
+          }
+        },
+        stackBarChart: {
+          selector: "#stackBarChart",
+          type: 'bar',
+          options: {
+            series: [
+              { name: 'Product A', data: [44, 55, 41, 67, 22, 43] },
+              { name: 'Product B', data: [13, 23, 20, 8, 13, 27] },
+              { name: 'Product C', data: [11, 17, 15, 15, 21, 14] }
+            ],
+            xaxis: { categories: ['2015', '2016', '2017', '2018', '2019', '2020'] },
+            fill: { opacity: 1 },
+            stroke: { width: 1, colors: ['#fff'] },
+            title: { text: 'Stacked Bar Chart' }
+          }
+        },
+        stackAreaChart: {
+          selector: "#stackAreaChart",
+          type: 'area',
+          options: {
+            series: [
+              { name: 'Product A', data: [31, 40, 28, 51, 42, 109, 100] },
+              { name: 'Product B', data: [11, 32, 45, 32, 34, 52, 41] },
+              { name: 'Product C', data: [15, 11, 25, 36, 26, 38, 20] }
+            ],
+            xaxis: {
+              type: 'category',
+              categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+            },
+            fill: {
+              type: 'none',
+              opacity: 0
+            },
+            stroke: {
+              curve: 'smooth',
+              width: 2
+            },
+            tooltip: {
+              x: {
+                format: 'dd/MM/yy HH:mm'
+              }
+            },
+            dataLabels: {
+              enabled: false
+            }
+          }
+        }
+      };
+
+      function initChart(selector, type, config) {
+        const baseOptions = {
+          chart: { type: type, height: config.height || 300 },
+          plotOptions: {
+            bar: { horizontal: false, columnWidth: '50%', endingShape: 'rounded' },
+            pie: { expandOnClick: true },
+            radar: { polygons: { strokeColors: '#e9e9e9', fill: { colors: ['#f8f8f8', '#fff'] } } },
+            area: { stacking: true, markers: { size: 0 } }
+          },
+          ...config
+        };
+
+        const chart = new ApexCharts(document.querySelector(selector), baseOptions);
+        chart.render();
+        return chart;
+      }
+
+      Object.keys(chartsConfig).forEach(key => {
+        const { selector, type, options } = chartsConfig[key];
+        window[key] = initChart(selector, type, options);
+      });
+
+      function registerEventListeners() {
+        document.getElementById('updateLine').addEventListener('click', () => {
+          update(lineChart, [{ data: [45, 50, 55, 60, 65, 75, 80] }, { data: [100, 200, 700, 60, 965, 1075, 800] }, { data: [400, 350, 200, 900, 1000, 775, 580] }]);
+        });
+
+        document.getElementById('updateArea').addEventListener('click', () => {
+          update(stackAreaChart, [{ data: [145, 52, 38, 60, 55, 60, 70] }, { data: [120, 41, 145, 50, 49, 60, 65] }, { data: [28, 29, 39, 40, 36, 47, 53] }]);
+        });
+      }
+
+      function update(chart, newData) {
+        chart.updateOptions({ series: newData });
+      }
+
+      registerEventListeners();
+    });
+  </script>
+</body>
+
+</html>
