@@ -7,8 +7,8 @@
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
   <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/prism.css">
@@ -28,6 +28,107 @@
       <h1 class="component-h1">Grids</h1>
       <h2 class="component-title">Default</h2>
       <div class="component-link"><a href="https://nhn.github.io/tui.grid/latest/Grid" target="_blank" class="link">API/Examples</a></div>
+<pre>
+<code class="language-Markup">실데이터 바인딩 가이드
+
+1. 데이터 형식: JSON
+백엔드에서 데이터를 받아올 때 JSON 형식으로 변환하여 클라이언트로 전달
+예를 들어, gridData1은 다음과 같이 정의
+
+const gridData1 = [
+  {
+    처리유형: '고객직접변경',
+    처리자: 'endorhappy001',
+    변경유형: '비밀변경',
+    변경사유: '비밀번호 변경',
+    변경처리일: '2024-02-26 15:00',
+  },
+  // 다른 데이터...
+];
+
+2. 백엔드와 연동
+백엔드에서 API 엔드포인트를 만들어 데이터를 JSON 형식으로 제공하면,
+클라이언트에서 AJAX 요청을 통해 데이터를 받아와 그리드에 바인딩
+
+예시)
+$.ajax({
+  url: '/api/getGridData1', // 백엔드 API 엔드포인트
+  method: 'GET',
+  success: function(data) {
+    grid1.resetData(data); // 그리드에 데이터 바인딩
+  },
+  error: function(error) {
+    console.error('Error fetching grid data:', error);
+  }
+});
+
+3. 초기 데이터 설정 및 바인딩
+const grid1 = new tui.Grid({
+  el: document.getElementById('grid1'),
+  data: [], // 초기 데이터는 빈 배열
+  scrollX: false,
+  scrollY: false,
+  minRowHeight: '48',
+  minBodyHeight: '240',
+  contextMenu: null,
+  pagination: true,
+  pageOptions: {
+    useClient: true,
+    perPage: 5,
+    element: document.getElementById('pagination1') // 한 화면에 다중 페이지네이션 생성시
+  },
+  columnOptions: {
+    resizable: true
+  },
+  rowHeaders: [{ type: 'rowNum', header: 'NO.', renderer: RowNumberRenderer, width: 56 }],
+  header: {
+    height: 48
+  },
+  columns: [
+    {
+      header: '처리유형',
+      name: '처리유형',
+      align: 'center',
+      width: 340,
+    },
+    {
+      header: '처리자',
+      name: '처리자',
+      align: 'center'
+    },
+    {
+      header: '변경유형',
+      name: '변경유형',
+      align: 'center',
+    },
+    {
+      header: '변경사유',
+      name: '변경사유',
+      align: 'center'
+    },
+    {
+      header: '변경처리일',
+      name: '변경처리일',
+      align: 'center',
+      width: 199,
+      sortable: true
+    }
+  ]
+});
+
+// 데이터 로드 후 바인딩
+$.ajax({
+  url: '/api/getGridData1',
+  method: 'GET',
+  success: function(data) {
+    grid1.resetData(data);
+  },
+  error: function(error) {
+    console.error('Error fetching grid data:', error);
+  }
+});</code>
+</pre>
+      </p>
       <div class="tbl-head">
         <select class="inp-select">
           <option value="" selected>10개씩 보기</option>
@@ -120,66 +221,66 @@
     data: [
       {
         헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
+        헤더2: '콘텐츠 1',
+        헤더3: '콘텐츠 1',
+        헤더4: '콘텐츠 1',
+        헤더5: '콘텐츠 1',
+        헤더6: '콘텐츠 1',
         헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
         _attributes: { checkDisabled: true } // 체크박스 비활성화
       },
       {
-        헤더1: '콘텐츠 1',
+        헤더1: '콘텐츠 2',
         헤더2: '콘텐츠 2',
+        헤더3: '콘텐츠 2',
+        헤더4: '콘텐츠 2',
+        헤더5: '콘텐츠 2',
+        헤더6: '콘텐츠 2',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 3',
+        헤더2: '콘텐츠 3',
         헤더3: '콘텐츠 3',
+        헤더4: '콘텐츠 3',
+        헤더5: '콘텐츠 3',
+        헤더6: '콘텐츠 3',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 4',
+        헤더2: '콘텐츠 4',
+        헤더3: '콘텐츠 4',
         헤더4: '콘텐츠 4',
+        헤더5: '콘텐츠 4',
+        헤더6: '콘텐츠 4',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 5',
+        헤더2: '콘텐츠 5',
+        헤더3: '콘텐츠 5',
+        헤더4: '콘텐츠 5',
         헤더5: '콘텐츠 5',
+        헤더6: '콘텐츠 5',
+        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
+      },
+      {
+        헤더1: '콘텐츠 6',
+        헤더2: '콘텐츠 6',
+        헤더3: '콘텐츠 6',
+        헤더4: '콘텐츠 6',
+        헤더5: '콘텐츠 6',
         헤더6: '콘텐츠 6',
         헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
       },
       {
-        헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
-        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
-      },
-      {
-        헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
-        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
-      },
-      {
-        헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
-        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
-      },
-      {
-        헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
-        헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
-      },
-      {
-        헤더1: '콘텐츠 1',
-        헤더2: '콘텐츠 2',
-        헤더3: '콘텐츠 3',
-        헤더4: '콘텐츠 4',
-        헤더5: '콘텐츠 5',
-        헤더6: '콘텐츠 6',
+        헤더1: '콘텐츠 7',
+        헤더2: '콘텐츠 7',
+        헤더3: '콘텐츠 7',
+        헤더4: '콘텐츠 7',
+        헤더5: '콘텐츠 7',
+        헤더6: '콘텐츠 7',
         헤더7: '&lt;button class="btn is-outline-2 is-h26">버튼&lt;/button>',
       }
     ]
@@ -205,69 +306,6 @@
     };
     Grid.export('xlsx', options);
   }
-
-  // rowHeaders number renderer - custom
-  class RowNumberRenderer {
-    constructor(props) {
-      const el = document.createElement('span');
-      el.innerHTML = `NO.${props.formattedValue}`;
-      this.el = el;
-    }
-
-    getElement() {
-      return this.el;
-    }
-
-    render(props) {
-      this.el.innerHTML = `NO.${props.formattedValue}`;
-    }
-  }
-
-  // rowHeaders checkbox renderer - custom
-  class CheckboxRenderer {
-    constructor(props) {
-      const { grid, rowKey } = props;
-
-      const label = document.createElement('label');
-      label.className = 'checkbox tui-grid-row-header-checkbox';
-      label.setAttribute('for', String(rowKey));
-
-      const hiddenInput = document.createElement('input');
-      hiddenInput.className = 'hidden-input';
-      hiddenInput.id = String(rowKey);
-
-      const customInput = document.createElement('span');
-      customInput.className = 'custom-input';
-
-      label.appendChild(hiddenInput);
-      label.appendChild(customInput);
-
-      hiddenInput.type = 'checkbox';
-      label.addEventListener('click', (ev) => {
-        ev.preventDefault();
-
-        if (ev.shiftKey) {
-          grid[!hiddenInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
-          return;
-        }
-
-        grid[!hiddenInput.checked ? 'check' : 'uncheck'](rowKey);
-      });
-
-      this.el = label;
-      this.render(props);
-    }
-
-    getElement() {
-      return this.el;
-    }
-
-    render(props) {
-      const hiddenInput = this.el.querySelector('.hidden-input');
-      const checked = Boolean(props.value);
-      hiddenInput.checked = checked;
-    }
-  }
 &lt;/script></code>
 </pre>
     </main>
@@ -278,10 +316,10 @@
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
   <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
-  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
-  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
-  <script src="../../resources/js/lib/tui-grid.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
   <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
   <script src="../../resources/js/lib/prism.js"></script>
   <!-- js common -->
@@ -369,66 +407,66 @@
       data: [
         {
           헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
+          헤더2: '콘텐츠 1',
+          헤더3: '콘텐츠 1',
+          헤더4: '콘텐츠 1',
+          헤더5: '콘텐츠 1',
+          헤더6: '콘텐츠 1',
           헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
           _attributes: { checkDisabled: true } // 체크박스 비활성화
         },
         {
-          헤더1: '콘텐츠 1',
+          헤더1: '콘텐츠 2',
           헤더2: '콘텐츠 2',
+          헤더3: '콘텐츠 2',
+          헤더4: '콘텐츠 2',
+          헤더5: '콘텐츠 2',
+          헤더6: '콘텐츠 2',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 3',
+          헤더2: '콘텐츠 3',
           헤더3: '콘텐츠 3',
+          헤더4: '콘텐츠 3',
+          헤더5: '콘텐츠 3',
+          헤더6: '콘텐츠 3',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 4',
+          헤더2: '콘텐츠 4',
+          헤더3: '콘텐츠 4',
           헤더4: '콘텐츠 4',
+          헤더5: '콘텐츠 4',
+          헤더6: '콘텐츠 4',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 5',
+          헤더2: '콘텐츠 5',
+          헤더3: '콘텐츠 5',
+          헤더4: '콘텐츠 5',
           헤더5: '콘텐츠 5',
+          헤더6: '콘텐츠 5',
+          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
+        },
+        {
+          헤더1: '콘텐츠 6',
+          헤더2: '콘텐츠 6',
+          헤더3: '콘텐츠 6',
+          헤더4: '콘텐츠 6',
+          헤더5: '콘텐츠 6',
           헤더6: '콘텐츠 6',
           헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
         },
         {
-          헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
-          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
-        },
-        {
-          헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
-          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
-        },
-        {
-          헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
-          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
-        },
-        {
-          헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
-          헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
-        },
-        {
-          헤더1: '콘텐츠 1',
-          헤더2: '콘텐츠 2',
-          헤더3: '콘텐츠 3',
-          헤더4: '콘텐츠 4',
-          헤더5: '콘텐츠 5',
-          헤더6: '콘텐츠 6',
+          헤더1: '콘텐츠 7',
+          헤더2: '콘텐츠 7',
+          헤더3: '콘텐츠 7',
+          헤더4: '콘텐츠 7',
+          헤더5: '콘텐츠 7',
+          헤더6: '콘텐츠 7',
           헤더7: '<button class="btn is-outline-2 is-h26">버튼</button>',
         }
       ]
@@ -453,69 +491,6 @@
         columnNames: ['헤더1', '헤더2', '헤더3', '헤더4', '헤더5', '헤더6'] // 내보낼 열 설정
       };
       Grid.export('xlsx', options);
-    }
-
-    // rowHeaders number renderer - custom
-    class RowNumberRenderer {
-      constructor(props) {
-        const el = document.createElement('span');
-        el.innerHTML = `NO.${props.formattedValue}`;
-        this.el = el;
-      }
-
-      getElement() {
-        return this.el;
-      }
-
-      render(props) {
-        this.el.innerHTML = `NO.${props.formattedValue}`;
-      }
-    }
-
-    // rowHeaders checkbox renderer - custom
-    class CheckboxRenderer {
-      constructor(props) {
-        const { grid, rowKey } = props;
-
-        const label = document.createElement('label');
-        label.className = 'checkbox tui-grid-row-header-checkbox';
-        label.setAttribute('for', String(rowKey));
-
-        const hiddenInput = document.createElement('input');
-        hiddenInput.className = 'hidden-input';
-        hiddenInput.id = String(rowKey);
-
-        const customInput = document.createElement('span');
-        customInput.className = 'custom-input';
-
-        label.appendChild(hiddenInput);
-        label.appendChild(customInput);
-
-        hiddenInput.type = 'checkbox';
-        label.addEventListener('click', (ev) => {
-          ev.preventDefault();
-
-          if (ev.shiftKey) {
-            grid[!hiddenInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
-            return;
-          }
-
-          grid[!hiddenInput.checked ? 'check' : 'uncheck'](rowKey);
-        });
-
-        this.el = label;
-        this.render(props);
-      }
-
-      getElement() {
-        return this.el;
-      }
-
-      render(props) {
-        const hiddenInput = this.el.querySelector('.hidden-input');
-        const checked = Boolean(props.value);
-        hiddenInput.checked = checked;
-      }
     }
   </script>
 </body>

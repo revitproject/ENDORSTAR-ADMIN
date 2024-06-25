@@ -375,6 +375,7 @@ input[type="password"]:not(:placeholder-shown) {
 .area-datepicker .wrap-datepicker {
   display: flex;
   align-items: center;
+  max-height: 2.8rem;
   border: .1rem solid var(--grays-5);
   background-color: #fff;
   border-radius: .4rem;

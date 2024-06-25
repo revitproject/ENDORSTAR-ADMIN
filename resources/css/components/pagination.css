@@ -3,11 +3,13 @@
 .wrap-pagination {
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-top: 2.4rem;
 }
 .wrap-pagination .pagination {
   position: absolute;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 0;

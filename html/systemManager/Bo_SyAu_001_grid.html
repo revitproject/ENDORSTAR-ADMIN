@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="8" data-sub-lnb-index="19"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">권한 관리</h1>
+      <div class="content-inner">
+        <div class="form-searchbox">
+          <div class="wrap-searchbox">
+            <label for="select-date" class="lb-inp">기간</label>
+            <select id="select-date" class="inp-select">
+              <option value="" selected>등록일</option>
+              <option value="">옵션1</option>
+              <option value="">옵션1</option>
+              <option value="">옵션1</option>
+            </select>
+          
+            <div class="area-datepicker">
+              <!-- DatePicker -->
+              <div class="wrap-datepicker">
+                <div class="datePicker">
+                  <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                    <div id="startpicker-div1" class="datepicker-div"></div>
+                  </div>
+                </div>
+                <span class="datepicker-to">~</span>
+                <div class="datePicker">
+                  <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                    <div id="endpicker-div1" class="datepicker-div"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- //DatePicker -->
+              <div class="btn-options">
+                <button type="button" class="btn is-secondary-1 is-active">전체</button>
+                <button type="button" class="btn is-secondary-1">오늘</button>
+                <button type="button" class="btn is-secondary-1">1주일</button>
+                <button type="button" class="btn is-secondary-1">1개월</button>
+                <button type="button" class="btn is-secondary-1">3개월</button>
+                <button type="button" class="btn is-secondary-1">6개월</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="wrap-searchbox">
+            <label for="inp-name" class="lb-inp">이름</label>
+            <input type="text" id="inp-name" class="inp-base" placeholder="">
+
+            <label for="inp-id" class="lb-inp">아이디</label>
+            <input type="text" id="inp-id" class="inp-base" placeholder="">
+          </div>
+        
+          <div class="wrap-searchbox inbtn">
+            <div class="searchbox-item">
+              <label for="select-search" class="lb-inp">검색어</label>
+              <select id="select-search" class="inp-select">
+                <option value="" selected>검색어</option>
+                <option value="">옵션1</option>
+                <option value="">옵션1</option>
+                <option value="">옵션1</option>
+              </select>
+          
+              <input type="text" id="inp-search" class="inp-base" placeholder="">
+            </div>
+            <div class="searchbox-btn">
+              <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+              <button type="button" class="btn is-search">검색</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-form">
+          <div class="tbl-head">
+            <select class="inp-select">
+              <option value="" selected>15개씩 보기</option>
+              <option value="">50개씩 보기</option>
+              <option value="">100개씩 보기</option>
+            </select>
+            <button type="button" class="btn is-ico is-excel" onclick="saveExcel();"><span class="ico-excel">엑셀다운</span></button>
+          </div>
+        
+          <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+          <div id="grid" class="grid"></div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="preview" class="modal" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 447px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">권한 수정 이력 조회</strong>
+        </div>
+        <div class="modal-content has-scrollbar">
+          <div class="area-scroll">
+            <div class="scroll-content">
+              <table class="tbl-base has-result">
+                <colgroup>
+                  <col style="width: 4.8rem;">
+                  <col>
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>  
+                    <th>NO.</th>
+                    <th>이름</th>
+                    <th>권한수정일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>endorhappy050</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination">
+                <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-current">1</a>
+                <a href="#" class="pagination-link">2</a>
+                <a href="#" class="pagination-link">3</a>
+                <a href="#" class="pagination-link">4</a>
+                <a href="#" class="pagination-link">5</a>
+                <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer align-center">
+          <button type="button" class="btn is-grays-1 is-footer">닫기</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // TUI Grid 초기화
+    let Grid = tui.Grid;
+
+    // 언어 설정
+    Grid.setLanguage('ko', {
+      display: {
+        noData: '검색 결과가 없습니다.'
+      }
+    });
+
+    // Grid 생성
+    Grid = new tui.Grid({
+      el: document.getElementById('grid'),
+      scrollX: false, // 가로 스크롤
+      scrollY: false, // 세로 스크롤
+      minRowHeight: '48', // grid cell 높이
+      minBodyHeight: '240', // grid body 높이
+      contextMenu: null, // grid 우클릭 막기
+      pageOptions: {
+        useClient: true,
+        perPage: 10 // 화면에 보여주는 리스트 개수
+      },
+      columnOptions: {
+        resizable: true
+      },
+      rowHeaders: [{ type: 'rowNum', header: 'NO.', renderer: RowNumberRenderer, width: 56 }], // 행 번호
+      header: {
+        height: 40 // header 영역 높이
+      },
+      columns: [
+        {
+          header: '아이디',
+          name: '아이디',
+          align: 'center',
+          ellipsis: true, // 내용 말줄임 표시
+          sortable: true // 정렬 기능
+        },
+        {
+          header: '이름',
+          name: '이름',
+          align: 'center',
+          sortable: true
+        },
+        {
+          header: '소속',
+          name: '소속',
+          align: 'center',
+          sortable: true
+        },
+        {
+          header: '권한레벨',
+          name: '권한레벨',
+          align: 'center',
+          sortable: true,
+          width: 98, // width,
+        },
+        {
+          header: '권한등록일',
+          name: '권한등록일',
+          align: 'center',
+          sortable: true,
+          width: 199,
+        },
+        {
+          header: '권한수정일',
+          name: '권한수정일',
+          align: 'center',
+          sortable: true,
+          width: 199,
+        },
+        {
+          header: '수정이력',
+          name: '수정이력',
+          align: 'center',
+          width: 100,
+        }
+      ],
+      data: [
+        {
+          아이디: 'endorhappy001',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '1',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy002',
+          이름: '김해피',
+          소속: '개발',
+          권한레벨: '5',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy003',
+          이름: '김해피',
+          소속: '고객센터',
+          권한레벨: '5',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy004',
+          이름: '김해피',
+          소속: '상품개발',
+          권한레벨: '4',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy005',
+          이름: '김해피',
+          소속: '고객센터',
+          권한레벨: '30',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy006',
+          이름: '김해피',
+          소속: '상품개발',
+          권한레벨: '2',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy007',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '4',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy008',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '11',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy009',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '8',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy010',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '3',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" class="btn is-outline-3 is-h26">신규등록</button>',
+        },
+        {
+          아이디: 'endorhappy011',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '5',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy012',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '22',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy012',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '17',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy012',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '15',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        },
+        {
+          아이디: 'endorhappy012',
+          이름: '김해피',
+          소속: '마케팅',
+          권한레벨: '10',
+          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
+          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
+          수정이력: '<button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
+        }
+      ]
+    });
+
+    // Excel Export 기능
+    function saveExcel() {
+      const options = {
+        includeHiddenColumns: true, // 숨겨진 컬럼 포함 여부
+        onlySelected: true, // 선택한 영역만 내보내기
+        fileName: 'myExport', // 파일명
+        columnNames: ['아이디', '이름', '소속', '권한레벨', '권한등록일', '권한수정일'] // 내보낼 열 설정
+      };
+      Grid.export('xlsx', options);
+    }
+  </script>
+
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    // UI확인용 datepicker btn 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+      }
+
+      startpicker.setDate(startDate);
+      endpicker.setDate(endDate);
+    });
+  </script>
+</body>
+</html>

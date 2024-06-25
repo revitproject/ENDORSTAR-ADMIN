@@ -108,10 +108,10 @@ pre[class*=language-] {
   align-items: center;
   padding: 1rem 0;
 }
-.component .wrap-group .inp-base:not(:first-child),
+/* .component .wrap-group .inp-base:not(:first-child),
 .component .wrap-group .switch:not(:first-child) {
   margin-left: 1rem;
-}
+} */
 .component .component-area:not(:first-child) {
   margin-top: 4rem;
 }

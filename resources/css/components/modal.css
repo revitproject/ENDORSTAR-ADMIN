@@ -113,3 +113,7 @@
 .modal-inner.has-confirm .modal-content .alert-msg {
   margin: 1.4rem 0;
 }
+
+.modal .pagination {
+  margin-top: 2rem;
+}

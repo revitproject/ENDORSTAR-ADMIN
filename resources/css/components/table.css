@@ -16,16 +16,17 @@
 .tbl-base > tfoot > tr > th,
 .tbl-base > tfoot > tr > td {
   height: 4.8rem;
-  padding: .6rem 1.2rem;
+  padding: .5rem 1.2rem;
   color: var(--grays-1);
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.8rem;
   text-align: center;
 }
 .tbl-base > thead > tr,
 .tbl-base > tbody > tr {border-bottom: .1rem solid var(--secondary-3);}
 .tbl-base > thead > tr > th {
+  height: 4rem;
   font-size: 1.3rem;
   font-weight: 500;
   background-color: var(--grays-6);
@@ -61,7 +62,7 @@
 }
 .tbl-base .no-result {
   position: relative;
-  padding: 20.2rem 0 10.8rem;
+  padding: 20.2rem 0 8rem;
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--grays-3);
@@ -106,7 +107,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 2.8rem;
-  margin-bottom: .8rem;
+  margin-bottom: 1rem;
 }
 .tbl-head-count {
 
@@ -170,9 +171,14 @@
 }
 
 .box-form {
+  min-height: 100%;
   padding: 2.8rem;
   margin-top: 2.8rem;
   background: #fff;
   border-radius: 1.6rem;
   box-shadow: .4rem .4rem 2.1rem 0 rgba(86, 86, 86, 0.07);
+}
+.tbl-nodata, 
+.tbl-nodata tbody tr {
+  border-bottom: 0;
 }

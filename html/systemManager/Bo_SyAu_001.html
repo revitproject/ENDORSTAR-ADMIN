@@ -6,11 +6,9 @@
   <title>엔돌스타</title>
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
-  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
@@ -93,17 +91,160 @@
         </div>
 
         <div class="box-form">
-          <div class="tbl-head">
-            <select class="inp-select">
-              <option value="" selected>15개씩 보기</option>
-              <option value="">50개씩 보기</option>
-              <option value="">100개씩 보기</option>
-            </select>
-            <button type="button" class="btn is-ico is-excel" onclick="saveExcel();"><span class="ico-excel">엑셀다운</span></button>
+          <div class="wrap-tbl">
+            <div class="tbl-head">
+              <select class="inp-select">
+                <option value="" selected="">15개씩 보기</option>
+                <option value="">50개씩 보기</option>
+                <option value="">100개씩 보기</option>
+              </select>
+              <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
+            </div>
+
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 5.6rem;">
+                <col>
+                <col>
+                <col>
+                <col style="width: 9.8rem;">
+                <col style="width: 19.9rem;">
+                <col style="width: 19.9rem;">
+                <col style="width: 10rem;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>아이디 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>이름 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>소속 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>권한레벨 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>권한등록일 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>권한수정일 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>수정이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>endorhappy001</td>
+                  <td>김해피</td>
+                  <td>마케팅</td>
+                  <td>1</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>endorhappy002</td>
+                  <td>김해피</td>
+                  <td>개발</td>
+                  <td>5</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>endorhappy003</td>
+                  <td>김해피</td>
+                  <td>고객센터</td>
+                  <td>5</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>endorhappy004</td>
+                  <td>김해피</td>
+                  <td>상품개발</td>
+                  <td>4</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>endorhappy005</td>
+                  <td>김해피</td>
+                  <td>고객센터</td>
+                  <td>30</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>endorhappy006</td>
+                  <td>김해피</td>
+                  <td>상품개발</td>
+                  <td>2</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>endorhappy007</td>
+                  <td>김해피</td>
+                  <td>마케팅</td>
+                  <td>4</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>endorhappy008</td>
+                  <td>김해피</td>
+                  <td>마케팅</td>
+                  <td>11</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>endorhappy009</td>
+                  <td>김해피</td>
+                  <td>마케팅</td>
+                  <td>8</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>endorhappy010</td>
+                  <td>김해피</td>
+                  <td>마케팅</td>
+                  <td>3</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td>endorhappy050<br>2024-02-26 15:00</td>
+                  <td><button type="button" class="btn is-outline-3 is-h26">신규등록</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="pagination">
+              <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+              <a href="#" class="pagination-link">2</a>
+              <a href="#" class="pagination-link">3</a>
+              <a href="#" class="pagination-link">4</a>
+              <a href="#" class="pagination-link">5</a>
+              <a href="#" class="pagination-link">6</a>
+              <a href="#" class="pagination-link">7</a>
+              <a href="#" class="pagination-link">8</a>
+              <a href="#" class="pagination-link">9</a>
+              <a href="#" class="pagination-link">10</a>
+              <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+              <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+            </div>
           </div>
-        
-          <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
-          <div id="grid" class="grid"></div>
         </div>
       </div>
     </main>
@@ -159,31 +300,6 @@
                     <td>endorhappy050</td>
                     <td>2024-02-26 15:00</td>
                   </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>endorhappy050</td>
-                    <td>2024-02-26 15:00</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>endorhappy050</td>
-                    <td>2024-02-26 15:00</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>endorhappy050</td>
-                    <td>2024-02-26 15:00</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>endorhappy050</td>
-                    <td>2024-02-26 15:00</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>endorhappy050</td>
-                    <td>2024-02-26 15:00</td>
-                  </tr>
                 </tbody>
               </table>
               <div class="pagination">
@@ -211,282 +327,15 @@
 
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
-  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
-  <script src="../../resources/js/lib/xlsx-full.min.js"></script>
-  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
-  <script src="../../resources/js/lib/tui-grid.min.js"></script>
-  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
   <!-- js base -->
   <script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/template.js"></script>
 
   <!-- page script -->
-  <script>
-    // TUI Grid 초기화
-    let Grid = tui.Grid;
-
-    // 언어 설정
-    Grid.setLanguage('ko', {
-      display: {
-        noData: '검색 결과가 없습니다.'
-      }
-    });
-
-    // Grid 생성
-    Grid = new tui.Grid({
-      el: document.getElementById('grid'),
-      scrollX: false, // 가로 스크롤
-      scrollY: false, // 세로 스크롤
-      minRowHeight: '48', // grid cell 높이
-      minBodyHeight: '240', // grid body 높이
-      contextMenu: null, // grid 우클릭 막기
-      pageOptions: {
-        useClient: true,
-        perPage: 10 // 화면에 보여주는 리스트 개수
-      },
-      columnOptions: {
-        resizable: true
-      },
-      rowHeaders: ['rowNum'], // 행 번호와 체크박스
-      header: {
-        height: 48 // header 영역 높이
-      },
-      columns: [
-        {
-          header: '아이디',
-          name: '아이디',
-          align: 'center',
-          ellipsis: true, // 내용 말줄임 표시
-          sortable: true // 정렬 기능
-        },
-        {
-          header: '이름',
-          name: '이름',
-          align: 'center',
-          sortable: true
-        },
-        {
-          header: '소속',
-          name: '소속',
-          align: 'center',
-          sortable: true
-        },
-        {
-          header: '권한레벨',
-          name: '권한레벨',
-          align: 'center',
-          sortable: true,
-          width: 98, // width,
-        },
-        {
-          header: '권한등록일',
-          name: '권한등록일',
-          align: 'center',
-          sortable: true,
-          width: 199,
-        },
-        {
-          header: '권한수정일',
-          name: '권한수정일',
-          align: 'center',
-          sortable: true,
-          width: 199,
-        },
-        {
-          header: '수정이력',
-          name: '수정이력',
-          align: 'center',
-          width: 80,
-        }
-      ],
-      data: [
-        {
-          아이디: 'endorhappy001',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '1',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy002',
-          이름: '김해피',
-          소속: '개발',
-          권한레벨: '5',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy003',
-          이름: '김해피',
-          소속: '고객센터',
-          권한레벨: '5',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy004',
-          이름: '김해피',
-          소속: '상품개발',
-          권한레벨: '4',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy005',
-          이름: '김해피',
-          소속: '고객센터',
-          권한레벨: '4',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy006',
-          이름: '김해피',
-          소속: '상품개발',
-          권한레벨: '2',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy007',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '3',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy008',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '3',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy009',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '3',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy010',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '3',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button class="btn is-outline-3 is-h26">신규등록</button>',
-        },
-        {
-          아이디: 'endorhappy011',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '5',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        },
-        {
-          아이디: 'endorhappy012',
-          이름: '김해피',
-          소속: '마케팅',
-          권한레벨: '5',
-          권한등록일: 'endorhappy050<br>2024-02-26 15:00',
-          권한수정일: 'endorhappy050<br>2024-02-26 15:00',
-          수정이력: '<button data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button>',
-        }
-      ]
-    });
-
-    // Excel Export 기능
-    function saveExcel() {
-      const options = {
-        includeHiddenColumns: true, // 숨겨진 컬럼 포함 여부
-        onlySelected: true, // 선택한 영역만 내보내기
-        fileName: 'myExport', // 파일명
-        columnNames: ['아이디', '이름', '소속', '권한레벨', '권한등록일', '권한수정일'] // 내보낼 열 설정
-      };
-      Grid.export('xlsx', options);
-    }
-
-    // rowHeaders number renderer - custom
-    class RowNumberRenderer {
-      constructor(props) {
-        const el = document.createElement('span');
-        el.innerHTML = `NO.${props.formattedValue}`;
-        this.el = el;
-      }
-
-      getElement() {
-        return this.el;
-      }
-
-      render(props) {
-        this.el.innerHTML = `NO.${props.formattedValue}`;
-      }
-    }
-
-    // rowHeaders checkbox renderer - custom
-    class CheckboxRenderer {
-      constructor(props) {
-        const { grid, rowKey } = props;
-
-        const label = document.createElement('label');
-        label.className = 'checkbox tui-grid-row-header-checkbox';
-        label.setAttribute('for', String(rowKey));
-
-        const hiddenInput = document.createElement('input');
-        hiddenInput.className = 'hidden-input';
-        hiddenInput.id = String(rowKey);
-
-        const customInput = document.createElement('span');
-        customInput.className = 'custom-input';
-
-        label.appendChild(hiddenInput);
-        label.appendChild(customInput);
-
-        hiddenInput.type = 'checkbox';
-        label.addEventListener('click', (ev) => {
-          ev.preventDefault();
-
-          if (ev.shiftKey) {
-            grid[!hiddenInput.checked ? 'checkBetween' : 'uncheckBetween'](rowKey);
-            return;
-          }
-
-          grid[!hiddenInput.checked ? 'check' : 'uncheck'](rowKey);
-        });
-
-        this.el = label;
-        this.render(props);
-      }
-
-      getElement() {
-        return this.el;
-      }
-
-      render(props) {
-        const hiddenInput = this.el.querySelector('.hidden-input');
-        const checked = Boolean(props.value);
-        hiddenInput.checked = checked;
-      }
-    }
-  </script>
-
   <script>
     // DatePicker
     const today = new Date();
@@ -507,7 +356,7 @@
       }
     });
 
-    // UI확인용 스크립트
+    // UI확인용 datepicker btn 스크립트
     document.querySelector('.btn-options').addEventListener('click', function (event) {
       const target = event.target;
       if (!target.classList.contains('btn')) return;

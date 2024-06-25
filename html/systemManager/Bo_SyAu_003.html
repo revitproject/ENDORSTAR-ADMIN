@@ -6,1367 +6,1364 @@
   <title>엔돌스타</title>
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
-  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
 <body data-route="main" data-lnb-index="8" data-sub-lnb-index="19"> <!-- [Exclude attr] "data-route" only UI Template -->
-<!-- base-wrap -->
-<div class="base-wrap">
-  <!-- inlcude -->
-  <header class="base-header"></header>
-  <aside class="base-aside"></aside>
-  <!-- // inlcude -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- inlcude -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- // inlcude -->
 
-  <!-- base-content -->
-  <main class="base-content">
-    <h1 class="content-title">권한 관리</h1>
-      <div class="module-top">
-        <div class="form-searchbox">
-          <div class="wrap-searchbox">
-            <label for="inp-id" class="lb-inp"><em class="text-primary">*</em>아이디</label>
-            <input type="text" id="inp-id" class="inp-base" placeholder="해피머니 직원 아이디를 입력하세요" style="width: 390px;">
-            <button type="button" class="btn is-grays-1 is-h28">유효성체크</button>
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">권한 관리</h1>
+        <div class="module-top">
+          <div class="form-searchbox">
+            <div class="wrap-searchbox">
+              <label for="inp-id" class="lb-inp"><em class="text-primary">*</em>아이디</label>
+              <input type="text" id="inp-id" class="inp-base" placeholder="해피머니 직원 아이디를 입력하세요" style="width: 390px;">
+              <button type="button" class="btn is-grays-1 is-h28">유효성체크</button>
+            </div>
+            <div class="wrap-searchbox">
+              <label for="inp-name" class="lb-inp">이름</label>
+              <input type="text" id="inp-name" class="inp-base" placeholder="" style="width: 390px;">
+            </div>
           </div>
-          <div class="wrap-searchbox">
-            <label for="inp-name" class="lb-inp">이름</label>
-            <input type="text" id="inp-name" class="inp-base" placeholder="" style="width: 390px;">
-          </div>
-        </div>
-        <ul class="list-base" data-bullet="dot">
-          <li>“등록”, “수정”, “삭제” 권한 체크 시 “조회” 권한도 함께 체크해야만 메뉴에 접근할 수 있으며, 권한 체크는 최종 depth에만 표시됩니다.</li>
-          <li>“조회” 권한만 있을 경우 페이지에는 접근 가능하지만, 기능 사용은 불가능합니다.</li>
-        </ul>
-      </div>
-
-      <div class="module-bottom">
-        <div class="ui-tab">
-          <ul class="tab-menu">
-            <li class="tab-item is-active"> 
-              <a href="#" class="tab-link" data-tab="tab1">TAb01</a>
-            </li>
-            <li class="tab-item">  
-              <a href="#" class="tab-link" data-tab="tab2">TAP02</a>
-            </li>
-            <li class="tab-item">
-              <a href="#" class="tab-link" data-tab="tab3">TAP03</a>
-            </li>
+          <ul class="list-base" data-bullet="dot">
+            <li>“등록”, “수정”, “삭제” 권한 체크 시 “조회” 권한도 함께 체크해야만 메뉴에 접근할 수 있으며, 권한 체크는 최종 depth에만 표시됩니다.</li>
+            <li>“조회” 권한만 있을 경우 페이지에는 접근 가능하지만, 기능 사용은 불가능합니다.</li>
           </ul>
-          <div class="tab-contents">
-            <div class="tab-content is-active" data-tab-content="tab1">
-              <div class="tbl-area">
-                <div class="tbl-head">
-                  <select class="inp-select">
-                    <option value="" selected>15개씩 보기</option>
-                    <option value="">50개씩 보기</option>
-                    <option value="">100개씩 보기</option>
-                  </select>
-        
-                  <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
-                </div>
-          
-                <table class="tbl-base has-result">
-                  <colgroup>
-                    <col>
-                    <col>
-                    <col>
-                    <col style="width: 7%;">
-                    <col style="width: 7%;">
-                    <col style="width: 7%;">
-                    <col style="width: 7%;">
-                  </colgroup>
-                  <thead>
-                    <tr>  
-                      <th>1depth</th>
-                      <th>2depth</th>
-                      <th>3depth</th>
-                      <th>등록</th>
-                      <th>수정</th>
-                      <th>삭제</th>
-                      <th>조회</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>회원관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><span class="text-red-1">회원정보 조회</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>놀이동산</td>
-                      <td><span class="text-red-1">오락실</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>미니게임1</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>미니게임2</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>미니게임3</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>챌린지</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>출석체크</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>기상챌린지</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>걷기</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><span class="text-red-1">랭킹보드</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>주간랭킹</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>이벤트관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>이벤트</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>진행이벤트</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>응모상품관리</td>
-                      <td>해피캐시전환</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>핫딜응모</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>해피툰관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>해피툰</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>마케팅관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>푸시관리</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>무료충전소</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>고객지원관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>인증관리</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>고객센터</td>
-                      <td>1:1 문의 내역</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>FAQ</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>공지사항</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>이용가이드</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>엔도르핀,골드해머 이용안내</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>서비스이용약관</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>엔돌캐쉬 이용약관</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>개인정보 처리방침</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>청소년 보호정책</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>통계관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>접속통계</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><span class="text-red-1">포인트통계</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>콘텐츠 이용 통계</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><span class="text-red-1">방문자 유형 통계</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>시스템관리</td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><span class="text-red-1">정책관리</span></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>포인트관리</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td><span class="text-red-1">엔돌스타 관리</span></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>권한관리</td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td><span class="text-red-1">직원조회</span></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox" checked></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>권한등록</td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                      <td class="align-center">
-                        <div class="form-checkbox">
-                          <label><input type="checkbox" class="inp-checkbox"></label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- 데이터 없는 CASE : 'no-result' 클래스 추가 -->
-                      <td colspan="7" class="no-result">검색 내용이 없습니다.</td>
-                    </tr>
-                  </tbody>
-                </table>
+        </div>
 
-                <div class="tbl-btn-group is-right">
-                  <button type="button" class="btn is-outline-1" onclick="">목록</button>
-                  <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '삭제하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
-                  <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');">저장</button>
+        <div class="module-bottom">
+          <div class="ui-tab">
+            <ul class="tab-menu">
+              <li class="tab-item is-active"> 
+                <a href="#" class="tab-link" data-tab="tab1">TAb01</a>
+              </li>
+              <li class="tab-item">  
+                <a href="#" class="tab-link" data-tab="tab2">TAP02</a>
+              </li>
+              <li class="tab-item">
+                <a href="#" class="tab-link" data-tab="tab3">TAP03</a>
+              </li>
+            </ul>
+            <div class="tab-contents">
+              <div class="tab-content is-active" data-tab-content="tab1">
+                <div class="wrap-tbl">
+                  <div class="tbl-head">
+                    <select class="inp-select">
+                      <option value="" selected>15개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                      <option value="">100개씩 보기</option>
+                    </select>
+          
+                    <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
+                  </div>
+            
+                  <table class="tbl-base has-result">
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col style="width: 7%;">
+                      <col style="width: 7%;">
+                      <col style="width: 7%;">
+                      <col style="width: 7%;">
+                    </colgroup>
+                    <thead>
+                      <tr>  
+                        <th>1depth</th>
+                        <th>2depth</th>
+                        <th>3depth</th>
+                        <th>등록</th>
+                        <th>수정</th>
+                        <th>삭제</th>
+                        <th>조회</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>회원관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><span class="text-red-1">회원정보 조회</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>놀이동산</td>
+                        <td><span class="text-red-1">오락실</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>미니게임1</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>미니게임2</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>미니게임3</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>챌린지</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>출석체크</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>기상챌린지</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>걷기</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><span class="text-red-1">랭킹보드</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>주간랭킹</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>이벤트관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>이벤트</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>진행이벤트</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>응모상품관리</td>
+                        <td>해피캐시전환</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>핫딜응모</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>해피툰관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>해피툰</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>마케팅관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>푸시관리</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>무료충전소</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>고객지원관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>인증관리</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>고객센터</td>
+                        <td>1:1 문의 내역</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>FAQ</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>공지사항</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>이용가이드</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>엔도르핀,골드해머 이용안내</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>서비스이용약관</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>엔돌캐쉬 이용약관</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>개인정보 처리방침</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>청소년 보호정책</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>통계관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>접속통계</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><span class="text-red-1">포인트통계</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>콘텐츠 이용 통계</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><span class="text-red-1">방문자 유형 통계</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>시스템관리</td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><span class="text-red-1">정책관리</span></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>포인트관리</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td><span class="text-red-1">엔돌스타 관리</span></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>권한관리</td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td><span class="text-red-1">직원조회</span></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox" checked></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>권한등록</td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                        <td class="align-center">
+                          <div class="form-checkbox">
+                            <label><input type="checkbox" class="inp-checkbox"></label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <!-- 데이터 없는 CASE : 'no-result' 클래스 추가 -->
+                        <td colspan="7" class="no-result">검색 내용이 없습니다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="tbl-btn-group is-right">
+                    <button type="button" class="btn is-outline-1" onclick="">목록</button>
+                    <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '삭제하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
+                    <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');">저장</button>
+                  </div>
                 </div>
               </div>
+              <div class="tab-content" data-tab-content="tab2">content2</div>
+              <div class="tab-content" data-tab-content="tab3">content3</div>
             </div>
-            <div class="tab-content" data-tab-content="tab2">content2</div>
-            <div class="tab-content" data-tab-content="tab3">content3</div>
           </div>
         </div>
-      </div>
-  </main>
-  <!-- //base-content -->
+    </main>
+    <!-- //base-content -->
 
-  <!-- modal -->
-  <div id="alert" class="modal" data-modal="alert">
-    <div class="modal-dimmed"></div>
-    <div class="modal-inner has-alert">
-      <div class="modal-header">
-        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-        <strong class="modal-title" id="alert__tit">알림</strong>
-      </div>
-      <div class="modal-content">
-        <div id="alert-msg" class="alert-msg"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn is-false is-footer">취소</button>
-        <button type="button" class="btn is-true is-footer">확인</button>
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">알림</strong>
+        </div>
+        <div class="modal-content">
+          <div id="alert-msg" class="alert-msg"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-false is-footer">취소</button>
+          <button type="button" class="btn is-true is-footer">확인</button>
+        </div>
       </div>
     </div>
+    <!-- //modal -->
   </div>
-  <!-- //modal -->
-</div>
-<!-- //base-wrap -->
+  <!-- //base-wrap -->
+
 
 <!-- js library -->
 <script src="../../resources/js/jquery/jquery.min.js"></script>
-<script src="../../resources/js/jquery/jquery-ui.min.js"></script>
-<script src="../../resources/js/lib/xlsx-full.min.js"></script>
-<script src="../../resources/js/lib/tui-pagination.min.js"></script>
+<script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+<script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
 <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
-<script src="../../resources/js/lib/tui-grid.min.js"></script>
-<script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+<script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
 <!-- js base -->
 <script src="../../resources/js/common/ui.common.js"></script>
 <script src="../../resources/js/common/template.js"></script>
