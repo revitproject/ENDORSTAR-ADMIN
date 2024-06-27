@@ -182,3 +182,4 @@
 .tbl-nodata tbody tr {
   border-bottom: 0;
 }
+.tbl-base .btn.is-h26 {min-width: 4.8rem;}

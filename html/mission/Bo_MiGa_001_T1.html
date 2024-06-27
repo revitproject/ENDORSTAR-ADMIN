@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="2" data-sub-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">런닝몽</h1>
+      <div class="content-inner">
+        <div class="ui-tab">
+          <ul class="tab-menu">
+            <li class="tab-item is-active"> 
+              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+            </li>
+            <li class="tab-item">  
+              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+            </li>
+          </ul>
+          <div class="tab-contents">
+            <div class="tab-content is-active" data-tab-content="tab1">
+              <div class="module-top">
+                <h2 class="content-subtitle">혜택 현황</h2>
+                <div class="wrap-tbl">
+                  <table class="tbl-base has-left">
+                    <colgroup>
+                      <col style="width: 20rem;">
+                      <col>
+                      <col style="width: 20rem;">
+                      <col>
+                      <col style="width: 20rem;">
+                      <col>
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th>추가혜택 기간</th>
+                        <td colspan="3">2024-09-01 00:00 ~ 2024-09-30 23:59</td>
+                      </tr>
+                      <tr>
+                        <th>추가지급 경험치</th>
+                        <td>100</td>
+                        <th>추가지급 골드해머</th>
+                        <td>0</td>
+                        <th>추가지급 엔돌캐시</th>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <div class="module-bottom">
+                <div class="wrap-tbl">
+                  <div class="tbl-head">
+                    <select class="inp-select">
+                      <option value="" selected="">15개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                      <option value="">100개씩 보기</option>
+                    </select>
+                    <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
+                  </div>
+      
+                  <table class="tbl-base">
+                    <colgroup>
+                      <col style="width: 5.6rem;">
+                      <col style="width: 19.9rem;">
+                      <col style="width: 19.9rem;">
+                      <col>
+                      <col style="width: 19.9rem;">
+                      <col>
+                      <col style="width: 13rem;">
+                      <col style="width: 13rem;">
+                      <col style="width: 13rem;">
+                      <col style="width: 12.8rem;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>NO.</th>
+                        <th>기간</th>
+                        <th>등록일</th>
+                        <th>등록자</th>
+                        <th>최종수정일</th>
+                        <th>수정자</th>
+                        <th>추가 XP</th>
+                        <th>추가 GP</th>
+                        <th>추가 EP</th>
+                        <th>수정/삭제</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>YYYY-MM-DD HH:MM</td>
+                        <td>%등록자ID%</td>
+                        <td>YYYY-MM-DD HH:MM</td>
+                        <td>%수정자ID%</td>
+                        <td>%추가 XP%</td>
+                        <td>%추가 GP%</td>
+                        <td>%추가 EP%</td>
+                        <td>
+                          <div class="btn-group">
+                            <button type="button" data-url="#Bo_MiGa_001_P1" data-modal="open" class="btn is-outline-3 is-h26">수정</button>
+                            <button type="button" data-url="#preview2" data-modal="open" class="btn is-outline-2 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                        <td>2024-02-26 15:00</td>
+                        <td>endorhappy050</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+      
+                  <div class="wrap-pagination">
+                    <div class="wrap-count">
+                      <span class="count-text">총 <em class="count-number">115</em>건</span>
+                    </div>
+                    <div class="pagination">
+                      <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                      <a href="#" class="pagination-link">2</a>
+                      <a href="#" class="pagination-link">3</a>
+                      <a href="#" class="pagination-link">4</a>
+                      <a href="#" class="pagination-link">5</a>
+                      <a href="#" class="pagination-link">6</a>
+                      <a href="#" class="pagination-link">7</a>
+                      <a href="#" class="pagination-link">8</a>
+                      <a href="#" class="pagination-link">9</a>
+                      <a href="#" class="pagination-link">10</a>
+                      <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                      <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                    </div>
+                  </div>
+      
+                  <div class="tbl-btn-group is-right">
+                    <button type="button" class="btn is-primary" data-modal="open" data-url="#Bo_MiGa_001_P2">신규등록</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content" data-tab-content="tab2">
+              Bo_MiGa_001_T2.html
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 추가 혜택 수정 -->
+    <div id="Bo_MiGa_001_P1" class="modal is-large" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 90rem;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">추가 혜택 수정</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base has-left">
+              <colgroup>
+                <col style="width: 20rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>기간설정<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="area-datepicker">
+                      <div class="wrap-datepicker is-fulldate">
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                            <div id="startpicker-div1" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrap-formbox">
+                        <select id="select-date1" class="inp-select is-sm">
+                          <option value="" selected>시</option>
+                          <option value="">옵션</option>
+                        </select>
+                        <select id="select-date2" class="inp-select is-sm">
+                          <option value="" selected>분</option>
+                          <option value="">옵션</option>
+                        </select>
+                      </div>
+                      <span class="datepicker-to">~</span>
+                      <div class="wrap-datepicker">
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                            <div id="endpicker-div1" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrap-formbox">
+                        <select id="select-date3" class="inp-select is-sm">
+                          <option value="" selected>시</option>
+                          <option value="">옵션</option>
+                        </select>
+                        <select id="select-date4" class="inp-select is-sm">
+                          <option value="" selected>분</option>
+                          <option value="">옵션</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 XP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요." value="100">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 GP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요." value="1,000">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 EP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요." value="5">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-primary is-footer">수정</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 추가 혜택 등록 -->
+    <div id="Bo_MiGa_001_P2" class="modal is-large" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 90rem;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">추가 혜택 등록</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base has-left">
+              <colgroup>
+                <col style="width: 20rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>기간설정<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="area-datepicker">
+                      <div class="wrap-datepicker is-fulldate">
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+                            <div id="startpicker-div2" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrap-formbox">
+                        <select id="select-date1" class="inp-select is-sm">
+                          <option value="" selected>시</option>
+                          <option value="">옵션</option>
+                        </select>
+                        <select id="select-date2" class="inp-select is-sm">
+                          <option value="" selected>분</option>
+                          <option value="">옵션</option>
+                        </select>
+                      </div>
+                      <span class="datepicker-to">~</span>
+                      <div class="wrap-datepicker">
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+                            <div id="endpicker-div2" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrap-formbox">
+                        <select id="select-date3" class="inp-select is-sm">
+                          <option value="" selected>시</option>
+                          <option value="">옵션</option>
+                        </select>
+                        <select id="select-date4" class="inp-select is-sm">
+                          <option value="" selected>분</option>
+                          <option value="">옵션</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 XP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요.">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 GP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요.">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가 지급 EP<em class="text-primary">*</em></th>
+                  <td>
+                    <div class="wrap-formbox">
+                      <input type="text" id="inp-name" class="inp-base" placeholder="숫자만 기입해주세요.">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
+          <button type="button" class="btn is-primary is-footer">등록</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+  </script>
+</body>
+</html>

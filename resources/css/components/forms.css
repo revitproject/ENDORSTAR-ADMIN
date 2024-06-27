@@ -156,9 +156,7 @@ input[type="password"]:not(:placeholder-shown) {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.52906 6.07941L7.18479 2.76557C7.41856 2.47387 7.37118 2.04821 7.07896 1.81485C6.95882 1.7189 6.80954 1.66663 6.65568 1.66663H1.34422C0.969993 1.66663 0.666626 1.96946 0.666626 2.34303C0.666626 2.49662 0.718991 2.64564 0.815107 2.76557L3.47084 6.07941C3.70461 6.37112 4.13101 6.41841 4.42323 6.18505C4.46231 6.15384 4.4978 6.11842 4.52906 6.07941Z' fill='%23A5AAAE'/%3e%3c/svg%3e");
 }
 .inp-select.is-sm {
-  height: 2.8rem;
-  font-size: 1.1rem;
-  letter-spacing: -0.011px;
+  min-width: 5rem;
 }
 .inp-select.is-count {
   height: 2.4rem;
@@ -355,12 +353,23 @@ input[type="password"]:not(:placeholder-shown) {
 .wrap-searchbox.inbtn {
   justify-content: space-between;
 }
+.wrap-formbox,
 .wrap-searchbox,
 .searchbox-item {
   display: flex;
   align-items: center;
   gap: .8rem;
 }
+.wrap-formbox .wrap-group {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.wrap-formbox .wrap-group  + .wrap-group {
+  margin-left: .6rem;
+}
+.wrap-formbox + .wrap-formbox,
+.wrap-formbox + .wrap-searchbox.inbtn,
 .wrap-searchbox + .wrap-searchbox {
   margin-top: 1.4rem;
 }

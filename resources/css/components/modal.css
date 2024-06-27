@@ -88,6 +88,9 @@
 .modal-footer .btn+.btn {
   margin-left: .8rem;
 }
+.modal.is-large .modal-footer .btn {
+  max-width: 16rem;
+}
 
 /* alert */
 .modal-inner.has-alert {
@@ -116,4 +119,10 @@
 
 .modal .pagination {
   margin-top: 2rem;
+}
+
+/* login */
+.alert-msg .user-id,
+.alert-msg .user-date {
+  display: block;
 }

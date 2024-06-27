@@ -14,7 +14,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body> <!-- [Exclude attr] "data-route" only UI Template -->
+<body>
   <!-- base-wrap -->
   <div class="base-wrap login">
     <!-- base-content -->
@@ -47,7 +47,7 @@
             </form>
             <div class="login-info">
               <p class="login-text">
-                <a href="mailto:happymon@endor.com"><em>해피몽(happymon@endor.com)</em></a>
+                <em>해피몽(happymon@endor.com)</em>
                 계정 관련 문의는 계정관리팀으로 문의주세요
               </p>
             </div>
@@ -70,6 +70,27 @@
           <p class="alert-msg">
             입력하신 아이디 또는 비밀번호가 맞지 않아요.<br>
             확인 후 다시 입력해 주세요.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 접속정보 안내 -->
+    <div id="alert" class="modal" data-modal="alert2">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">안내</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">
+            접속정보 
+            <span class="user-id">ID : happymong</span>
+            <span class="user-date">2024-06-17 14:00</span>
           </p>
         </div>
         <div class="modal-footer">

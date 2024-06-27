@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="1" data-sub-lnb-index="0"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">회원 정보</h1>
+      <div class="content-inner">
+        <div class="module-top">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">일반정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>이름</th>
+                    <td><a href="#none" class="link">김해피</a></td>
+                    <th>아이디</th>
+                    <td>endorhappy001</td>
+                    <th>생년월일</th>
+                    <td>2024-10-24</td>
+                    <th>성별</th>
+                    <td>남</td>
+                  </tr>
+                  <tr>
+                    <th>휴대폰번호</th>
+                    <td><a href="#none" class="link">010-7777-1111</a></td>
+                    <th>이메일</th>
+                    <td><a href="#none" class="link">happymong@happy.com</a></td>
+                    <th>회원유형</th>
+                    <td>일반회원</td>
+                    <th>연동정보/전환해머포인트</th>
+                    <td>해피머니/500(톤)</td>
+                  </tr>
+                  <tr>
+                    <th>등급</th>
+                    <td>소울스타</td>
+                    <th>레벨</th>
+                    <td>02</td>
+                    <th>닉네임</th>
+                    <td>진짜해피몽</td>
+                    <th>초대코드</th>
+                    <td>ABC122</td>
+                  </tr>
+                  <tr>
+                    <th>엔돌캐시</th>
+                    <td>1,000</td>
+                    <th>골드해머</th>
+                    <td>50,000</td>
+                    <th>최초가입일</th>
+                    <td>2024-02-26 15:00</td>
+                    <th>일반회원 전환일</th>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">마케팅정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>SMS 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox"></label>
+                      </div>
+                    </td>
+                    <th>이메일 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox"></label>
+                      </div>
+                    </td>
+                    <th>불량회원</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox"></label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="wrap-tbl">
+              <h2 class="tbl-title">앱정보</h2>
+              <table class="tbl-base has-left">
+                <colgroup>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                  <col style="width: 20rem;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>푸시 수신</th>
+                    <td>
+                      <div class="form-checkbox">
+                        <label><input type="checkbox" class="inp-checkbox"></label>
+                      </div>
+                    </td>
+                    <th>단말기 정보</th>
+                    <td>iPhone 12 Pro</td>
+                    <th>OS 버젼</th>
+                    <td>IOS 4.3.2</td>
+                    <th>앱 설치 버전</th>
+                    <td>Endor_v_0_ab</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <div class="tbl-btn-group is-center">
+              <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '수정 된 회원정보를 저장 하시겠어요?', 'trueFn()', 'falseFn()');">저장</button>
+              <button type="button" class="btn is-primary"onclick="customAlert.confirm('안내', '수정 후 저장되지 않은  회원정보가 있어요.<br>저장하지 않고 나가시겠어요?', 'trueFn()', 'falseFn()');">확인</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-bottom">
+          <h2 class="tbl-title">이력정보</h2>
+          <div class="ui-tab">
+            <ul class="tab-menu">
+              <li class="tab-item is-active"> 
+                <a href="./Bo_MbMi_002.html" class="tab-link" data-tab="tab1">회원정보 변경이력</a>
+              </li>
+              <li class="tab-item">  
+                <a href="./Bo_MbMi_003.html" class="tab-link" data-tab="tab2">회원인증이력</a>
+              </li>
+              <li class="tab-item">
+                <a href="./Bo_MbMi_004.html" class="tab-link" data-tab="tab3">접속이력</a>
+              </li>
+            </ul>
+            <div class="tab-contents">
+              <div class="tab-content is-active" data-tab-content="tab1">
+                <div class="wrap-tbl">
+                  <table class="tbl-base">
+                    <colgroup>
+                      <col style="width: 5.6rem;">
+                      <col style="width: 34rem;">
+                      <col>
+                      <col>
+                      <col>
+                      <col style="width: 19.9rem;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>NO.</th>
+                        <th>처리유형</th>
+                        <th>처리자</th>
+                        <th>변경유형</th>
+                        <th>변경사유</th>
+                        <th>변경처리일<button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2</td>
+                        <td>CS변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>푸시 수신 상태 변경</td>
+                        <td>고객 요청으로 인한 수신 동의 처리</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>CS변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>SMS 수신 상태 변경</td>
+                        <td>고객 요청으로 인한 수신 미동의 처리</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>CS변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>휴대폰 번호 변경</td>
+                        <td>CS요청_휴대폰번호 수기변경</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>CS변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>불량회원 상태 변경</td>
+                        <td>불량회원 처리</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>CS변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>비밀변경</td>
+                        <td>비밀번호 변경</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>고객직접변경</td>
+                        <td>황인상(서비스팀)</td>
+                        <td>비밀변경</td>
+                        <td>비밀번호 변경</td>
+                        <td>2024-02-26 15:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="wrap-pagination">
+                    <div class="wrap-count">
+                      <span class="count-text">총 <em class="count-number">10</em>건</span>
+                    </div>
+                    <div class="pagination">
+                      <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                      <a href="#" class="pagination-link">2</a>
+                      <a href="#" class="pagination-link">3</a>
+                      <a href="#" class="pagination-link">4</a>
+                      <a href="#" class="pagination-link">5</a>
+                      <a href="#" class="pagination-link">6</a>
+                      <a href="#" class="pagination-link">7</a>
+                      <a href="#" class="pagination-link">8</a>
+                      <a href="#" class="pagination-link">9</a>
+                      <a href="#" class="pagination-link">10</a>
+                      <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                      <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content" data-tab-content="tab2">
+                Bo_MbMi_003.html
+              </div>
+              <div class="tab-content" data-tab-content="tab3">
+                Bo_MbMi_004.html
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">안내</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">아니오</button>
+          <button type="button" class="btn is-footer is-true">예</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+</body>
+</html>

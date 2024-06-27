@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="1" data-sub-lnb-index="1"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">탈퇴이력</h1>
+      <div class="content-inner">
+        <div class="form-searchbox">
+          <div class="wrap-formbox">
+            <label for="select-date" class="lb-inp">회원유형</label>
+            <select id="select-date" class="inp-select">
+              <option value="">전체회원</option>
+              <option value="">일반회원</option>
+              <option value="">소셜회원</option>
+            </select>
+
+            <label for="select-date" class="lb-inp">탈퇴사유</label>
+            <select id="select-date" class="inp-select">
+              <option value="">없음</option>
+              <option value="">캐시적립부족</option>
+              <option value="">제휴상품부족</option>
+              <option value="">육성난이도높음</option>
+              <option value="">앱사용불편</option>
+              <option value="">기타</option>
+            </select>
+          </div>
+
+          <div class="wrap-formbox">
+            <label for="select-date" class="lb-inp">탈퇴사유</label>
+            <select id="select-date" class="inp-select">
+              <option value="">없음</option>
+              <option value="">캐시적립부족</option>
+              <option value="">제휴상품부족</option>
+              <option value="">육성난이도높음</option>
+              <option value="">앱사용불편</option>
+              <option value="">기타</option>
+            </select>
+          </div>
+        
+          <div class="wrap-searchbox inbtn">
+            <div class="wrap-formbox">
+              <label for="inp-id" class="lb-inp">아이디</label>
+              <input type="text" id="inp-id" class="inp-base" placeholder="아이디를 입력해주세요.">
+
+              <label for="inp-nickname" class="lb-inp">닉네임</label>
+              <input type="text" id="inp-nickname" class="inp-base" placeholder="닉네임을 입력해주세요.">
+            </div>
+
+            <div class="searchbox-btn">
+              <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+              <button type="button" class="btn is-search">검색</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-form">
+          <div class="wrap-tbl">
+            <div class="tbl-head">
+              <select class="inp-select">
+                <option value="" selected="">15개씩 보기</option>
+                <option value="">50개씩 보기</option>
+                <option value="">100개씩 보기</option>
+              </select>
+            </div>
+
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 5.6rem;">
+                <col style="width: 19.9rem;">
+                <col>
+                <col style="width: 13rem;">
+                <col style="width: 16rem;">
+                <col>
+                <col>
+                <col style="width: 15rem;">
+                <col style="width: 15rem;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>아이디</th>
+                  <th>닉네임</th>
+                  <th>회원유형</th>
+                  <th>연동정보</th>
+                  <th>탈퇴사유</th>
+                  <th>탈퇴사유 내용</th>
+                  <th>최초가입일</th>
+                  <th>탈퇴일 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>endorhappy001</td>
+                  <td>해피펑따라1</td>
+                  <td>일반</td>
+                  <td>-</td>
+                  <td>캐시적립부족</td>
+                  <td>아무리 해도 캐시가 적립이 적어요.</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>endorhappy002</td>
+                  <td>해피펑따라2</td>
+                  <td>일반</td>
+                  <td>해피머니</td>
+                  <td>제휴상품부족</td>
+                  <td>포인트 모아도 사고 싶은게 없어요.</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>-</td>
+                  <td>해피펑따라3</td>
+                  <td>소셜</td>
+                  <td>네이버</td>
+                  <td>육성난이도높음</td>
+                  <td>육성하는데 너무 오래걸려요.</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>-</td>
+                  <td>해피펑따라4</td>
+                  <td>소셜</td>
+                  <td>카카오</td>
+                  <td>앱사용불편</td>
+                  <td>사용하기가 불편해요.</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>-</td>
+                  <td>해피펑따라5</td>
+                  <td>소셜</td>
+                  <td>구글</td>
+                  <td>기타</td>
+                  <td>없음</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>endorhappy006</td>
+                  <td>해피펑따라6</td>
+                  <td>일반</td>
+                  <td>소셜 전환</td>
+                  <td>기타</td>
+                  <td>없음</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>endorhappy007</td>
+                  <td>해피펑따라7</td>
+                  <td>일반</td>
+                  <td>소셜 전환</td>
+                  <td>기타</td>
+                  <td>없음</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>endorhappy008</td>
+                  <td>해피펑따라8</td>
+                  <td>일반</td>
+                  <td>소셜 전환</td>
+                  <td>기타</td>
+                  <td>그냥</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>endorhappy009</td>
+                  <td>해피펑따라9</td>
+                  <td>일반</td>
+                  <td>해피머니</td>
+                  <td>기타</td>
+                  <td>그냥</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>endorhappy010</td>
+                  <td>해피펑따라기</td>
+                  <td>일반</td>
+                  <td>-</td>
+                  <td>기타</td>
+                  <td>그냥</td>
+                  <td>2024-02-26 15:00</td>
+                  <td>2024-02-26 15:00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="wrap-pagination">
+              <div class="wrap-count">
+                <span class="count-text">총 <em class="count-number">10</em>건</span>
+              </div>
+              <div class="pagination">
+                <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                <a href="#" class="pagination-link">2</a>
+                <a href="#" class="pagination-link">3</a>
+                <a href="#" class="pagination-link">4</a>
+                <a href="#" class="pagination-link">5</a>
+                <a href="#" class="pagination-link">6</a>
+                <a href="#" class="pagination-link">7</a>
+                <a href="#" class="pagination-link">8</a>
+                <a href="#" class="pagination-link">9</a>
+                <a href="#" class="pagination-link">10</a>
+                <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+     
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+</body>
+</html>

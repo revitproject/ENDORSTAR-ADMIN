@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="2" data-sub-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">런닝몽</h1>
+      <div class="content-inner">
+        <div class="ui-tab">
+          <ul class="tab-menu">
+            <li class="tab-item">
+              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+            </li>
+            <li class="tab-item is-active">
+              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+            </li>
+          </ul>
+          <div class="tab-contents">
+            <div class="tab-content" data-tab-content="tab1">
+              Bo_MiGa_001_T1.html
+            </div>
+            <div class="tab-content is-active" data-tab-content="tab2">
+              <div class="module-top">
+                <div class="form-searchbox">
+                  <div class="wrap-formbox">
+                    <label for="startpicker-inp1" class="lb-inp">기간</label>
+                    <div class="area-datepicker">
+                      <div class="wrap-datepicker">
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                            <div id="startpicker-div1" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                        <span class="datepicker-to">~</span>
+                        <div class="datePicker">
+                          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                            <div id="endpicker-div1" class="datepicker-div"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="btn-options">
+                        <button type="button" class="btn is-secondary-1 is-active">오늘</button>
+                        <button type="button" class="btn is-secondary-1">1주일</button>
+                        <button type="button" class="btn is-secondary-1">1개월</button>
+                        <button type="button" class="btn is-secondary-1">3개월</button>
+                        <button type="button" class="btn is-secondary-1">6개월</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="wrap-searchbox inbtn">
+                    <div class="searchbox-item">
+                      <label for="select-search" class="lb-inp">검색어</label>
+                      <select id="select-search" class="inp-select">
+                        <option value="" selected>이메일</option>
+                        <option value="">아이디</option>
+                        <option value="">이름</option>
+                      </select>
+                  
+                      <input type="text" id="inp-search" class="inp-base" placeholder="">
+                    </div>
+                    <div class="searchbox-btn">
+                      <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                      <button type="button" class="btn is-search">검색</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="module-bottom">
+                <div class="wrap-tbl">
+                  <div class="tbl-head">
+                    <select class="inp-select">
+                      <option value="" selected="">15개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                      <option value="">100개씩 보기</option>
+                    </select>
+                    <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
+                  </div>
+    
+                  <table class="tbl-base">
+                    <colgroup>
+                      <col style="width: 5.6rem;">
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col style="width: 8rem;">
+                      <col style="width: 14rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 8rem;">
+                      <col style="width: 8rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 9rem;">
+                      <col style="width: 9rem;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th rowspan="2">NO.</th>
+                        <th rowspan="2">아이디</th>
+                        <th rowspan="2">이메일</th>
+                        <th rowspan="2">이름</th>
+                        <th rowspan="2">닉네임</th>
+                        <th rowspan="2">레벨</th>
+                        <th rowspan="2">출석체크<br>참여시간</th>
+                        <th rowspan="2">출석체크<br>연속참여</th>
+                        <th rowspan="2">추가참여권<br>사용여부</th>
+                        <th rowspan="2">운세보기<br>참여여부</th>
+                        <th colspan="6">획득 리워드</th>
+                      </tr>
+                      <tr>
+                        <th>XP<br>(기본)</th>
+                        <th>XP<br>(혜택)</th>
+                        <th>GP<br>(기본)</th>
+                        <th>GP<br>(혜택)</th>
+                        <th>EP<br>(기본)</th>
+                        <th>EP<br>(혜택)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>%User ID%</td>
+                        <td>%이메일%</td>
+                        <td>%이름%</td>
+                        <td>%닉네임%</td>
+                        <td>%레벨%</td>
+                        <td>%참여시간%</td>
+                        <td>%연속참여일수%</td>
+                        <td>%추가참여권사용여부%</td>
+                        <td>%운세보기참여여부%</td>
+                        <td>%기본지급경험치%</td>
+                        <td>%혜택지급경험치%</td>
+                        <td>%기본지급골드해머%</td>
+                        <td>%혜택지급골드해머%</td>
+                        <td>%기본지급엔돌캐시%</td>
+                        <td>%혜택지급엔돌캐시%</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Endorhappy002</td>
+                        <td>abc@abc.com</td>
+                        <td>김해피</td>
+                        <td>내가해피몽</td>
+                        <td>7</td>
+                        <td>2024-02-24 15:00</td>
+                        <td>12</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>달라진통닭</td>
+                        <td>14</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>N</td>
+                        <td>N</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Endorhappy004</td>
+                        <td>abc@abc.com</td>
+                        <td>왕피트</td>
+                        <td>내가해피몽</td>
+                        <td>26</td>
+                        <td>YYYY-MM-DD HH:MM</td>
+                        <td>만근</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Endorhappy002</td>
+                        <td>abc@abc.com</td>
+                        <td>김해피</td>
+                        <td>달라진통닭</td>
+                        <td>7</td>
+                        <td>YYYY-MM-DD HH:MM</td>
+                        <td>생일</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+                  <div class="wrap-pagination">
+                    <div class="wrap-count">
+                      <span class="count-text">총 <em class="count-number">115</em>건</span>
+                    </div>
+                    <div class="pagination">
+                      <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                      <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                      <a href="#" class="pagination-link">2</a>
+                      <a href="#" class="pagination-link">3</a>
+                      <a href="#" class="pagination-link">4</a>
+                      <a href="#" class="pagination-link">5</a>
+                      <a href="#" class="pagination-link">6</a>
+                      <a href="#" class="pagination-link">7</a>
+                      <a href="#" class="pagination-link">8</a>
+                      <a href="#" class="pagination-link">9</a>
+                      <a href="#" class="pagination-link">10</a>
+                      <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                      <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                    </div>
+                  </div>
+    
+                  <div class="tbl-btn-group is-right">
+                    <button type="button" class="btn is-primary"
+                      onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');">신규등록</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">안내</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    // UI확인용 datepicker btn 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+      }
+
+      startpicker.setDate(startDate);
+      endpicker.setDate(endDate);
+    });
+  </script>
+</body>
+</html>
