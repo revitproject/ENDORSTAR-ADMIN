@@ -275,11 +275,12 @@ input[type="password"]:not(:placeholder-shown) {
 .ui-dropdown {
   position: relative;
   user-select: none;
-  width: 26rem;
+  width: auto;
+  min-width: 26rem;
 }
 .dropdown-trigger {
   position: relative;
-  padding: .3rem 2rem .3rem 1rem; 
+  padding: .3rem 3rem .3rem 1rem; 
   background: #fff; 
   color: var(--grays-3);
   font-size: 1.4rem;
@@ -372,6 +373,9 @@ input[type="password"]:not(:placeholder-shown) {
 .wrap-formbox + .wrap-searchbox.inbtn,
 .wrap-searchbox + .wrap-searchbox {
   margin-top: 1.4rem;
+}
+.form-searchbox + .list-base {
+  margin-top: 1rem;
 }
 .form-searchbox .searchbox-btn {
   display: flex;

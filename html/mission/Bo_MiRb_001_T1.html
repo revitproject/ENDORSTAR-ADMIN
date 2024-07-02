@@ -12,7 +12,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="main" data-lnb-index="2" data-sub-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main" data-lnb-index="2" data-sub-lnb-index="4"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap mission">
     <!-- include -->
@@ -26,10 +26,10 @@
         <div class="ui-tab is-line">
           <ul class="tab-menu">
             <li class="tab-item is-active"> 
-              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+              <a href="./Bo_MiRb_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
             </li>
             <li class="tab-item">  
-              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+              <a href="./Bo_MiRb_001_T2_T1.html" class="tab-link" data-tab="tab2">참여현황</a>
             </li>
           </ul>
           <div class="tab-contents">
@@ -63,7 +63,6 @@
                   </div>
                 </div>
               </div>
-              
               <div class="module-bottom">
                 <div class="box-form">
                   <div class="wrap-tbl">
@@ -74,20 +73,22 @@
                         <option value="">50개씩 보기</option>
                         <option value="">100개씩 보기</option>
                       </select>
+                      <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
                     </div>
-        
+      
                     <table class="tbl-base">
                       <colgroup>
                         <col style="width: 5.6rem;">
-                        <col style="width: 19.9rem;">
-                        <col style="width: 19.9rem;">
                         <col>
-                        <col style="width: 19.9rem;">
                         <col>
-                        <col style="width: 13rem;">
-                        <col style="width: 13rem;">
-                        <col style="width: 13rem;">
+                        <col>
+                        <col>
+                        <col>
+                        <col style="width: 9rem;">
+                        <col style="width: 9rem;">
+                        <col style="width: 9rem;">
                         <col style="width: 11.1rem;">
+
                       </colgroup>
                       <thead>
                         <tr>
@@ -108,22 +109,22 @@
                           <td>1</td>
                           <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
                           <td>YYYY-MM-DD HH:MM</td>
-                          <td>%등록자ID%<br>(%등록자이름%)</td>
+                          <td>%등록자ID%</td>
                           <td>YYYY-MM-DD HH:MM</td>
-                          <td>%수정자ID%<br>(%수정자이름%)</td>
+                          <td>%수정자ID%</td>
                           <td>%추가 XP%</td>
                           <td>%추가 GP%</td>
                           <td>%추가 EP%</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" data-url="#Bo_MiGa_001_P1" data-modal="open" class="btn is-outline-2 is-h26">수정</button>
+                              <button type="button" data-url="#Bo_MiRb_001_P1" data-modal="open" class="btn is-outline-2 is-h26">수정</button>
                               <button type="button" data-url="#preview2" data-modal="open" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
                             </div>
                           </td>
                         </tr>
                         <tr>
                           <td>2</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
@@ -135,11 +136,11 @@
                         </tr>
                         <tr>
                           <td>3</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -147,11 +148,11 @@
                         </tr>
                         <tr>
                           <td>4</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -159,11 +160,11 @@
                         </tr>
                         <tr>
                           <td>5</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -171,11 +172,11 @@
                         </tr>
                         <tr>
                           <td>6</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -183,11 +184,11 @@
                         </tr>
                         <tr>
                           <td>7</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -195,11 +196,11 @@
                         </tr>
                         <tr>
                           <td>8</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -207,11 +208,11 @@
                         </tr>
                         <tr>
                           <td>9</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -219,11 +220,11 @@
                         </tr>
                         <tr>
                           <td>10</td>
-                          <td>YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+                          <td>2024-09-01 00:00 ~ 2024-09-30 23:59</td>
                           <td>2024-02-26 15:00</td>
                           <td>endorhappy050</td>
                           <td>-</td>
-                          <td>-</td>
+                          <td>endorhappy050</td>
                           <td>100</td>
                           <td>0</td>
                           <td>10</td>
@@ -252,14 +253,14 @@
                         <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
                         <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
                       </div>
-                      <button type="button" class="btn is-outline-3 is-h26" data-modal="open" data-url="#Bo_MiGa_001_P2">신규등록</button>
+                      <button type="button" class="btn is-outline-3 is-h26" data-modal="open" data-url="#Bo_MiRb_001_P2">신규등록</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="tab-content" data-tab-content="tab2">
-              Bo_MiGa_001_T2.html
+              Bo_MiRb_001_T2_T1.html
             </div>
           </div>
         </div>
@@ -269,7 +270,7 @@
 
     <!-- modal -->
     <!-- 추가 혜택 수정 -->
-    <div id="Bo_MiGa_001_P1" class="modal is-large" data-modal="target">
+    <div id="Bo_MiRb_001_P1" class="modal is-large" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 72rem;">
         <div class="modal-header">
@@ -519,13 +520,13 @@
       </div>
     </div>
 
-    <!-- 추가 리워드 등록 관리 -->
-    <div id="Bo_MiGa_001_P2" class="modal is-large" data-modal="target">
+    <!-- 추가 혜택 등록 -->
+    <div id="Bo_MiRb_001_P2" class="modal is-large" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 72rem;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">추가 리워드 등록 관리</strong>
+          <strong class="modal-title">추가 혜택 등록</strong>
         </div>
         <div class="modal-content">
           <div class="tbl-dl">

@@ -95,6 +95,39 @@ class CustomAlert {
 }
 
 // Tab
+// class TabManager {
+//   constructor() {
+//     this.initTabs();
+//   }
+
+//   initTabs() {
+//     document.addEventListener('click', (e) => {
+//       const target = e.target.closest(".tab-link");
+//       if (target && target.getAttribute("href") === "#") {
+//         e.preventDefault();
+//         this.handleTabClick(target);
+//       }
+//     });
+//   }
+
+//   handleTabClick(target) {
+//     const tabContentId = target.dataset.tab;
+//     const tabList = target.closest(".ui-tab");
+
+//     tabList.querySelectorAll(".tab-item").forEach(item => {
+//       item.classList.remove("is-active");
+//     });
+//     target.closest(".tab-item").classList.add("is-active");
+
+//     document.querySelectorAll(".tab-content").forEach(content => {
+//       content.classList.remove("is-active");
+//       if (content.getAttribute("data-tab-content") === tabContentId) {
+//         content.classList.add("is-active");
+//       }
+//     });
+//   }
+// }
+
 class TabManager {
   constructor() {
     this.initTabs();
@@ -120,6 +153,51 @@ class TabManager {
     target.closest(".tab-item").classList.add("is-active");
 
     document.querySelectorAll(".tab-content").forEach(content => {
+      // 상위 탭 콘텐츠에만 적용
+      if (content.closest(".ui-tab") === tabList) {
+        content.classList.remove("is-active");
+        if (content.getAttribute("data-tab-content") === tabContentId) {
+          content.classList.add("is-active");
+        }
+      }
+    });
+
+    // 탭 안의 탭 처리
+    const nestedTabManager = new NestedTabManager(tabContentId);
+    nestedTabManager.initTabs();
+  }
+}
+
+class NestedTabManager {
+  constructor(parentTabId) {
+    this.parentTabId = parentTabId;
+  }
+
+  initTabs() {
+    const parentTabContent = document.querySelector(`.tab-content[data-tab-content="${this.parentTabId}"]`);
+    if (parentTabContent) {
+      parentTabContent.querySelectorAll('.tab-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const target = e.target.closest(".tab-link");
+          if (target && target.getAttribute("href") === "#") {
+            e.preventDefault();
+            this.handleTabClick(target, parentTabContent);
+          }
+        });
+      });
+    }
+  }
+
+  handleTabClick(target, parentTabContent) {
+    const tabContentId = target.dataset.tab;
+    const tabList = target.closest(".ui-tab");
+
+    tabList.querySelectorAll(".tab-item").forEach(item => {
+      item.classList.remove("is-active");
+    });
+    target.closest(".tab-item").classList.add("is-active");
+
+    parentTabContent.querySelectorAll(".tab-content").forEach(content => {
       content.classList.remove("is-active");
       if (content.getAttribute("data-tab-content") === tabContentId) {
         content.classList.add("is-active");
@@ -127,6 +205,7 @@ class TabManager {
     });
   }
 }
+
 
 // Grid (TOAST UI Grid)
 class GridManager {

@@ -5,6 +5,9 @@
   align-items: center;
   gap: .8rem;
 }
+.btn-group.flex-wrap {
+  flex-wrap: wrap;
+}
 .btn-group > .btn {
   flex: 1;
 }

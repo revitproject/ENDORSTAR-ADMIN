@@ -52,7 +52,7 @@
   border-bottom: .1rem solid var(--secondary-3);
 }
 .modal-content {
-  margin: 2rem 4rem;
+  margin: 2rem 4rem 3.2rem;
   color: var(--grays-2);
   font-size: 2rem;
   font-weight: 400;
@@ -125,4 +125,67 @@
 .alert-msg .user-id,
 .alert-msg .user-date {
   display: block;
+}
+
+/* table dl type */
+.modal .tbl-dl {
+  flex-wrap: wrap;
+}
+.modal .tbl-dl dl {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.modal .tbl-dl dl + dl {
+  margin-top: 1.4rem;
+}
+.modal .tbl-dl dt {
+  display: inline-flex;
+  justify-content: flex-end;
+  min-width: 8rem;
+  padding-right: 0;
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.modal .tbl-dl dd {
+  flex: 1;
+  padding-left: 1.2rem;
+}
+.modal .tbl-dl .inp-base {
+  width: 100%;
+  min-width: 26rem;
+}
+.modal .tbl-dl dd .datepicker-to {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.modal .tbl-dl .dl-tit {
+  margin-bottom: 1rem;
+  color: var(--grays-1);
+  font-size: 1.3rem;
+  font-weight: 500
+}
+.modal .area-tbl-dl {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+.modal .area-tbl-dl .tbl-dl .inp-base {
+  min-width: 1.6rem;
+}
+.modal .area-tbl-dl .tbl-dl dt {
+  justify-content: flex-start;
+  min-width: 7rem;
+}
+.modal .tbl-dl dt em.text-primary {
+  margin-left: .2rem;
+}
+.modal .area-tbl-dl .tbl-dl dd {
+  flex: auto;
+  padding-left: 0;
+}
+.modal .area-tbl-dl .tbl-dl + .tbl-dl {
+  margin-left: 2rem;
+  padding-left: 2rem;
 }

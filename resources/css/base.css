@@ -24,6 +24,7 @@
 /* contents */
 @import "contents/dashboard.css";
 @import "contents/system.css";
+@import "contents/mission.css";
 
 /* utilities */
 @import "utilities.css";

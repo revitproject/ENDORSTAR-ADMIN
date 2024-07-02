@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.mission .module-top .box-form {
+  margin-top: 1rem;
+}
+.mission .module-top .ui-dropdown {
+  width: 28rem;
+}

@@ -146,7 +146,9 @@
       </div>
     </div>
   </div>
-<pre><code class="language-Markup">&lt;div class="area-dropdown">
+<pre>
+<code class="language-Markup">&lt;div class="wrap-group">
+  &lt;div class="area-dropdown">
     &lt;div class="wrap-dropdown">
       &lt;div class="ui-dropdown" data-input="#dropdown-value">
         &lt;div class="dropdown-title">선택 전&lt;/div>
@@ -156,10 +158,10 @@
           &lt;div class="dropdown-item" data-value="value2">아이디 검색&lt;/div>
           &lt;div class="dropdown-item" data-value="value3">직원코드 검색&lt;/div>
         &lt;/div>
-      &lt;/div>  
+      &lt;/div>
     &lt;/div>
     &lt;div class="wrap-dropdown">
-      &lt;div class="dropdown open" data-input="#dropdown-value">
+      &lt;div class="ui-dropdown open" data-input="#dropdown-value">
         &lt;div class="dropdown-title">선택 중&lt;/div>
         &lt;div class="dropdown-trigger">선택하기&lt;/div>
         &lt;div class="dropdown-menu">
@@ -167,7 +169,7 @@
           &lt;div class="dropdown-item" data-value="value2">아이디 검색&lt;/div>
           &lt;div class="dropdown-item" data-value="value3">직원코드 검색&lt;/div>
         &lt;/div>
-      &lt;/div> 
+      &lt;/div>
     &lt;/div>
     &lt;div class="wrap-dropdown">
       &lt;div class="ui-dropdown" data-input="#dropdown-value">
@@ -180,7 +182,8 @@
         &lt;/ul>
       &lt;/div>
     &lt;/div>
-  &lt;/div></code>
+  &lt;/div>
+&lt;/div></code>
 </pre>
 <!-- //dropdown -->
 
@@ -246,135 +249,143 @@
 <h2 class="component-title">Search form</h2>
 <div class="wrap-group">
   <div class="form-searchbox">
-    <div class="wrap-formbox">
-      <label for="select-date" class="lb-inp">기간</label>
-      <select id="select-date" class="inp-select">
-        <option value="" selected>등록일</option>
-        <option value="">옵션1</option>
-        <option value="">옵션1</option>
-        <option value="">옵션1</option>
-      </select>
-    
-      <div class="area-datepicker">
-        <!-- DatePicker -->
-        <div class="wrap-datepicker">
-          <div class="datePicker">
-            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-              <input id="startpicker-inp2" type="text" aria-label="Date-Time">
-              <div id="startpicker-div2" class="datepicker-div"></div>
-            </div>
-          </div>
-          <span class="datepicker-to">~</span>
-          <div class="datePicker">
-            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-              <input id="endpicker-inp2" type="text" aria-label="Date-Time">
-              <div id="endpicker-div2" class="datepicker-div"></div>
-            </div>
-          </div>
-        </div>
-        <!-- //DatePicker -->
-        <div class="btn-options">
-          <button type="button" class="btn is-secondary-1 is-active">전체</button>
-          <button type="button" class="btn is-secondary-1">오늘</button>
-          <button type="button" class="btn is-secondary-1">1주일</button>
-          <button type="button" class="btn is-secondary-1">1개월</button>
-          <button type="button" class="btn is-secondary-1">3개월</button>
-          <button type="button" class="btn is-secondary-1">6개월</button>
-        </div>
-      </div>
-    </div>
-  
-    <div class="wrap-formbox">
-      <label for="inp-name" class="lb-inp">이름</label>
-      <input type="text" id="inp-name" class="inp-base" placeholder="">
-
-      <label for="inp-id" class="lb-inp">아이디</label>
-      <input type="text" id="inp-id" class="inp-base" placeholder="">
-    </div>
-  
-    <div class="wrap-searchbox inbtn">
-      <div class="searchbox-item">
-        <label for="select-search" class="lb-inp">검색어</label>
-        <select id="select-search" class="inp-select">
-          <option value="" selected>검색어</option>
+    <form action="">
+      <div class="wrap-formbox">
+        <label for="select-date" class="lb-inp">기간</label>
+        <select id="select-date" class="inp-select">
+          <option value="" selected>등록일</option>
           <option value="">옵션1</option>
           <option value="">옵션1</option>
           <option value="">옵션1</option>
         </select>
+      
+        <div class="area-datepicker">
+          <!-- DatePicker -->
+          <div class="wrap-datepicker">
+            <div class="datePicker">
+              <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+                <div id="startpicker-div2" class="datepicker-div"></div>
+              </div>
+            </div>
+            <span class="datepicker-to">~</span>
+            <div class="datePicker">
+              <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+                <div id="endpicker-div2" class="datepicker-div"></div>
+              </div>
+            </div>
+          </div>
+          <!-- //DatePicker -->
+          <div class="btn-options">
+            <button type="button" class="btn is-secondary-1 is-active">전체</button>
+            <button type="button" class="btn is-secondary-1">오늘</button>
+            <button type="button" class="btn is-secondary-1">1주일</button>
+            <button type="button" class="btn is-secondary-1">1개월</button>
+            <button type="button" class="btn is-secondary-1">3개월</button>
+            <button type="button" class="btn is-secondary-1">6개월</button>
+          </div>
+        </div>
+      </div>
     
-        <input type="text" id="inp-search" class="inp-base" placeholder="">
+      <div class="wrap-formbox">
+        <label for="inp-name" class="lb-inp">이름</label>
+        <input type="text" id="inp-name" class="inp-base" placeholder="">
+  
+        <label for="inp-id" class="lb-inp">아이디</label>
+        <input type="text" id="inp-id" class="inp-base" placeholder="">
       </div>
-      <div class="searchbox-btn">
-        <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
-        <button type="button" class="btn is-search">검색</button>
+    
+      <div class="wrap-searchbox inbtn">
+        <div class="searchbox-item">
+          <label for="select-search" class="lb-inp">검색어</label>
+          <select id="select-search" class="inp-select">
+            <option value="" selected>검색어</option>
+            <option value="">옵션1</option>
+            <option value="">옵션1</option>
+            <option value="">옵션1</option>
+          </select>
+      
+          <input type="search" id="inp-search" name="search" class="inp-base" placeholder="">
+        </div>
+        <div class="searchbox-btn">
+          <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+          <button type="submit" class="btn is-search">검색</button>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 <pre>
-<code class="language-Markup">&lt;div class="form-searchbox">
-  &lt;div class="wrap-formbox">
-    &lt;label for="select-date" class="lb-inp">기간&lt;/label>
-    &lt;select id="select-date" class="inp-select">
-      &lt;option value="" selected>등록일&lt;/option>
-      &lt;option value="">옵션1&lt;/option>
-      &lt;option value="">옵션1&lt;/option>
-      &lt;option value="">옵션1&lt;/option>
-    &lt;/select>
-  
-    &lt;div class="area-datepicker">
-      &lt;div class="wrap-datepicker">
-        &lt;div class="datePicker">
-          &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            &lt;input id="startpicker-inp2" type="text" aria-label="Date-Time">
-            &lt;div id="startpicker-div2" class="datepicker-div">&lt;/div>
-          &lt;/div>
-        &lt;/div>
-        &lt;span class="datepicker-to">~&lt;/span>
-        &lt;div class="datePicker">
-          &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            &lt;input id="endpicker-inp2" type="text" aria-label="Date-Time">
-            &lt;div id="endpicker-div2" class="datepicker-div">&lt;/div>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="btn-options">
-        &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
-        &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
-        &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
-        &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
-        &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
-        &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
-      &lt;/div>
-    &lt;/div>
-  &lt;/div>
-
-  &lt;div class="wrap-formbox">
-    &lt;label for="inp-name" class="lb-inp">이름&lt;/label>
-    &lt;input type="text" id="inp-name" class="inp-base" placeholder="">
-
-    &lt;label for="inp-id" class="lb-inp">아이디&lt;/label>
-    &lt;input type="text" id="inp-id" class="inp-base" placeholder="">
-  &lt;/div>
-
-  &lt;div class="wrap-searchbox inbtn">
-    &lt;div class="searchbox-item">
-      &lt;label for="select-search" class="lb-inp">검색어&lt;/label>
-      &lt;select id="select-search" class="inp-select">
-        &lt;option value="" selected>검색어&lt;/option>
+<code class="language-Markup">
+&lt;div class="form-searchbox">
+  &lt;form action="">
+    &lt;div class="wrap-formbox">
+      &lt;label for="select-date" class="lb-inp">기간&lt;/label>
+      &lt;select id="select-date" class="inp-select">
+        &lt;option value="" selected>등록일&lt;/option>
         &lt;option value="">옵션1&lt;/option>
         &lt;option value="">옵션1&lt;/option>
         &lt;option value="">옵션1&lt;/option>
       &lt;/select>
+    
+      &lt;div class="area-datepicker">
+        &lt;!-- DatePicker --&gt;
+        &lt;div class="wrap-datepicker">
+          &lt;div class="datePicker">
+            &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+              &lt;input id="startpicker-inp2" type="text" aria-label="Date-Time">
+              &lt;div id="startpicker-div2" class="datepicker-div">&lt;/div>
+            &lt;/div>
+          &lt;/div>
+          &lt;span class="datepicker-to">~&lt;/span>
+          &lt;div class="datePicker">
+            &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+              &lt;input id="endpicker-inp2" type="text" aria-label="Date-Time">
+              &lt;div id="endpicker-div2" class="datepicker-div">&lt;/div>
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+        &lt;!-- //DatePicker --&gt;
+        &lt;div class="btn-options">
+          &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
+          &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
+          &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
+          &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
+          &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
+          &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
   
-      &lt;input type="text" id="inp-search" class="inp-base" placeholder="">
+    &lt;div class="wrap-formbox">
+      &lt;label for="inp-name" class="lb-inp">이름&lt;/label>
+      &lt;input type="text" id="inp-name" class="inp-base" placeholder="">
+
+      &lt;label for="inp-id" class="lb-inp">아이디&lt;/label>
+      &lt;input type="text" id="inp-id" class="inp-base" placeholder="">
     &lt;/div>
-    &lt;div class="searchbox-btn">
-      &lt;button type="button" class="btn is-reset">&lt;span class="ico-reset">초기화&lt;/span>&lt;/button>
-      &lt;button type="button" class="btn is-search">검색&lt;/button>
+  
+    &lt;div class="wrap-searchbox inbtn">
+      &lt;div class="searchbox-item">
+        &lt;label for="select-search" class="lb-inp">검색어&lt;/label>
+        &lt;select id="select-search" class="inp-select">
+          &lt;option value="" selected>검색어&lt;/option>
+          &lt;option value="">옵션1&lt;/option>
+          &lt;option value="">옵션1&lt;/option>
+          &lt;option value="">옵션1&lt;/option>
+        &lt;/select>
+    
+        &lt;input type="search" id="inp-search" name="search" class="inp-base" placeholder="">
+      &lt;/div>
+      &lt;div class="searchbox-btn">
+        &lt;button type="button" class="btn is-reset">&lt;span class="ico-reset">초기화&lt;/span>&lt;/button>
+        &lt;button type="submit" class="btn is-search">검색&lt;/button>
+      &lt;/div>
     &lt;/div>
-  &lt;/div>
-&lt;/div></code>
+  &lt;/form>
+&lt;/div>
+</code>
 </pre>
 <!-- // searchform -->
 

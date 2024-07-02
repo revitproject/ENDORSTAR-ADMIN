@@ -50,3 +50,66 @@
   color: var(--grays-1);
   text-decoration: underline;
 }
+
+/* line */
+.ui-tab.is-line .tab-item {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.ui-tab.is-line .tab-item.is-active {
+  border-bottom: .2rem solid var(--primary);
+}
+.ui-tab.is-line .tab-content {
+  padding: 4rem 0 0;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+}
+.ui-tab.is-line .tab-link {
+  min-width: initial;
+  padding: 0 0 .4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.02rem;
+}
+.ui-tab.is-line .tab-item.is-active .tab-link {
+  padding-bottom: .2rem;
+  font-weight: 700;
+}
+.ui-tab.is-line .tab-item + .tab-item {
+  margin-left: 2rem;
+}
+
+/* round */
+.ui-tab.is-round .tab-item {
+  border: 0;
+  border-radius: 0;
+}
+.ui-tab.is-round .tab-link {
+  min-width: 7.7rem;
+  height: 3.6rem;
+  padding: .8rem 1.6rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.ui-tab.is-round .tab-item.is-active {
+  border: 0;
+  border-radius: 0;
+  border-radius: 3rem;
+  background: var(--grays-1);
+}
+.ui-tab.is-round .tab-item + .tab-item {
+  margin-left: 0;
+}
+.ui-tab.is-round .tab-item.is-active .tab-link {
+  color: #fff;
+  padding: .8rem 1.6rem;
+}
+.ui-tab.is-round .tab-content {
+  padding: 1.4rem 0 0;
+  box-shadow: none;
+  border-radius: 0;
+}
