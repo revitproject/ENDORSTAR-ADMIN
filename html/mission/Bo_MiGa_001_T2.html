@@ -281,8 +281,8 @@
                   <div class="wrap-datepicker is-fulldate">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="startpicker-div1" class="datepicker-div"></div>
+                        <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div2" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
@@ -382,8 +382,8 @@
                   <div class="wrap-datepicker">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="endpicker-div1" class="datepicker-div"></div>
+                        <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div2" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
@@ -548,7 +548,7 @@
   <script>
     // DatePicker
     const today = new Date();
-    const startpicker = new tui.DatePicker('#startpicker-div1', {
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
       date: today,
       language: 'ko',
       input: {
@@ -556,11 +556,28 @@
         format: 'yyyy-MM-dd'
       }
     });
-    const endpicker = new tui.DatePicker('#endpicker-div1', {
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
       date: today,
       language: 'ko',
       input: {
         element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
         format: 'yyyy-MM-dd'
       }
     });
