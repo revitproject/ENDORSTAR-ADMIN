@@ -1,18 +1,10 @@
 @charset "UTF-8";
-/* inputWrap */
+/* input */
 .wrap-inp {
   display: flex;
   align-items: center;
   gap: .8rem;
 }
-
-/* input - password */
-input[type="password"]:not(:placeholder-shown) {
-  font-family: "pass", "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-}
-
-/* input[text] */
 .inp-base {
   min-width: 24rem;
   height: 2.8rem;
