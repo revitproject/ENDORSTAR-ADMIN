@@ -12,7 +12,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="main" data-lnb-index="2" data-sub-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main" data-lnb-index="2" data-sub-lnb-index="3"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap mission">
     <!-- include -->
@@ -26,18 +26,18 @@
         <div class="ui-tab is-line">
           <ul class="tab-menu">
             <li class="tab-item is-active"> 
-              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+              <a href="./Bo_MiCh_004_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
             </li>
             <li class="tab-item">  
-              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+              <a href="./Bo_MiCh_004_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
             </li>
           </ul>
           <div class="tab-contents">
             <div class="tab-content is-active" data-tab-content="tab1">
-              Bo_MiGa_001_T1.html
+              Bo_MiCh_004_T1.html
             </div>
             <div class="tab-content" data-tab-content="tab2">
-              Bo_MiGa_001_T2.html
+              Bo_MiCh_004_T2.html
             </div>
           </div>
         </div>
@@ -46,13 +46,13 @@
     <!-- //base-content -->
 
     <!-- modal -->
-    <!-- 추가 리워드 등록 관리 -->
-    <div id="Bo_MiGa_001_P2" class="modal is-large is-show" data-modal="target">
+    <!-- 추가 혜택 수정 -->
+    <div id="Bo_MiCh_004_P1" class="modal is-large is-show" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 72rem;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">추가 리워드 등록 관리</strong>
+          <strong class="modal-title">추가 혜택 수정</strong>
         </div>
         <div class="modal-content">
           <div class="tbl-dl">
@@ -63,8 +63,8 @@
                   <div class="wrap-datepicker is-fulldate">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="startpicker-div1" class="datepicker-div"></div>
+                        <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div2" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
@@ -164,8 +164,8 @@
                   <div class="wrap-datepicker">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="endpicker-div1" class="datepicker-div"></div>
+                        <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div2" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
@@ -268,7 +268,7 @@
               <dt>추가 지급 XP<em class="text-primary">*</em></dt>
               <dd>
                 <div class="wrap-formbox">
-                  <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요." value="100">
                 </div>
               </dd>
             </dl>
@@ -276,7 +276,7 @@
               <dt>추가 지급 GP<em class="text-primary">*</em></dt>
               <dd>
                 <div class="wrap-formbox">
-                  <input type="text" id="inp-gp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  <input type="text" id="inp-gp" class="inp-base" placeholder="숫자만 기입해주세요." value="1,000">
                 </div>
               </dd>
             </dl>
@@ -284,15 +284,15 @@
               <dt>추가 지급 EP<em class="text-primary">*</em></dt>
               <dd>
                 <div class="wrap-formbox">
-                  <input type="text" id="inp-ep" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  <input type="text" id="inp-ep" class="inp-base" placeholder="숫자만 기입해주세요." value="5">
                 </div>
               </dd>
             </dl>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
-          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '등록 하시겠어요?', 'trueFn()', 'falseFn()');">등록</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', 'trueFn()', 'falseFn()');">취소</button>
+          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '수정 하시겠어요?', 'trueFn()', 'falseFn()');">수정</button>
         </div>
       </div>
     </div>
@@ -331,19 +331,19 @@
   <script>
     // DatePicker
     const today = new Date();
-    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
       date: today,
       language: 'ko',
       input: {
-        element: '#startpicker-inp1',
+        element: '#startpicker-inp2',
         format: 'yyyy-MM-dd'
       }
     });
-    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
       date: today,
       language: 'ko',
       input: {
-        element: '#endpicker-inp1',
+        element: '#endpicker-inp2',
         format: 'yyyy-MM-dd'
       }
     });

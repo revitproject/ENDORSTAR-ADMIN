@@ -133,6 +133,9 @@
   padding: .3rem 1.2rem;
   background-image: url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 5L0.535899 0.499999L7.4641 0.5L4 5Z' fill='%23222222'/%3E%3C/svg%3E%0A");
 }
+.tbl-head .head-option .inp-select {
+  margin-right: .8rem;
+}
 .tbl-btn-group {
   display: flex;
   align-items: center;
@@ -185,6 +188,11 @@
 .tbl-base .btn.is-h26 {
   min-width: 4.7rem;
 }
+
+/* rowspan이 있을 경우 border-left 값 추가 */
+.tbl-base tr > th.is-border {
+  border-left: .1rem solid var(--grays-5);
+} 
 
 /* dl type */
 .tbl-dl {

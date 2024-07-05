@@ -26,18 +26,18 @@
         <div class="ui-tab is-line">
           <ul class="tab-menu">
             <li class="tab-item is-active"> 
-              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+              <a href="./Bo_MiGa_003_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
             </li>
             <li class="tab-item">  
-              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+              <a href="./Bo_MiGa_003_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
             </li>
           </ul>
           <div class="tab-contents">
             <div class="tab-content is-active" data-tab-content="tab1">
-              Bo_MiGa_001_T1.html
+              Bo_MiGa_003_T1.html
             </div>
             <div class="tab-content" data-tab-content="tab2">
-              Bo_MiGa_001_T2.html
+              Bo_MiGa_003_T2.html
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
 
     <!-- modal -->
     <!-- 추가 리워드 등록 관리 -->
-    <div id="Bo_MiGa_001_P2" class="modal is-large is-show" data-modal="target">
+    <div id="Bo_MiGa_003_P2" class="modal is-large is-show" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 72rem;">
         <div class="modal-header">
@@ -344,6 +344,23 @@
       language: 'ko',
       input: {
         element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
         format: 'yyyy-MM-dd'
       }
     });

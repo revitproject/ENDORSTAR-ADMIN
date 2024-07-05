@@ -12,7 +12,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="main" data-lnb-index="2" data-sub-lnb-index="2"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main" data-lnb-index="2" data-sub-lnb-index="3"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap mission">
     <!-- include -->
@@ -26,18 +26,18 @@
         <div class="ui-tab is-line">
           <ul class="tab-menu">
             <li class="tab-item is-active"> 
-              <a href="./Bo_MiGa_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+              <a href="./Bo_MiCh_002_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
             </li>
             <li class="tab-item">  
-              <a href="./Bo_MiGa_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+              <a href="./Bo_MiCh_002_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
             </li>
           </ul>
           <div class="tab-contents">
             <div class="tab-content is-active" data-tab-content="tab1">
-              Bo_MiGa_001_T1.html
+              Bo_MiCh_002_T1.html
             </div>
             <div class="tab-content" data-tab-content="tab2">
-              Bo_MiGa_001_T2.html
+              Bo_MiCh_002_T2.html
             </div>
           </div>
         </div>
@@ -46,30 +46,30 @@
     <!-- //base-content -->
 
     <!-- modal -->
-    <!-- 추가 리워드 등록 관리 -->
-    <div id="Bo_MiGa_001_P2" class="modal is-large is-show" data-modal="target">
+    <!-- 추가 혜택 등록 -->
+    <div id="Bo_MiCh_002_P3" class="modal is-large is-show" data-modal="target">
       <div class="modal-dimmed"></div>
-      <div class="modal-inner" style="width: 72rem;">
+      <div class="modal-inner" style="width: 82rem;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">추가 리워드 등록 관리</strong>
+          <strong class="modal-title">추가 혜택 등록</strong>
         </div>
         <div class="modal-content">
           <div class="tbl-dl">
             <dl>
-              <dt>기간설정<em class="text-primary">*</em></dt>
+              <dt>기간설정 <em class="text-primary">*</em></dt>
               <dd>
                 <div class="area-datepicker">
                   <div class="wrap-datepicker is-fulldate">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="startpicker-div1" class="datepicker-div"></div>
+                        <input id="startpicker-inp3" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div3" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
                   <div class="wrap-formbox">
-                    <select id="select-date1" class="inp-select is-sm">
+                    <select id="select-date9" class="inp-select is-sm">
                       <option value="" selected>시</option>
                       <option value="">00</option>
                       <option value="">01</option>
@@ -96,7 +96,7 @@
                       <option value="">22</option>
                       <option value="">23</option>
                     </select>
-                    <select id="select-date2" class="inp-select is-sm">
+                    <select id="select-date10" class="inp-select is-sm">
                       <option value="" selected>분</option>
                       <option value="">00</option>
                       <option value="">01</option>
@@ -164,13 +164,13 @@
                   <div class="wrap-datepicker">
                     <div class="datePicker">
                       <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
-                        <div id="endpicker-div1" class="datepicker-div"></div>
+                        <input id="endpicker-inp3" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div3" class="datepicker-div"></div>
                       </div>
                     </div>
                   </div>
                   <div class="wrap-formbox">
-                    <select id="select-date3" class="inp-select is-sm">
+                    <select id="select-date11" class="inp-select is-sm">
                       <option value="" selected>시</option>
                       <option value="">00</option>
                       <option value="">01</option>
@@ -197,7 +197,7 @@
                       <option value="">22</option>
                       <option value="">23</option>
                     </select>
-                    <select id="select-date4" class="inp-select is-sm">
+                    <select id="select-date12" class="inp-select is-sm">
                       <option value="" selected>분</option>
                       <option value="">00</option>
                       <option value="">01</option>
@@ -264,30 +264,113 @@
                 </div>
               </dd>
             </dl>
-            <dl>
-              <dt>추가 지급 XP<em class="text-primary">*</em></dt>
-              <dd>
-                <div class="wrap-formbox">
-                  <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
-                </div>
-              </dd>
-            </dl>
-            <dl>
-              <dt>추가 지급 GP<em class="text-primary">*</em></dt>
-              <dd>
-                <div class="wrap-formbox">
-                  <input type="text" id="inp-gp" class="inp-base" placeholder="숫자만 기입해주세요.">
-                </div>
-              </dd>
-            </dl>
-            <dl>
-              <dt>추가 지급 EP<em class="text-primary">*</em></dt>
-              <dd>
-                <div class="wrap-formbox">
-                  <input type="text" id="inp-ep" class="inp-base" placeholder="숫자만 기입해주세요.">
-                </div>
-              </dd>
-            </dl>
+          </div>
+          <div class="area-tbl-dl">
+            <div class="tbl-dl">
+              <p class="dl-tit">미션구간1 <em class="text-primary">*</em></p>
+              <dl>
+                <dt>초대인원</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 경험치</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 골드해머</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 엔돌캐시</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <div class="tbl-dl">
+              <p class="dl-tit">미션구간2 <em class="text-primary">*</em></p>
+              <dl>
+                <dt>초대인원</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 경험치</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 골드해머</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 엔돌캐시</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <div class="tbl-dl">
+              <p class="dl-tit">미션구간3 <em class="text-primary">*</em></p>
+              <dl>
+                <dt>초대인원</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 경험치</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 골드해머</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>추가지급 엔돌캐시</dt>
+                <dd>
+                  <div class="wrap-formbox">
+                    <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요.">
+                  </div>
+                </dd>
+              </dl>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -331,19 +414,19 @@
   <script>
     // DatePicker
     const today = new Date();
-    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+    const startpicker3 = new tui.DatePicker('#startpicker-div3', {
       date: today,
       language: 'ko',
       input: {
-        element: '#startpicker-inp1',
+        element: '#startpicker-inp3',
         format: 'yyyy-MM-dd'
       }
     });
-    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+    const endpicker3 = new tui.DatePicker('#endpicker-div3', {
       date: today,
       language: 'ko',
       input: {
-        element: '#endpicker-inp1',
+        element: '#endpicker-inp3',
         format: 'yyyy-MM-dd'
       }
     });
