@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main" data-lnb-index="3" data-sub-lnb-index="7"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap mission">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <div class="ui-tab is-line">
+          <ul class="tab-menu">
+            <li class="tab-item is-active"> 
+              <a href="./Bo_MkA3_001_T1.html" class="tab-link" data-tab="tab1">혜택관리</a>
+            </li>
+            <li class="tab-item">  
+              <a href="./Bo_MkA3_001_T2.html" class="tab-link" data-tab="tab2">참여현황</a>
+            </li>
+          </ul>
+          <div class="tab-contents">
+            <div class="tab-content is-active" data-tab-content="tab1">
+              Bo_MkA3_001_T1.html
+            </div>
+            <div class="tab-content" data-tab-content="tab2">
+              Bo_MkA3_001_T2.html
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 추가 혜택 수정 -->
+    <div id="Bo_MkA3_001_P1" class="modal is-large is-show" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 72rem;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">추가 혜택 수정</strong>
+        </div>
+        <div class="modal-content">
+          <div class="tbl-dl">
+            <dl>
+              <dt>기간설정<em class="text-primary">*</em></dt>
+              <dd>
+                <div class="area-datepicker">
+                  <div class="wrap-datepicker is-fulldate">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div2" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-formbox">
+                    <select id="select-date1" class="inp-select is-sm">
+                      <option value="" selected>시</option>
+                      <option value="">00</option>
+                      <option value="">01</option>
+                      <option value="">02</option>
+                      <option value="">03</option>
+                      <option value="">04</option>
+                      <option value="">05</option>
+                      <option value="">06</option>
+                      <option value="">07</option>
+                      <option value="">08</option>
+                      <option value="">09</option>
+                      <option value="">10</option>
+                      <option value="">11</option>
+                      <option value="">12</option>
+                      <option value="">13</option>
+                      <option value="">14</option>
+                      <option value="">15</option>
+                      <option value="">16</option>
+                      <option value="">17</option>
+                      <option value="">18</option>
+                      <option value="">19</option>
+                      <option value="">20</option>
+                      <option value="">21</option>
+                      <option value="">22</option>
+                      <option value="">23</option>
+                    </select>
+                    <select id="select-date2" class="inp-select is-sm">
+                      <option value="" selected>분</option>
+                      <option value="">00</option>
+                      <option value="">01</option>
+                      <option value="">02</option>
+                      <option value="">03</option>
+                      <option value="">04</option>
+                      <option value="">05</option>
+                      <option value="">06</option>
+                      <option value="">07</option>
+                      <option value="">08</option>
+                      <option value="">09</option>
+                      <option value="">10</option>
+                      <option value="">11</option>
+                      <option value="">12</option>
+                      <option value="">13</option>
+                      <option value="">14</option>
+                      <option value="">15</option>
+                      <option value="">16</option>
+                      <option value="">17</option>
+                      <option value="">18</option>
+                      <option value="">19</option>
+                      <option value="">20</option>
+                      <option value="">21</option>
+                      <option value="">22</option>
+                      <option value="">23</option>
+                      <option value="">24</option>
+                      <option value="">25</option>
+                      <option value="">26</option>
+                      <option value="">27</option>
+                      <option value="">28</option>
+                      <option value="">29</option>
+                      <option value="">30</option>
+                      <option value="">31</option>
+                      <option value="">32</option>
+                      <option value="">33</option>
+                      <option value="">34</option>
+                      <option value="">35</option>
+                      <option value="">36</option>
+                      <option value="">37</option>
+                      <option value="">38</option>
+                      <option value="">39</option>
+                      <option value="">40</option>
+                      <option value="">41</option>
+                      <option value="">42</option>
+                      <option value="">43</option>
+                      <option value="">44</option>
+                      <option value="">45</option>
+                      <option value="">46</option>
+                      <option value="">47</option>
+                      <option value="">48</option>
+                      <option value="">49</option>
+                      <option value="">50</option>
+                      <option value="">51</option>
+                      <option value="">52</option>
+                      <option value="">53</option>
+                      <option value="">54</option>
+                      <option value="">55</option>
+                      <option value="">56</option>
+                      <option value="">57</option>
+                      <option value="">58</option>
+                      <option value="">59</option>
+                    </select>
+                  </div>
+                  <span class="datepicker-to">~</span>
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp2" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div2" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-formbox">
+                    <select id="select-date3" class="inp-select is-sm">
+                      <option value="" selected>시</option>
+                      <option value="">00</option>
+                      <option value="">01</option>
+                      <option value="">02</option>
+                      <option value="">03</option>
+                      <option value="">04</option>
+                      <option value="">05</option>
+                      <option value="">06</option>
+                      <option value="">07</option>
+                      <option value="">08</option>
+                      <option value="">09</option>
+                      <option value="">10</option>
+                      <option value="">11</option>
+                      <option value="">12</option>
+                      <option value="">13</option>
+                      <option value="">14</option>
+                      <option value="">15</option>
+                      <option value="">16</option>
+                      <option value="">17</option>
+                      <option value="">18</option>
+                      <option value="">19</option>
+                      <option value="">20</option>
+                      <option value="">21</option>
+                      <option value="">22</option>
+                      <option value="">23</option>
+                    </select>
+                    <select id="select-date4" class="inp-select is-sm">
+                      <option value="" selected>분</option>
+                      <option value="">00</option>
+                      <option value="">01</option>
+                      <option value="">02</option>
+                      <option value="">03</option>
+                      <option value="">04</option>
+                      <option value="">05</option>
+                      <option value="">06</option>
+                      <option value="">07</option>
+                      <option value="">08</option>
+                      <option value="">09</option>
+                      <option value="">10</option>
+                      <option value="">11</option>
+                      <option value="">12</option>
+                      <option value="">13</option>
+                      <option value="">14</option>
+                      <option value="">15</option>
+                      <option value="">16</option>
+                      <option value="">17</option>
+                      <option value="">18</option>
+                      <option value="">19</option>
+                      <option value="">20</option>
+                      <option value="">21</option>
+                      <option value="">22</option>
+                      <option value="">23</option>
+                      <option value="">24</option>
+                      <option value="">25</option>
+                      <option value="">26</option>
+                      <option value="">27</option>
+                      <option value="">28</option>
+                      <option value="">29</option>
+                      <option value="">30</option>
+                      <option value="">31</option>
+                      <option value="">32</option>
+                      <option value="">33</option>
+                      <option value="">34</option>
+                      <option value="">35</option>
+                      <option value="">36</option>
+                      <option value="">37</option>
+                      <option value="">38</option>
+                      <option value="">39</option>
+                      <option value="">40</option>
+                      <option value="">41</option>
+                      <option value="">42</option>
+                      <option value="">43</option>
+                      <option value="">44</option>
+                      <option value="">45</option>
+                      <option value="">46</option>
+                      <option value="">47</option>
+                      <option value="">48</option>
+                      <option value="">49</option>
+                      <option value="">50</option>
+                      <option value="">51</option>
+                      <option value="">52</option>
+                      <option value="">53</option>
+                      <option value="">54</option>
+                      <option value="">55</option>
+                      <option value="">56</option>
+                      <option value="">57</option>
+                      <option value="">58</option>
+                      <option value="">59</option>
+                    </select>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>추가 지급 XP<em class="text-primary">*</em></dt>
+              <dd>
+                <div class="wrap-formbox">
+                  <input type="text" id="inp-xp" class="inp-base" placeholder="숫자만 기입해주세요." value="100">
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>추가 지급 GP<em class="text-primary">*</em></dt>
+              <dd>
+                <div class="wrap-formbox">
+                  <input type="text" id="inp-gp" class="inp-base" placeholder="숫자만 기입해주세요." value="1,000">
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>추가 지급 EP<em class="text-primary">*</em></dt>
+              <dd>
+                <div class="wrap-formbox">
+                  <input type="text" id="inp-ep" class="inp-base" placeholder="숫자만 기입해주세요." value="5">
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', 'trueFn()', 'falseFn()');">취소</button>
+          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '수정 하시겠어요?', 'trueFn()', 'falseFn()');">수정</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+  </script>
+</body>
+</html>
