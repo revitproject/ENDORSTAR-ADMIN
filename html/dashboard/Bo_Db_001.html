@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
 
-<body data-route="main" data-lnb-index="0" data-sub-lnb-index="0"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap">
     <!-- inlcude -->
@@ -26,7 +26,7 @@
     <!-- base-content -->
     <main class="base-content dashboard">
       <section>
-        <h1 class="head-title">DASHBOARD</h1>
+        <h1 class="content-title">회원통계 <span>7일간의 회원통계</span></h1>
         <div class="dashboard-info">
           <div class="dashboard__card">
             <span class="card-title">방문자수</span>
@@ -77,6 +77,14 @@
   <script src="../../resources/js/common/template.js"></script>
 
   <!-- page script -->
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(0, null, null); // 1-depth만 있는 경우
+      }, 50);
+    });
+  </script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const chartsConfig = {

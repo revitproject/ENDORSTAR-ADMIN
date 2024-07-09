@@ -12,7 +12,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="main" data-lnb-index="2" data-sub-lnb-index="4"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap mission">
     <!-- include -->
@@ -802,6 +802,14 @@
   <script src="../../resources/js/common/template.js"></script>
 
   <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(2, 2, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
   <script>
     // DatePicker
     const today = new Date();

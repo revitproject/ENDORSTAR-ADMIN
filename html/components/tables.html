@@ -15,7 +15,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="component" data-lnb-index="5"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="component"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap component">
     <!-- inlcude -->
@@ -463,6 +463,14 @@
   <script src="../../resources/js/common/template.js"></script>
 
   <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(4, null, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
   <script>
     // 테이블 check toggle
     const checkedAllCheckBox = (allCheck, check) => {

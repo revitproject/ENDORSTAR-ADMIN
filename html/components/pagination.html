@@ -15,7 +15,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="component" data-lnb-index="7"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="component"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap component">
     <!-- inlcude -->
@@ -131,12 +131,20 @@
   </div>
   <button type="button" class="btn is-outline-3 is-h26">신규등록</button>
 </div>
-
-
     </main>
     <!-- //base-content -->
   </div>
   <!-- //base-wrap -->
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(8, null, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
 
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>

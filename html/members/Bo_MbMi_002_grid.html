@@ -12,7 +12,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="main" data-lnb-index="1" data-sub-lnb-index="0"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
   <div class="base-wrap members">
     <!-- include -->
@@ -323,6 +323,16 @@
   <script src="../../resources/js/common/template.js"></script>
 
   <!-- page script -->
+  <script>
+    window.addEventListener('load', function () {
+      showFocusedLnb(document.body.dataset.route);
+    
+      setTimeout(function () {
+        lnbActive(0, 0); // 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+
   <script>
     // TUI Grid 초기화
     let Grid = tui.Grid;
