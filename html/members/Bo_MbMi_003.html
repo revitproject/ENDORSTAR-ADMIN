@@ -42,7 +42,7 @@
                 <tbody>
                   <tr>
                     <th>이름</th>
-                    <td><a href="#none" class="link">김해피</a></td>
+                    <td><a href="#Bo_MbMi_002_L" class="link" data-modal="open">김해피</a></td>
                     <th>아이디</th>
                     <td>endorhappy001</td>
                     <th>생년월일</th>
@@ -128,17 +128,22 @@
                   <col>
                   <col style="width: 20rem;">
                   <col>
-                  <col style="width: 20rem;">
-                  <col>
                 </colgroup>
                 <tbody>
                   <tr>
-                    <th>푸시 수신</th>
-                    <td>
-                      <div class="form-checkbox">
-                        <label><input type="checkbox" class="inp-checkbox"></label>
+                    <th>앱 알림 여부 수신</th>
+                    <td colspan="5">
+                      <div class="wrap-group is-flex">
+                        <div class="form-checkbox">
+                          <label>알림 수신 동의<input type="checkbox" class="inp-checkbox"></label>
+                        </div>
+                        <div class="form-checkbox">
+                          <label>이벤트 수신 동의<input type="checkbox" class="inp-checkbox" checked></label>
+                        </div>
                       </div>
                     </td>
+                  </tr>
+                  <tr>
                     <th>단말기 정보</th>
                     <td>iPhone 12 Pro</td>
                     <th>OS 버젼</th>
@@ -168,7 +173,7 @@
                 <a href="./Bo_MbMi_003.html" class="tab-link" data-tab="tab2">회원인증이력</a>
               </li>
               <li class="tab-item">
-                <a href="./Bo_MbMi_004.html" class="tab-link" data-tab="tab3">접속이력</a>
+                <a href="./Bo_MbMi_004.html" class="tab-link" data-tab="tab3">푸시수신변경이력</a>
               </li>
             </ul>
             <div class="tab-contents">
@@ -446,6 +451,45 @@
     <!-- //base-content -->
 
     <!-- modal -->
+    <div id="Bo_MbMi_002_L" class="modal is-userinfo" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 40rem;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">회원정보 수정</strong>
+        </div>
+        <div class="modal-content">
+          <p class="desc manage">처리담당자 : <span>endorhappy050</span></p>
+          <div class="tbl-dl">
+            <dl>
+              <dt>변경 전</dt>
+              <dd>김해피</dd>
+            </dl>
+            <dl>
+              <dt>변경 후</dt>
+              <dd>김해피</dd>
+            </dl>
+            <dl>
+              <dt>변경사유</dt>
+              <dd>
+                <select id="select1" class="inp-select">
+                  <option value="" selected>개명</option>
+                  <option value="">기타</option>
+                </select>
+              </dd>
+            </dl>
+          </div>
+          <div class="wrap-textarea">
+            <textarea name="" id="" class="inp-textarea" placeholder="변경사유를 입력해 주세요."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-primary is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
     <div id="alert" class="modal" data-modal="alert">
       <div class="modal-dimmed"></div>
       <div class="modal-inner has-alert">

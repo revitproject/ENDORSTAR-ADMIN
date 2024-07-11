@@ -94,40 +94,6 @@ class CustomAlert {
   }
 }
 
-// Tab
-// class TabManager {
-//   constructor() {
-//     this.initTabs();
-//   }
-
-//   initTabs() {
-//     document.addEventListener('click', (e) => {
-//       const target = e.target.closest(".tab-link");
-//       if (target && target.getAttribute("href") === "#") {
-//         e.preventDefault();
-//         this.handleTabClick(target);
-//       }
-//     });
-//   }
-
-//   handleTabClick(target) {
-//     const tabContentId = target.dataset.tab;
-//     const tabList = target.closest(".ui-tab");
-
-//     tabList.querySelectorAll(".tab-item").forEach(item => {
-//       item.classList.remove("is-active");
-//     });
-//     target.closest(".tab-item").classList.add("is-active");
-
-//     document.querySelectorAll(".tab-content").forEach(content => {
-//       content.classList.remove("is-active");
-//       if (content.getAttribute("data-tab-content") === tabContentId) {
-//         content.classList.add("is-active");
-//       }
-//     });
-//   }
-// }
-
 class TabManager {
   constructor() {
     this.initTabs();

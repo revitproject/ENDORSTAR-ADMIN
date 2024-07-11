@@ -338,6 +338,8 @@
 
 /* searchForm */
 .form-searchbox {
+  display: block;
+  width: 100%;
   padding: 2.8rem;
   background: #fff;
   border-radius: 1.6rem;
@@ -426,4 +428,80 @@
 }
 .searchbox-item .inp-base {
   min-width: 42.5rem;
+}
+
+/* dl-formbox */
+.dl-formbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dl-formbox + .dl-formbox {
+  margin-top: 1.4rem;
+}
+.dl-formbox dt {
+  flex: 0 0 auto;
+  min-width: 3.7rem;
+  margin-right: 1.2rem;
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  text-align: right;
+}
+.dl-formbox dt > .lb-inp {
+  min-width: initial;
+  margin-right: 0;
+}
+.dl-formbox dd:not(.searchbox-btn) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem; 
+  width: auto; 
+}
+.dl-formbox dd .inp-select,
+.dl-formbox dd .inp-base {
+  flex: 1 1 auto; 
+  min-width: 24rem; 
+  max-width: 100%; 
+}
+.dl-formbox dd .searchbox-item .inp-base {
+  min-width: 42.5rem;
+}
+.dl-formbox dd .inp-select.is-sm {
+  min-width: 12rem;
+}
+.dl-formbox dd + dt {
+  margin-left: 2.2rem;
+}
+.dl-formbox dd .form-radio > label {
+  gap: .4rem;
+}
+.dl-formbox .searchbox-btn {
+  position: absolute;
+  right: 0;
+}
+
+/* textarea */
+.wrap-textarea {
+  width: 100%;
+}
+.inp-textarea {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  min-height: 12rem;
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  word-break: break-all;
+  border: .1rem solid var(--grays-5);
+  border-radius: .6rem;
+  resize: none;
+}
+.inp-textarea::placeholder {
+  color: var(--grays-3);
+}
+.inp-textarea:read-only,
+.inp-textarea:disabled {
+  color: var(--grays-2);
+  background-color: var(--grays-6)
 }

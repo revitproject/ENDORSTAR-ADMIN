@@ -14,7 +14,7 @@
 </head>
 <body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
   <!-- base-wrap -->
-  <div class="base-wrap system">
+  <div class="base-wrap maketing">
     <!-- include -->
     <header class="base-header"></header>
     <aside class="base-aside"></aside>
@@ -22,26 +22,113 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">권한 관리</h1>
+      <h1 class="content-title">푸시 관리</h1>
       <div class="content-inner">
         <div class="form-searchbox">
-          <div class="wrap-searchbox inbtn">
-            <div class="searchbox-item">
-              <label for="select-search" class="lb-inp">검색어</label>
-              <select id="select-search" class="inp-select">
-                <option value="" selected>검색어</option>
-                <option value="">옵션1</option>
-                <option value="">옵션1</option>
-                <option value="">옵션1</option>
+          <dl class="dl-formbox">
+            <dt>기간</dt>
+            <dd>
+              <select id="select-date" class="inp-select is-sm">
+                <option value="" selected>등록일</option>
+                <option value="">최종수정일</option>
               </select>
-          
-              <input type="search" id="inp-search" class="inp-base" placeholder="해피머니 직원 아이디를 입력해주세요.">
-            </div>
-            <div class="searchbox-btn">
+            
+              <div class="area-datepicker">
+                <!-- DatePicker -->
+                <div class="wrap-datepicker">
+                  <div class="datePicker">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                      <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                      <div id="startpicker-div1" class="datepicker-div"></div>
+                    </div>
+                  </div>
+                  <span class="datepicker-to">~</span>
+                  <div class="datePicker">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                      <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                      <div id="endpicker-div1" class="datepicker-div"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //DatePicker -->
+                <div class="btn-options">
+                  <button type="button" class="btn is-secondary-1 is-active">전체</button>
+                  <button type="button" class="btn is-secondary-1">오늘</button>
+                  <button type="button" class="btn is-secondary-1">1주일</button>
+                  <button type="button" class="btn is-secondary-1">1개월</button>
+                  <button type="button" class="btn is-secondary-1">3개월</button>
+                  <button type="button" class="btn is-secondary-1">6개월</button>
+                  <button type="button" class="btn is-secondary-1">12개월</button>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl class="dl-formbox">
+            <dt>검색어</dt>
+            <dd>
+              <div class="searchbox-item">
+                <select id="select-search" class="inp-select is-sm">
+                  <option value="" selected>제목</option>
+                  <option value="">등록자</option>
+                  <option value="">최종수정자</option>
+                </select>
+            
+                <input type="search" id="inp-search" class="inp-base" placeholder="">
+              </div>
+            </dd>
+          </dl>
+          <dl class="dl-formbox">
+            <dt>알림종류</dt>
+            <dd>
+              <select id="select1" class="inp-select">
+                <option value="" selected>전체</option>
+                <option value="">공지</option>
+                <option value="">광고</option>
+              </select>
+            </dd>
+            <dt>발송종류</dt>
+            <dd>
+              <select id="select2" class="inp-select">
+                <option value="" selected>전체</option>
+                <option value="">즉시발송</option>
+                <option value="">예약발송</option>
+              </select>
+            </dd>
+          </dl>
+          <dl class="dl-formbox">
+            <dt>발송결과</dt>
+            <dd>
+              <select id="select3" class="inp-select">
+                <option value="" selected>전체</option>
+                <option value="">등록완료</option>
+                <option value="">발송완료</option>
+              </select>
+            </dd>
+            <dt>대상자</dt>
+            <dd>
+              <select id="select2" class="inp-select">
+                <option value="" selected>전체</option>
+                <option value="">일반회원</option>
+                <option value="">소셜회원</option>
+                <option value="">타겟</option>
+                <option value="">파일등록</option>
+              </select>
+            </dd>
+          </dl>
+          <dl class="dl-formbox inbtn">
+            <dt>디바이스</dt>
+            <dd>
+              <div class="form-radio">
+                <label><input type="radio" name="appType" class="inp-radio">전체</label>
+                <label><input type="radio" name="appType" class="inp-radio">AOS</label>
+                <label><input type="radio" name="appType" class="inp-radio" checked>IOS</label>
+              </div>
+            </dd>
+            <dd class="searchbox-btn">
               <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
               <button type="submit" class="btn is-search">검색</button>
-            </div>
-          </div>
+            </dd>
+          </dl>
         </div>
 
         <div class="box-form">
@@ -82,7 +169,7 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><a href="./Bo_SyAu_001_2.html" class="link">endorhappy001</a></td>
+                  <td>endorhappy001</td>
                   <td>김해피</td>
                   <td>마케팅</td>
                   <td>1</td>
@@ -172,13 +259,13 @@
                 </tr>
                 <tr>
                   <td>10</td>
-                  <td>endorhappy009</td>
+                  <td>endorhappy010</td>
                   <td>김해피</td>
                   <td>마케팅</td>
-                  <td>8</td>
+                  <td>3</td>
                   <td>endorhappy050<br>2024-02-26 15:00</td>
                   <td>endorhappy050<br>2024-02-26 15:00</td>
-                  <td><button type="button" data-url="#preview" data-modal="open" class="btn is-outline-2 is-h26">조회</button></td>
+                  <td><button type="button" class="btn is-outline-3 is-h26">신규등록</button></td>
                 </tr>
               </tbody>
             </table>
@@ -203,7 +290,7 @@
                 <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
                 <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
               </div>
-              <button type="button" class="btn is-outline-3 is-h26" onclick="location.href='./Bo_SyAu_003.html'">신규등록</button>
+              <button type="button" class="btn is-outline-3 is-h26">신규등록</button>
             </div>
           </div>
         </div>
@@ -214,7 +301,7 @@
     <!-- modal -->
     <div id="preview" class="modal" data-modal="target">
       <div class="modal-dimmed"></div>
-      <div class="modal-inner" style="width: 52rem;">
+      <div class="modal-inner" style="width: 447px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">권한 수정 이력 조회</strong>
@@ -263,21 +350,16 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="wrap-pagination">
-                <div class="wrap-count">
-                  <span class="count-text">총 <em class="count-number">10</em>건</span>
-                </div>
-                <div class="pagination">
-                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
-                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
-                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
-                  <a href="#" class="pagination-link">2</a>
-                  <a href="#" class="pagination-link">3</a>
-                  <a href="#" class="pagination-link">4</a>
-                  <a href="#" class="pagination-link">5</a>
-                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
-                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
-                </div>
+              <div class="pagination">
+                <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-current">1</a>
+                <a href="#" class="pagination-link">2</a>
+                <a href="#" class="pagination-link">3</a>
+                <a href="#" class="pagination-link">4</a>
+                <a href="#" class="pagination-link">5</a>
+                <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
               </div>
             </div>
           </div>
@@ -354,6 +436,9 @@
         case '6개월':
           startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
           break;
+        case '12개월':
+        startDate = new Date(endDate.getFullYear() - 1, endDate.getMonth(), endDate.getDate());;
+        break;
       }
 
       startpicker.setDate(startDate);

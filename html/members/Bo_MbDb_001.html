@@ -25,51 +25,41 @@
       <h1 class="content-title">탈퇴이력</h1>
       <div class="content-inner">
         <div class="form-searchbox">
-          <div class="wrap-formbox">
-            <label for="select-date" class="lb-inp">회원유형</label>
-            <select id="select-date" class="inp-select">
-              <option value="">전체회원</option>
-              <option value="">일반회원</option>
-              <option value="">소셜회원</option>
-            </select>
+          <dl class="dl-formbox">
+            <dt><label for="select1" class="lb-inp">회원유형</label></dt>
+            <dd>
+              <select id="select1" class="inp-select is-sm">
+                <option value="">전체회원</option>
+                <option value="">일반회원</option>
+                <option value="">소셜회원</option>
+              </select>
+            </dd>
 
-            <label for="select-date" class="lb-inp">탈퇴사유</label>
-            <select id="select-date" class="inp-select">
-              <option value="">없음</option>
-              <option value="">캐시적립부족</option>
-              <option value="">제휴상품부족</option>
-              <option value="">육성난이도높음</option>
-              <option value="">앱사용불편</option>
-              <option value="">기타</option>
-            </select>
-          </div>
+            <dt><label for="select2" class="lb-inp">탈퇴사유</label></dt>
+            <dd>
+              <select id="select2" class="inp-select">
+                <option value="">없음</option>
+                <option value="">캐시적립부족</option>
+                <option value="">제휴상품부족</option>
+                <option value="">육성난이도높음</option>
+                <option value="">앱사용불편</option>
+                <option value="">기타</option>
+              </select>
+            </dd>
+          </dl>
 
-          <div class="wrap-formbox">
-            <label for="select-date" class="lb-inp">탈퇴사유</label>
-            <select id="select-date" class="inp-select">
-              <option value="">없음</option>
-              <option value="">캐시적립부족</option>
-              <option value="">제휴상품부족</option>
-              <option value="">육성난이도높음</option>
-              <option value="">앱사용불편</option>
-              <option value="">기타</option>
-            </select>
-          </div>
-        
-          <div class="wrap-searchbox inbtn">
-            <div class="wrap-formbox">
-              <label for="inp-id" class="lb-inp">아이디</label>
-              <input type="text" id="inp-id" class="inp-base" placeholder="아이디를 입력해주세요.">
+          <div class="dl-formbox inbtn">
+            <dt><label for="inpId" class="lb-inp">아이디</label></dt>
+            <dd><input type="text" id="inpId" class="inp-base" placeholder="아이디를 입력해주세요."></dd>
+            <dt><label for="inp-nickname" class="lb-inp">닉네임</label></dt>
+            <dd><input type="text" id="inp-nickname" class="inp-base" placeholder="닉네임을 입력해주세요."></dd>
 
-              <label for="inp-nickname" class="lb-inp">닉네임</label>
-              <input type="text" id="inp-nickname" class="inp-base" placeholder="닉네임을 입력해주세요.">
-            </div>
-
-            <div class="searchbox-btn">
+            <dd class="searchbox-btn">
               <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
               <button type="button" class="btn is-search">검색</button>
-            </div>
+            </dd>
           </div>
+
         </div>
 
         <div class="box-form">
@@ -105,7 +95,7 @@
                   <th>탈퇴사유</th>
                   <th>탈퇴사유 내용</th>
                   <th>최초가입일</th>
-                  <th>탈퇴일 <button type="button" class="btn-sorting"><span class="hidden">정렬</span></button></th>
+                  <th>탈퇴일</th>
                 </tr>
               </thead>
               <tbody>

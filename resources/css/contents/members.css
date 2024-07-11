@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.members .dl-formbox dd .inp-base {
+  min-width: 23.4rem;
+}
+.members .dl-formbox dd .searchbox-item .inp-base {
+  min-width: 42.5rem;
+}
+.members .dl-formbox dt {
+  min-width: 4.9rem;
+}

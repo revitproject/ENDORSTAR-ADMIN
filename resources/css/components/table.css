@@ -96,6 +96,14 @@
 	font-weight: 600;
 	line-height: 1.5;
 }
+.tbl-base .wrap-group.is-flex {
+  display: flex;
+  align-items: center;
+}
+.tbl-base .wrap-group.is-flex .form-checkbox + .form-checkbox {
+  margin-top: 0;
+  margin-left: 1.6rem;
+}
 
 /* .table has-left  */
 .tbl-base.has-left > thead > tr > th,

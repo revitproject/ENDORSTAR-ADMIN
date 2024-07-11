@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap system">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">인증패스</h1>
+      <div class="content-inner">
+        <div class="form-searchbox">
+          <dl class="dl-formbox inbtn">
+            <dt><label for="inpId" class="lb-inp">아이디</label></dt>
+            <dd><input type="text" id="inpId" class="inp-base" placeholder=""></dd>
+            <dd class="searchbox-btn">
+              <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+              <button type="submit" class="btn is-search">검색</button>
+            </dd>
+          </dl>
+        </div>
+
+        <div class="box-form">
+          <div class="wrap-tbl">
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 5.6rem;">
+                <col>
+                <col>
+                <col style="width: 16rem;">
+                <col style="width: 16rem;">
+                <col style="width: 19.9rem;">
+                <col style="width: 19.9rem;">
+                <col style="width: 12rem;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>아이디</th>
+                  <th>앱 버전</th>
+                  <th>인증성공여부</th>
+                  <th>인증사용여부</th>
+                  <th>인증 등록일자</th>
+                  <th>인증 스킵 일자</th>
+                  <th>관리</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>%User ID%</td>
+                  <td>0.0.0</td>
+                  <td>N</td>
+                  <td>Y</td>
+                  <td>YYYY.MM.DD hh:mm:ss</td>
+                  <td>YYYY.MM.DD hh:mm:ss</td>
+                  <td><button type="button" class="btn is-outline-3 is-h26"  onclick="customAlert.confirm('안내', '모바일인증을 스킵하시겠습니까?', 'trueFn()', 'falseFn()');">인증스킵</button></td>
+                </tr>
+                <tr>
+                  <td colspan="8" class="no-result">검색 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="pagination">
+              <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+              <a href="#" class="pagination-link">2</a>
+              <a href="#" class="pagination-link">3</a>
+              <a href="#" class="pagination-link">4</a>
+              <a href="#" class="pagination-link">5</a>
+              <a href="#" class="pagination-link">6</a>
+              <a href="#" class="pagination-link">7</a>
+              <a href="#" class="pagination-link">8</a>
+              <a href="#" class="pagination-link">9</a>
+              <a href="#" class="pagination-link">10</a>
+              <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+              <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">아니오</button>
+          <button type="button" class="btn is-footer is-true">네</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(7, 0, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+</body>
+</html>

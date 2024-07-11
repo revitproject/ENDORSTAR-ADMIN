@@ -26,14 +26,14 @@
         <div class="module-top">
           <div class="form-searchbox">
             <div class="wrap-formbox">
-              <label for="inp-id" class="lb-inp"><em class="text-primary">*</em>아이디</label>
-              <input type="text" id="inp-id" class="inp-base" placeholder="해피머니 직원 아이디를 입력하세요" style="width: 390px;">
+              <label for="inp-id" class="lb-inp">아이디</label>
+              <input type="text" id="inp-id" class="inp-base" placeholder="해피머니 직원 아이디를 입력하세요" style="width: 390px;" value="endorhappy050">
               <button type="button" class="btn is-grays-1 is-h28">유효성체크</button>
             </div>
             <div class="wrap-formbox">
               <label for="inp-name" class="lb-inp">이름</label>
               <!-- 유효성체크 후 'disabled' 해제 -->
-              <input type="text" id="inp-name" class="inp-base" placeholder="" style="width: 390px;" disabled>
+              <input type="text" id="inp-name" class="inp-base" placeholder="" style="width: 390px;" value="김해피">
             </div>
           </div>
           <ul class="list-base" data-bullet="dot">
@@ -1671,7 +1671,8 @@
               </table>
   
               <div class="tbl-btn-group is-right">
-                <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');" disabled>저장</button>
+                <button type="button" class="btn is-outline-1" onclick="">목록</button>
+                <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');">저장</button>
               </div>
             </div>
           </div>

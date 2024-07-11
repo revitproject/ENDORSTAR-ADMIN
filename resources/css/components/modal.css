@@ -58,6 +58,11 @@
   font-weight: 400;
   line-height: 1.4;
 }
+.modal-content .desc {
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
 .modal-content.has-scrollbar {
   overflow: auto;
   margin: 1.6rem 2.2rem 3rem 3rem;
@@ -87,9 +92,6 @@
 }
 .modal-footer .btn+.btn {
   margin-left: .8rem;
-}
-.modal.is-large .modal-footer .btn {
-  max-width: 16rem;
 }
 
 /* alert */
@@ -150,6 +152,8 @@
 }
 .modal .tbl-dl dd {
   flex: 1;
+  font-size: 1.4rem;
+  font-weight: 400;
   padding-left: 1.2rem;
 }
 .modal .tbl-dl .inp-base {
@@ -188,4 +192,37 @@
 .modal .area-tbl-dl .tbl-dl + .tbl-dl {
   margin-left: 2rem;
   padding-left: 2rem;
+}
+/*  회원정보변경 */
+.modal.is-userinfo .wrap-group .tit {
+  margin-bottom: 1rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.modal.is-userinfo .manage {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  background: var(--grays-6);
+  border-radius: .8rem;
+}
+.modal.is-userinfo .manage span {
+  color: var(--grays-2);
+}
+.modal.is-userinfo .tbl-dl + .wrap-textarea {
+  margin-top: 2rem;
+}
+.modal.is-userinfo .tbl-dl dt {
+  min-width: 6rem;
+}
+.modal.is-userinfo .tbl-dl .inp-select {
+  width: 100%;
+}
+
+.modal .wrap-pagination .pagination {
+  margin-top: .4rem;
 }

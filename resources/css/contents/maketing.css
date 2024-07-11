@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.maketing .dl-formbox dd .inp-select:not(.is-sm) {
+  min-width: 23.4rem;
+}
+.maketing .dl-formbox dt {
+  min-width: 4.9rem;
+}

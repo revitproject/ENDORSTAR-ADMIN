@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap members">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">회원 정보</h1>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="Bo_MbMi_002_L" class="modal is-userinfo is-show" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 40rem;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">회원정보 수정</strong>
+        </div>
+        <div class="modal-content">
+          <p class="desc manage">처리담당자 : <span>endorhappy050</span></p>
+          <div class="tbl-dl">
+            <dl>
+              <dt>변경 전</dt>
+              <dd>김해피</dd>
+            </dl>
+            <dl>
+              <dt>변경 후</dt>
+              <dd>김해피</dd>
+            </dl>
+            <dl>
+              <dt>변경사유</dt>
+              <dd>
+                <select id="select1" class="inp-select">
+                  <option value="" selected>개명</option>
+                  <option value="">기타</option>
+                </select>
+              </dd>
+            </dl>
+          </div>
+          <div class="wrap-textarea">
+            <textarea name="" id="" class="inp-textarea" placeholder="변경사유를 입력해 주세요."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-primary is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">안내</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">아니오</button>
+          <button type="button" class="btn is-footer is-true">예</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(1, 0, 0); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+</body>
+</html>
