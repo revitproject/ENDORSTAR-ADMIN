@@ -8,49 +8,36 @@
   <link rel="shortcut icon" href="../resources/images/common/favicon.ico">
   <!-- css base -->
   <link rel="stylesheet" href="../resources/css/base.css">
-  <style>
-    body {background-color: #fff;}
-    .guide.base-wrap::before {display: none;}
-    .guide.base-wrap {padding: 4rem 2rem;}
-    .guide .base-content {left: 0;width: 100%;padding: 0 2rem; box-sizing: border-box;}
-    .guide .content-title {margin: 2rem 0 1rem;font-size: 2.2rem;font-weight: 600;}
-    .guide .tbl-base > thead > tr > th {font-weight: 600; text-align: center;}
-    .guide .tbl-base > tbody > tr > td:last-child {text-align: center;}
-    .guide .tbl-base > tbody > tr > th,
-    .guide .tbl-base > tbody > tr > td,
-    .guide .tbl-base > tbody > tr > td > a {color: var(--grays-1);}
-    .guide .tbl-base .date {text-align: center;}
-    .guide .tbl-base .status.ing {color: #f16122;} 
-    .guide .tbl-base .status.modify {color: #04AA6D;} 
-    .guide .tbl-base .status.complete {color: #007CEF;} 
-    .guide .tbl-base .status.confirm {color: #E5493A;}
-  </style>
 </head>
-<body>
+<body class="bg-white">
   <div class="base-wrap guide">
     <main class="base-content">
       <h1 class="content-title">ENDORSTAR ADMIN</h1>
-      <table class="tbl-base has-left">
+      <table class="tbl-base tbl-guide">
         <colgroup>
           <col style="width: 10%;">
           <col style="width: 10%;">
           <col style="width: 10%;">
           <col style="width: 10%;">
           <col style="width: 10%;">
-          <col style="width: 16%;">
+          <col style="width: 10%;">
           <col>
           <col>
-          <col style="width: 10%;">
-          <col style="width: 10%;">
+          <col style="width: 13rem;">
+          <col style="width: 12rem;">
         </colgroup>
         <thead>
           <tr>
-            <th colspan="5">screen name</th>
-            <th>file path</th>
+            <th>1depth</th>
+            <th>2depth</th>
+            <th>3depth</th>
+            <th>4depth</th>
+            <th>5depth</th>
+            <th>화면ID</th>
             <th>비고</th>
             <th>수정사항</th>
             <th>완료일</th>
-            <th>상태</th>
+            <th>상태 <button type="button" id="btnFilter" class="btn-filter"><span class="hidden">filter</span></button></th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +47,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./components/structure.html" target="_blank">components/structure.html</a></td>
+            <td class="link"><a href="./components/structure.html" target="_blank">structure.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-06-14</td>
@@ -73,7 +60,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./common/login.html" target="_blank">common/login.html</a></td>
+            <td class="link"><a href="./common/login.html" target="_blank">login.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -84,7 +71,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./common/error.html" target="_blank">common/error.html</a></td>
+            <td class="link"><a href="./common/error.html" target="_blank">error.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-06-14</td>
@@ -99,7 +86,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./dashboard/Bo_Db_001.html" target="_blank">dashboard/Bo_Db_001.html</a></td>
+            <td class="link"><a href="./dashboard/Bo_Db_001.html" target="_blank">Bo_Db_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -113,7 +100,7 @@
             <td>목록</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbMi_001.html" target="_blank">members/Bo_MbMi_001.html</a></td>
+            <td class="link"><a href="./members/Bo_MbMi_001.html" target="_blank">Bo_MbMi_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -125,7 +112,7 @@
             <td>회원정보 상세/수정</td>
             <td>회원정보 변경이력</td>
             <td></td>
-            <td><a href="./members/Bo_MbMi_002.html" target="_blank">members/Bo_MbMi_002.html</a></td>
+            <td class="link"><a href="./members/Bo_MbMi_002.html" target="_blank">Bo_MbMi_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -137,7 +124,7 @@
             <td></td>
             <td>회원정보변경</td>
             <td></td>
-            <td><a href="./members/Bo_MbMi_002_L.html" target="_blank">members/Bo_MbMi_002_L.html</a></td>
+            <td class="link"><a href="./members/Bo_MbMi_002_L.html" target="_blank">Bo_MbMi_002_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -149,7 +136,7 @@
             <td></td>
             <td>회원인증이력</td>
             <td></td>
-            <td><a href="./members/Bo_MbMi_003.html" target="_blank">members/Bo_MbMi_003.html</a></td>
+            <td class="link"><a href="./members/Bo_MbMi_003.html" target="_blank">Bo_MbMi_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -161,7 +148,7 @@
             <td></td>
             <td>푸시수신변경이력</td>
             <td></td>
-            <td><a href="./members/Bo_MbMi_004.html" target="_blank">members/Bo_MbMi_004.html</a></td>
+            <td class="link"><a href="./members/Bo_MbMi_004.html" target="_blank">Bo_MbMi_004.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -173,7 +160,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbDb_001.html" target="_blank">members/Bo_MbDb_001.html</a></td>
+            <td class="link"><a href="./members/Bo_MbDb_001.html" target="_blank">Bo_MbDb_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -185,7 +172,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbEc_001.html" target="_blank">members/Bo_MbEc_001.html</a></td>
+            <td class="link"><a href="./members/Bo_MbEc_001.html" target="_blank">Bo_MbEc_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -197,7 +184,7 @@
             <td>엔돌캐시 적립 팝업</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbEc_001_L.html" target="_blank">members/Bo_MbEc_001_L.html</a></td>
+            <td class="link"><a href="./members/Bo_MbEc_001_L.html" target="_blank">Bo_MbEc_001_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -209,7 +196,7 @@
             <td>엔돌캐시 소멸내역 팝업</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbEc_002_L.html" target="_blank">members/Bo_MbEc_002_L.html</a></td>
+            <td class="link"><a href="./members/Bo_MbEc_002_L.html" target="_blank">Bo_MbEc_002_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -221,7 +208,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbGh_001.html" target="_blank">members/Bo_MbGh_001.html</a></td>
+            <td class="link"><a href="./members/Bo_MbGh_001.html" target="_blank">Bo_MbGh_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -233,7 +220,7 @@
             <td>골드해머 적립 팝업</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbGh_001_L.html" target="_blank">members/Bo_MbGh_001_L.html</a></td>
+            <td class="link"><a href="./members/Bo_MbGh_001_L.html" target="_blank">Bo_MbGh_001_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -245,7 +232,7 @@
             <td>본인인증스킵</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbCt_001.html" target="_blank">members/Bo_MbCt_001.html</a></td>
+            <td class="link"><a href="./members/Bo_MbCt_001.html" target="_blank">Bo_MbCt_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -257,7 +244,7 @@
             <td>개인정보이용내역</td>
             <td></td>
             <td></td>
-            <td><a href="./members/Bo_MbCt_002.html" target="_blank">members/Bo_MbCt_002.html</a></td>
+            <td class="link"><a href="./members/Bo_MbCt_002.html" target="_blank">Bo_MbCt_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -269,7 +256,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="#none" target="_blank">members/메일비밀번호안내.html</a></td>
+            <td class="link"><a href="#none" target="_blank">메일비밀번호안내.html</a></td>
             <td>디자인 미수급</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -284,7 +271,7 @@
             <td>미니게임1(런닝몽)</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_001_T1.html" target="_blank">mission/Bo_MiGa_001_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_001_T1.html" target="_blank">Bo_MiGa_001_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -296,7 +283,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiGa_001_P1.html" target="_blank">mission/Bo_MiGa_001_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_001_P1.html" target="_blank">Bo_MiGa_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -308,7 +295,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiGa_001_P2.html" target="_blank">mission/Bo_MiGa_001_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_001_P2.html" target="_blank">Bo_MiGa_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -320,7 +307,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_001_T2.html" target="_blank">mission/Bo_MiGa_001_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_001_T2.html" target="_blank">Bo_MiGa_001_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -332,7 +319,7 @@
             <td>미니게임2(틀린그림찾기)</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_002_T1.html" target="_blank">mission/Bo_MiGa_002_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_002_T1.html" target="_blank">Bo_MiGa_002_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -344,7 +331,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiGa_002_P1.html" target="_blank">mission/Bo_MiGa_002_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_002_P1.html" target="_blank">Bo_MiGa_002_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -356,7 +343,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiGa_002_P2.html" target="_blank">mission/Bo_MiGa_002_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_002_P2.html" target="_blank">Bo_MiGa_002_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -368,7 +355,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_002_T2.html" target="_blank">mission/Bo_MiGa_002_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_002_T2.html" target="_blank">Bo_MiGa_002_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -380,7 +367,7 @@
             <td>미니게임3(몽글몽글)</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_003_T1.html" target="_blank">mission/Bo_MiGa_003_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_003_T1.html" target="_blank">Bo_MiGa_003_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -392,7 +379,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiGa_003_P1.html" target="_blank">mission/Bo_MiGa_003_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_003_P1.html" target="_blank">Bo_MiGa_003_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -404,7 +391,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiGa_003_P2.html" target="_blank">mission/Bo_MiGa_003_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_003_P2.html" target="_blank">Bo_MiGa_003_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -416,7 +403,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiGa_003_T2.html" target="_blank">mission/Bo_MiGa_003_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiGa_003_T2.html" target="_blank">Bo_MiGa_003_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -428,7 +415,7 @@
             <td>출석체크</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_001_T1.html" target="_blank">mission/Bo_MiCh_001_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_001_T1.html" target="_blank">Bo_MiCh_001_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -440,7 +427,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiCh_001_P1.html" target="_blank">mission/Bo_MiCh_001_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_001_P1.html" target="_blank">Bo_MiCh_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -452,7 +439,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiCh_001_P2.html" target="_blank">mission/Bo_MiCh_001_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_001_P2.html" target="_blank">Bo_MiCh_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -464,7 +451,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_001_T2.html" target="_blank">mission/Bo_MiCh_001_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_001_T2.html" target="_blank">Bo_MiCh_001_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -476,7 +463,7 @@
             <td>친구초대</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_002_T1.html" target="_blank">mission/Bo_MiCh_002_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_T1.html" target="_blank">Bo_MiCh_002_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -488,7 +475,7 @@
             <td></td>
             <td></td>
             <td>챌린지 진행 여부</td>
-            <td><a href="./mission/Bo_MiCh_002_P1.html" target="_blank">mission/Bo_MiCh_002_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_P1.html" target="_blank">Bo_MiCh_002_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -500,7 +487,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiCh_002_P2.html" target="_blank">mission/Bo_MiCh_002_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_P2.html" target="_blank">Bo_MiCh_002_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -512,7 +499,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiCh_002_P3.html" target="_blank">mission/Bo_MiCh_002_P3.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_P3.html" target="_blank">Bo_MiCh_002_P3.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -524,7 +511,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_002_T2.html" target="_blank">mission/Bo_MiCh_002_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_T2.html" target="_blank">Bo_MiCh_002_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -536,7 +523,7 @@
             <td>기상챌린지</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_003_T1.html" target="_blank">mission/Bo_MiCh_003_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_003_T1.html" target="_blank">Bo_MiCh_003_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -548,7 +535,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiCh_003_P1.html" target="_blank">mission/Bo_MiCh_003_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_003_P1.html" target="_blank">Bo_MiCh_003_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -560,7 +547,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiCh_003_P2.html" target="_blank">mission/Bo_MiCh_003_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_003_P2.html" target="_blank">Bo_MiCh_003_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -572,7 +559,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_003_T2.html" target="_blank">mission/Bo_MiCh_003_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_003_T2.html" target="_blank">Bo_MiCh_003_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -584,7 +571,7 @@
             <td>걷기</td>
             <td>혜택관리</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_004_T1.html" target="_blank">mission/Bo_MiCh_004_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_004_T1.html" target="_blank">Bo_MiCh_004_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -596,7 +583,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 수정</td>
-            <td><a href="./mission/Bo_MiCh_004_P1.html" target="_blank">mission/Bo_MiCh_004_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_004_P1.html" target="_blank">Bo_MiCh_004_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -608,7 +595,7 @@
             <td></td>
             <td></td>
             <td>추가 혜택 등록</td>
-            <td><a href="./mission/Bo_MiCh_004_P2.html" target="_blank">mission/Bo_MiCh_004_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_004_P2.html" target="_blank">Bo_MiCh_004_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -620,7 +607,7 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td><a href="./mission/Bo_MiCh_004_T2.html" target="_blank">mission/Bo_MiCh_004_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiCh_004_T2.html" target="_blank">Bo_MiCh_004_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -632,7 +619,7 @@
             <td>혜택관리</td>
             <td></td>
             <td></td>
-            <td><a href="./mission/Bo_MiRb_001_T1.html" target="_blank">mission/Bo_MiRb_001_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiRb_001_T1.html" target="_blank">Bo_MiRb_001_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -644,7 +631,7 @@
             <td></td>
             <td>추가 혜택 수정</td>
             <td></td>
-            <td><a href="./mission/Bo_MiRb_001_P1.html" target="_blank">mission/Bo_MiRb_001_P1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiRb_001_P1.html" target="_blank">Bo_MiRb_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -656,7 +643,7 @@
             <td></td>
             <td>추가 혜택 등록</td>
             <td></td>
-            <td><a href="./mission/Bo_MiRb_001_P2.html" target="_blank">mission/Bo_MiRb_001_P2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiRb_001_P2.html" target="_blank">Bo_MiRb_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -668,7 +655,7 @@
             <td>참여현황</td>
             <td>이번주랭킹</td>
             <td></td>
-            <td><a href="./mission/Bo_MiRb_001_T2_T1.html" target="_blank">mission/Bo_MiRb_001_T2_T1.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiRb_001_T2_T1.html" target="_blank">Bo_MiRb_001_T2_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -680,7 +667,7 @@
             <td></td>
             <td>지난랭킹</td>
             <td></td>
-            <td><a href="./mission/Bo_MiRb_001_T2_T2.html" target="_blank">mission/Bo_MiRb_001_T2_T2.html</a></td>
+            <td class="link"><a href="./mission/Bo_MiRb_001_T2_T2.html" target="_blank">Bo_MiRb_001_T2_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -693,7 +680,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA2_001.html" target="_blank">maketing/Bo_MkA2_001.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA2_001.html" target="_blank">Bo_MkA2_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -705,7 +692,7 @@
             <td>배너등록</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA2_002.html" target="_blank">maketing/Bo_MkA2_002.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA2_002.html" target="_blank">Bo_MkA2_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -717,7 +704,7 @@
             <td>배너수정</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA2_003.html" target="_blank">maketing/Bo_MkA2_003.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA2_003.html" target="_blank">Bo_MkA2_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -729,7 +716,7 @@
             <td>혜택관리</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA3_001_T1.html" target="_blank">maketing/Bo_MkA3_001_T1.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA3_001_T1.html" target="_blank">Bo_MkA3_001_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -741,7 +728,7 @@
             <td></td>
             <td>추가 혜택 수정</td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA3_001_P1.html" target="_blank">maketing/Bo_MkA3_001_P1.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA3_001_P1.html" target="_blank">Bo_MkA3_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -753,7 +740,7 @@
             <td></td>
             <td>추가 혜택 등록</td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA3_001_P2.html" target="_blank">maketing/Bo_MkA3_001_P2.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA3_001_P2.html" target="_blank">Bo_MkA3_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -765,7 +752,7 @@
             <td>참여현황</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkA3_001_T2.html" target="_blank">maketing/Bo_MkA3_001_T2.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkA3_001_T2.html" target="_blank">Bo_MkA3_001_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -773,11 +760,23 @@
           </tr>
           <tr>
             <th></th>
+            <td>마케팅내역조회</td>
+            <td>참여현황</td>
+            <td></td>
+            <td></td>
+            <td class="link"><a href="./maketing/Bo_MkA3_001.html" target="_blank">Bo_MkA3_001.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
             <td>푸시관리</td>
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkPu_001.html" target="_blank">maketing/Bo_MkPu_001.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkPu_001.html" target="_blank">Bo_MkPu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -789,7 +788,7 @@
             <td>푸시 등록</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkPu_001_P1.html" target="_blank">maketing/Bo_MkPu_001_P1.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkPu_001_P1.html" target="_blank">Bo_MkPu_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -801,7 +800,7 @@
             <td>푸시 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkPu_001_P2.html" target="_blank">maketing/Bo_MkPu_001_P2.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkPu_001_P2.html" target="_blank">Bo_MkPu_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -813,7 +812,7 @@
             <td>푸시 수정</td>
             <td></td>
             <td></td>
-            <td><a href="./maketing/Bo_MkPu_001_P3.html" target="_blank">maketing/Bo_MkPu_001_P3.html</a></td>
+            <td class="link"><a href="./maketing/Bo_MkPu_001_P3.html" target="_blank">Bo_MkPu_001_P3.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -828,11 +827,11 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_001.html" target="_blank">eventManager/Bo_EmEv_001.html</a></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_001.html" target="_blank">Bo_EmEv_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
@@ -840,59 +839,251 @@
             <td>순서설정</td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_001_P.html" target="_blank">eventManager/Bo_EmEv_001_P.html</a></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_001_P.html" target="_blank">Bo_EmEv_001_P.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
             <td></td>
             <td>이벤트 등록</td>
+            <td>배너링크 CASE</td>
             <td></td>
-            <td></td>
-            <td><a href="./eventManager/Bo_EmEv_002.html" target="_blank">eventManager/Bo_EmEv_002.html</a></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002.html" target="_blank">Bo_EmEv_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>일반이벤트(이미지 등록) CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002_1.html" target="_blank">Bo_EmEv_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>일반이벤트(HTML등록) CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002_2.html" target="_blank">Bo_EmEv_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>설문이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002_3.html" target="_blank">Bo_EmEv_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>응모이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002_4.html" target="_blank">Bo_EmEv_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>퀴즈이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_002_5.html" target="_blank">Bo_EmEv_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
             <td></td>
             <td>이벤트 상세</td>
+            <td>배너링크 CASE</td>
             <td></td>
-            <td></td>
-            <td><a href="./eventManager/Bo_EmEv_003.html" target="_blank">eventManager/Bo_EmEv_003.html</a></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003.html" target="_blank">Bo_EmEv_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>일반이벤트(이미지 등록) CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003_1.html" target="_blank">Bo_EmEv_003.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>일반이벤트(HTML 등록) CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003_2.html" target="_blank">Bo_EmEv_003.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>설문이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003_3.html" target="_blank">Bo_EmEv_003.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>응모이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003_4.html" target="_blank">Bo_EmEv_003.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>퀴즈이벤트 CASE</td>
+            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_003_5.html" target="_blank">Bo_EmEv_003.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
             <td></td>
             <td>참여자조회</td>
             <td>당첨자 선정</td>
-            <td></td>
-            <td><a href="./eventManager/Bo_EmEv_004_T1.html" target="_blank">eventManager/Bo_EmEv_004_T1.html</a></td>
+            <td>배너링크, 일반이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T1.html" target="_blank">Bo_EmEv_004_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>설문이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T1_1.html" target="_blank">Bo_EmEv_004_T1.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>응모이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T1_2.html" target="_blank">Bo_EmEv_004_T1.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>퀴즈이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T1_3.html" target="_blank">Bo_EmEv_004_T1.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
             <td></td>
             <td></td>
             <td>당첨자 발표</td>
-            <td></td>
-            <td><a href="./eventManager/Bo_EmEv_004_T2.html" target="_blank">eventManager/Bo_EmEv_004_T2.html</a></td>
+            <td>배너링크, 일반이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T2.html" target="_blank">Bo_EmEv_004_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>설문이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T2_1.html" target="_blank">Bo_EmEv_004_T2.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>응모이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T2_2.html" target="_blank">Bo_EmEv_004_T2.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>퀴즈이벤트 CASE</td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_004_T2_3.html" target="_blank">Bo_EmEv_004_T2.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
@@ -900,8 +1091,8 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_005.html" target="_blank">eventManager/Bo_EmEv_005.html</a></td>
-            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_005.html" target="_blank">Bo_EmEv_005.html</a></td>
+            <td>추후 개발 진행 예정</td>
             <td></td>
             <td class="date">2024-08-31</td>
             <td class="status"></td>
@@ -912,8 +1103,8 @@
             <td>이벤트등록</td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_006.html" target="_blank">eventManager/Bo_EmEv_006.html</a></td>
-            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_006.html" target="_blank">Bo_EmEv_006.html</a></td>
+            <td>추후 개발 진행 예정</td>
             <td></td>
             <td class="date">2024-08-31</td>
             <td class="status"></td>
@@ -924,8 +1115,8 @@
             <td>이벤트상세</td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_007.html" target="_blank">eventManager/Bo_EmEv_007.html</a></td>
-            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_007.html" target="_blank">Bo_EmEv_007.html</a></td>
+            <td>추후 개발 진행 예정</td>
             <td></td>
             <td class="date">2024-08-31</td>
             <td class="status"></td>
@@ -936,8 +1127,8 @@
             <td>참여자조회</td>
             <td></td>
             <td></td>
-            <td><a href="./eventManager/Bo_EmEv_008.html" target="_blank">eventManager/Bo_EmEv_008.html</a></td>
-            <td></td>
+            <td class="link"><a href="./eventManager/Bo_EmEv_008.html" target="_blank">Bo_EmEv_008.html</a></td>
+            <td>추후 개발 진행 예정</td>
             <td></td>
             <td class="date">2024-08-31</td>
             <td class="status"></td>
@@ -951,7 +1142,7 @@
             <td>대시보드/목록</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_001.html" target="_blank">shop/Bo_EmEv_001.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_001.html" target="_blank">Bo_EmEv_001.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -963,7 +1154,7 @@
             <td>해피캐시교환 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_002.html" target="_blank">shop/Bo_EmEv_002.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_002.html" target="_blank">Bo_EmEv_002.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -975,7 +1166,7 @@
             <td>목록</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_003.html" target="_blank">shop/Bo_EmEv_003.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_003.html" target="_blank">Bo_EmEv_003.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -987,7 +1178,7 @@
             <td>핫딜 등록</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_004.html" target="_blank">shop/Bo_EmEv_004.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_004.html" target="_blank">Bo_EmEv_004.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -999,7 +1190,7 @@
             <td>핫딜 상세/수정</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_005.html" target="_blank">shop/Bo_EmEv_005.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_005.html" target="_blank">Bo_EmEv_005.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1011,7 +1202,7 @@
             <td>스템프관리</td>
             <td></td>
             <td></td>
-            <td><a href="./shop/Bo_EmEv_005.html" target="_blank">shop/Bo_EmEv_005.html</a></td>
+            <td class="link"><a href="./shop/Bo_EmEv_005.html" target="_blank">Bo_EmEv_005.html</a></td>
             <td>화면ID 확인 필요</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1026,7 +1217,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./happyToon/Bo_Ht_001.html" target="_blank">happyToon/Bo_Ht_001.html</a></td>
+            <td class="link"><a href="./happyToon/Bo_Ht_001.html" target="_blank">Bo_Ht_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1038,7 +1229,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./happyToon/Bo_Ht_002.html" target="_blank">happyToon/Bo_Ht_002.html</a></td>
+            <td class="link"><a href="./happyToon/Bo_Ht_002.html" target="_blank">Bo_Ht_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1050,7 +1241,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./happyToon/Bo_Ht_003.html" target="_blank">happyToon/Bo_Ht_003.html</a></td>
+            <td class="link"><a href="./happyToon/Bo_Ht_003.html" target="_blank">Bo_Ht_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1065,7 +1256,7 @@
             <td>1:1문의 관리</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_001.html" target="_blank">customerManager/Bo_CmCs_001.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_001.html" target="_blank">Bo_CmCs_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1077,7 +1268,7 @@
             <td></td>
             <td>1:1 상세 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_001_P1.html" target="_blank">customerManager/Bo_CmCs_001_P1.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_001_P1.html" target="_blank">Bo_CmCs_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1089,7 +1280,7 @@
             <td></td>
             <td>1:1 상세 팝업(답변완료 이후)</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_001_P2.html" target="_blank">customerManager/Bo_CmCs_001_P2.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_001_P2.html" target="_blank">Bo_CmCs_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1101,7 +1292,7 @@
             <td></td>
             <td>수정내역 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_001_P3.html" target="_blank">customerManager/Bo_CmCs_001_P3.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_001_P3.html" target="_blank">Bo_CmCs_001_P3.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1113,7 +1304,7 @@
             <td>FAQ관리</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_002.html" target="_blank">customerManager/Bo_CmCs_002.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_002.html" target="_blank">Bo_CmCs_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1125,7 +1316,7 @@
             <td></td>
             <td>등록 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_002_P1.html" target="_blank">customerManager/Bo_CmCs_002_P1.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_002_P1.html" target="_blank">Bo_CmCs_002_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1137,7 +1328,7 @@
             <td></td>
             <td>수정 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_002_P2.html" target="_blank">customerManager/Bo_CmCs_002_P2.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_002_P2.html" target="_blank">Bo_CmCs_002_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1149,7 +1340,7 @@
             <td>공지사항</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_003.html" target="_blank">customerManager/Bo_CmCs_003.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_003.html" target="_blank">Bo_CmCs_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1161,7 +1352,7 @@
             <td></td>
             <td>등록 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_003_P1.html" target="_blank">customerManager/Bo_CmCs_003_P1.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_003_P1.html" target="_blank">Bo_CmCs_003_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1173,7 +1364,7 @@
             <td></td>
             <td>수정 팝업</td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmCs_003_P2.html" target="_blank">customerManager/Bo_CmCs_003_P2.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmCs_003_P2.html" target="_blank">Bo_CmCs_003_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1185,7 +1376,7 @@
             <td>목록</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmGu_001.html" target="_blank">customerManager/Bo_CmGu_001.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmGu_001.html" target="_blank">Bo_CmGu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1197,7 +1388,7 @@
             <td>약관 신규등록</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmGu_001_P1.html" target="_blank">customerManager/Bo_CmGu_001_P1.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmGu_001_P1.html" target="_blank">Bo_CmGu_001_P1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1209,7 +1400,7 @@
             <td>약관 상세/수정</td>
             <td></td>
             <td></td>
-            <td><a href="./customerManager/Bo_CmGu_001_P2.html" target="_blank">customerManager/Bo_CmGu_001_P2.html</a></td>
+            <td class="link"><a href="./customerManager/Bo_CmGu_001_P2.html" target="_blank">Bo_CmGu_001_P2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1224,7 +1415,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmAc_001.html" target="_blank">statisticsManagement/Bo_SmAc_001.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmAc_001.html" target="_blank">Bo_SmAc_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1236,7 +1427,7 @@
             <td>접속통계 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmAc_002.html" target="_blank">statisticsManagement/Bo_SmAc_002.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmAc_002.html" target="_blank">Bo_SmAc_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1248,7 +1439,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmRe_001.html" target="_blank">statisticsManagement/Bo_SmRe_001.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmRe_001.html" target="_blank">Bo_SmRe_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1260,7 +1451,7 @@
             <td>포인트 통계 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmRe_002.html" target="_blank">statisticsManagement/Bo_SmRe_002.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmRe_002.html" target="_blank">Bo_SmRe_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1272,7 +1463,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmCv_001.html" target="_blank">statisticsManagement/Bo_SmCv_001.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmCv_001.html" target="_blank">Bo_SmCv_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1284,7 +1475,7 @@
             <td>콘텐츠 이용 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmCv_002.html" target="_blank">statisticsManagement/Bo_SmCv_002.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmCv_002.html" target="_blank">Bo_SmCv_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1296,7 +1487,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmVv_001.html" target="_blank">statisticsManagement/Bo_SmVv_001.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmVv_001.html" target="_blank">Bo_SmVv_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1308,7 +1499,7 @@
             <td>방문자 유형 통계 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./statisticsManagement/Bo_SmVv_002.html" target="_blank">statisticsManagement/Bo_SmVv_002.html</a></td>
+            <td class="link"><a href="./statisticsManagement/Bo_SmVv_002.html" target="_blank">Bo_SmVv_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1323,7 +1514,7 @@
             <td>엔돌스타 관리</td>
             <td>등급혜택관리</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_001.html" target="_blank">systemManager/Bo_SyPo_001.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_001.html" target="_blank">Bo_SyPo_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1335,7 +1526,7 @@
             <td></td>
             <td></td>
             <td>등급혜택 등록/수정</td>
-            <td><a href="./systemManager/Bo_SyPo_002_L.html" target="_blank">systemManager/Bo_SyPo_002_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_002_L.html" target="_blank">Bo_SyPo_002_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1347,7 +1538,7 @@
             <td></td>
             <td></td>
             <td>등급혜택 이력 조회</td>
-            <td><a href="./systemManager/Bo_SyPo_003_L.html" target="_blank">systemManager/Bo_SyPo_003_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_003_L.html" target="_blank">Bo_SyPo_003_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1359,7 +1550,7 @@
             <td></td>
             <td>레벨구간관리</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_004.html" target="_blank">systemManager/Bo_SyPo_004.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_004.html" target="_blank">Bo_SyPo_004.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1371,7 +1562,7 @@
             <td></td>
             <td></td>
             <td>레벨혜택관리 등록/수정</td>
-            <td><a href="./systemManager/Bo_SyPo_005_L.html" target="_blank">systemManager/Bo_SyPo_005_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_005_L.html" target="_blank">Bo_SyPo_005_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1383,7 +1574,7 @@
             <td></td>
             <td></td>
             <td>레벨혜택관리 이력 조회</td>
-            <td><a href="./systemManager/Bo_SyPo_006_L.html" target="_blank">systemManager/Bo_SyPo_006_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_006_L.html" target="_blank">Bo_SyPo_006_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1395,7 +1586,7 @@
             <td></td>
             <td>꾸미기관리</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_007.html" target="_blank">systemManager/Bo_SyPo_007.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_007.html" target="_blank">Bo_SyPo_007.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1407,7 +1598,7 @@
             <td></td>
             <td></td>
             <td>꾸미기 상세/수정</td>
-            <td><a href="./systemManager/Bo_SyPo_008.html" target="_blank">systemManager/Bo_SyPo_008.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_008.html" target="_blank">Bo_SyPo_008.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1419,7 +1610,7 @@
             <td></td>
             <td></td>
             <td>꾸리기 신규등록</td>
-            <td><a href="./systemManager/Bo_SyPo_009.html" target="_blank">systemManager/Bo_SyPo_009.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_009.html" target="_blank">Bo_SyPo_009.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1431,7 +1622,7 @@
             <td>오락실</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_010.html" target="_blank">systemManager/Bo_SyPo_010.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_010.html" target="_blank">Bo_SyPo_010.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1443,7 +1634,7 @@
             <td></td>
             <td>오락실 혜택 등록/수정</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_011_L.html" target="_blank">systemManager/Bo_SyPo_011_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_011_L.html" target="_blank">Bo_SyPo_011_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1455,7 +1646,7 @@
             <td></td>
             <td>오락실 혜택 조회</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_012_L.html" target="_blank">systemManager/Bo_SyPo_012_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_012_L.html" target="_blank">Bo_SyPo_012_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1467,7 +1658,7 @@
             <td>챌린지</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_013.html" target="_blank">systemManager/Bo_SyPo_013.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_013.html" target="_blank">Bo_SyPo_013.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1479,7 +1670,7 @@
             <td></td>
             <td>챌린지 혜택 등록/수정</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_014_L.html" target="_blank">systemManager/Bo_SyPo_014_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_014_L.html" target="_blank">Bo_SyPo_014_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1491,7 +1682,7 @@
             <td></td>
             <td>챌린지 혜택 조회</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_015_L.html" target="_blank">systemManager/Bo_SyPo_015_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_015_L.html" target="_blank">Bo_SyPo_015_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1503,7 +1694,7 @@
             <td>랭킹보드</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_016.html" target="_blank">systemManager/Bo_SyPo_016.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_016.html" target="_blank">Bo_SyPo_016.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1515,7 +1706,7 @@
             <td></td>
             <td>랭킹보드 혜택 등록/수정</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_017_L.html" target="_blank">systemManager/Bo_SyPo_017_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_017_L.html" target="_blank">Bo_SyPo_017_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1527,7 +1718,7 @@
             <td></td>
             <td>랭킹보드 혜택 조회</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyPo_018_L.html" target="_blank">systemManager/Bo_SyPo_018_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyPo_018_L.html" target="_blank">Bo_SyPo_018_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1539,7 +1730,7 @@
             <td>목록</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_001.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_001.html" target="_blank">Bo_SyAu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1551,7 +1742,7 @@
             <td>목록(Gird table)</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_001_grid.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_001_grid.html" target="_blank">Bo_SyAu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1563,7 +1754,7 @@
             <td></td>
             <td>검색결과</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_001_2.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_001_2.html" target="_blank">Bo_SyAu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1575,7 +1766,7 @@
             <td></td>
             <td>검색결과 없음</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_001_3.html" target="_blank">systemManager/Bo_SyAu_001.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_001_3.html" target="_blank">Bo_SyAu_001.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1587,7 +1778,7 @@
             <td>직원 정보 상세</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_002.html" target="_blank">systemManager/Bo_SyAu_002.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_002.html" target="_blank">Bo_SyAu_002.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1599,7 +1790,7 @@
             <td>직원 권한 등록</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_003.html" target="_blank">systemManager/Bo_SyAu_003.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_003.html" target="_blank">Bo_SyAu_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1611,7 +1802,7 @@
             <td></td>
             <td>직원 권한 수정</td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_003_2.html" target="_blank">systemManager/Bo_SyAu_003.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_003_2.html" target="_blank">Bo_SyAu_003.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1623,7 +1814,7 @@
             <td>수정이력 보기</td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_004_L.html" target="_blank">systemManager/Bo_SyAu_004_L.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_004_L.html" target="_blank">Bo_SyAu_004_L.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1635,7 +1826,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="./systemManager/Bo_SyAu_005.html" target="_blank">systemManager/Bo_SyAu_005.html</a></td>
+            <td class="link"><a href="./systemManager/Bo_SyAu_005.html" target="_blank">Bo_SyAu_005.html</a></td>
             <td>기획 미수급</td>
             <td></td>
             <td class="date">2024-08-31</td>
@@ -1644,35 +1835,84 @@
           <!-- //시스템관리 -->
         </tbody>
       </table>
+      <div class="filter-menu" id="filter-menu">
+        <button data-status="all">전체</button>
+        <button data-status="ing">진행 중</button>
+        <button data-status="complete">작업 완료</button>
+        <!-- <button data-status="modify">수정 완료</button> -->
+        <button data-status="confirm">컨펌 완료</button>
+      </div>
     </main>
   </div>
 
   <!-- page script -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const rows = document.querySelectorAll("tbody tr");
-      let total = 0;
-      let complete = 0;
-      let confirm = 0;
+      const sortingButton = document.getElementById("btnFilter");
+      const filterMenu = document.getElementById("filter-menu");
+      const rows = document.querySelectorAll(".tbl-guide tbody tr");
 
-      rows.forEach(row => {
-        const statusCell = row.querySelector(".status");
-        if (statusCell) {
-          total++;
-          if (statusCell.classList.contains("complete")) {
-            complete++;
-          }
-          if (statusCell.classList.contains("confirm")) {
-            confirm++;
-          }
+      sortingButton.addEventListener("click", function(event) {
+        const rect = sortingButton.getBoundingClientRect();
+        filterMenu.style.top = `${rect.bottom}px`;
+        filterMenu.style.left = `${rect.left}px`;
+        filterMenu.style.display = filterMenu.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", function(event) {
+        if (!filterMenu.contains(event.target) && !sortingButton.contains(event.target)) {
+          filterMenu.style.display = "none";
         }
       });
 
-      const progressRate = (complete / total) * 100;
-      const finalRate = (confirm / total) * 100;
+      filterMenu.addEventListener("click", function(event) {
+        if (event.target.tagName === "BUTTON") {
+          const status = event.target.getAttribute("data-status");
+          filterRows(status);
+          filterMenu.style.display = "none";
+        }
+      });
 
-      console.log(`진척률 (완료 기준): ${progressRate.toFixed(2)}%`);
-      console.log(`최종 완료율 (컨펌 기준): ${finalRate.toFixed(2)}%`);
+      function filterRows(status) {
+        rows.forEach(row => {
+          const statusCell = row.querySelector(".status");
+          if (status === "all") {
+            row.style.display = "";
+          } else if (statusCell && statusCell.classList.contains(status)) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      }
+
+      // Initial progress calculation
+      calculateProgress();
+
+      function calculateProgress() {
+        let total = 0;
+        let complete = 0;
+        let confirm = 0;
+
+        rows.forEach(row => {
+          const statusCell = row.querySelector(".status");
+          if (statusCell) {
+            total++;
+            if (statusCell.classList.contains("complete")) {
+              complete++;
+            }
+            if (statusCell.classList.contains("confirm")) {
+              confirm++;
+            }
+          }
+        });
+
+        const progressRate = (complete / total) * 100;
+        const finalRate = (confirm / total) * 100;
+
+        console.log(`진척률 (완료 기준): ${progressRate.toFixed(2)}%`);
+        console.log(`최종 완료율 (컨펌완료 기준): ${finalRate.toFixed(2)}%`);
+      }
     });
   </script>
 </body>

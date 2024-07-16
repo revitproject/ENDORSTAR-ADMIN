@@ -4,6 +4,18 @@
   display: flex;
   flex-direction: column;
 }
+.dashboard .content-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.dashboard .content-title > span {
+  display: inline-block;
+  margin-left: .8rem;
+  color: var(--grays-2);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
 .dashboard .dashboard-info {
   display: flex;
   justify-content: space-between;
