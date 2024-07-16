@@ -36,13 +36,15 @@
       
 <pre><code class="language-Markup">&lt;a href="#modal1" class="btn is-grays-1" data-modal="open">a tag&lt;/a>
 &lt;button type="button" class="btn is-grays-1" data-modal="open" data-url="#modal1">button tag(data-url로 id값 전달)&lt;/button>
-&lt;button type="button" class="btn is-grays-1" onclick="customAlert.alert('타이틀', '텍스트', '확인 실행 함수');">alert&lt;/button>
-&lt;button type="button" class="btn is-grays-1" onclick="customAlert.confirm('타이틀', '텍스트', '확인 실행 함수', '취소 실행 함수');">confirm&lt;/button></code>
+&lt;button type="button" class="btn is-grays-1" onclick="customAlert.alert('타이틀', '텍스트', 'trueFn()');">alert&lt;/button>
+&lt;button type="button" class="btn is-grays-1" onclick="customAlert.confirm('타이틀', '텍스트', 'trueFn()', 'falseFn()');">confirm&lt;/button></code>
 </pre>
 
   <h2 class="component-title">Markup</h2>
+  <p class="component-desc">하기 마크업 포함</p>
 <pre>
-<code class="language-Markup">&lt;div id="modal1" class="modal" data-modal="target">
+<code class="language-Markup">&lt;!-- modal이 필요한 화면에 작성 --&gt;
+  &lt;div id="modal1" class="modal" data-modal="target">
   &lt;div class="modal-dimmed">&lt;/div>
   &lt;div class="modal-inner" style="width: 450px;"> &lt;!-- 모달 크기 지정 --&gt;
     &lt;div class="modal-header">
@@ -58,6 +60,7 @@
   &lt;/div>
 &lt;/div>
 
+&lt;!-- 공통으로 사용시 --&gt;
 &lt;div id="alert" class="modal" data-modal="alert">
   &lt;div class="modal-dimmed">&lt;/div>
   &lt;div class="modal-inner has-alert">
@@ -141,22 +144,22 @@
     </div>
   </div>
 
-  <div id="alert" class="modal" data-modal="alert">
-    <div class="modal-dimmed"></div>
-    <div class="modal-inner has-alert">
-      <div class="modal-header">
-        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-        <strong class="modal-title" id="alert__tit">$타이틀$</strong>
-      </div>
-      <div class="modal-content">
-        <p class="alert-msg">$메시지$</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn is-footer is-false">취소</button>
-        <button type="button" class="btn is-footer is-true">확인</button>
-      </div>
+<div id="alert" class="modal" data-modal="alert">
+  <div class="modal-dimmed"></div>
+  <div class="modal-inner has-alert">
+    <div class="modal-header">
+      <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+      <strong class="modal-title" id="alert__tit">$타이틀$</strong>
+    </div>
+    <div class="modal-content">
+      <p class="alert-msg">$메시지$</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn is-footer is-false">취소</button>
+      <button type="button" class="btn is-footer is-true">확인</button>
     </div>
   </div>
+</div>
   <!-- /modal -->
 
   <script>

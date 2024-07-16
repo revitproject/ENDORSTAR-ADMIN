@@ -117,7 +117,7 @@
                           <td>
                             <div class="btn-group">
                               <button type="button" data-url="#Bo_MiGa_001_P1" data-modal="open" class="btn is-outline-2 is-h26">수정</button>
-                              <button type="button" data-url="#preview2" data-modal="open" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
+                              <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', () => { deleteData(); }, () => { console.log('삭제 취소됨'); });">삭제</button>
                             </div>
                           </td>
                         </tr>
@@ -808,6 +808,12 @@
         lnbActive(2, 0, 0); // 1epth, 2epth, 3dpeth
       }, 50);
     });
+
+    // confirm 사용 예시 추가
+    function deleteData() {
+      console.log('데이터 삭제됨');
+      // 데이터 삭제를 수행하는 코드 추가
+    }
   </script>
 
   <script>
