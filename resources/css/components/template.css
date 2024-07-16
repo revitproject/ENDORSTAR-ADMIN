@@ -136,10 +136,10 @@ pre[class*=language-] {
 }
 
 /* worklist */
-.guide.base-wrap::before {
+.base-wrap.guide::before {
   display: none;
 }
-.guide.base-wrap {
+.base-wrap.guide {
   padding: 4rem 2rem;
 }
 .guide .base-content {

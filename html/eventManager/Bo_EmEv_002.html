@@ -22,11 +22,36 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">이벤트</h1>
+      <h1 class="content-title">이벤트 등록</h1>
       <div class="content-inner">
         <div class="form-searchbox">
           <dl class="dl-formbox">
-            <dt>기간</dt>
+            <dt>이벤트 유형</dt>
+            <dd>
+              <div class="form-radio">
+                <label><input type="radio" name="eventType" class="inp-radio" checked>엔돌캐시</label>
+                <label><input type="radio" name="eventType" class="inp-radio">상품권</label>
+                <label><input type="radio" name="eventType" class="inp-radio">제휴상품</label>
+                <label><input type="radio" name="eventType" class="inp-radio">아이템</label>
+                <label><input type="radio" name="eventType" class="inp-radio">골드해머</label>
+                <label><input type="radio" name="eventType" class="inp-radio">기타</label>
+              </div>
+            </dd>
+            <dt>이벤트 타겟</dt>
+            <dd>
+              <div class="form-radio">
+                <label><input type="radio" name="eventTarget" class="inp-radio" checked>전체</label>
+                <label><input type="radio" name="eventTarget" class="inp-radio">AND</label>
+                <label><input type="radio" name="eventTarget" class="inp-radio">IOS</label>
+              </div>
+            </dd>
+          </dl>
+          <div class="dl-formbox">
+            <dt><label for="inpName" class="lb-inp">이벤트 명</label></dt>
+            <dd><input type="text" id="inpName" class="inp-base" placeholder="이벤트 명을 입력해주세요." style="width: 63rem;"></dd>
+          </div>
+          <dl class="dl-formbox">
+            <dt>이벤트 기간</dt>
             <dd>
               <div class="area-datepicker">
                 <div class="wrap-datepicker">
@@ -54,6 +79,8 @@
                 </div>
               </div>
             </dd>
+          </dl>
+          <dl class="dl-formbox">
             <dt>진행여부</dt>
             <dd>
               <div class="form-radio">
@@ -61,31 +88,6 @@
                 <label><input type="radio" name="progressType" class="inp-radio">Y</label>
                 <label><input type="radio" name="progressType" class="inp-radio">N</label>
               </div>
-            </dd>
-          </dl>
-          <dl class="dl-formbox">
-            <dt><label for="eventType1" class="lb-inp">이벤트 구분</label></dt>
-            <dd>
-              <select id="eventType1" class="inp-select is-sm">
-                <option value="">전체</option>
-                <option value="">엔돌캐시</option>
-                <option value="">상품권</option>
-                <option value="">제휴상품</option>
-                <option value="">아이템</option>
-                <option value="">골드해머</option>
-              </select>
-            </dd>
-            <dt><label for="eventType2" class="lb-inp">이벤트 유형</label></dt>
-            <dd>
-              <select id="eventType2" class="inp-select is-sm">
-                <option value="">전체</option>
-                <option value="">배너링크</option>
-                <option value="">일반이벤트</option>
-                <option value="">설문이벤트</option>
-                <option value="">응모이벤트</option>
-                <option value="">퀴즈이벤트</option>
-                <option value="">빙고이벤트</option>
-              </select>
             </dd>
           </dl>
           <dl class="dl-formbox inbtn">
@@ -116,6 +118,14 @@
                 <option value="">100개씩 보기</option>
               </select>
               <div class="head-option">
+                <select class="inp-select">
+                  <option value="" selected="">전체</option>
+                  <option value="">엔돌캐시</option>
+                  <option value="">상품권</option>
+                  <option value="">제휴상품</option>
+                  <option value="">아이템</option>
+                  <option value="">골드해머</option>
+                </select>
                 <button type="button" data-url="#Bo_EmEv_001_P" data-modal="open" class="btn is-outline-2 is-h28">순서설정</button>
               </div>
             </div>
@@ -327,34 +337,34 @@
           <div class="area-scroll">
             <div class="scroll-content">
               <div class="wrap-draglist">
-                <ul id="drag-list">
-                  <li draggable="true">
+                <ul>
+                  <li>
                     <span>%이벤트명%</span>
-                    <span class="wrap-btn">
+                    <span>
                       <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
                     </span>
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span>빙고이벤트</span>
-                    <span class="wrap-btn">
+                    <span>
                       <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
                     </span>
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span>설문이벤트</span>
-                    <span class="wrap-btn">
+                    <span>
                       <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
                     </span>
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span>일반이벤트</span>
-                    <span class="wrap-btn">
+                    <span>
                       <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
                     </span>
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span>배너링크이벤트</span>
-                    <span class="wrap-btn">
+                    <span>
                       <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
                     </span>
                   </li>
@@ -363,10 +373,9 @@
             </div>
           </div>
         </div>
-        
         <div class="modal-footer align-center">
-          <button type="button" class="btn is-grays-1 is-footer is-false">취소</button>
-          <button type="button" class="btn is-primary is-footer is-true">저장</button>
+          <button type="button" class="btn is-grays-1 is-footer">취소</button>
+          <button type="button" class="btn is-primary is-footer">저장</button>
         </div>
       </div>
     </div>
@@ -458,96 +467,6 @@
 
       startpicker.setDate(startDate);
       endpicker.setDate(endDate);
-    });
-
-    // drag&drop
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const dragList = document.getElementById('drag-list');
-      let dragSrcEl = null;
-      let items = null;
-
-      /**
-       * 드래그 시작 시 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragStart(e) {
-        this.classList.add('dragging');
-        dragSrcEl = this;
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/html', this.innerHTML);
-      }
-
-      /**
-       * 드래그 종료 시 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragEnd(e) {
-        this.classList.remove('dragging');
-        items.forEach(function (item) {
-          item.classList.remove('over');
-        });
-      }
-
-      /**
-       * 드래그 요소가 다른 요소 위에 있을 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragOver(e) {
-        if (e.preventDefault) {
-          e.preventDefault();
-        }
-        e.dataTransfer.dropEffect = 'move';
-        return false;
-      }
-
-      /**
-       * 드래그 요소가 다른 요소 위에 들어올 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragEnter(e) {
-        this.classList.add('over');
-      }
-
-      /**
-       * 드래그 요소가 다른 요소를 벗어날 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragLeave(e) {
-        this.classList.remove('over');
-      }
-
-      /**
-       * 드래그 요소가 드롭될 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDrop(e) {
-        if (e.stopPropagation) {
-          e.stopPropagation();
-        }
-        if (dragSrcEl !== this) {
-          dragSrcEl.innerHTML = this.innerHTML;
-          this.innerHTML = e.dataTransfer.getData('text/html');
-        }
-        return false;
-      }
-
-      /**
-       * 각 리스트 항목에 드래그 앤 드롭 이벤트 리스너 추가
-       */
-      function addEventListeners() {
-        items = document.querySelectorAll('#drag-list li');
-        items.forEach(function(item) {
-          item.addEventListener('dragstart', handleDragStart, false);
-          item.addEventListener('dragenter', handleDragEnter, false);
-          item.addEventListener('dragover', handleDragOver, false);
-          item.addEventListener('dragleave', handleDragLeave, false);
-          item.addEventListener('drop', handleDrop, false);
-          item.addEventListener('dragend', handleDragEnd, false);
-        });
-      }
-
-      // 초기 이벤트 리스너 추가
-      addEventListeners();
     });
   </script>
 </body>

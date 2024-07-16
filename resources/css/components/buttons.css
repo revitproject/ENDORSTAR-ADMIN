@@ -105,7 +105,7 @@
   background-color: var(--grays-2)
 }
 
-/* 검색 */
+/* type */
 .btn.is-reset {
   border-color: var(--grays-5);
 }
@@ -119,6 +119,10 @@
   background-position: 0 50%;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16312 10.0027C3.88932 8.98275 3.96195 7.9008 4.36962 6.92664C4.77729 5.95248 5.49691 5.14128 6.41552 4.62038C7.33412 4.09947 8.3997 3.89836 9.44498 4.04861C10.4903 4.19886 11.456 4.69196 12.1907 5.45051C12.9254 6.20906 13.3874 7.19012 13.5042 8.23966C13.621 9.2892 13.3859 10.3478 12.836 11.2493C12.286 12.1508 11.4522 12.8441 10.4655 13.2205C9.47883 13.5968 8.3951 13.6349 7.38446 13.3286' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M8.4005 12.0647L6.93384 13.5314L8.4005 14.998' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.btn.is-text {
+  min-width: 3rem;
+  text-decoration: underline;
 }
 
 /* icon */
