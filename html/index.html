@@ -12,7 +12,13 @@
 <body class="bg-white">
   <div class="base-wrap guide">
     <main class="base-content">
-      <h1 class="content-title">ENDORSTAR ADMIN</h1>
+      <div class="wrap-title">
+        <h1 class="content-title">ENDORSTAR ADMIN</h1>
+        <div class="progress-rate">
+          <p><span class="progress-tit">진척률 (작업완료 기준):</span> <span id="progressRate">0%</span></p>
+          <p><span class="progress-tit">최종 완료율 (컨펌완료 기준):</span> <span id="finalRate">0%</span></p>
+        </div>
+      </div>
       <table class="tbl-base tbl-guide">
         <colgroup>
           <col style="width: 10%;">
@@ -828,7 +834,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -840,7 +846,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -852,7 +858,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -864,7 +870,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <!-- //마케팅관리 -->
     
@@ -1896,24 +1902,26 @@
 
   <!-- page script -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+   document.addEventListener("DOMContentLoaded", function() {
       const sortingButton = document.getElementById("btnFilter");
       const filterMenu = document.getElementById("filter-menu");
       const rows = document.querySelectorAll(".tbl-guide tbody tr");
-  
+      const progressRateElement = document.getElementById("progressRate");
+      const finalRateElement = document.getElementById("finalRate");
+
       sortingButton.addEventListener("click", function(event) {
         const rect = sortingButton.getBoundingClientRect();
         filterMenu.style.top = `${rect.bottom}px`;
         filterMenu.style.left = `${rect.left}px`;
         filterMenu.style.display = filterMenu.style.display === "block" ? "none" : "block";
       });
-  
+
       document.addEventListener("click", function(event) {
         if (!filterMenu.contains(event.target) && !sortingButton.contains(event.target)) {
           filterMenu.style.display = "none";
         }
       });
-  
+
       filterMenu.addEventListener("click", function(event) {
         if (event.target.tagName === "BUTTON") {
           const status = event.target.getAttribute("data-status");
@@ -1921,13 +1929,13 @@
           filterMenu.style.display = "none";
         }
       });
-  
+
       function filterRows(status) {
         rows.forEach(row => {
           const statusCell = row.querySelector(".status");
           const linkCell = row.querySelector(".link");
           const isDeleted = statusCell && statusCell.classList.contains("delete");
-  
+
           if (status === "delete") {
             if (isDeleted) {
               row.style.display = "";
@@ -1936,10 +1944,9 @@
               row.style.display = "none";
             }
           } else if (status === "all") {
+            row.style.display = ""; // `all` 필터에서는 모든 항목을 보여주기
             if (isDeleted) {
-              row.style.display = "none"; // `delete` 상태는 'all' 필터에서도 숨기기
-            } else {
-              row.style.display = "";
+              linkCell.classList.add("del");
             }
           } else {
             if (statusCell && statusCell.classList.contains(status)) {
@@ -1950,15 +1957,15 @@
           }
         });
       }
-  
+
       // 초기 진행률 계산
       calculateProgress();
-  
+
       function calculateProgress() {
         let total = 0;
         let complete = 0;
         let confirm = 0;
-  
+
         rows.forEach(row => {
           const statusCell = row.querySelector(".status");
           if (statusCell) {
@@ -1971,18 +1978,25 @@
             }
           }
         });
-  
-        const progressRate = (complete / total) * 100;
-        const finalRate = (confirm / total) * 100;
-  
-        console.log(`진척률 (완료 기준): ${progressRate.toFixed(2)}%`);
-        // console.log(`최종 완료율 (컨펌완료 기준): ${finalRate.toFixed(2)}%`);
+
+        const progressRate = Math.floor((complete / total) * 100);
+        const finalRate = Math.floor((confirm / total) * 100);
+
+        progressRateElement.textContent = `${progressRate}%`;
+        finalRateElement.textContent = `${finalRate}%`;
+
+        console.log(`진척률 (완료 기준): ${progressRate}%`);
+        console.log(`최종 완료율 (컨펌완료 기준): ${finalRate}%`);
       }
-  
+
       // 초기 목록에서는 delete 상태 숨기기
-      filterRows("all");
+      rows.forEach(row => {
+        const statusCell = row.querySelector(".status");
+        if (statusCell && statusCell.classList.contains("delete")) {
+          row.style.display = "none";
+        }
+      });
     });
   </script>
-  
 </body>
 </html>

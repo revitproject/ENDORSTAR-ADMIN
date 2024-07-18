@@ -237,3 +237,25 @@ pre[class*=language-] {
   cursor: auto;
   text-decoration: line-through;
 }
+.guide .wrap-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.guide .progress-rate {
+  width: 24rem;
+  padding: 1.2rem 2rem;
+  border: .1rem solid var(--grays-5);
+  background-color: #fafafa;
+  border-radius: .6rem;
+}
+.guide .progress-rate p {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--grays-2);
+  font-size: 1.3rem;
+}
+.guide .progress-rate .progress-tit {
+  color: var(--grays-1);
+}
