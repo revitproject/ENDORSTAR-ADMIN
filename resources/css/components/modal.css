@@ -24,9 +24,11 @@
   flex-direction: column;
   min-width: 34rem;
   min-height: 20rem;
-  max-height: 60.8rem;
+  /* max-height: 60.8rem; */
+  max-height: 74.7rem;
   background-color: #fff;
   border-radius: 3rem;
+  box-shadow: .4rem .4rem 2.7rem 0 rgba(0, 0, 0, 0.2);
 }
 .modal .modal-header {
   position: relative;
@@ -89,6 +91,13 @@
 }
 .modal-footer .btn {
   border-radius: .8rem;
+}
+.modal-footer .btn.is-secondary-1 {
+  color: var(--grays-1);
+}
+.modal-footer .btn:disabled {
+  color: #fff;
+  background-color: var(--grays-4);
 }
 .modal-footer .btn+.btn {
   margin-left: .8rem;
@@ -155,6 +164,7 @@
   font-size: 1.4rem;
   font-weight: 400;
   padding-left: 1.2rem;
+  line-height: 2.8rem;
 }
 .modal .tbl-dl .inp-base {
   width: 100%;
@@ -169,6 +179,9 @@
   color: var(--grays-1);
   font-size: 1.3rem;
   font-weight: 500
+}
+.modal .tbl-dl .form-radio > label {
+  gap: .4rem;
 }
 .modal .area-tbl-dl {
   display: flex;
@@ -222,7 +235,13 @@
 .modal.is-userinfo .tbl-dl .inp-select {
   width: 100%;
 }
-
 .modal .wrap-pagination .pagination {
   margin-top: .4rem;
+}
+
+/* etc */
+.form-radio > label,
+.form-checkbox > label {
+  color: var(--grays-1);
+  font-weight: 400;
 }

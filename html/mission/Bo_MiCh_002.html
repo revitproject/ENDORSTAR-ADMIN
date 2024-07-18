@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap mission">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">챌린지관리 > 친구초대</h1>
+        <div class="module-top">
+          <div class="form-searchbox">
+            <dl class="dl-formbox">
+              <dt>기간</dt>
+              <dd>
+                <div class="area-datepicker">
+                  <!-- DatePicker -->
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                    <span class="datepicker-to">~</span>
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //DatePicker -->
+                  <div class="btn-options">
+                    <button type="button" class="btn is-secondary-1 is-active">오늘</button>
+                    <button type="button" class="btn is-secondary-1">1주일</button>
+                    <button type="button" class="btn is-secondary-1">1개월</button>
+                    <button type="button" class="btn is-secondary-1">3개월</button>
+                    <button type="button" class="btn is-secondary-1">6개월</button>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox inbtn">
+              <dt>진행여부</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="progressType" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="progressType" class="inp-radio">Y</label>
+                  <label><input type="radio" name="progressType" class="inp-radio">N</label>
+                </div>
+              </dd>
+              <dt><span class="hidden">검색어</span></dt>
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                <button type="submit" class="btn is-search">검색</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+              </div>
+  
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col style="width: 40rem;">
+                  <col style="width: 10rem;">
+                  <col style="width: 20rem;">
+                  <col>
+                  <col>
+                  <col style="width: 10rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>챌린지기간</th>
+                    <th>참여자</th>
+                    <th>조회수</th>
+                    <th>등록</th>
+                    <th>수정</th>
+                    <th>진행여부</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26" onclick="location.href='./Bo_MiCh_002_03.html'">조회</button></td>
+                    <td>%조회수%</td>
+                    <td><span class="data-block id">%등록자ID%</span> <span class="data-block time">(%등록시간%)</span></td>
+                    <td><span class="data-block id">%수정자ID%</span> <span class="data-block time">(%수정시간%)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">N</button></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td><a href="./Bo_MiCh_002_02.html" class="link">2024-09-01 00:00 ~ 2024-09-30 23:59</a></td>
+                    <td><button type="button" id="modalOpenBtn" class="btn is-outline-2 is-h26">조회</button></td>
+                    <td>1,234</td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><span class="data-block id">Abcde123</span> <span class="data-block time">(2024-08-16 13:14:15)</span></td>
+                    <td><button type="button" data-url="#preview2" data-modal="open" class="btn is-text" onclick="customAlert.confirm('진행여부 변경 안내', '진행여부 상태를 변경하시겠어요?', 'trueFn()', 'falseFn()');">Y</button></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">115</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+                <button type="button" class="btn is-outline-3 is-h26" onclick="location.href='./Bo_MiCh_002_01.html'">신규등록</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">변경</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(2, 1, 1); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker3 = new tui.DatePicker('#startpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker3 = new tui.DatePicker('#endpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+
+    // 데이터 조회 이후 모달 실행
+    document.getElementById('modalOpenBtn').addEventListener('click', function() {
+      console.log('모달버튼클릭')
+      const modalSelector = '#Bo_MiCh_002_P2';    // 모달을 열 선택자
+      const fetchUrl = 'https://api.example.com/data';  // 데이터를 가져올 URL
+
+      fetchDataAndOpenModal(modalSelector, fetchUrl);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap mission">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">챌린지관리 > 친구초대 > 친구초대 상세</h1>
+        <div class="module-top">
+          <div class="form-searchbox">
+            <dl class="dl-formbox">
+              <dt>챌린지 기간</dt>
+              <dd>
+                <div class="area-datepicker">
+                  <!-- DatePicker -->
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-datepicker is-timepicker">
+                    <select class="inp-select is-sm">
+                      <option value="">시</option>
+                    </select>
+                    <select class="inp-select is-sm">
+                      <option value="">분</option>
+                    </select>
+                  </div>
+                  <span class="datepicker-to">~</span>
+
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-datepicker is-timepicker">
+                    <select class="inp-select is-sm">
+                      <option value="">시</option>
+                    </select>
+                    <select class="inp-select is-sm">
+                      <option value="">분</option>
+                    </select>
+                  </div>
+                  <!-- //DatePicker -->
+                </div>
+              </dd>
+              <dt><label for="inpPersonnel" class="lb-inp">초대제한 인원수</label></dt>
+              <dd><input type="text" id="inpPersonnel" class="inp-base" placeholder="숫자만 입력해주세요." value="100"></dd>
+            </dl>
+            <table class="tbl-base has-left">
+              <colgroup>
+                <col style="width: 10rem;">
+                <col style="width: 10rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th rowspan="3" scope="rowgroup">기본 리워드</th>
+                  <th class="is-border" scope="col"><label for="inpReward01" class="lb-inp">경험치</label></th>
+                  <td headers="inpReward01">
+                    <input type="text" id="inpReward01" class="inp-base" placeholder="숫자만 입력해주세요." value="150">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="is-border" scope="col"><label for="inpReward02" class="lb-inp">골드해머</label></th>
+                  <td headers="inpReward02">
+                    <input type="text" id="inpReward02" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="is-border" scope="col"><label for="inpReward03" class="lb-inp">엔돌캐시</label></th>
+                  <td headers="inpReward03">
+                    <input type="text" id="inpReward03" class="inp-base" placeholder="숫자만 입력해주세요." value="500">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="area-tbl">
+              <div class="wrap-tbl">
+                <table class="tbl-base has-left">
+                  <colgroup>
+                    <col style="width: 10rem;">
+                    <col style="width: 10rem;">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th rowspan="4" scope="rowgroup">미션1 리워드</th>
+                      <th class="is-border" scope="col"><label for="inpMission1-1" class="lb-inp">초대인원</label></th>
+                      <td headers="inpMission1-1">
+                        <input type="text" id="inpMission1-1" class="inp-base" placeholder="숫자만 입력해주세요." value="5">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission1-2" class="lb-inp">경험치</label></th>
+                      <td headers="inpMission1-2">
+                        <input type="text" id="inpMission1-2" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission1-3" class="lb-inp">골드해머</label></th>
+                      <td headers="inpMission1-3">
+                        <input type="text" id="inpMission1-3" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission1-4" class="lb-inp">엔돌캐시</label></th>
+                      <td headers="inpMission1-4">
+                        <input type="text" id="inpMission1-4" class="inp-base" placeholder="숫자만 입력해주세요." value="500">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="wrap-tbl">
+                <table class="tbl-base has-left">
+                  <colgroup>
+                    <col style="width: 10rem;">
+                    <col style="width: 10rem;">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th rowspan="4" scope="rowgroup">미션2 리워드</th>
+                      <th class="is-border" scope="col"><label for="inpMission2-1" class="lb-inp">초대인원</label></th>
+                      <td headers="inpMission2-1">
+                        <input type="text" id="inpMission2-1" class="inp-base" placeholder="숫자만 입력해주세요." value="20">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission2-2" class="lb-inp">경험치</label></th>
+                      <td headers="inpMission2-2">
+                        <input type="text" id="inpMission2-2" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission2-3" class="lb-inp">골드해머</label></th>
+                      <td headers="inpMission2-3">
+                        <input type="text" id="inpMission2-3" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission2-4" class="lb-inp">엔돌캐시</label></th>
+                      <td headers="inpMission2-4">
+                        <input type="text" id="inpMission2-4" class="inp-base" placeholder="숫자만 입력해주세요." value="1,500">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="wrap-tbl">
+                <table class="tbl-base has-left">
+                  <colgroup>
+                    <col style="width: 10rem;">
+                    <col style="width: 10rem;">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th rowspan="4" scope="rowgroup">미션3 리워드</th>
+                      <th class="is-border" scope="col"><label for="inpMission3-1" class="lb-inp">초대인원</label></th>
+                      <td headers="inpMission3-1">
+                        <input type="text" id="inpMission3-1" class="inp-base" placeholder="숫자만 입력해주세요." value="30">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission3-2" class="lb-inp">경험치</label></th>
+                      <td headers="inpMission3-2">
+                        <input type="text" id="inpMission3-2" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission3-3" class="lb-inp">골드해머</label></th>
+                      <td headers="inpMission3-3">
+                        <input type="text" id="inpMission3-3" class="inp-base" placeholder="숫자만 입력해주세요." value="0">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="is-border" scope="col"><label for="inpMission3-4" class="lb-inp">엔돌캐시</label></th>
+                      <td headers="inpMission3-4">
+                        <input type="text" id="inpMission3-4" class="inp-base" placeholder="숫자만 입력해주세요." value="3,000">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="tbl-btn-group is-right">
+              <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '입력한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', 'trueFn()', 'falseFn()');">취소</button>
+              <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '수정 하시겠어요?', 'trueFn()', 'falseFn()');">수정</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(2, 1, 1); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker3 = new tui.DatePicker('#startpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker3 = new tui.DatePicker('#endpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+  </script>
+</body>
+</html>

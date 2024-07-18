@@ -461,13 +461,61 @@
             <th></th>
             <td></td>
             <td>친구초대</td>
+            <td></td>
+            <td></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002.html" target="_blank">Bo_MiCh_002.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status complete">완료</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>친구초대 등록</td>
+            <td></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_01.html" target="_blank">Bo_MiCh_002_01.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status complete">완료</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>친구초대 상세</td>
+            <td></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_02.html" target="_blank">Bo_MiCh_002_02.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status complete">완료</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td>참여자 조회</td>
+            <td></td>
+            <td class="link"><a href="./mission/Bo_MiCh_002_03.html" target="_blank">Bo_MiCh_002_03.html</a></td>
+            <td></td>
+            <td></td>
+            <td class="date">2024-08-31</td>
+            <td class="status complete">완료</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
             <td>혜택관리</td>
             <td></td>
             <td class="link"><a href="./mission/Bo_MiCh_002_T1.html" target="_blank">Bo_MiCh_002_T1.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status complete">완료</td>
+            <td class="status delete">삭제</td>
           </tr>
           <tr>
             <th></th>
@@ -479,7 +527,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status complete">완료</td>
+            <td class="status delete">삭제</td>
           </tr>
           <tr>
             <th></th>
@@ -491,7 +539,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status complete">완료</td>
+            <td class="status delete">삭제</td>
           </tr>
           <tr>
             <th></th>
@@ -503,7 +551,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status complete">완료</td>
+            <td class="status delete">삭제</td>
           </tr>
           <tr>
             <th></th>
@@ -511,11 +559,11 @@
             <td></td>
             <td>참여현황</td>
             <td></td>
-            <td class="link"><a href="./mission/Bo_MiCh_002_T2.html" target="_blank">Bo_MiCh_002_T2.html</a></td>
+            <td class="link del"><a href="./mission/Bo_MiCh_002_T2.html" target="_blank">Bo_MiCh_002_T2.html</a></td>
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status complete">완료</td>
+            <td class="status del">삭제</td>
           </tr>
           <tr>
             <th></th>
@@ -768,7 +816,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -780,7 +828,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
@@ -792,7 +840,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
@@ -804,7 +852,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <tr>
             <th></th>
@@ -816,7 +864,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status"></td>
+            <td class="status ing">진행 중</td>
           </tr>
           <!-- //마케팅관리 -->
     
@@ -1837,10 +1885,11 @@
       </table>
       <div class="filter-menu" id="filter-menu">
         <button data-status="all">전체</button>
-        <button data-status="ing">진행 중</button>
-        <button data-status="complete">작업 완료</button>
-        <!-- <button data-status="modify">수정 완료</button> -->
-        <button data-status="confirm">컨펌 완료</button>
+        <button data-status="ing">진행중</button>
+        <button data-status="delete">삭제</button>
+        <button data-status="modify">수정</button>
+        <button data-status="complete">완료</button>
+        <!-- <button data-status="confirm">컨펌완료</button> -->
       </div>
     </main>
   </div>
@@ -1851,20 +1900,20 @@
       const sortingButton = document.getElementById("btnFilter");
       const filterMenu = document.getElementById("filter-menu");
       const rows = document.querySelectorAll(".tbl-guide tbody tr");
-
+  
       sortingButton.addEventListener("click", function(event) {
         const rect = sortingButton.getBoundingClientRect();
         filterMenu.style.top = `${rect.bottom}px`;
         filterMenu.style.left = `${rect.left}px`;
         filterMenu.style.display = filterMenu.style.display === "block" ? "none" : "block";
       });
-
+  
       document.addEventListener("click", function(event) {
         if (!filterMenu.contains(event.target) && !sortingButton.contains(event.target)) {
           filterMenu.style.display = "none";
         }
       });
-
+  
       filterMenu.addEventListener("click", function(event) {
         if (event.target.tagName === "BUTTON") {
           const status = event.target.getAttribute("data-status");
@@ -1872,28 +1921,44 @@
           filterMenu.style.display = "none";
         }
       });
-
+  
       function filterRows(status) {
         rows.forEach(row => {
           const statusCell = row.querySelector(".status");
-          if (status === "all") {
-            row.style.display = "";
-          } else if (statusCell && statusCell.classList.contains(status)) {
-            row.style.display = "";
+          const linkCell = row.querySelector(".link");
+          const isDeleted = statusCell && statusCell.classList.contains("delete");
+  
+          if (status === "delete") {
+            if (isDeleted) {
+              row.style.display = "";
+              linkCell.classList.add("del");
+            } else {
+              row.style.display = "none";
+            }
+          } else if (status === "all") {
+            if (isDeleted) {
+              row.style.display = "none"; // `delete` 상태는 'all' 필터에서도 숨기기
+            } else {
+              row.style.display = "";
+            }
           } else {
-            row.style.display = "none";
+            if (statusCell && statusCell.classList.contains(status)) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
           }
         });
       }
-
-      // Initial progress calculation
+  
+      // 초기 진행률 계산
       calculateProgress();
-
+  
       function calculateProgress() {
         let total = 0;
         let complete = 0;
         let confirm = 0;
-
+  
         rows.forEach(row => {
           const statusCell = row.querySelector(".status");
           if (statusCell) {
@@ -1906,14 +1971,18 @@
             }
           }
         });
-
+  
         const progressRate = (complete / total) * 100;
         const finalRate = (confirm / total) * 100;
-
+  
         console.log(`진척률 (완료 기준): ${progressRate.toFixed(2)}%`);
-        console.log(`최종 완료율 (컨펌완료 기준): ${finalRate.toFixed(2)}%`);
+        // console.log(`최종 완료율 (컨펌완료 기준): ${finalRate.toFixed(2)}%`);
       }
+  
+      // 초기 목록에서는 delete 상태 숨기기
+      filterRows("all");
     });
   </script>
+  
 </body>
 </html>

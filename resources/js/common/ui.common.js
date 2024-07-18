@@ -172,7 +172,6 @@ class NestedTabManager {
   }
 }
 
-
 // Grid (TOAST UI Grid)
 class GridManager {
   constructor() {
@@ -343,6 +342,104 @@ function activeDateOptions(selector) {
       this.classList.add('is-active');
     });
   });
+}
+
+// 이미지 업로드 초기화 함수
+function initPhotoRegistration(config) {
+  const registerBtn = document.getElementById(config.registerBtnId); // 등록 버튼
+  const thumbnailContainer = document.getElementById(config.thumbnailContainerId);
+  
+  if (!registerBtn || !thumbnailContainer) {
+    console.error("Required elements not found. Please check the element IDs in the config.");
+    return;
+  }
+
+  const maxPhotos = config.maxPhotos;
+  const lengthSpan = registerBtn.querySelector(".length-txt");
+  const currentCountSpan = registerBtn.querySelector(".current");
+  const addIcon = registerBtn.querySelector(".ico-add");
+  const validExtensions = config.validExtensions || ['jpg', 'jpeg', 'png']; // 허용 확장자
+  const maxFileSizeMB = config.maxFileSizeMB; // 최대 파일 사이즈 100MB
+
+  let photos = [];
+
+  if (lengthSpan) lengthSpan.style.display = "none";
+
+  registerBtn.addEventListener("click", handleRegisterClick);
+
+  function handleRegisterClick() {
+    if (photos.length < maxPhotos) {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = validExtensions.map(ext => `image/${ext}`).join(',');
+      input.onchange = handleFileChange;
+      input.click();
+    }
+  }
+
+  function handleFileChange(event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (!isValidExtension(file.name)) {
+        alert('지원하지 않는 파일 형식입니다.');
+        return;
+      }
+      if (file.size > maxFileSizeMB * 1024 * 1024) {
+        alert('100MB 이하의 파일만 업로드 가능합니다.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        photos.push({ src: e.target.result, name: file.name });
+        updateThumbnails();
+        updatePhotoCount();
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function isValidExtension(filename) {
+    const extension = filename.split('.').pop().toLowerCase();
+    return validExtensions.includes(extension);
+  }
+
+  function updateThumbnails() {
+    thumbnailContainer.innerHTML = photos.map((photo, index) => `
+      <div class="thumbnail">
+        <img src="${photo.src}" alt="Thumbnail">
+        <span class="file-name">${photo.name}</span>
+        <button class="delete-btn" data-index="${index}"><span class="hidden">삭제</span></button>
+      </div>
+    `).join('');
+
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", handleDeleteButtonClick);
+    });
+
+    registerBtn.classList.toggle("disabled", photos.length >= maxPhotos);
+  }
+
+  function handleDeleteButtonClick(event) {
+    const photoToDeleteIndex = event.target.getAttribute("data-index");
+    handleDeletePhoto(photoToDeleteIndex);
+  }
+
+  function handleDeletePhoto(index) {
+    photos.splice(index, 1);
+    updateThumbnails();
+    updatePhotoCount();
+  }
+
+  function updatePhotoCount() {
+    if (currentCountSpan) currentCountSpan.textContent = photos.length;
+    const hasPhotos = photos.length > 0;
+    if (lengthSpan) lengthSpan.style.display = hasPhotos ? "inline" : "none";
+    if (addIcon) addIcon.style.display = hasPhotos ? "none" : "inline";
+  }
+
+  // 초기 상태 설정
+  updatePhotoCount();
 }
 
 class ApplicationInit {

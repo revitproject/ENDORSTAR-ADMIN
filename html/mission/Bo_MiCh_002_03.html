@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap mission">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">챌린지관리 > 친구초대 > 참여자조회</h1>
+        <div class="module-top">
+          <div class="form-searchbox is-inquiry">
+            <dl class="dl-formbox">
+              <dt>챌린지 기간</dt>
+              <dd>YYYY.MM.DD ~ YYYY.MM.DD</dd>
+            </dl>
+            <dl class="dl-formbox inbtn">
+              <dt>검색어</dt>
+              <dd>
+                <div class="searchbox-item">
+                  <select id="select-search" class="inp-select is-sm">
+                    <option value="" selected>이메일</option>
+                    <option value="">아이디</option>
+                    <option value="">이름</option>
+                  </select>
+              
+                  <input type="search" id="inp-search" class="inp-base" placeholder="">
+                </div>
+              </dd>
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                <button type="submit" class="btn is-search">검색</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+                <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀다운</span></button>
+              </div>
+
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col>
+                  <col>
+                  <col>
+                  <col style="width: 14rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                  <col style="width: 11rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th rowspan="2">NO.</th>
+                    <th rowspan="2">아이디</th>
+                    <th rowspan="2">이메일</th>
+                    <th rowspan="2">이름</th>
+                    <th rowspan="2">친구초대<br>발송시간</th>
+                    <th rowspan="2">수락상태</th>
+                    <th colspan="6">획득 리워드</th>
+                  </tr>
+                  <tr>
+                    <th>XP(기본)</th>
+                    <th>XP(미션)</th>
+                    <th>GP(기본)</th>
+                    <th>GP(미션)</th>
+                    <th>EP(기본)</th>
+                    <th>EP(미션)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>%User ID%</td>
+                    <td>%이메일%</td>
+                    <td>%이름%</td>
+                    <td>%발송시간%</td>
+                    <td>%수락상태%</td>
+                    <td>%기본지급<br>경험치%</td>
+                    <td>%혜택지급<br>경험치%</td>
+                    <td>%기본지급<br>골드해머%</td>
+                    <td>%혜택지급<br>골드해머%</td>
+                    <td>%기본지급<br>엔돌캐시%</td>
+                    <td>%혜택지급<br>엔돌캐시%</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Endorhappy002</td>
+                    <td>abc@abc.com</td>
+                    <td>김해피</td>
+                    <td>2024-02-24 15:00</td>
+                    <td>수락</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>기간만료</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Endorhappy004</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Endorhappy005</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Endorhappy006</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Endorhappy007</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Endorhappy008</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Endorhappy009</td>
+                    <td>abc@abc.com</td>
+                    <td>왕피트</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락대기</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>Endorhappy010</td>
+                    <td>abc@abc.com</td>
+                    <td>박선출</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>수락</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">115</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(2, 1, 1); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    const startpicker3 = new tui.DatePicker('#startpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker3 = new tui.DatePicker('#endpicker-div3', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp3',
+        format: 'yyyy-MM-dd'
+      }
+    });
+  </script>
+</body>
+</html>

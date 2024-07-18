@@ -67,10 +67,6 @@
   color: #fff;
   background-color: var(--primary);
 }
-.btn.is-primary:disabled {
-  color: var(--grays-1);
-  background-color: var(--secondary-3);
-}
 .btn.is-secondary-1 {
   color: var(--grays-2);
   background-color: var(--secondary-1);
@@ -83,10 +79,6 @@
   color: var(--grays-1);
   border-color: var(--grays-5);
 }
-.btn.is-outline-1:disabled {
-  color: var(--grays-1);
-  background-color: var(--secondary-3);
-}
 .btn.is-outline-2 {
   color: var(--grays-1);
   border-color: var(--grays-1);
@@ -95,7 +87,6 @@
   color: var(--primary);
   border-color: var(--primary);
 }
-
 .btn.is-grays-1 {
   color: #fff;
   background-color:var(--grays-1);
@@ -103,6 +94,11 @@
 .btn.is-grays-2 {
   color: #fff;
   background-color: var(--grays-2)
+}
+/* disabled */
+.btn:disabled {
+  color: #fff;
+  background-color: var(--grays-4);
 }
 
 /* type */

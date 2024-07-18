@@ -179,6 +179,9 @@ pre[class*=language-] {
 .guide .tbl-base .status.confirm {
   color: #E5493A;
 }
+.guide .tbl-base .status.delete {
+  color: var(--grays-2);
+}
 .guide .filter-menu {
   position: absolute;
   z-index: 10;
@@ -225,4 +228,12 @@ pre[class*=language-] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.guide .del {
+  text-decoration: none;
+}
+.guide .del > a{
+  opacity: .5;
+  cursor: auto;
+  text-decoration: line-through;
 }

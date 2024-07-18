@@ -14,8 +14,8 @@
 
 /* scroll-content */
 .scroll-content::-webkit-scrollbar,
-.scroll-content::-webkit-scrollbar-thumb {border-radius: 1rem;}
-.scroll-content::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: #fff;}
+.scroll-content::-webkit-scrollbar-thumb {border-radius: .6rem;}
+.scroll-content::-webkit-scrollbar {width: .6rem; height: .6rem; background-color: #fff;}
 .scroll-content::-webkit-scrollbar-thumb {background-color: var(--grays-5);}
 
 /* modal */
