@@ -22,7 +22,7 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">회원 관리</h1>
+      <h1 class="content-title">회원관리 > 회원정보관리</h1>
       <div class="content-inner">
         <div class="form-searchbox">
           <dl class="dl-formbox">
@@ -52,7 +52,7 @@
                   <option value="">휴대폰번호</option>
                   <option value="">이메일</option>
                 </select>
-                <input type="search" id="inp-search" class="inp-base" placeholder="검색어를 입력해주세요.">
+                <input type="search" id="inp-search" class="inp-base" placeholder="검색어를 입력해주세요." style="width: 43.5rem;">
               </div>
             </dd>
             <dd class="searchbox-btn">
@@ -253,9 +253,9 @@
     <!-- //base-content -->
 
     <!-- modal -->
-    <div id="modal-filedownload" class="modal" data-modal="target">
+    <div id="modal-filedownload" class="modal is-fileinfo" data-modal="target">
       <div class="modal-dimmed"></div>
-      <div class="modal-inner" style="width: 40rem;">
+      <div class="modal-inner" style="width: 478px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">파일 발송 정보</strong>
@@ -271,7 +271,7 @@
           </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-secondary-1 is-footer" data-modal="close">취소</button>
           <a href="../../resources/file/@temp.xlsx" download="fileName.xlsx" class="btn is-primary is-footer">다운로드</a>
         </div>
       </div>
@@ -295,7 +295,7 @@
     // lnb active
     window.addEventListener('load', function () {
       setTimeout(function () {
-        lnbActive(1, 0, 0); // 1epth, 2epth, 3dpeth
+        lnbActive(1, 0, null); // 1epth, 2epth, 3dpeth
       }, 50);
     });
   </script>

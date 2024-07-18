@@ -22,9 +22,9 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">이벤트 등록</h1>
+      <h1 class="content-title">이벤트관리 > 이벤트 등록</h1>
       <div class="content-inner">
-        <div class="form-searchbox">
+        <div class="form-searchbox dt-length5">
           <dl class="dl-formbox">
             <dt>이벤트 유형</dt>
             <dd>
@@ -48,7 +48,7 @@
           </dl>
           <dl class="dl-formbox">
             <dt><label for="inpName" class="lb-inp">이벤트 명</label></dt>
-            <dd><input type="text" id="inpName" class="inp-base" placeholder="이벤트 명을 입력해주세요." style="width: 63rem;"></dd>
+            <dd><input type="text" id="inpName" class="inp-base" placeholder="이벤트 명을 입력해주세요." style="width: 55.5rem;"></dd>
           </dl>
           <dl class="dl-formbox">
             <dt>이벤트 기간</dt>
@@ -326,9 +326,9 @@
 
     <!-- modal -->
     <!-- 이벤트 순서 설정 -->
-    <div id="Bo_EmEv_001_P" class="modal" data-modal="target">
+    <div id="Bo_EmEv_001_P" class="modal is-eventdrag" data-modal="target">
       <div class="modal-dimmed"></div>
-      <div class="modal-inner" style="width: 52rem;">
+      <div class="modal-inner" style="width: 478px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">이벤트 순서 설정</strong>
@@ -337,35 +337,41 @@
           <div class="area-scroll">
             <div class="scroll-content">
               <div class="wrap-draglist">
-                <ul>
-                  <li>
-                    <span>%이벤트명%</span>
-                    <span>
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                <ul id="drag-list">
+                  <li draggable="true">
+                    <span class="event-name">%이벤트명%</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">1</button>
                     </span>
                   </li>
-                  <li>
-                    <span>빙고이벤트</span>
-                    <span>
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                  <li draggable="true">
+                    <span class="event-name">빙고이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">2</button>
                     </span>
                   </li>
-                  <li>
-                    <span>설문이벤트</span>
-                    <span>
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                  <li draggable="true">
+                    <span class="event-name">설문이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">3</button>
                     </span>
                   </li>
-                  <li>
-                    <span>일반이벤트</span>
-                    <span>
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                  <li draggable="true">
+                    <span class="event-name">일반이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">4</button>
                     </span>
                   </li>
-                  <li>
-                    <span>배너링크이벤트</span>
-                    <span>
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                  <li draggable="true">
+                    <span class="event-name">배너링크이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">5</button>
+                    </span>
+                  </li>
+                  <li draggable="true">
+                    <span class="event-name">배너링크이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">5</button>
                     </span>
                   </li>
                 </ul>
@@ -373,13 +379,13 @@
             </div>
           </div>
         </div>
+        
         <div class="modal-footer align-center">
-          <button type="button" class="btn is-grays-1 is-footer">취소</button>
-          <button type="button" class="btn is-primary is-footer">저장</button>
+          <button type="button" class="btn is-secondary-1 is-footer is-false">취소</button>
+          <button type="button" class="btn is-primary is-footer is-true">저장</button>
         </div>
       </div>
     </div>
-
     <div id="alert" class="modal" data-modal="alert">
       <div class="modal-dimmed"></div>
       <div class="modal-inner has-alert">
@@ -415,7 +421,7 @@
     // lnb active
     window.addEventListener('load', function () {
       setTimeout(function () {
-        lnbActive(4, 0, null); // 1epth, 2epth, 3dpeth
+        lnbActive(4, 0, 0); // 1epth, 2epth, 3dpeth
       }, 50);
     });
   </script>
@@ -467,6 +473,96 @@
 
       startpicker.setDate(startDate);
       endpicker.setDate(endDate);
+    });
+
+    // drag&drop
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const dragList = document.getElementById('drag-list');
+      let dragSrcEl = null;
+      let items = null;
+
+      /**
+       * 드래그 시작 시 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDragStart(e) {
+        this.classList.add('dragging');
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+      }
+
+      /**
+       * 드래그 종료 시 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDragEnd(e) {
+        this.classList.remove('dragging');
+        items.forEach(function (item) {
+          item.classList.remove('over');
+        });
+      }
+
+      /**
+       * 드래그 요소가 다른 요소 위에 있을 때 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDragOver(e) {
+        if (e.preventDefault) {
+          e.preventDefault();
+        }
+        e.dataTransfer.dropEffect = 'move';
+        return false;
+      }
+
+      /**
+       * 드래그 요소가 다른 요소 위에 들어올 때 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDragEnter(e) {
+        this.classList.add('over');
+      }
+
+      /**
+       * 드래그 요소가 다른 요소를 벗어날 때 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDragLeave(e) {
+        this.classList.remove('over');
+      }
+
+      /**
+       * 드래그 요소가 드롭될 때 호출
+       * @param {Event} e - 이벤트 객체
+       */
+      function handleDrop(e) {
+        if (e.stopPropagation) {
+          e.stopPropagation();
+        }
+        if (dragSrcEl !== this) {
+          dragSrcEl.innerHTML = this.innerHTML;
+          this.innerHTML = e.dataTransfer.getData('text/html');
+        }
+        return false;
+      }
+
+      /**
+       * 각 리스트 항목에 드래그 앤 드롭 이벤트 리스너 추가
+       */
+      function addEventListeners() {
+        items = document.querySelectorAll('#drag-list li');
+        items.forEach(function(item) {
+          item.addEventListener('dragstart', handleDragStart, false);
+          item.addEventListener('dragenter', handleDragEnter, false);
+          item.addEventListener('dragover', handleDragOver, false);
+          item.addEventListener('dragleave', handleDragLeave, false);
+          item.addEventListener('drop', handleDrop, false);
+          item.addEventListener('dragend', handleDragEnd, false);
+        });
+      }
+
+      // 초기 이벤트 리스너 추가
+      addEventListeners();
     });
   </script>
 </body>

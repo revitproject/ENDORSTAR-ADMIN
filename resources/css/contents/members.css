@@ -1,11 +1,21 @@
 @charset "UTF-8";
 
-.members .dl-formbox dd .inp-base {
-  min-width: 23.4rem;
+.members .module-top .tbl-title {
+  margin-bottom: 1.4rem;
 }
-.members .dl-formbox dd .searchbox-item .inp-base {
-  min-width: 42.5rem;
+.members .tbl-title + .box-form {
+  margin-top: 0;
 }
-.members .dl-formbox dt {
-  min-width: 4.9rem;
+.members .tbl-head.is-top {
+  margin-top: 1rem;
+}
+.members .tbl-head.is-top .head-option {
+  display: flex;
+  gap: 1rem;
+}
+.members .tbl-head.is-top .head-option .btn.is-outline-2 {
+  min-width: 4.1rem;
+  padding: .4rem 1rem;
+  color: var(--grays-1);
+  background-color: transparent;
 }

@@ -1,17 +1,8 @@
 @charset "UTF-8";
 
-.mission .dl-formbox dt {
-  min-width: 4.7rem;
-}
-.mission .form-searchbox.is-inquiry .dl-formbox dt {
-  min-width: 6.4rem;
-}
 .mission .module-top .box-form {
   margin-top: 1rem;
 }
 .mission .module-top .ui-dropdown {
   width: 28rem;
-}
-.modal.is-push .tbl-dl dt {
-  min-width: 9rem;
 }

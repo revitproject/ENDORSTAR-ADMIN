@@ -22,9 +22,9 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">이벤트</h1>
+      <h1 class="content-title">이벤트관리 > 이벤트</h1>
       <div class="content-inner">
-        <div class="form-searchbox">
+        <div class="form-searchbox dt-length5">
           <dl class="dl-formbox">
             <dt>기간</dt>
             <dd>
@@ -316,9 +316,9 @@
 
     <!-- modal -->
     <!-- 이벤트 순서 설정 -->
-    <div id="Bo_EmEv_001_P" class="modal" data-modal="target">
+    <div id="Bo_EmEv_001_P" class="modal is-eventdrag" data-modal="target">
       <div class="modal-dimmed"></div>
-      <div class="modal-inner" style="width: 52rem;">
+      <div class="modal-inner" style="width: 478px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">이벤트 순서 설정</strong>
@@ -329,33 +329,39 @@
               <div class="wrap-draglist">
                 <ul id="drag-list">
                   <li draggable="true">
-                    <span>%이벤트명%</span>
-                    <span class="wrap-btn">
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                    <span class="event-name">%이벤트명%</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">1</button>
                     </span>
                   </li>
                   <li draggable="true">
-                    <span>빙고이벤트</span>
-                    <span class="wrap-btn">
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                    <span class="event-name">빙고이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">2</button>
                     </span>
                   </li>
                   <li draggable="true">
-                    <span>설문이벤트</span>
-                    <span class="wrap-btn">
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                    <span class="event-name">설문이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">3</button>
                     </span>
                   </li>
                   <li draggable="true">
-                    <span>일반이벤트</span>
-                    <span class="wrap-btn">
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                    <span class="event-name">일반이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">4</button>
                     </span>
                   </li>
                   <li draggable="true">
-                    <span>배너링크이벤트</span>
-                    <span class="wrap-btn">
-                      <button type="button" class="btn-drag"><span class="hidden">정렬</span></button>
+                    <span class="event-name">배너링크이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">5</button>
+                    </span>
+                  </li>
+                  <li draggable="true">
+                    <span class="event-name">배너링크이벤트</span>
+                    <span class="event-btn">
+                      <button type="button" class="btn-drag">5</button>
                     </span>
                   </li>
                 </ul>
@@ -365,7 +371,7 @@
         </div>
         
         <div class="modal-footer align-center">
-          <button type="button" class="btn is-grays-1 is-footer is-false">취소</button>
+          <button type="button" class="btn is-secondary-1 is-footer is-false">취소</button>
           <button type="button" class="btn is-primary is-footer is-true">저장</button>
         </div>
       </div>

@@ -3,16 +3,16 @@
 .maketing .dl-formbox dd .inp-select:not(.is-sm) {
   min-width: 23.4rem;
 }
-.maketing .dl-formbox dt {
-  min-width: 4.9rem;
+.modal.push-modal .tbl-dl dt {
+  min-width: 9rem;
 }
-.modal.is-push dl.align-start {
+.modal.push-modal dl.align-start {
   align-items: flex-start;
 }
-.modal.is-push dl.align-start dt {
+.modal.push-modal dl.align-start dt {
   line-height: 2.8rem;
 }
-.modal.is-push .img-text {
+.modal.push-modal .img-text {
   color: var(--grays-3);
   font-size: 1.4rem;
   line-height: 2.2rem;

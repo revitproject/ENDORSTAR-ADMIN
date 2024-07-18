@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+  <body data-route="main">
+  <!-- base-wrap -->
+  <div class="base-wrap members">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <div class="module-top">
+          <h1 class="content-title">회원관리 > 골드해머내역</h1>
+          <div class="form-searchbox dt-length5">
+            <dl class="dl-formbox">
+              <dt><label for="select1" class="lb-inp">내역 구분</label></dt>
+              <dd>
+                <select id="select1" class="inp-select">
+                  <option value="">전체</option>
+                  <option value="">리워드 적립</option>
+                  <option value="">사용 구간</option>
+                </select>
+              </dd>
+  
+              <dt><label for="select2" class="lb-inp">적립/사용</label></dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="rdoType" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="rdoType" class="inp-radio">적립</label>
+                  <label><input type="radio" name="rdoType" class="inp-radio">사용</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>적립/사용일</dt>
+              <dd>
+                <div class="area-datepicker">
+                  <!-- DatePicker -->
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                    <span class="datepicker-to">~</span>
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //DatePicker -->
+                  <div class="btn-options">
+                    <button type="button" class="btn is-secondary-1 is-active">전체</button>
+                    <button type="button" class="btn is-secondary-1">오늘</button>
+                    <button type="button" class="btn is-secondary-1">1주일</button>
+                    <button type="button" class="btn is-secondary-1">1개월</button>
+                    <button type="button" class="btn is-secondary-1">3개월</button>
+                    <button type="button" class="btn is-secondary-1">6개월</button>
+                    <button type="button" class="btn is-secondary-1">12개월</button>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox inbtn">
+              <dt><label for="inpId" class="lb-inp">아이디</label></dt>
+              <dd><input type="text" id="inpId" class="inp-base" placeholder="아이디를 입력해주세요."></dd>
+  
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                <button type="button" class="btn is-search">검색</button>
+              </dd>
+            </dl>
+          </div>
+          <div class="tbl-head is-top">
+            <p class="info-text">* 회원ID 미 입력 시 검색기간은 1년 단위로만 가능합니다.</p>
+            <div class="head-option">
+              <button type="button" class="btn is-outline-2 is-h28" data-modal="open" data-url="#Bo_MbGh_002_L">차감</button>
+              <button type="button" class="btn is-outline-2 is-h28" data-modal="open" data-url="#Bo_MbGh_001_L">적립</button>
+              <button type="button" class="btn is-ico is-excel"><span class="ico-excel">엑셀</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+              </div>
+  
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                  <col style="width: 42rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>회원유형</th>
+                    <th>내역 구분</th>
+                    <th>적립/사용일</th>
+                    <th>적립/사용액</th>
+                    <th>내용(25자 이내)</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th colspan="5"><span class="total">합계 : 10건</span></th>
+                    <th>골드해머  : 560</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>End*******</td>
+                    <td>김*피</td>
+                    <td>일반</td>
+                    <td>육성</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>자동채굴</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>게임티켓</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span class="text-red-1">-100</span></td> <!-- 음수값은 'text-red-1' 클래스 추가 -->
+                    <td>해피터치</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>챌린지</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>출석(기본)</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>관리자_적립</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>출석(연속) 오류로 인한 적립</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>챌린지</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>개근 포인트</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>기타</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>생일축하 포인트</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>챌린지</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>30</span></td>
+                    <td>운세보기</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>챌린지</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span class="text-red-1">-500</span></td>
+                    <td>친구초대 서버오류로 인한 차감</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>챌린지</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>500</span></td>
+                    <td>친구초대(1단계)</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>endorhappy001</td>
+                    <td>김해피</td>
+                    <td>일반</td>
+                    <td>육성</td>
+                    <td>2024-02-26 15:00</td>
+                    <td><span>500</span></td>
+                    <td>2등급 승급</td>
+                  </tr>
+                </tbody>
+              </table>
+  
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">10</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 골드해머 적립 -->
+    <div id="Bo_MbGh_001_L" class="modal is-goldhammer" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 478px;"> 
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">골드해머 적립</strong>
+        </div>
+        <div class="modal-content">
+          <div class="tbl-dl">
+            <dl>
+              <dt>일괄적립</dt>
+              <dd>
+                <div class="wrap-formbox">
+                  <input type="text" id="inpFileUpload" class="inp-base inp-fileupload" placeholder="파일을 선택해주세요." readonly>
+                  <button type="button" class="btn btn-fileupload" id="btnFileUpload">파일선택</button>
+                  <input type="file" id="fileInput" class="hidden fileInput" accept=".xls,.xlsx">
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>적립회원(ID)</dt>
+              <dd><input type="text" class="inp-base" placeholder="ID를 입력해주세요."></dd>
+            </dl>
+            <dl>
+              <dt>적립금액<br>(골드해머 GP)</dt>
+              <dd><input type="text" class="inp-base" placeholder="적립금액을 입력해 주세요."></dd>
+            </dl>
+            <dl>
+              <dt>적립 내역구분</dt>
+              <dd>
+                <select id="selectSave" class="inp-select">
+                  <option value="">전체</option>
+                  <option value="">리워드 적립</option>
+                  <option value="">사용 구간</option>
+                </select>
+              </dd>
+            </dl>
+            <dl>
+              <dt>적립 사유</dt>
+              <dd>
+                <div class="wrap-textarea">
+                  <textarea name="" id="" class="inp-textarea" placeholder="적립사유를 25자 이내로 입력해주세요."></textarea>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
+        </div>
+      </div>
+    </div> 
+    
+    <!-- 골드해머 차감 -->
+    <div id="Bo_MbGh_002_L" class="modal is-goldhammer" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 478px;"> 
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">골드해머 차감</strong>
+        </div>
+        <div class="modal-content">
+          <div class="tbl-dl">
+            <dl>
+              <dt>일괄차감</dt>
+              <dd>
+                <div class="wrap-formbox">
+                  <input type="text" id="inpFileUpload" class="inp-base inp-fileupload" placeholder="파일을 선택해주세요." readonly>
+                  <button type="button" class="btn btn-fileupload" id="btnFileUpload">파일선택</button>
+                  <input type="file" id="fileInput" class="hidden fileInput" accept=".xls,.xlsx">
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>차감회원(ID)</dt>
+              <dd><input type="text" class="inp-base" placeholder="ID를 입력해주세요."></dd>
+            </dl>
+            <dl>
+              <dt>차감금액<br>(골드해머 GP)</dt>
+              <dd><input type="text" class="inp-base" placeholder="차감금액을 입력해 주세요."></dd>
+            </dl>
+            <dl>
+              <dt>차감 내역구분</dt>
+              <dd>
+                <select id="selectSave" class="inp-select">
+                  <option value="">전체</option>
+                  <option value="">리워드 차감</option>
+                  <option value="">사용 구간</option>
+                </select>
+              </dd>
+            </dl>
+            <dl>
+              <dt>차감 사유</dt>
+              <dd>
+                <div class="wrap-textarea">
+                  <textarea name="" id="" class="inp-textarea" placeholder="차감사유를 25자 이내로 입력해주세요."></textarea>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
+        </div>
+      </div>
+    </div>    
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(1, 3, 0); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // DatePicker 초기화
+      const today = new Date();
+      const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+        date: today,
+        language: 'ko',
+        input: {
+          element: '#startpicker-inp1',
+          format: 'yyyy-MM-dd'
+        }
+      });
+      const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+        date: today,
+        language: 'ko',
+        input: {
+          element: '#endpicker-inp1',
+          format: 'yyyy-MM-dd'
+        }
+      });
+      
+      // UI 확인용 스크립트
+      document.querySelector('.btn-options').addEventListener('click', function (event) {
+        const target = event.target;
+        if (!target.classList.contains('btn')) return;
+
+        let startDate, endDate = today;
+        switch (target.textContent.trim()) {
+          case '전체':
+            break;
+          case '오늘':
+            startDate = endDate = today;
+            break;
+          case '1주일':
+            startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+            break;
+          case '1개월':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+            break;
+          case '3개월':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+            break;
+          case '6개월':
+            startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+            break;
+        }
+
+        startpicker.setDate(startDate);
+        endpicker.setDate(endDate);
+      });
+
+      // 골드해머 모달 초기화
+      initializeFileUpload();
+
+      function initializeFileUpload() {
+        const fileInputs = document.querySelectorAll(".fileInput");
+        const btnFileUploads = document.querySelectorAll(".btn-fileupload");
+        const inpFileUploads = document.querySelectorAll(".inp-fileupload");
+
+        btnFileUploads.forEach((btn, index) => {
+          const fileInput = fileInputs[index];
+          const inpFileUpload = inpFileUploads[index];
+
+          btn.addEventListener("click", function () {
+            fileInput.click();
+          });
+
+          fileInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+              const fileName = file.name;
+              const fileExtension = fileName.split('.').pop().toLowerCase();
+              const validExtensions = ['xls', 'xlsx'];
+
+              if (!validExtensions.includes(fileExtension)) {
+                alert('파일 양식을 확인해 주세요.');
+                inpFileUpload.value = "";
+                fileInput.value = "";
+              } else {
+                inpFileUpload.value = fileName;
+              }
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

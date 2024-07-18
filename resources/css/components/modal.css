@@ -206,7 +206,27 @@
   margin-left: 2rem;
   padding-left: 2rem;
 }
-/*  회원정보변경 */
+/* 회원관리 */
+.modal.is-fileinfo .email {
+  margin: 1.2rem 0 1.4rem;
+  color: var(--grays-2);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+}
+.modal.is-fileinfo .inp-textarea {
+  min-height: 7rem;
+  padding: .3rem 1rem;
+  font-size: 1.4rem;
+  border-radius: .4rem;
+}
+.modal.is-fileinfo .list-base > li {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+.modal.is-fileinfo .list-base > li:not(:first-child) {
+  margin-top: .6rem;
+}
 .modal.is-userinfo .wrap-group .tit {
   margin-bottom: 1rem;
   color: var(--grays-1);
@@ -214,34 +234,49 @@
   font-weight: 600;
 }
 .modal.is-userinfo .manage {
-  margin-bottom: 2rem;
-  padding: 2rem;
-  color: var(--grays-1);
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-align: center;
-  background: var(--grays-6);
-  border-radius: .8rem;
-}
-.modal.is-userinfo .manage span {
+  margin: .8rem 0 2.8rem;
   color: var(--grays-2);
+  font-size: 2rem;
+  font-weight: 400;
 }
-.modal.is-userinfo .tbl-dl + .wrap-textarea {
-  margin-top: 2rem;
-}
-.modal.is-userinfo .tbl-dl dt {
-  min-width: 6rem;
-}
-.modal.is-userinfo .tbl-dl .inp-select {
+.modal.is-userinfo .inp-select {
   width: 100%;
 }
-.modal .wrap-pagination .pagination {
-  margin-top: .4rem;
+.modal.is-userinfo .tbl-base > tbody > tr > td {
+  font-weight: 500;
+}
+.modal.is-userinfo .inp-select + .wrap-textarea {
+  margin-top: .8rem;
+}
+.modal.is-goldhammer .tbl-dl dt {
+  text-align: right;
+}
+.modal.is-goldhammer .tbl-dl .inp-base {
+  min-width: initial;
+}
+.modal.is-goldhammer .btn-fileupload {
+  min-width: 6.9rem;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  background: var(--grays-1);
+  border: 0;
+}
+.modal.is-goldhammer .inp-select {
+  width: 100%;
+}
+
+/* 이벤트 순서 설정 */
+.modal.is-eventdrag .has-scrollbar {
+  padding-right: 2rem;
 }
 
 /* etc */
-.form-radio > label,
-.form-checkbox > label {
+.modal .form-radio > label,
+.modal .form-checkbox > label {
   color: var(--grays-1);
   font-weight: 400;
+}
+.modal .wrap-pagination .pagination {
+  margin-top: .4rem;
 }
