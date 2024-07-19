@@ -43,7 +43,7 @@
             <th>비고</th>
             <th>수정사항</th>
             <th>완료일</th>
-            <th>상태 <button type="button" id="btnFilter" class="btn-filter"><span class="hidden">filter</span></button></th>
+            <th><span class="filter">상태 <button type="button" id="btnFilter" class="btn-filter"></button></span></th>
           </tr>
         </thead>
         <tbody>
@@ -287,10 +287,10 @@
             <td></td>
             <td></td>
             <td class="link"><a href="./members/메일비밀번호안내.html" target="_blank">메일비밀번호안내.html</a></td>
-            <td></td>
+            <td>이메일 템플릿</td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -299,10 +299,10 @@
             <td></td>
             <td></td>
             <td class="link"><a href="./members/엔돌캐시소멸예정포인트안내.html" target="_blank">엔돌캐시소멸예정포인트안내.html</a></td>
-            <td></td>
+            <td>이메일 템플릿</td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <!-- //회원관리 -->
     
@@ -945,7 +945,7 @@
             <td></td>
             <td></td>
             <td class="date">2024-08-31</td>
-            <td class="status ing">진행 중</td>
+            <td class="status complete">완료</td>
           </tr>
           <tr>
             <th></th>
@@ -1929,9 +1929,9 @@
         <button data-status="all">전체</button>
         <button data-status="ing">진행중</button>
         <button data-status="delete">삭제</button>
-        <button data-status="modify">수정완료</button>
-        <button data-status="complete">작업완료</button>
-        <!-- <button data-status="confirm">컨펌완료</button> -->
+        <button data-status="modify">수정</button>
+        <button data-status="complete">완료</button>
+        <!-- <button data-status="confirm">컨펌 완료</button> -->
       </div>
     </main>
   </div>
@@ -1947,8 +1947,8 @@
 
       sortingButton.addEventListener("click", function(event) {
         const rect = sortingButton.getBoundingClientRect();
-        filterMenu.style.top = `${rect.bottom}px`;
-        filterMenu.style.left = `${rect.left}px`;
+        filterMenu.style.top = `${rect.top + 20}px`; 
+        filterMenu.style.left = `${rect.right - 20}px`; 
         filterMenu.style.display = filterMenu.style.display === "block" ? "none" : "block";
       });
 

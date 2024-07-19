@@ -524,6 +524,9 @@
 .form-searchbox.dt-length6 .dl-formbox dt {
   min-width: 7.3rem;
 }
+.form-searchbox.dt-length10 .dl-formbox dt {
+  min-width: 9.4rem;
+}
 
 /* textarea */
 .wrap-textarea {
@@ -548,47 +551,6 @@
 .inp-textarea:disabled {
   color: var(--grays-2);
   background-color: var(--grays-6)
-}
-
-/* drag&drop */
-.wrap-draglist li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: .8rem;
-  gap: 1rem;
-  cursor: move;
-}
-.wrap-draglist .event-name {
-  flex: 1;
-  display: inline-block;
-  padding: 1.9rem 2rem;
-  color: var(--grays-1);
-  font-size: 1.6rem;
-  font-weight: 500;
-  background: var(--grays-6);
-  border-radius: 1.2rem;
-}
-.wrap-draglist li.dragging {
-  opacity: 0.5;
-}
-.wrap-draglist li.over {
-  border: .2rem dashed var(--grays-5);
-  border-radius: 1rem;
-}
-.wrap-draglist .btn-drag {
-  display: inline-block;
-  width: 6rem;
-  height: 6rem;
-  color: var(--grays-1);
-  font-size: 2rem;
-  font-weight: 500;
-  border: .1rem solid var(--grays-5);
-  border-radius: 1.2rem;
-  cursor: grab;
-}
-.wrap-draglist .btn-drag:active {
-  cursor: grabbing;
 }
 
 /* 파일등록 */

@@ -267,7 +267,7 @@
 }
 
 /* 이벤트 순서 설정 */
-.modal.is-eventdrag .has-scrollbar {
+.modal.is-event-order .has-scrollbar {
   padding-right: 2rem;
 }
 

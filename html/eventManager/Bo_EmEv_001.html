@@ -316,7 +316,7 @@
 
     <!-- modal -->
     <!-- 이벤트 순서 설정 -->
-    <div id="Bo_EmEv_001_P" class="modal is-eventdrag" data-modal="target">
+    <div id="Bo_EmEv_001_P" class="modal is-event-order" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 478px;">
         <div class="modal-header">
@@ -326,43 +326,27 @@
         <div class="modal-content has-scrollbar">
           <div class="area-scroll">
             <div class="scroll-content">
-              <div class="wrap-draglist">
-                <ul id="drag-list">
-                  <li draggable="true">
+              <div class="wrap-eventlist">
+                <ul>
+                  <li>
                     <span class="event-name">%이벤트명%</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">1</button>
-                    </span>
+                    <input type="number" class="inp-order" min="1" value="1" />
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span class="event-name">빙고이벤트</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">2</button>
-                    </span>
+                    <input type="number" class="inp-order" min="1" value="2" />
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span class="event-name">설문이벤트</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">3</button>
-                    </span>
+                    <input type="number" class="inp-order" min="1" value="3" />
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span class="event-name">일반이벤트</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">4</button>
-                    </span>
+                    <input type="number" class="inp-order" min="1" value="4" />
                   </li>
-                  <li draggable="true">
+                  <li>
                     <span class="event-name">배너링크이벤트</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">5</button>
-                    </span>
-                  </li>
-                  <li draggable="true">
-                    <span class="event-name">배너링크이벤트</span>
-                    <span class="event-btn">
-                      <button type="button" class="btn-drag">5</button>
-                    </span>
+                    <input type="number" class="inp-order" min="1" value="5" />
                   </li>
                 </ul>
               </div>
@@ -464,96 +448,6 @@
 
       startpicker.setDate(startDate);
       endpicker.setDate(endDate);
-    });
-
-    // drag&drop
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const dragList = document.getElementById('drag-list');
-      let dragSrcEl = null;
-      let items = null;
-
-      /**
-       * 드래그 시작 시 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragStart(e) {
-        this.classList.add('dragging');
-        dragSrcEl = this;
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/html', this.innerHTML);
-      }
-
-      /**
-       * 드래그 종료 시 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragEnd(e) {
-        this.classList.remove('dragging');
-        items.forEach(function (item) {
-          item.classList.remove('over');
-        });
-      }
-
-      /**
-       * 드래그 요소가 다른 요소 위에 있을 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragOver(e) {
-        if (e.preventDefault) {
-          e.preventDefault();
-        }
-        e.dataTransfer.dropEffect = 'move';
-        return false;
-      }
-
-      /**
-       * 드래그 요소가 다른 요소 위에 들어올 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragEnter(e) {
-        this.classList.add('over');
-      }
-
-      /**
-       * 드래그 요소가 다른 요소를 벗어날 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDragLeave(e) {
-        this.classList.remove('over');
-      }
-
-      /**
-       * 드래그 요소가 드롭될 때 호출
-       * @param {Event} e - 이벤트 객체
-       */
-      function handleDrop(e) {
-        if (e.stopPropagation) {
-          e.stopPropagation();
-        }
-        if (dragSrcEl !== this) {
-          dragSrcEl.innerHTML = this.innerHTML;
-          this.innerHTML = e.dataTransfer.getData('text/html');
-        }
-        return false;
-      }
-
-      /**
-       * 각 리스트 항목에 드래그 앤 드롭 이벤트 리스너 추가
-       */
-      function addEventListeners() {
-        items = document.querySelectorAll('#drag-list li');
-        items.forEach(function(item) {
-          item.addEventListener('dragstart', handleDragStart, false);
-          item.addEventListener('dragenter', handleDragEnter, false);
-          item.addEventListener('dragover', handleDragOver, false);
-          item.addEventListener('dragleave', handleDragLeave, false);
-          item.addEventListener('drop', handleDrop, false);
-          item.addEventListener('dragend', handleDragEnd, false);
-        });
-      }
-
-      // 초기 이벤트 리스너 추가
-      addEventListeners();
     });
   </script>
 </body>

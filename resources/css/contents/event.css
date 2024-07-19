@@ -1,1 +1,49 @@
 @charset "UTF-8";
+
+.wrap-eventlist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .8rem;
+  gap: 1rem;
+}
+.wrap-eventlist .event-name {
+  flex: 1;
+  display: inline-block;
+  padding: 1.9rem 2rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 500;
+  background: var(--grays-6);
+  border-radius: 1.2rem;
+}
+.wrap-eventlist .inp-order {
+  width: 6rem;
+  min-width: 6rem;
+  height: 6rem;
+  padding-left: 1.4rem;
+  color: var(--grays-1);
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 1.2rem;
+  border: .1rem solid var(--grays-5);
+  text-align: center;
+}
+/* .inp-order::-webkit-inner-spin-button,
+.inp-order::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+} */
+.tbl-btn-group.is-count {
+  margin-top: 1rem;
+}
+ .tbl-btn-group.is-count .btn {
+  min-width: 4rem;
+  height: 2.8rem;
+  font-size: 1.6rem;
+  background: transparent;
+} 
+.event-detail .dl-formbox dd {
+  flex: 1;
+}

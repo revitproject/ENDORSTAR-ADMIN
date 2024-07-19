@@ -182,6 +182,13 @@ pre[class*=language-] {
 .guide .tbl-base .status.delete {
   color: var(--grays-2);
 }
+.guide .filter {
+  display: inline-flex;
+  align-items: center;
+}
+.guide .filter > button {
+  margin-left: .4rem;
+}
 .guide .filter-menu {
   position: absolute;
   z-index: 10;
@@ -197,7 +204,7 @@ pre[class*=language-] {
   padding: .6rem .6rem;
   border: none;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   font-size: 1.2rem;
 }
 .guide .filter-menu button:hover {
