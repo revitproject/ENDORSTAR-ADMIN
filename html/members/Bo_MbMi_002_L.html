@@ -22,7 +22,7 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">회원 정보</h1>
+      <h1 class="content-title">회원관리 > 회원정보관리</h1>
     </main>
     <!-- //base-content -->
 
@@ -36,32 +36,41 @@
         </div>
         <div class="modal-content">
           <p class="desc manage">처리담당자 : <span>endorhappy050</span></p>
-          <div class="tbl-dl">
-            <dl>
-              <dt>변경 전</dt>
-              <dd>김해피</dd>
-            </dl>
-            <dl>
-              <dt>변경 후</dt>
-              <dd>김해피</dd>
-            </dl>
-            <dl>
-              <dt>변경사유</dt>
-              <dd>
-                <select id="select1" class="inp-select">
-                  <option value="" selected>개명</option>
-                  <option value="">기타</option>
-                </select>
-              </dd>
-            </dl>
-          </div>
-          <div class="wrap-textarea">
-            <textarea name="" id="" class="inp-textarea" placeholder="변경사유를 입력해 주세요."></textarea>
+          <div class="wrap-tbl">
+            <h2 class="tbl-title">이름</h2>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 11.1rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>변경 전</th>
+                  <td class="is-bg">김해피</td>
+                </tr>
+                <tr>
+                  <th>변경 후</th>
+                  <td>김해피</td>
+                </tr>
+                <tr>
+                  <th>변경사유</th>
+                  <td class="align-left">
+                    <select id="select1" class="inp-select">
+                      <option value="" selected>개명</option>
+                      <option value="">기타</option>
+                    </select>
+                    <div class="wrap-textarea">
+                      <textarea name="" id="" class="inp-textarea" placeholder="변경사유를 입력해 주세요."></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">취소</button>
-          <button type="button" class="btn is-primary is-footer" data-modal="close">저장</button>
+          <button type="button" class="btn is-secondary-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">저장</button>
         </div>
       </div>
     </div>
