@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap maketing">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">마케팅관리 > 푸시 관리</h1>
+      <div class="content-inner">
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 푸시 상세 -->
+    <div id="Bo_MkPu_001_P2" class="modal push-modal is-push-detail is-show" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 654px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">푸시 상세</strong>
+        </div>
+        <div class="modal-content has-scrollbar">
+          <div class="area-scroll">
+            <div class="scroll-content">
+              <div class="tbl-dl">
+                <dl>
+                  <dt>발송 종류<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="wrap-formbox">
+                      <div class="form-radio">
+                        <label><input type="radio" name="sendType" class="inp-radio" value="immediate" checked disabled>즉시발송</label>
+                        <label><input type="radio" name="sendType" class="inp-radio" value="scheduled" disabled>예약발송</label>
+                      </div>
+                      <div class="area-datepicker is-disabled">
+                        <!-- DatePicker -->
+                        <div class="wrap-datepicker">
+                          <div class="datePicker">
+                            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                              <input type="text" id="startpicker-inp3" aria-label="Date-Time" disabled>
+                              <div id="startpicker-div3" class="datepicker-div"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrap-datepicker is-timepicker">
+                          <select class="inp-select is-sm" disabled>
+                            <option value="">시</option>
+                          </select>
+                          <select class="inp-select is-sm" disabled>
+                            <option value="">분</option>
+                          </select>
+                        </div>
+                        <!-- //DatePicker -->
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>알림 종류<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="notificationType" class="inp-radio" value="공지" checked disabled>공지</label>
+                      <label><input type="radio" name="notificationType" class="inp-radio" value="광고(마케팅)" disabled>광고(마케팅)</label>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpMemo" class="lb-inp">관리자 메모</label></dt>
+                  <dd><input type="text" id="inpMemo" class="inp-base" placeholder="관리자 메모" disabled></dd>
+                </dl>
+                <dl>
+                  <dt>디바이스<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="deviceType" class="inp-radio" checked disabled>전체</label>
+                      <label><input type="radio" name="deviceType" class="inp-radio" disabled>AOS</label>
+                      <label><input type="radio" name="deviceType" class="inp-radio" disabled>IOS</label>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="align-start">
+                  <dt>대상자<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="targetType" class="inp-radio" value="all" checked disabled>회원전체</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="target" disabled>특정타겟</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="file" disabled>파일등록</label>
+                    </div>
+                    <!-- CASE: 특정타겟 선택시 노출 -->
+                    <div class="form-checkbox form-case" style="display: none;">
+                      <label><input type="checkbox" class="inp-checkbox">10대</label>
+                      <label><input type="checkbox" class="inp-checkbox">20대</label>
+                      <label><input type="checkbox" class="inp-checkbox">30대</label>
+                      <label><input type="checkbox" class="inp-checkbox">40대</label>
+                      <label><input type="checkbox" class="inp-checkbox">50대</label>
+                      <label><input type="checkbox" class="inp-checkbox">60대 이상</label>
+                    </div>
+                    <!-- CASE: 파일등록 선택시 노출 -->
+                    <div class="form-file form-case" style="display: none;">
+                      <input type="text" id="inpFileUpload" class="inp-base inp-fileupload" placeholder="엑셀양식 업로드" readonly>
+                      <button type="button" class="btn btn-fileupload" id="btnFileUpload">파일 등록</button>
+                      <input type="file" id="fileInput" class="hidden" accept=".xls,.xlsx">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpSubject2" class="lb-inp">제목<em class="text-red-1">*</em></label></dt>
+                  <dd><input type="text" id="inpSubject2" class="inp-base" placeholder="제목" value="챌린지 2배!" disabled></dd>
+                </dl>
+                <dl class="align-start">
+                  <dt>이미지<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <p class="img-text">
+                      권장크기 : 000PX X 000PX<br>
+                      00MB 이하의 JPG, JPEG, PNG, 형식의 이미지만 등록이 가능합니다.
+                    </p>
+                    <div class="upload-thumb">
+                      <button id="registerPhotoBtn" class="btn-upload disabled">
+                        <span class="ico-add">+</span>
+                        <span class="length-txt" style="display: block;"><em class="current">1</em>/1</span>
+                      </button>
+                      <div id="thumbnailContainer" class="thumbnail-container"></div>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpMessage2" class="lb-inp">메시지<em class="text-red-1">*</em></label></dt>
+                  <dd>
+                    <!-- 공지 메시지 필드 -->
+                    <div class="message-notice">
+                      <input type="text" class="inp-base" placeholder="메시지" value="지금 참여하면 챌린지 보상 2배" disabled>
+                    </div>
+                    
+                    <!-- 광고(마케팅) 메시지 필드 -->
+                    <div class="message-ad" style="display: none;">
+                      <input type="text" class="inp-base inp-ad" placeholder="(광고)메시지" disabled>
+                    </div>
+                  </dd>
+                </dl>
+                
+                <dl>
+                  <dt><label for="inpUrl2" class="lb-inp">알림 연결 URL<em class="text-red-1">*</em></label></dt>
+                  <dd>
+                    <div class="wrap-formbox">
+                      <select id="select2" class="inp-select" disabled>
+                        <option value="" selected>내부</option>
+                        <option value="">기타</option>
+                      </select>
+                      <input type="text" id="inpUrl2" class="inp-base" placeholder="URL 또는 코드를 입력해주세요." value="0000000000000" disabled>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer">닫기</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(3, 2, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+</body>
+</html>

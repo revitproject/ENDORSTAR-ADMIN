@@ -47,3 +47,6 @@
 .event-detail .dl-formbox dd {
   flex: 1;
 }
+.event-detail .wrap-upload-img {
+  width: 100%;
+}

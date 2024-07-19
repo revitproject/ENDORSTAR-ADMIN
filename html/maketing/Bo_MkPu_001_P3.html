@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap maketing">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">마케팅관리 > 푸시 관리</h1>
+      <div class="content-inner">
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 푸시 수정 -->
+    <div id="Bo_MkPu_001_P3" class="modal push-modal is-show" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 654px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">푸시 수정</strong>
+        </div>
+        <div class="modal-content has-scrollbar">
+          <div class="area-scroll">
+            <div class="scroll-content">
+              <div class="tbl-dl">
+                <dl>
+                  <dt>발송 종류<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="wrap-formbox">
+                      <div class="form-radio">
+                        <label><input type="radio" name="sendType" class="inp-radio" value="immediate" checked>즉시발송</label>
+                        <label><input type="radio" name="sendType" class="inp-radio" value="scheduled">예약발송</label>
+                      </div>
+                      <div class="area-datepicker">
+                        <!-- DatePicker -->
+                        <div class="wrap-datepicker">
+                          <div class="datePicker">
+                            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                              <input id="startpicker-inp4" type="text" aria-label="Date-Time">
+                              <div id="startpicker-div4" class="datepicker-div"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrap-datepicker is-timepicker">
+                          <select class="inp-select is-sm">
+                            <option value="">시</option>
+                          </select>
+                          <select class="inp-select is-sm">
+                            <option value="">분</option>
+                          </select>
+                        </div>
+                        <!-- //DatePicker -->
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>알림 종류<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="notificationType" class="inp-radio" value="공지" checked>공지</label>
+                      <label><input type="radio" name="notificationType" class="inp-radio" value="광고(마케팅)">광고(마케팅)</label>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpMemo" class="lb-inp">관리자 메모</label></dt>
+                  <dd><input type="text" id="inpMemo" class="inp-base" placeholder="관리자 메모"></dd>
+                </dl>
+                <dl>
+                  <dt>디바이스<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="deviceType" class="inp-radio" checked>전체</label>
+                      <label><input type="radio" name="deviceType" class="inp-radio">AOS</label>
+                      <label><input type="radio" name="deviceType" class="inp-radio">IOS</label>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="align-start">
+                  <dt>대상자<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <div class="form-radio">
+                      <label><input type="radio" name="targetType" class="inp-radio" value="all" checked>회원전체</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="general">일반회원</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="social">소셜회원</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="target">특정타겟</label>
+                      <label><input type="radio" name="targetType" class="inp-radio" value="file">파일등록</label>
+                    </div>
+                    <!-- CASE: 특정타겟 선택시 노출 -->
+                    <div class="form-checkbox form-case" style="display: none;">
+                      <label><input type="checkbox" class="inp-checkbox">10대</label>
+                      <label><input type="checkbox" class="inp-checkbox">20대</label>
+                      <label><input type="checkbox" class="inp-checkbox">30대</label>
+                      <label><input type="checkbox" class="inp-checkbox">40대</label>
+                      <label><input type="checkbox" class="inp-checkbox">50대</label>
+                      <label><input type="checkbox" class="inp-checkbox">60대 이상</label>
+                    </div>
+                    <!-- CASE: 파일등록 선택시 노출 -->
+                    <div class="form-file form-case" style="display: none;">
+                      <input type="text" id="inpFileUpload" class="inp-base inp-fileupload" placeholder="엑셀양식 업로드" readonly>
+                      <button type="button" class="btn btn-fileupload" id="btnFileUpload">파일 등록</button>
+                      <input type="file" id="fileInput" class="hidden" accept=".xls,.xlsx">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpSubject" class="lb-inp">제목<em class="text-red-1">*</em></label></dt>
+                  <dd><input type="text" id="inpSubject" class="inp-base" placeholder="제목"></dd>
+                </dl>
+                <dl class="align-start">
+                  <dt>이미지<em class="text-red-1">*</em></dt>
+                  <dd>
+                    <p class="img-text">
+                      권장크기 : 000PX X 000PX<br>
+                      00MB 이하의 JPG, JPEG, PNG, 형식의 이미지만 등록이 가능합니다.
+                    </p>
+                    <div class="upload-thumb">
+                      <button id="registerPhotoBtn" class="btn-upload">
+                        <span class="ico-add">+</span>
+                        <span class="length-txt"><em class="current">1</em>/1</span>
+                      </button>
+                      <div id="thumbnailContainer" class="thumbnail-container"></div>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><label for="inpMessage" class="lb-inp">메시지<em class="text-red-1">*</em></label></dt>
+                  <dd>
+                    <!-- 공지 메시지 필드 -->
+                    <div class="message-notice">
+                      <input type="text" class="inp-base" placeholder="메시지">
+                    </div>
+                    
+                    <!-- 광고(마케팅) 메시지 필드 -->
+                    <div class="message-ad" style="display: none;">
+                      <input type="text" class="inp-base inp-ad" placeholder="(광고)메시지">
+                    </div>
+                  </dd>
+                </dl>
+                
+                <dl>
+                  <dt><label for="inpUrl3" class="lb-inp">알림 연결 URL<em class="text-red-1">*</em></label></dt>
+                  <dd>
+                    <div class="wrap-formbox">
+                      <select id="select1" class="inp-select">
+                        <option value="" selected>내부</option>
+                        <option value="">기타</option>
+                      </select>
+                      <input type="text" id="inpUrl3" class="inp-base" placeholder="URL 또는 코드를 입력해주세요.">
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer">닫기</button>
+          <button type="button" class="btn is-primary is-footer">수정</button>
+          <button type="button" id="btnTestSend" class="btn is-grays-1 is-footer" disabled onclick="customAlert.confirm('안내', '입력하신 내용으로 테스트 발송 하시겠습니까?', 'trueFn()', 'falseFn()');">테스트 발송</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(3, 2, null); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // DatePicker 초기화
+      const today = new Date();
+      const startpicker4 = new tui.DatePicker('#startpicker-div4', {
+        date: today,
+        language: 'ko',
+        input: {
+          element: '#startpicker-inp4',
+          format: 'yyyy-MM-dd'
+        }
+      });
+
+      // 이미지 업로드 초기화
+      const imageUploadConfig = {
+        registerBtnId: 'registerPhotoBtn',
+        thumbnailContainerId: 'thumbnailContainer',
+        maxPhotos: 1,
+        validExtensions: ['jpg', 'jpeg', 'png'],
+        maxFileSizeMB: 100
+      };
+      initPhotoRegistration(imageUploadConfig);
+
+      // 푸시 등록 모달 초기화
+      initializePushModal('#Bo_MkPu_001_P3'); // 초기화 대상 모달 id
+    });
+
+    // 푸시 모달 초기화 함수
+    function initializePushModal(modalSelector) {
+      document.querySelectorAll(modalSelector).forEach(modal => {
+        // 발송 종류 라디오 버튼
+        const sendTypeRadios = modal.querySelectorAll("input[name='sendType']");
+        const areaDatepicker = modal.querySelector(".area-datepicker");
+        const timePickers = areaDatepicker.querySelectorAll(".is-timepicker select");
+        const datePickerInput = areaDatepicker.querySelector(".tui-datepicker-input input");
+
+        // 메시지 input 요소
+        const noticeMessageField = modal.querySelector(".message-notice");
+        const adMessageField = modal.querySelector(".message-ad");
+        const adMessageInput = modal.querySelector(".inp-ad");
+
+        // 파일 업로드
+        const fileInput = modal.querySelector("#fileInput");
+        const inpFileUpload = modal.querySelector(".inp-fileupload");
+        const btnFileUpload = modal.querySelector(".btn-fileupload");
+
+        btnFileUpload.addEventListener("click", function() {
+          fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const fileName = file.name;
+            const fileExtension = fileName.split('.').pop().toLowerCase();
+            const validExtensions = ['xls', 'xlsx'];
+
+            if (!validExtensions.includes(fileExtension)) {
+              alert('파일 양식을 확인해 주세요.');
+              inpFileUpload.value = "";
+              fileInput.value = "";
+            } else {
+              inpFileUpload.value = fileName;
+            }
+          }
+        });
+
+        // 알림 종류 라디오 버튼
+        const notificationTypeRadios = modal.querySelectorAll("input[name='notificationType']");
+        notificationTypeRadios.forEach(function(elem) {
+          elem.addEventListener("change", function(event) {
+            if (event.target.checked) {
+              if (event.target.value === "광고(마케팅)") {
+                noticeMessageField.style.display = "none";
+                adMessageField.style.display = "block";
+
+                // input 이벤트를 통해 prefix 추가
+                adMessageInput.addEventListener("input", handleAdPrefix);
+
+              } else if (event.target.value === "공지") {
+                adMessageField.style.display = "none";
+                noticeMessageField.style.display = "block";
+
+                // 광고 prefix 추가 이벤트 제거
+                adMessageInput.removeEventListener("input", handleAdPrefix);
+              }
+            }
+          });
+        });
+
+        // (광고) prefix 추가
+        function handleAdPrefix(event) {
+          const inputValue = event.target.value;
+          if (!inputValue.startsWith("(광고)")) {
+            event.target.value = "(광고)" + inputValue.replace(/^\(광고\)/, '');
+          }
+        }
+
+        // 발송 종류 변경에 따른 date/timepicker 활성화/비활성화
+        sendTypeRadios.forEach(function(elem) {
+          elem.addEventListener("change", function(event) {
+            if (event.target.value === "scheduled") {
+              areaDatepicker.classList.remove("is-disabled");
+              datePickerInput.disabled = false;
+              timePickers.forEach(select => select.disabled = false);
+            } else {
+              areaDatepicker.classList.add("is-disabled");
+              datePickerInput.disabled = true;
+              timePickers.forEach(select => select.disabled = true);
+            }
+          });
+        });
+
+        // 대상자 라디오 버튼과 관련된 엘리먼트
+        const targetTypeRadios = modal.querySelectorAll("input[name='targetType']");
+        const formCheckbox = modal.querySelector(".form-checkbox");
+        const formFile = modal.querySelector(".form-file");
+        const testSendButton = modal.querySelector(".btn.is-grays-1.is-footer"); // 테스트 전송 버튼
+
+        // 하위 옵션 초기화 함수
+        function resetTargetOptions() {
+          formCheckbox.querySelectorAll("input[type='checkbox']").forEach(checkbox => checkbox.checked = false);
+          inpFileUpload.value = "";
+        }
+
+        // 대상자 선택에 따른 폼 영역 및 테스트 전송 버튼 상태 관리
+        targetTypeRadios.forEach(function(elem) {
+          elem.addEventListener("change", function(event) {
+            formCheckbox.style.display = "none";
+            formFile.style.display = "none";
+            resetTargetOptions(); // 하위 옵션 초기화
+
+            if (event.target.value === "target") {
+              formCheckbox.style.display = "flex";
+              testSendButton.disabled = true; 
+            } else if (event.target.value === "file") {
+              formFile.style.display = "flex";
+              testSendButton.disabled = false;  
+            } else {
+              testSendButton.disabled = true;
+            }
+          });
+        });
+
+        // 페이지 로드 시 초기 설정 - 발송 종류 및 대상자 종류에 따른 초기 상태 설정
+        const initialSendType = modal.querySelector("input[name='sendType']:checked");
+        const initialTargetType = modal.querySelector("input[name='targetType']:checked");
+        
+        if (initialSendType && initialSendType.value === "immediate") {
+          areaDatepicker.classList.add("is-disabled");
+          datePickerInput.disabled = true;
+          timePickers.forEach(select => select.disabled = true);
+        }
+
+        if (initialTargetType && initialTargetType.value === "file") {
+          formFile.style.display = "flex"; // 파일 등록이 이미 선택되어 있으면 노출
+          testSendButton.disabled = false; // 파일 등록이 이미 선택되어 있으면 활성화
+        } else {
+          testSendButton.disabled = true; // 그 외의 경우 비활성화
+        }
+      });
+    }
+  </script>
+</body>
+</html>
