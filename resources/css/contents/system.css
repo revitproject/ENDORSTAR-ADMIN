@@ -34,6 +34,9 @@
 .modal.is-grade .tbl-base + .tbl-base {
   margin-top: 2.8rem;
 }
+.modal.is-grade .tbl-base > colgroup + tbody > tr > td {
+  padding: .6rem 1rem;
+}
 .system .modal.is-userinfo .inp-textarea {
   min-height: 7.7rem;
 }
