@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap system">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <div class="ui-tab is-line">
+          <ul class="tab-menu">
+            <li class="tab-item"> 
+              <a href="./Bo_SyPo_001.html" class="tab-link" data-tab="tab1">등급혜택관리</a>
+            </li>
+            <li class="tab-item">  
+              <a href="./Bo_SyPo_004.html" class="tab-link" data-tab="tab2">레벨구간관리</a>
+            </li>
+            <li class="tab-item is-active">  
+              <a href="./Bo_SyPo_007.html" class="tab-link" data-tab="tab3">꾸미기관리</a>
+            </li>
+          </ul>
+          <div class="tab-contents">
+            <div class="tab-content" data-tab-content="tab1">
+              Bo_SyPo_001.html
+            </div>
+            <div class="tab-content" data-tab-content="tab2">
+              Bo_SyPo_004.html
+            </div>
+            <div class="tab-content pt-0 is-active" data-tab-content="tab3">
+              <p class="info-text">엔돌스타 육성형 게임에서 꾸미기 아이템을 등록 관리할 수 있습니다.</p>
+              <div class="module-top">
+                <div class="form-searchbox">
+                  <dl class="dl-formbox">
+                    <dt><label for="select1" class="lb-inp">판매여부</label></dt>
+                    <dd>
+                      <div class="form-radio">
+                        <label><input type="radio" name="rdoType" class="inp-radio" checked="">전체</label>
+                        <label><input type="radio" name="rdoType" class="inp-radio">Y</label>
+                        <label><input type="radio" name="rdoType" class="inp-radio">N</label>
+                      </div>
+                    </dd>
+                  </dl>
+
+                  <dl class="dl-formbox">
+                    <dt><label for="select2" class="lb-inp">카테고리</label></dt>
+                    <dd>
+                      <select id="select2" class="inp-select">
+                        <option value="">배경</option>
+                        <option value="">옵션</option>
+                      </select>
+                    </dd>
+                  </dl>
+                
+                  <dl class="dl-formbox inbtn">
+                    <dt><label for="selectSearch" class="lb-inp">검색어</label></dt>
+                    <dd>
+                      <div class="searchbox-item">
+                        <select id="selectSearch" class="inp-select is-sm">
+                          <option value="">선택</option>
+                          <option value="">아이템명</option>
+                          <option value="">등록자 ID</option>
+                          <option value="">아이템코드</option>
+                        </select>
+                        <input type="search" id="inp-search" class="inp-base" placeholder="검색어를 입력해주세요." style="width: 43.5rem;">
+                      </div>
+                    </dd>
+                    <dd class="searchbox-btn">
+                      <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                      <button type="submit" class="btn is-search">검색</button>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              
+              <div class="module-bottom">
+                <div class="box-form">
+                  <div class="wrap-tbl">
+                    <div class="tbl-head">
+                      <select class="inp-select">
+                        <option value="" selected="">10개씩 보기</option>
+                        <option value="">30개씩 보기</option>
+                        <option value="">50개씩 보기</option>
+                        <option value="">100개씩 보기</option>
+                      </select>
+                    </div>
+        
+                    <table class="tbl-base">
+                      <colgroup>
+                        <col style="width: 5.6rem;">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>NO.</th>
+                          <th>카테고리1</th>
+                          <th>아이템코드</th>
+                          <th>아이템명</th>
+                          <th>판매여부</th>
+                          <th>판매가격<br>(골드해머-GP)</th>
+                          <th>판매 누적 수량</th>
+                          <th>등록일</th>
+                          <th>등록자 ID</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>배경</td>
+                          <td>ITEM0001</td>
+                          <td><a href="#none" class="link">파란 행성</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>1000</td>
+                          <td>YYYY-MM-DD HH:MM</td>
+                          <td>%등록자ID%</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>배경</td>
+                          <td>ITEM0001</td>
+                          <td><a href="#none" class="link">파란 행성</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>1000</td>
+                          <td>YYYY-MM-DD HH:MM</td>
+                          <td>%등록자ID%</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>배경</td>
+                          <td>ITEM0002</td>
+                          <td><a href="#none" class="link">노란 행성</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>배경</td>
+                          <td>ITEM0003</td>
+                          <td><a href="#none" class="link">봄</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>배경</td>
+                          <td>ITEM0004</td>
+                          <td><a href="#none" class="link">여름</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>배경</td>
+                          <td>ITEM0005</td>
+                          <td><a href="#none" class="link">산</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>배경</td>
+                          <td>ITEM0006</td>
+                          <td><a href="#none" class="link">바다</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>배경</td>
+                          <td>ITEM0007</td>
+                          <td><a href="#none" class="link">축구장</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>100</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>배경</td>
+                          <td>ITEM0008</td>
+                          <td><a href="#none" class="link">프랑스 에펠탑</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>30</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>배경</td>
+                          <td>ITEM0009</td>
+                          <td><a href="#none" class="link">이탈리아 콜로세움</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>30</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>배경</td>
+                          <td>ITEM0010</td>
+                          <td><a href="#none" class="link">엔돌스타 축구장</a></td>
+                          <td>Y</td>
+                          <td>1000</td>
+                          <td>30</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>endorhappy050</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="wrap-pagination">
+                      <div class="wrap-count">
+                        <span class="count-text">총 <em class="count-number">115</em>건</span>
+                      </div>
+                      <div class="pagination">
+                        <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                        <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                        <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                        <a href="#" class="pagination-link">2</a>
+                        <a href="#" class="pagination-link">3</a>
+                        <a href="#" class="pagination-link">4</a>
+                        <a href="#" class="pagination-link">5</a>
+                        <a href="#" class="pagination-link">6</a>
+                        <a href="#" class="pagination-link">7</a>
+                        <a href="#" class="pagination-link">8</a>
+                        <a href="#" class="pagination-link">9</a>
+                        <a href="#" class="pagination-link">10</a>
+                        <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                        <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                      </div>
+                      <button type="button" class="btn is-outline-3 is-h26" data-modal="open" data-url="#Bo_SyPo_005_L">신규등록</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 레벨구간 혜택 신규 등록 -->
+    <div id="Bo_SyPo_005_L" class="modal is-grade" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 1114px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">레벨구간 혜택 신규 등록</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="bold">회원등급</th>
+                  <th class="bold">1등급 (소울스타)</th>
+                  <th class="bold">2등급 (타임스타)</th>
+                  <th class="bold">3등급 (파워스타)</th>
+                  <th class="bold">4등급 (마인스타)</th>
+                  <th class="bold">5등급 (엔돌스타)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="is-bg bold">레벨 구간</th>
+                  <td class="is-bg">1~10 Level</td>
+                  <td class="is-bg">11~20 Level</td>
+                  <td class="is-bg">21~30 Level</td>
+                  <td class="is-bg">31~40 Level</td>
+                  <td class="is-bg">41~50 Level</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1등급 당 상승 충족 경험치(XP)</th>
+                  <td class="is-bg">30000</td>
+                  <td class="is-bg">50,000</td>
+                  <td class="is-bg">70,000</td>
+                  <td class="is-bg">150,000</td>
+                  <td class="is-bg">200,000</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 상승 충족 경험치(XP)</th>
+                  <td class="is-bg">3000</td>
+                  <td class="is-bg">5,000</td>
+                  <td class="is-bg">7,000</td>
+                  <td class="is-bg">15,000</td>
+                  <td class="is-bg">20,000</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">적립 골드해머(GP)</th>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">적립 엔돌캐시(EP)</th>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">관리자 비고</th>
+                  <td colspan="5">
+                    <input type="text" class="inp-base" placeholder="등록사유를 입력해주세요.(최대 50자)" style="width: 100%;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 레벨구간 혜택 수정 -->
+    <div id="Bo_SyPo_005_L_1" class="modal is-grade" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 1114px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">레벨구간 혜택 수정</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="bold">회원등급</th>
+                  <th class="bold">1등급 (소울스타)</th>
+                  <th class="bold">2등급 (타임스타)</th>
+                  <th class="bold">3등급 (파워스타)</th>
+                  <th class="bold">4등급 (마인스타)</th>
+                  <th class="bold">5등급 (엔돌스타)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="is-bg bold">레벨 구간</th>
+                  <td class="is-bg">1~10 Level</td>
+                  <td class="is-bg">11~20 Level</td>
+                  <td class="is-bg">21~30 Level</td>
+                  <td class="is-bg">31~40 Level</td>
+                  <td class="is-bg">41~50 Level</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1등급 당 상승 충족 경험치(XP)</th>
+                  <td class="is-bg">30000</td>
+                  <td class="is-bg">50,000</td>
+                  <td class="is-bg">70,000</td>
+                  <td class="is-bg">150,000</td>
+                  <td class="is-bg">200,000</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 상승 충족 경험치(XP)</th>
+                  <td class="is-bg">3000</td>
+                  <td class="is-bg">5,000</td>
+                  <td class="is-bg">7,000</td>
+                  <td class="is-bg">15,000</td>
+                  <td class="is-bg">20,000</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 적립 골드해머(GP)</th>
+                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <td><input type="text" class="inp-base is-md" value="10"></td>
+                  <td><input type="text" class="inp-base is-md" value="20"></td>
+                  <td><input type="text" class="inp-base is-md" value="30"></td>
+                  <td><input type="text" class="inp-base is-md" value="40"></td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 적립 엔돌캐시(EP)</th>
+                  <td><input type="text" class="inp-base is-md" value="5"></td>
+                  <td><input type="text" class="inp-base is-md" value="10"></td>
+                  <td><input type="text" class="inp-base is-md" value="20"></td>
+                  <td><input type="text" class="inp-base is-md" value="30"></td>
+                  <td><input type="text" class="inp-base is-md" value="40"></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">관리자 비고</th>
+                  <td colspan="5">
+                    <span class="text-gray-1">초기값 등록_1</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>등록일</th>
+                  <th>등록자</th>
+                  <th>최종수정일</th>
+                  <th>수정자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%등록자ID%</td>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%수정자ID%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 레벨구간 혜택 조회 -->
+    <div id="Bo_SyPo_006_L" class="modal is-grade" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 1114px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">레벨구간 혜택 조회</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="bold">회원등급</th>
+                  <th class="bold">1등급 (소울스타)</th>
+                  <th class="bold">2등급 (타임스타)</th>
+                  <th class="bold">3등급 (파워스타)</th>
+                  <th class="bold">4등급 (마인스타)</th>
+                  <th class="bold">5등급 (엔돌스타)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="is-bg bold">레벨 구간</th>
+                  <td class="is-bg">1~10 Level</td>
+                  <td class="is-bg">11~20 Level</td>
+                  <td class="is-bg">21~30 Level</td>
+                  <td class="is-bg">31~40 Level</td>
+                  <td class="is-bg">41~50 Level</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1등급 당 상승 충족 경험치(XP)</th>
+                  <td class="is-bg">30000</td>
+                  <td class="is-bg">50,000</td>
+                  <td class="is-bg">70,000</td>
+                  <td class="is-bg">150,000</td>
+                  <td class="is-bg">200,000</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 적립 골드해머(GP)</th>
+                  <td>0</td>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>30</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <th class="is-bg bold">1레벨 당 적립 엔돌캐시(EP)</th>
+                  <td>0</td>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>30</td>
+                  <td>40</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 28.4rem;">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">관리자 비고</th>
+                  <td colspan="5">
+                    <span class="text-gray-1">초기값 등록_1</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>등록일</th>
+                  <th>등록자</th>
+                  <th>최종수정일</th>
+                  <th>수정자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%등록자ID%</td>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%수정자ID%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true" data-modal="close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(9, 0, 1); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+</body>
+</html>

@@ -22,27 +22,27 @@
 
     <!-- base-content -->
     <main class="base-content">
-      <h1 class="content-title">회원 정보</h1>
+      <h1 class="content-title">회원관리 > 회원정보관리</h1>
       <div class="content-inner">
         <div class="module-top">
           <div class="box-form">
             <div class="wrap-tbl">
               <h2 class="tbl-title">일반정보</h2>
-              <table class="tbl-base has-left">
+              <table class="tbl-base">
                 <colgroup>
-                  <col style="width: 20rem;">
+                  <col style="width: 14rem;">
                   <col>
-                  <col style="width: 20rem;">
+                  <col style="width: 14rem;">
                   <col>
-                  <col style="width: 20rem;">
+                  <col style="width: 14rem;">
                   <col>
-                  <col style="width: 20rem;">
+                  <col style="width: 14rem;">
                   <col>
                 </colgroup>
                 <tbody>
                   <tr>
                     <th>이름</th>
-                    <td>김해피</td>
+                    <td><a href="#Bo_MbMi_002_L" class="link" data-modal="open">김해피</a></td>
                     <th>아이디</th>
                     <td>endorhappy001</td>
                     <th>생년월일</th>
@@ -52,9 +52,9 @@
                   </tr>
                   <tr>
                     <th>휴대폰번호</th>
-                    <td>010-7777-1111</td>
+                    <td><a href="#none" class="link">010-7777-1111</a></td>
                     <th>이메일</th>
-                    <td>happymong@happy.com</td>
+                    <td><a href="#none" class="link">happymong@happy.com</a></td>
                     <th>회원유형</th>
                     <td>일반회원</td>
                     <th>연동정보/전환해머포인트</th>
@@ -85,7 +85,7 @@
             </div>
             <div class="wrap-tbl">
               <h2 class="tbl-title">마케팅정보</h2>
-              <table class="tbl-base has-left">
+              <table class="tbl-base">
                 <colgroup>
                   <col style="width: 20rem;">
                   <col>
@@ -98,19 +98,19 @@
                   <tr>
                     <th>SMS 수신</th>
                     <td>
-                      <div class="form-checkbox">
+                      <div class="form-checkbox is-center">
                         <label><input type="checkbox" class="inp-checkbox"></label>
                       </div>
                     </td>
                     <th>이메일 수신</th>
                     <td>
-                      <div class="form-checkbox">
+                      <div class="form-checkbox is-center">
                         <label><input type="checkbox" class="inp-checkbox"></label>
                       </div>
                     </td>
                     <th>불량회원</th>
                     <td>
-                      <div class="form-checkbox">
+                      <div class="form-checkbox is-center">
                         <label><input type="checkbox" class="inp-checkbox"></label>
                       </div>
                     </td>
@@ -120,23 +120,28 @@
             </div>
             <div class="wrap-tbl">
               <h2 class="tbl-title">앱정보</h2>
-              <table class="tbl-base has-left">
+              <table class="tbl-base">
                 <colgroup>
-                  <col style="width: 20rem;">
+                  <col style="width: 12.1rem;">
+                  <col style="width: 32rem;">
+                  <col style="width: 12.1rem;">
                   <col>
-                  <col style="width: 20rem;">
+                  <col style="width: 12.1rem;">
                   <col>
-                  <col style="width: 20rem;">
-                  <col>
-                  <col style="width: 20rem;">
+                  <col style="width: 12.1rem;">
                   <col>
                 </colgroup>
                 <tbody>
                   <tr>
-                    <th>푸시 수신</th>
+                    <th>앱 알림 여부 수신</th>
                     <td>
-                      <div class="form-checkbox">
-                        <label><input type="checkbox" class="inp-checkbox"></label>
+                      <div class="wrap-group is-flex">
+                        <div class="form-checkbox">
+                          <label>알림 수신 동의<input type="checkbox" class="inp-checkbox"></label>
+                        </div>
+                        <div class="form-checkbox">
+                          <label>이벤트 수신 동의<input type="checkbox" class="inp-checkbox" checked></label>
+                        </div>
                       </div>
                     </td>
                     <th>단말기 정보</th>
@@ -149,137 +154,134 @@
                 </tbody>
               </table>
             </div>
-  
-            <div class="tbl-btn-group is-center">
-              <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '수정 된 회원정보를 저장 하시겠어요?', 'trueFn()', 'falseFn()');">저장</button>
-              <button type="button" class="btn is-primary"onclick="customAlert.confirm('안내', '수정 후 저장되지 않은  회원정보가 있어요.<br>저장하지 않고 나가시겠어요?', 'trueFn()', 'falseFn()');">확인</button>
-            </div>
           </div>
         </div>
 
         <div class="module-bottom">
           <h2 class="tbl-title">이력정보</h2>
-          <div class="ui-tab">
-            <ul class="tab-menu">
-              <li class="tab-item is-active"> 
-                <a href="#" class="tab-link" data-tab="tab1">회원정보 변경이력</a>
-              </li>
-              <li class="tab-item">  
-                <a href="#" class="tab-link" data-tab="tab2">회원인증이력</a>
-              </li>
-              <li class="tab-item">
-                <a href="#" class="tab-link" data-tab="tab3">푸시수신변경이력</a>
-              </li>
-            </ul>
-            <div class="tab-contents">
-              <div class="tab-content is-active" data-tab-content="tab1">
-                <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
-                <div id="grid1" class="grid"></div>
-                <div class="wrap-count">
-                  <span class="count-text">총 <em class="count-number count-number1"></em>건</span>
+          <div class="box-form">
+            <div class="ui-tab is-round">
+              <ul class="tab-menu">
+                <li class="tab-item is-active"> 
+                  <a href="#" class="tab-link" data-tab="tab1">회원정보 변경이력</a>
+                </li>
+                <li class="tab-item">  
+                  <a href="#" class="tab-link" data-tab="tab2">회원인증이력</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link" data-tab="tab3">푸시수신변경이력</a>
+                </li>
+              </ul>
+              <div class="tab-contents">
+                <div class="tab-content is-active" data-tab-content="tab1">
+                  <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+                  <div id="grid1" class="grid"></div>
+                  <div class="wrap-count">
+                    <span class="count-text">총 <em class="count-number count-number1"></em>건</span>
+                  </div>
+                  <div id="pagination1" class="pagination"></div> <!-- 페이지네이션이 다중일 경우 생성 -->
                 </div>
-                <div id="pagination1" class="pagination"></div> <!-- 페이지네이션이 다중일 경우 생성 -->
-              </div>
-              <div class="tab-content" data-tab-content="tab2">
-                <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
-                <div id="grid2" class="grid"></div>
-                <div class="wrap-count">
-                  <span class="count-text">총 <em class="count-number count-number2">00</em>건</span>
+                <div class="tab-content" data-tab-content="tab2">
+                  <!-- Grid 테이블 생성, 하기 스크립트 필요 -->
+                  <div id="grid2" class="grid"></div>
+                  <div class="wrap-count">
+                    <span class="count-text">총 <em class="count-number count-number2">00</em>건</span>
+                  </div>
+                  <div id="pagination2" class="pagination"></div> <!-- 페이지네이션이 다중일 경우 생성 -->
                 </div>
-                <div id="pagination2" class="pagination"></div> <!-- 페이지네이션이 다중일 경우 생성 -->
-              </div>
-              <div class="tab-content" data-tab-content="tab3">
-                <div class="wrap-tbl">
-                  <table class="tbl-base">
-                    <colgroup>
-                      <col style="width: 5.6rem;">
-                      <col style="width: 34rem;">
-                      <col>
-                      <col>
-                      <col style="width: 19.9rem;">
-                      <col style="width: 19.9rem;">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>NO.</th>
-                        <th>단말기정보</th>
-                        <th>OS버젼</th>
-                        <th>앱 설치 버전</th>
-                        <th>접속시작</th>
-                        <th>접속종료</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>iPhone 12 Pro</td>
-                        <td>IOS 4.3.2</td>
-                        <td>Endor_v_0_ab</td>
-                        <td>2024-02-26 15:00</td>
-                        <td>2024-02-26 15:00</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <div class="wrap-pagination">
-                    <div class="wrap-count">
-                      <span class="count-text">총 <em class="count-number">10</em>건</span>
-                    </div>
-                    <div class="pagination">
-                      <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
-                      <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
-                      <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
-                      <a href="#" class="pagination-link">2</a>
-                      <a href="#" class="pagination-link">3</a>
-                      <a href="#" class="pagination-link">4</a>
-                      <a href="#" class="pagination-link">5</a>
-                      <a href="#" class="pagination-link">6</a>
-                      <a href="#" class="pagination-link">7</a>
-                      <a href="#" class="pagination-link">8</a>
-                      <a href="#" class="pagination-link">9</a>
-                      <a href="#" class="pagination-link">10</a>
-                      <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
-                      <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                <div class="tab-content" data-tab-content="tab3">
+                  <div class="wrap-tbl">
+                    <table class="tbl-base">
+                      <colgroup>
+                        <col style="width: 5.6rem;">
+                        <col style="width: 34rem;">
+                        <col>
+                        <col>
+                        <col style="width: 19.9rem;">
+                        <col style="width: 19.9rem;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>NO.</th>
+                          <th>단말기정보</th>
+                          <th>OS버젼</th>
+                          <th>앱 설치 버전</th>
+                          <th>접속시작</th>
+                          <th>접속종료</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>iPhone 12 Pro</td>
+                          <td>IOS 4.3.2</td>
+                          <td>Endor_v_0_ab</td>
+                          <td>2024-02-26 15:00</td>
+                          <td>2024-02-26 15:00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+  
+                    <div class="wrap-pagination">
+                      <div class="wrap-count">
+                        <span class="count-text">총 <em class="count-number">10</em>건</span>
+                      </div>
+                      <div class="pagination">
+                        <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                        <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                        <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                        <a href="#" class="pagination-link">2</a>
+                        <a href="#" class="pagination-link">3</a>
+                        <a href="#" class="pagination-link">4</a>
+                        <a href="#" class="pagination-link">5</a>
+                        <a href="#" class="pagination-link">6</a>
+                        <a href="#" class="pagination-link">7</a>
+                        <a href="#" class="pagination-link">8</a>
+                        <a href="#" class="pagination-link">9</a>
+                        <a href="#" class="pagination-link">10</a>
+                        <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                        <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -324,11 +326,10 @@
 
   <!-- page script -->
   <script>
+    // lnb active
     window.addEventListener('load', function () {
-      showFocusedLnb(document.body.dataset.route);
-    
       setTimeout(function () {
-        lnbActive(0, 0); // 2epth, 3dpeth
+        lnbActive(1, 0, null); // 1epth, 2epth, 3dpeth
       }, 50);
     });
   </script>

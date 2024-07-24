@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap event">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">이벤트관리 > 이벤트 등록</h1>
+      <div class="content-inner">
+        <div class="module-top">
+          <div class="form-searchbox dt-length5">
+            <dl class="dl-formbox">
+              <dt>이벤트 유형</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="eventCategory" class="inp-radio" checked>엔돌캐시</label>
+                  <label><input type="radio" name="eventCategory" class="inp-radio">상품권</label>
+                  <label><input type="radio" name="eventCategory" class="inp-radio">제휴상품</label>
+                  <label><input type="radio" name="eventCategory" class="inp-radio">아이템</label>
+                  <label><input type="radio" name="eventCategory" class="inp-radio">골드해머</label>
+                  <label><input type="radio" name="eventCategory" class="inp-radio">기타</label>
+                </div>
+              </dd>
+              <dt>이벤트 타겟</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="eventTarget" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="eventTarget" class="inp-radio">AOS</label>
+                  <label><input type="radio" name="eventTarget" class="inp-radio">IOS</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="inpEventname" class="lb-inp">이벤트 명</label></dt>
+              <dd><input type="text" id="inpEventname" class="inp-base" placeholder="이벤트 명을 입력해주세요." style="width: 55.5rem;"></dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>이벤트 기간</dt>
+              <dd>
+                <div class="area-datepicker">
+                  <!-- DatePicker -->
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-datepicker is-timepicker">
+                    <select class="inp-select is-sm">
+                      <option value="">시</option>
+                    </select>
+                    <select class="inp-select is-sm">
+                      <option value="">분</option>
+                    </select>
+                  </div>
+                  <span class="datepicker-to">~</span>
+  
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrap-datepicker is-timepicker">
+                    <select class="inp-select is-sm">
+                      <option value="">시</option>
+                    </select>
+                    <select class="inp-select is-sm">
+                      <option value="">분</option>
+                    </select>
+                  </div>
+                  <!-- //DatePicker -->
+                </div>
+              </dd>
+              <dt>참여 권한 설정</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="userType" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="userType" class="inp-radio">일반회원</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>이벤트 유형</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="eventType" class="inp-radio">배너링크</label>
+                  <label><input type="radio" name="eventType" class="inp-radio">일반이벤트</label>
+                  <label><input type="radio" name="eventType" class="inp-radio">설문조사</label>
+                  <label><input type="radio" name="eventType" class="inp-radio" checked>응모이벤트</label>
+                  <label><input type="radio" name="eventType" class="inp-radio">퀴즈이벤트</label>
+                  <label><input type="radio" name="eventType" class="inp-radio">빙고이벤트</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox inbtn">
+              <dt>검색어</dt>
+              <dd>
+                <div class="searchbox-item">
+                  <select id="select-search" class="inp-select is-sm">
+                    <option value="" selected>이벤트명</option>
+                  </select>
+              
+                  <input type="search" id="inp-search" class="inp-base" placeholder="">
+                </div>
+              </dd>
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                <button type="submit" class="btn is-search">검색</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- CASE 응모이벤트 -->
+        <div class="module-bottom event-case-entry">
+          <!-- 이벤트 상세 -->
+          <div class="event-detail">
+            <h2 class="content-title">이벤트 상세</h2>
+            <div class="form-searchbox dt-length6">
+              <dl class="dl-formbox">
+                <dt>등록 방식<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="form-radio">
+                    <label><input type="radio" name="uploadType" class="inp-radio" value="이미지">이미지</label>
+                    <label><input type="radio" name="uploadType" class="inp-radio" value="HTML" checked>HTML</label>
+                  </div>
+                </dd>
+              </dl>
+              <!-- 이미지 -->
+              <dl class="dl-formbox wrap-upload-img">
+                <dt>이미지 등록<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="upload-thumb">
+                    <button id="registerPhotoBtn" class="btn-upload">
+                      <span class="ico-add">+</span>
+                      <span class="length-txt"><em class="current">1</em>/1</span>
+                    </button>
+                    <div id="thumbnailContainer" class="thumbnail-container"></div>
+                  </div>
+                </dd>
+              </dl>
+              <!-- HTML -->
+              <dl class="dl-formbox wrap-upload-html">
+                <dt>HTML 등록<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="wrap-editor">
+                    에디터 영역
+                  </div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <!-- 유의사항 -->
+          <div class="event-detail">
+            <h2 class="content-title">유의사항</h2>
+            <div class="form-searchbox dt-length8">
+              <dl class="dl-formbox">
+                <dt>유의사항<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="wrap-editor">
+                    에디터 영역
+                  </div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="tbl-btn-group is-right">
+            <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '입력한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+            <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '등록 하시겠어요?', trueFn, falseFn);">등록</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(4, 0, 0); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    
+    // 이미지 업로드 초기화
+    const imageUploadConfig = {
+      registerBtnId: 'registerPhotoBtn',
+      thumbnailContainerId: 'thumbnailContainer',
+      maxPhotos: 1, // 이미지 최대등록개수
+      validExtensions: ['jpg', 'jpeg', 'png'], // 등록 파일 형식(수급 필요)
+      maxFileSizeMB: 100 // 등록 파일 최대 용량(수급 필요)
+    };
+    initPhotoRegistration(imageUploadConfig);
+
+    // 라디오 버튼 클릭 시 영역 노출
+    document.addEventListener('DOMContentLoaded', function() {
+      const imageRadio = document.querySelector('input[name="uploadType"][value="이미지"]');
+      const htmlRadio = document.querySelector('input[name="uploadType"][value="HTML"]');
+      const imageWrap = document.querySelector('.wrap-upload-img');
+      const htmlWrap = document.querySelector('.wrap-upload-html');
+
+      function toggleUploadArea() {
+        if (imageRadio.checked) {
+          imageWrap.style.display = 'flex';
+          htmlWrap.style.display = 'none';
+        } else if (htmlRadio.checked) {
+          imageWrap.style.display = 'none';
+          htmlWrap.style.display = 'flex';
+        }
+      }
+
+      imageRadio.addEventListener('change', toggleUploadArea);
+      htmlRadio.addEventListener('change', toggleUploadArea);
+
+      // 초기화 시 호출
+      toggleUploadArea();
+    });
+  </script>
+</body>
+</html>

@@ -58,8 +58,15 @@
   font-weight: 400;
   background: #fff;
 }
+.tbl-base > tbody > tr > th.is-bg,
 .tbl-base > tbody > tr > td.is-bg {
   background: var(--grays-6);
+}
+.tbl-base > tbody > tr > th.is-bg {
+  color: var(--grays-1);
+  font-weight: 500;
+  background: var(--grays-6);
+  border-right: .1rem solid var(--grays-5);
 }
 .tbl-base > colgroup + tbody > tr > th {
   /* padding: .6rem 2rem; */
@@ -112,6 +119,14 @@
 .tbl-base .wrap-group.is-flex .form-checkbox + .form-checkbox {
   margin-top: 0;
   margin-left: 1.6rem;
+}
+.tbl-base > thead > tr > th.bold,
+.tbl-base > thead > tr > td.bold,
+.tbl-base > tbody > tr > th.bold,
+.tbl-base > tbody > tr > td.bold,
+.module-top .tbl-base > tbody > tr > th.bold,
+.module-top .tbl-base > tbody > tr > td.bold {
+  font-weight: 700;
 }
 
 /* .table has-left  */

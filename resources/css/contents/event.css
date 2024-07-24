@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
-.wrap-eventlist li {
+/* 모달 - 이벤트 순서 설정 */
+.modal.is-event-order .wrap-eventlist li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: .8rem;
   gap: 1rem;
 }
-.wrap-eventlist .event-name {
+.modal.is-event-order .wrap-eventlist .event-name {
   flex: 1;
   display: inline-block;
   padding: 1.9rem 2rem;
@@ -17,7 +18,7 @@
   background: var(--grays-6);
   border-radius: 1.2rem;
 }
-.wrap-eventlist .inp-order {
+.modal.is-event-order .wrap-eventlist .inp-order {
   width: 6rem;
   min-width: 6rem;
   height: 6rem;
@@ -35,10 +36,21 @@
   -moz-appearance: textfield;
   margin: 0;
 } */
-.tbl-btn-group.is-count {
+.event .wrap-editor {
+  /* 임시 스타일 */
+  width: 100%;
+  min-height: 6rem;
+  padding: 2rem;
+  border: .1rem solid var(--grays-5);
+  border-radius: .4rem;
+}
+.event .wrap-editor + .form-checkbox {
+  margin-top: 1.4rem;
+}
+.event .tbl-btn-group.is-count {
   margin-top: 1rem;
 }
- .tbl-btn-group.is-count .btn {
+.event .tbl-btn-group.is-count .btn {
   min-width: 4rem;
   height: 2.8rem;
   font-size: 1.6rem;
@@ -47,6 +59,29 @@
 .event-detail .dl-formbox dd {
   flex: 1;
 }
-.event-detail .wrap-upload-img {
+.event .wrap-upload-img {
   width: 100%;
+  align-items: flex-start;
+}
+.event .wrap-upload-img .upload-thumb {
+  width: 100%;
+}
+.event .wrap-upload-html {
+  align-items: flex-start;
+}
+.event .event-detail {
+  margin-top: 2.8rem;
+}
+.event .event-detail .inp-textarea {
+  max-width: calc(100% - 12rem);
+  min-height: 6rem;
+}
+.event .dl-formbox dd.wrap-anwser {
+  gap: 1rem;
+}
+.event .wrap-anwser .form-radio + .form-radio {
+  margin-top: 0;
+}
+.event .wrap-survey {
+  margin-top: 1rem;
 }

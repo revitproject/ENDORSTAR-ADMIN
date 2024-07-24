@@ -118,7 +118,7 @@
                           <td>
                             <div class="btn-group">
                               <button type="button" data-url="#Bo_MiCh_003_P1" data-modal="open" class="btn is-outline-2 is-h26">수정</button>
-                              <button type="button" data-url="#preview2" data-modal="open" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', 'trueFn()', 'falseFn()');">삭제</button>
+                              <button type="button" data-url="#preview2" data-modal="open" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
                             </div>
                           </td>
                         </tr>
@@ -514,8 +514,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn is-grays-1 is-footer" data-modal="close" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', 'trueFn()', 'falseFn()');">취소</button>
-          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '수정 하시겠어요?', 'trueFn()', 'falseFn()');">수정</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '수정 하시겠어요?', trueFn, falseFn);">수정</button>
         </div>
       </div>
     </div>
@@ -766,7 +766,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn is-grays-1 is-footer" data-modal="close">닫기</button>
-          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '등록 하시겠어요?', 'trueFn()', 'falseFn()');">등록</button>
+          <button type="button" class="btn is-primary is-footer" onclick="customAlert.confirm('안내', '등록 하시겠어요?', trueFn, falseFn);">등록</button>
         </div>
       </div>
     </div>

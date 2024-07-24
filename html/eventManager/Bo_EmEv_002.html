@@ -133,24 +133,28 @@
           </div>
         </div>
 
-        <div class="module-bottom event-detail">
-          <h2 class="content-title">이벤트 상세</h2>
-          <div class="form-searchbox dt-length10">
-            <dl class="dl-formbox">
-              <dt><label for="inpUrl01" class="lb-inp">연결 URL (AOS)</label></dt>
-              <dd>
-                <input type="text" id="inpUrl01" class="inp-base" placeholder="URL을 입력해주세요." style="width: 52.5rem;">
-              </dd>
-            </dl>
-            <dl class="dl-formbox">
-              <dt><label for="inpUrl02" class="lb-inp">연결 URL (IOS)</label></dt>
-              <dd>
-                <input type="text" id="inpUrl02" class="inp-base" placeholder="URL을 입력해주세요." style="width: 52.5rem;">
-              </dd>
-            </dl>
+        <!-- CASE 배너링크 -->
+        <div class="module-bottom event-case-bannerlink">
+          <!-- 이벤트 상세 -->
+          <div class="event-detail">
+            <h2 class="content-title">이벤트 상세</h2>
+            <div class="form-searchbox dt-length8">
+              <dl class="dl-formbox">
+                <dt><label for="inpUrl01" class="lb-inp">연결 URL (AOS)</label></dt>
+                <dd>
+                  <input type="text" id="inpUrl01" class="inp-base" placeholder="URL을 입력해주세요." style="width: 52.5rem;">
+                </dd>
+              </dl>
+              <dl class="dl-formbox">
+                <dt><label for="inpUrl02" class="lb-inp">연결 URL (IOS)</label></dt>
+                <dd>
+                  <input type="text" id="inpUrl02" class="inp-base" placeholder="URL을 입력해주세요." style="width: 52.5rem;">
+                </dd>
+              </dl>
+            </div>
             <div class="tbl-btn-group is-right">
-              <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '입력한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', 'trueFn()', 'falseFn()');">취소</button>
-              <button type="button" class="btn is-primary"onclick="customAlert.confirm('안내', '등록 하시겠어요?', 'trueFn()', 'falseFn()');">등록</button>
+              <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '입력한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+              <button type="button" class="btn is-primary"onclick="customAlert.confirm('안내', '등록 하시겠어요?', trueFn, falseFn);">등록</button>
             </div>
           </div>
         </div>

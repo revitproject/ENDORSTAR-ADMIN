@@ -1,2 +1,42 @@
 @charset "UTF-8";
 
+.system .info-text {
+  margin-top: 1.6rem;
+  color: var(--grays-3);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.system .info-text + .module-top {
+  margin-top: 2.8rem;
+}
+.system .module-top .tbl-base + .tbl-base {
+  margin-top: 2.8rem;
+}
+.system .is-decorate .dl-formbox.is-start .img-text {
+  width: 100%;
+  margin-bottom: .4rem;
+  color: var(--grays-3);
+}
+.system .is-decorate .dl-formbox.is-start .upload-thumb {
+  width: 100%;
+}
+.system .is-decorate .dl-formbox.is-start .searchbox-btn {
+  bottom: 0;
+}
+/* 등급 혜택 모달 */
+.modal.is-grade .exchange-fee span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--grays-1);
+  font-weight: 500;
+  gap: 1.2rem;
+}
+.modal.is-grade .tbl-base + .tbl-base {
+  margin-top: 2.8rem;
+}
+.system .modal.is-userinfo .inp-textarea {
+  min-height: 7.7rem;
+}
+.system .modal.is-userinfo .manage.align-center {
+  margin-bottom: 2rem;
+}

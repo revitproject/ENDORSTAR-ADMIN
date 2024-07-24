@@ -49,6 +49,7 @@ class CustomAlert {
     this.initAlert();
   }
 
+  // 초기화 함수. 필요한 DOM 요소를 찾아 멤버 변수에 할당
   initAlert() {
     this.alertTitle = this.alertContainer.querySelector('.modal-title');
     this.alertText = this.alertContainer.querySelector('.modal-content .alert-msg');
@@ -56,9 +57,17 @@ class CustomAlert {
     this.falseBtn = this.alertContainer.querySelector('.modal-footer .is-false');
   }
 
-  alert(title, msg, trueFn) {
+  /**
+   * alert 표시
+   * @param {string} title - alert 타이틀
+   * @param {string} msg - alert 메시지
+   * @param {function} trueFn - 확인 버튼 클릭 시 실행할 함수
+   * @param {string} trueBtnText - 확인 버튼의 텍스트 (기본값: '확인')
+   */
+  alert(title, msg, trueFn, trueBtnText = '확인') {
     this.setupAlert(title, msg);
-    this.falseBtn.style.display = 'none';
+    this.trueBtn.textContent = trueBtnText;
+    this.falseBtn.style.display = 'none';  // 취소 버튼 숨기기
     this.trueBtn.onclick = () => {
       if (trueFn) trueFn();
       this.hideAlert();
@@ -66,8 +75,19 @@ class CustomAlert {
     this.showAlert();
   }
 
-  confirm(title, msg, trueFn, falseFn) {
+  /**
+   * confirm 표시
+   * @param {string} title - confirm 타이틀
+   * @param {string} msg - confirm 메시지
+   * @param {function} trueFn - 확인 버튼 클릭 시 실행할 함수
+   * @param {function} falseFn - 취소 버튼 클릭 시 실행할 함수
+   * @param {string} trueBtnText - 확인 버튼의 텍스트 (기본값: '확인')
+   * @param {string} falseBtnText - 취소 버튼의 텍스트 (기본값: '취소')
+   */
+  confirm(title, msg, trueFn, falseFn, trueBtnText = '확인', falseBtnText = '취소') {
     this.setupAlert(title, msg);
+    this.trueBtn.textContent = trueBtnText;
+    this.falseBtn.textContent = falseBtnText;
     this.trueBtn.onclick = () => {
       if (trueFn) trueFn();
       this.hideAlert();
@@ -76,7 +96,7 @@ class CustomAlert {
       if (falseFn) falseFn();
       this.hideAlert();
     };
-    this.falseBtn.style.display = 'block';
+    this.falseBtn.style.display = 'block';  // 취소 버튼 표시
     this.showAlert();
   }
 
@@ -94,6 +114,7 @@ class CustomAlert {
   }
 }
 
+// Tab
 class TabManager {
   constructor() {
     this.initTabs();
@@ -133,7 +154,6 @@ class TabManager {
     nestedTabManager.initTabs();
   }
 }
-
 class NestedTabManager {
   constructor(parentTabId) {
     this.parentTabId = parentTabId;
@@ -238,7 +258,6 @@ class GridManager {
     tui.Grid.applyTheme('default', gridStyle);
   }
 }
-
 // Grid 행번호 렌더러 커스텀
 class RowNumberRenderer {
   constructor(props) {
@@ -255,7 +274,6 @@ class RowNumberRenderer {
     this.el.innerHTML = `${props.formattedValue}`;
   }
 }
-
 // Grid 체크박스 렌더러 커스텀
 class CheckboxRenderer {
   constructor(props) {
@@ -444,25 +462,29 @@ function initPhotoRegistration(config) {
 
 class ApplicationInit {
   constructor() {
+    this.registerGlobalFunctions();
     document.addEventListener('DOMContentLoaded', () => {
       this.initComponents();
     });
   }
 
-  // iniit
+  registerGlobalFunctions() {
+    window.trueFn = () => console.log("확인 로직 실행");
+    window.falseFn = () => console.log("취소 로직 실행");
+  }
+
   initComponents() {
     this.modalManager = new ModalManager();
-    this.gridManager = new GridManager('.grid'); 
+    this.gridManager = new GridManager('.grid');
     this.tabManager = new TabManager();
-    window.customAlert = new CustomAlert(); 
+    window.customAlert = new CustomAlert(); // 글로벌 객체에 할당
 
-    document.querySelectorAll('.ui-dropdown').forEach(dropdownElement => {
-      new DropdownManager(dropdownElement);
-    });
+    this.dropdownManagers = Array.from(document.querySelectorAll('.ui-dropdown'))
+      .map(dropdown => new DropdownManager(dropdown));
 
     activeDateOptions('.btn-options .btn');
   }
 }
 
-// 애플리케이션 초기화
+// 애플리케이션 초기화 실행
 new ApplicationInit();

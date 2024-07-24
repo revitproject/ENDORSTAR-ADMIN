@@ -105,8 +105,8 @@
               <dt>이벤트 유형</dt>
               <dd>
                 <div class="form-radio">
-                  <label><input type="radio" name="eventType" class="inp-radio" checked>배너링크</label>
-                  <label><input type="radio" name="eventType" class="inp-radio">일반이벤트</label>
+                  <label><input type="radio" name="eventType" class="inp-radio">배너링크</label>
+                  <label><input type="radio" name="eventType" class="inp-radio" checked>일반이벤트</label>
                   <label><input type="radio" name="eventType" class="inp-radio">설문조사</label>
                   <label><input type="radio" name="eventType" class="inp-radio">응모이벤트</label>
                   <label><input type="radio" name="eventType" class="inp-radio">퀴즈이벤트</label>
@@ -133,23 +133,25 @@
           </div>
         </div>
 
-        <div class="module-bottom event-detail">
-          <h2 class="content-title">이벤트 상세</h2>
-          <div class="form-searchbox dt-length5">
-            <dl class="dl-formbox">
-              <dt>등록 방식<em class="text-red-1">*</em></dt>
-              <dd>
-                <div class="form-radio">
-                  <label><input type="radio" name="uploadType" class="inp-radio" checked="">이미지</label>
-                  <label><input type="radio" name="uploadType" class="inp-radio">HTML</label>
-                </div>
-              </dd>
-            </dl>
-            <dl class="dl-formbox">
-              <dt>이미지등록</dt>
-              <dd>
-                <!-- 이미지 -->
-                <div class="wrap-upload-img">
+        <!-- CASE 일반이벤트 -->
+        <div class="module-bottom event-case-default">
+          <!-- 이벤트 상세 -->
+          <div class="event-detail">
+            <h2 class="content-title">이벤트 상세</h2>
+            <div class="form-searchbox dt-length6">
+              <dl class="dl-formbox">
+                <dt>등록 방식<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="form-radio">
+                    <label><input type="radio" name="uploadType" class="inp-radio" value="이미지" checked="">이미지</label>
+                    <label><input type="radio" name="uploadType" class="inp-radio" value="HTML">HTML</label>
+                  </div>
+                </dd>
+              </dl>
+              <!-- 이미지 등록 영역 -->
+              <dl class="dl-formbox wrap-upload-img">
+                <dt>이미지 등록<em class="text-red-1">*</em></dt>
+                <dd>
                   <div class="upload-thumb">
                     <button id="registerPhotoBtn" class="btn-upload">
                       <span class="ico-add">+</span>
@@ -157,52 +159,46 @@
                     </button>
                     <div id="thumbnailContainer" class="thumbnail-container"></div>
                   </div>
-                </div>
-
-                <!-- HTML -->
-                 <div class="wrap-upload-html" style="display: none;">
+                </dd>
+              </dl>
+              <!-- HTML 등록 영역 -->
+              <dl class="dl-formbox wrap-upload-html">
+                <dt>HTML 등록<em class="text-red-1">*</em></dt>
+                <dd>
                   <div class="wrap-editor">
                     에디터 영역
                   </div>
-                 </div>
-              </dd>
-            </dl>
-            <dl class="dl-formbox">
-              <dt>질문등록<br> <span class="btye"><span class="text-primary">0</span>/1,000자</span></dt>
-              <dd>
-                <div class="wrap-textarea">
-                  <textarea name="" id="" class="inp-textarea" placeholder="질문을 등록해주세요."></textarea>
-                </div>
-              </dd>
-            </dl>
-            <dl class="dl-formbox">
-              <dt>답변 개수 등록</dt>
-              <dd>
-                <div class="form-radio">
-                  <label><input type="radio" name="answerItem" class="inp-radio">2개</label>
-                  <label><input type="radio" name="answerItem" class="inp-radio">3개</label>
-                  <label><input type="radio" name="answerItem" class="inp-radio">4개</label>
-                  <label><input type="radio" name="answerItem" class="inp-radio">5개</label>
-                </div>
-              </dd>
-            </dl>
-            <dl class="dl-formbox">
-              <dt>답변등록</dt>
-              <dd>
-                <div class="form-radio">
-                  <label for="answer01">
-                    <span class="hidden">1번</span>
-                    <input type="radio" name="answerItem" class="inp-radio">
-                    <input type="text" id="answer01" class="inp-base" placeholder="1번 답변 등록" style="width: 15rem;">
-                  </label>
-                </div>
-              </dd>
-            </dl>
+                </dd>
+              </dl>
+            </div>
           </div>
-        </div>
-        <div class="tbl-btn-group is-count">
-          <button type="button" class="btn is-outline-2">+</button>
-          <button type="button" class="btn is-outline-2">-</button>
+          <!-- 유의사항 -->
+          <div class="event-detail">
+            <h2 class="content-title">유의사항</h2>
+            <div class="form-searchbox dt-length8">
+              <dl class="dl-formbox">
+                <dt>유의사항<em class="text-red-1">*</em></dt>
+                <dd>
+                  <div class="wrap-editor">
+                    에디터 영역
+                  </div>
+                </dd>
+              </dl>
+              <dl class="dl-formbox">
+                <dt>응모버튼 노출여부</dt>
+                <dd>
+                  <div class="form-checkbox">
+                    <label><input type="checkbox" class="inp-checkbox">노출</label>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="tbl-btn-group is-right">
+            <button type="button" class="btn is-secondary-1" onclick="customAlert.confirm('안내', '입력한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+            <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '등록 하시겠어요?', trueFn, falseFn);">등록</button>
+          </div>
         </div>
       </div>
     </main>
@@ -273,11 +269,35 @@
     const imageUploadConfig = {
       registerBtnId: 'registerPhotoBtn',
       thumbnailContainerId: 'thumbnailContainer',
-      maxPhotos: 1,
-      validExtensions: ['jpg', 'jpeg', 'png'],
-      maxFileSizeMB: 100
+      maxPhotos: 1, // 이미지 최대등록개수
+      validExtensions: ['jpg', 'jpeg', 'png'], // 등록 파일 형식(수급 필요)
+      maxFileSizeMB: 100 // 등록 파일 최대 용량(수급 필요)
     };
     initPhotoRegistration(imageUploadConfig);
+
+    // 라디오 버튼 클릭 시 영역 노출
+    document.addEventListener('DOMContentLoaded', function() {
+      const imageRadio = document.querySelector('input[name="uploadType"][value="이미지"]');
+      const htmlRadio = document.querySelector('input[name="uploadType"][value="HTML"]');
+      const imageWrap = document.querySelector('.wrap-upload-img');
+      const htmlWrap = document.querySelector('.wrap-upload-html');
+
+      function toggleUploadArea() {
+        if (imageRadio.checked) {
+          imageWrap.style.display = 'flex';
+          htmlWrap.style.display = 'none';
+        } else if (htmlRadio.checked) {
+          imageWrap.style.display = 'none';
+          htmlWrap.style.display = 'flex';
+        }
+      }
+
+      imageRadio.addEventListener('change', toggleUploadArea);
+      htmlRadio.addEventListener('change', toggleUploadArea);
+
+      // 초기화 시 호출
+      toggleUploadArea();
+    });
   </script>
 </body>
 </html>

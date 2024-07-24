@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap system">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">꾸미기 아이템 상세/수정</h1>
+        <div class="module-top is-decorate">
+          <div class="form-searchbox dt-length13">
+            <dl class="dl-formbox">
+              <dt><label for="inpItemcode" class="lb-inp">아이템코드</label></dt>
+              <dd><input type="text" id="inpItemcode" class="inp-base" value="ITEM0001" readonly></dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="select2" class="lb-inp">카테고리</label></dt>
+              <dd>
+                <select id="select2" class="inp-select">
+                  <option value="">배경</option>
+                  <option value="">가구</option>
+                  <option value="">장식</option>
+                  <option value="">펫</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="inpItemname" class="lb-inp">아이템명</label></dt>
+              <dd><input type="text" id="inpItemname" class="inp-base" placeholder="꾸미기 아이템 등록" maxlength="8"></dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="inpPrice" class="lb-inp">판매가격 (골드해머 -GP)</label></dt>
+              <dd><input type="text" id="inpPrice" class="inp-base is-md" placeholder="입력해주세요." style="width: 15.4rem;"></dd>
+              <dt class="is-initial"><label for="inpCount" class="lb-inp">판매 누적 수량</label></dt>
+              <dd><input type="text" id="inpCount" class="inp-base is-md" placeholder="입력해주세요." value="-" disabled style="width: 15.4rem;"></dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="select1" class="lb-inp">판매여부</label></dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="rdoType" class="inp-radio" checked>Y</label>
+                  <label><input type="radio" name="rdoType" class="inp-radio">N</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox inbtn is-start">
+              <dt>아이템 이미지등록</dt>
+              <dd>
+                <p class="img-text">
+                  권장크기 : 000PX X 000PX<br>
+                  00MB 이하의 JPG, JPEG, PNG, 형식의 이미지만 등록이 가능합니다.
+                </p>
+                <div class="upload-thumb">
+                  <button id="registerPhotoBtn" class="btn-upload">
+                    <span class="ico-add">+</span>
+                    <span class="length-txt"><em class="current">1</em>/1</span>
+                  </button>
+                  <div id="thumbnailContainer" class="thumbnail-container"></div>
+              </dd>
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-search" data-modal="open" data-url="#Bo_SyPo_008_L">저장</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        
+        <div class="module-bottom">
+          <h2 class="content-title">이력정보</h2>
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col style="width: 22rem;">
+                  <col>
+                  <col style="width: 22rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>처리자</th>
+                    <th>변경사유</th>
+                    <th>변경처리일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>endorhappy001</td>
+                    <td>카테고리 이동 (배경  > 모자)</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>황인상(서비스팀)</td>
+                    <td>카테고리 이동 (자연  > 기본)</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>endorhappy001</td>
+                    <td>보라우주행성 > 파란우주행성</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>황인상(서비스팀)</td>
+                    <td>카테고리 이동 (배경  > 모자)</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>황인상(서비스팀)</td>
+                    <td>이벤트성 가격 조정 1000 GP > 500 GP</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>황인상(서비스팀)</td>
+                    <td>판매중지</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>황인상(서비스팀)</td>
+                    <td>개선이미지로 업데이트</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>endorhappy001</td>
+                    <td>최초등록</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>endorhappy001</td>
+                    <td>카테고리 이동 (배경  > 모자)</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>endorhappy001</td>
+                    <td>카테고리 이동 (배경  > 모자)</td>
+                    <td>2024-02-26 15:00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">115</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <div id="Bo_SyPo_008_L" class="modal is-userinfo" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 478px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">변경 정보</strong>
+        </div>
+        <div class="modal-content">
+          <p class="manage align-center">처리담당자 : <span>endorhappy050</span></p>
+          <div class="wrap-textarea">
+            <textarea name="" id="" class="inp-textarea" placeholder="변경사유를 입력해 주세요.(최대 25자)"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" data-modal="close">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true" data-modal="close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(9, 0, 1); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+    // 이미지 업로드 초기화
+    const imageUploadConfig = {
+      registerBtnId: 'registerPhotoBtn',
+      thumbnailContainerId: 'thumbnailContainer',
+      maxPhotos: 1,
+      validExtensions: ['jpg', 'jpeg', 'png'],
+      maxFileSizeMB: 100
+    };
+    initPhotoRegistration(imageUploadConfig);
+  </script>
+</body>
+</html>

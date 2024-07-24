@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
 
-<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+<body data-route="main">
   <!-- base-wrap -->
   <div class="base-wrap">
     <!-- inlcude -->
@@ -29,8 +29,8 @@
         <h1 class="content-title">회원통계 <span>7일간의 회원통계</span></h1>
         <div class="dashboard-info">
           <div class="dashboard__card">
-            <span class="card-title">방문자수</span>
-            <span class="card-count"><strong class="card-number">1,000,000</strong>명</span>
+            <span class="card-title">전체회원수</span>
+            <div id="pieChart" class="chart"></div>
           </div>
           <div class="dashboard__card">
             <span class="card-title">앱 다운로드 수</span>
@@ -50,7 +50,6 @@
           <div class="chart-group">
             <div id="lineChart" class="chart"></div>
             <div id="barChart" class="chart"></div>
-            <div id="pieChart" class="chart"></div>
           </div>
           <div class="chart-group">
             <div id="stackBarChart" class="chart"></div>
@@ -111,10 +110,41 @@
         },
         pieChart: {
           selector: "#pieChart",
-          type: 'pie',
+          type: 'donut',
           options: {
-            series: [44, 55, 13, 33],
-            labels: ['Online Shopping', 'Acquisition', 'Subscription', 'Other']
+            series: [45, 23, 23, 9],
+            labels: ['일반회원', '소셜회원', '해피머니', '일반전환'],
+            colors: ['#F16122', '#7DB700', '#FFAA00', '#BA75F3'], 
+            chart: {
+              type: 'donut',
+            },
+            legend: {
+              formatter: function(seriesName, opts) {
+                return seriesName + "(" + opts.w.globals.series[opts.seriesIndex] + "%)";
+              }
+            },
+            plotOptions: {
+              pie: {
+                donut: {
+                  size: '65%', // 도넛 두께 조정
+                  labels: {
+                    show: true,
+                    total: {
+                      showAlways: true,
+                      show: true,
+                      label: '회원수',
+                      formatter: function (w) {
+                        // return w.globals.seriesTotals.reduce((a, b) => a + b, 0) + "%"
+                        return "백분율"
+                      }
+                    }
+                  },
+                  dataLabels: {
+                    offset: 10 // 섹션 간 간격 조정
+                  }
+                }
+              }
+            }
           }
         },
         stackBarChart: {

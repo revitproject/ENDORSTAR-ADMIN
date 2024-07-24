@@ -399,55 +399,5 @@
       }, 50);
     });
   </script>
-   <script>
-    // DatePicker
-    const today = new Date();
-    const startpicker = new tui.DatePicker('#startpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker = new tui.DatePicker('#endpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-
-    // UI확인용 datepicker btn 스크립트
-    document.querySelector('.btn-options').addEventListener('click', function (event) {
-      const target = event.target;
-      if (!target.classList.contains('btn')) return;
-
-      let startDate, endDate = today;
-      switch (target.textContent.trim()) {
-        case '전체':
-          break;
-        case '오늘':
-          startDate = endDate = today;
-          break;
-        case '1주일':
-          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-          break;
-        case '1개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-          break;
-        case '3개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
-          break;
-        case '6개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
-          break;
-      }
-
-      startpicker.setDate(startDate);
-      endpicker.setDate(endDate);
-    });
-   </script>
 </body>
 </html>

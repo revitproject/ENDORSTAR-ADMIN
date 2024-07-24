@@ -595,7 +595,7 @@
     // lnb active
     window.addEventListener('load', function () {
       setTimeout(function () {
-        lnbActive(1, 2, 0); // 1epth, 2epth, 3dpeth
+        lnbActive(1, 2, null); // 1epth, 2epth, 3dpeth
       }, 50);
     });
 
@@ -643,10 +643,13 @@
           case '6개월':
             startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
             break;
+          case '12개월':  // 새로운 case 추가
+            startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+            break;
         }
 
-        startpicker.setDate(startDate);
-        endpicker.setDate(endDate);
+        startpicker1.setDate(startDate);
+        endpicker1.setDate(endDate);
       });
 
       // 엔돌캐시 모달 초기화

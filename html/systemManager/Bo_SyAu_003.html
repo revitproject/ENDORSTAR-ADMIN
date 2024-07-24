@@ -1671,7 +1671,7 @@
               </table>
   
               <div class="tbl-btn-group is-right">
-                <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', 'trueFn()', 'falseFn()');" disabled>저장</button>
+                <button type="button" class="btn is-primary" onclick="customAlert.confirm('안내', '작성 중인 내용을 저장 하시겠어요?', trueFn, falseFn);" disabled>저장</button>
               </div>
             </div>
           </div>
@@ -1715,7 +1715,7 @@
   // lnb active
   window.addEventListener('load', function () {
     setTimeout(function () {
-      lnbActive(9, 1, null); // 1epth, 2epth, 3dpeth
+      lnbActive(9, 1, 1); // 1epth, 2epth, 3dpeth
     }, 50);
   });
 </script>
