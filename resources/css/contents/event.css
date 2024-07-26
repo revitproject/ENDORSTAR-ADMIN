@@ -85,3 +85,25 @@
 .event .wrap-survey {
   margin-top: 1rem;
 }
+
+.event .uploaded-photos-view {
+  margin: 1.4rem 0 0;
+}
+.uploaded-photos-view .thumbnail-container {
+  margin-left: 0;
+}
+.uploaded-photos-view.is-sm .thumbnail-container {
+  margin-left: 0;
+  gap: 1.6rem;
+}
+.event .uploaded-photos-view.is-sm .thumbnail {
+  top: -.5rem;
+  right: -.5rem;
+  width: 4.2rem;
+  height: 4.2rem;
+}
+.event .uploaded-photos-view.is-sm .thumbnail .delete-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-size: .6rem;
+}

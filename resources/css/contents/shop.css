@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.shop .wrap-group.is-center {
+  display: flex;
+  align-items: center;
+}
+.shop .wrap-group.is-center .percent {
+  display: inline-block;
+  min-width: 2rem;
+  margin-left: .6rem;
+}

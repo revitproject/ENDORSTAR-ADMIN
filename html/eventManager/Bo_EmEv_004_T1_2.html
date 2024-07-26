@@ -138,8 +138,9 @@
                             <td>%참여시간%</td>
                             <td>%당첨횟수%</td>
                             <td>
-                              <div class="wrap-upload">
-
+                              <!-- 이미지 보기 화면 -->
+                              <div class="uploaded-photos-view is-sm">
+                                <div id="viewThumbnailContainer" class="thumbnail-container"></div>
                               </div>
                             </td>
                             <td>
@@ -229,40 +230,16 @@
     });
   </script>
   <script>
-    // DatePicker
-    const today = new Date();
-    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-
-    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp2',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp2',
-        format: 'yyyy-MM-dd'
-      }
+    document.addEventListener('DOMContentLoaded', function() {
+      initPhotoView({
+        thumbnailContainerId: 'viewThumbnailContainer',
+        photos: [
+          { src: '../../resources/images/temp/img-thumbnail.png', name: '' }, // 서버에서 받아온 데이터로 대체
+          { src: '../../resources/images/temp/img-thumbnail.png', name: '' },
+          { src: '../../resources/images/temp/img-temp2.png', name: '' },
+        ],
+        previewEnabled: true
+      });
     });
   </script>
 </body>

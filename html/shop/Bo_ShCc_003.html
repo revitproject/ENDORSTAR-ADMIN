@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap shop">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">해피머니 사용자수수료</h1>
+        <div class="module-top">
+          <div class="box-form">
+            <table class="tbl-base has-data">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>교환처</th>
+                  <td>해피머니</td>
+                </tr>
+                <tr>
+                  <th>교환처 ID</th>
+                  <td>happymoney</td>
+                </tr>
+                <tr>
+                  <th>사용자수수료</th>
+                  <td><span>0</span> %</td>
+                </tr>
+                <tr>
+                  <th>사용여부</th>
+                  <td>
+                    <div class="form-radio">
+                      <label><input type="radio" name="rdoType" class="inp-radio" checked>Y</label>
+                      <label><input type="radio" name="rdoType" class="inp-radio">N</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>관리자비고</th>
+                  <td>최초값입력</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+              </div>
+  
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                  <col style="width: 11rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>등록일</th>
+                    <th>등록자</th>
+                    <th>최종수정일</th>
+                    <th>수정자</th>
+                    <th>수정/조회</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>happymong</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>endorhappy050</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_ShCc_004_L_1" data-modal="open">수정</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>happymong</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>endorhappy050</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_ShCc_004_L_2" data-modal="open">조회</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>happymong</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>endorhappy050</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_ShCc_004_L_2" data-modal="open">조회</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>happymong</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>endorhappy050</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_ShCc_004_L_2" data-modal="open">조회</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>happymong</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>endorhappy050</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_ShCc_004_L_2" data-modal="open">조회</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">5</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- 사용자수수료 수정 -->
+    <div id="Bo_ShCc_004_L_1" class="modal is-grade" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 710px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">사용자수수료 수정</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base has-data">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">교환처</th>
+                  <td>해피머니</td>
+                </tr>
+                <tr>
+                  <th class="is-bg">교환처 ID</th>
+                  <td>happymoney</td>
+                </tr>
+                <tr>
+                  <th class="is-bg">사용자수수료</th>
+                  <td>
+                    <div class="wrap-group is-center">
+                      <input type="text" class="inp-base" placeholder="입력해주세요." value="0">
+                      <span class="percent">%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="is-bg">사용여부</th>
+                  <td>
+                    <div class="form-radio">
+                      <label><input type="radio" name="appType" class="inp-radio" checked>Y</label>
+                      <label><input type="radio" name="appType" class="inp-radio">N</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">관리자 비고</th>
+                  <td colspan="5">
+                    <input type="text" class="inp-base" placeholder="등록사유를 입력해주세요.(최대 50자)" maxlength="50" style="width: 100%;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>등록일</th>
+                  <th>등록자</th>
+                  <th>최종수정일</th>
+                  <th>수정자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%등록자ID%</td>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%수정자ID%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사용자수수료 조회 -->
+    <div id="Bo_ShCc_004_L_2" class="modal is-grade" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 710px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">사용자수수료 조회</strong>
+        </div>
+        <div class="modal-content">
+          <div class="wrap-tbl">
+            <table class="tbl-base has-data">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">교환처</th>
+                  <td>해피머니</td>
+                </tr>
+                <tr>
+                  <th class="is-bg">교환처 ID</th>
+                  <td>happymoney</td>
+                </tr>
+                <tr>
+                  <th class="is-bg">사용자수수료</th>
+                  <td>
+                    <div class="wrap-group is-center">
+                      <input type="text" class="inp-base" placeholder="입력해주세요." value="0">
+                      <span class="percent">%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="is-bg">사용여부</th>
+                  <td>
+                    <div class="form-radio">
+                      <label><input type="radio" name="appType" class="inp-radio" checked>Y</label>
+                      <label><input type="radio" name="appType" class="inp-radio">N</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="is-bg">관리자 비고</th>
+                  <td colspan="5">
+                    <input type="text" class="inp-base" placeholder="등록사유를 입력해주세요.(최대 50자)" maxlength="50" style="width: 100%;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 16rem;">
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>등록일</th>
+                  <th>등록자</th>
+                  <th>최종수정일</th>
+                  <th>수정자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%등록자ID%</td>
+                  <td>YYYY-MM-DD HH:MM</td>
+                  <td>%수정자ID%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" onclick="customAlert.confirm('안내', '변경한 내용이 저장되지 않습니다.<br>취소하시겠습니까?', trueFn, falseFn);">취소</button>
+          <button type="button" class="btn is-grays-1 is-footer" data-modal="close">저장</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true" data-modal="close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+  // lnb active
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      lnbActive(5, 0, null); // 1epth, 2epth, 3dpeth
+    }, 50);
+  });
+  </script>
+  <script>
+  // DatePicker 초기화
+  const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    
+    // UI 확인용 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+        case '12개월':  // 새로운 case 추가
+          startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+          break;
+      }
+
+      startpicker1.setDate(startDate);
+      endpicker1.setDate(endDate);
+    });
+  </script>
+</body>
+</html>

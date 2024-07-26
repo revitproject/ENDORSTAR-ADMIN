@@ -25,27 +25,28 @@
       <div class="content-inner">
         <div class="ui-tab is-line">
           <ul class="tab-menu">
-            <li class="tab-item is-active"> 
-              <a href="./Bo_SyPo_001.html" class="tab-link" data-tab="tab1">등급혜택관리</a>
+            <li class="tab-item"> 
+              <a href="./Bo_SyPo_010.html" class="tab-link" data-tab="tab1">오락실</a>
+            </li>
+            <li class="tab-item is-active">  
+              <a href="./Bo_SyPo_013.html" class="tab-link" data-tab="tab2">챌린지</a>
             </li>
             <li class="tab-item">  
-              <a href="./Bo_SyPo_004.html" class="tab-link" data-tab="tab2">레벨구간관리</a>
-            </li>
-            <li class="tab-item">  
-              <a href="./Bo_SyPo_007.html" class="tab-link" data-tab="tab3">꾸미기관리</a>
+              <a href="./Bo_SyPo_016.html" class="tab-link" data-tab="tab3">랭킹보드</a>
             </li>
           </ul>
           <div class="tab-contents">
-            <div class="tab-content pt-0 is-active" data-tab-content="tab1">
-              <p class="info-text">엔돌스타 육성형 게임에서 승급 시 부여되는 리워드를 관리할 수 있습니다.</p>
+            <div class="tab-content" data-tab-content="tab1">
+              Bo_SyPo_010.html
+            </div>
+            <div class="tab-content pt-0 is-active" data-tab-content="tab2">
+              <p class="info-text">챌린지에서 제공하는 리워드와 미션완료 구매권 관리를 할 수 있습니다.</p>
               <div class="module-top">
-                <h1 class="content-title">등급혜택 현황</h1>
+                <h1 class="content-title">챌린지 설정 현황</h1>
                 <div class="box-form mt-0">
                   <div class="wrap-tbl">
                     <table class="tbl-base">
                       <colgroup>
-                        <col style="width: 28.4rem;">
-                        <col>
                         <col>
                         <col>
                         <col>
@@ -53,52 +54,76 @@
                       </colgroup>
                       <thead>
                         <tr>
-                          <th>회원등급</th>
-                          <th>1등급 (소울스타)</th>
-                          <th>2등급 (타임스타)</th>
-                          <th>3등급 (파워스타)</th>
-                          <th>4등급 (마인스타)</th>
-                          <th>5등급 (엔돌스타)</th>
+                          <th>챌린지</th>
+                          <th colspan="3">출석체크</th>
+                          <th colspan="2">걷기</th>
+                          <th colspan="2">기상</th>
+                        </tr>
+                        <tr>
+                          <th>미션</th>
+                          <th>기본 (일1회)</th>
+                          <th>5회 이상 연속</th>
+                          <th>미션 (월)</th>
+                          <th>기본 (일1회)</th>
+                          <th>미션 (주 5회)</th>
+                          <th>기본 (일1회)</th>
+                          <th>미션 (주 5회)</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th class="is-bg">적립 경험치(XP)</th>
+                          <th class="is-bg"> 경험치(XP)</th>
+                          <td>30</td>
+                          <td>50</td>
                           <td>0</td>
+                          <td>50</td>
                           <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
-                        </tr>
-                        <tr>
-                          <th class="is-bg">적립 골드해머(GP)</th>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
+                          <td>50</td>
                           <td>0</td>
                         </tr>
                         <tr>
-                          <th class="is-bg">적립 엔돌캐시(EP)</th>
+                          <th class="is-bg">골드해머(GP)</th>
+                          <td>30</td>
+                          <td>50</td>
                           <td>0</td>
-                          <td>100</td>
-                          <td>500</td>
-                          <td>1000</td>
-                          <td>1500</td>
+                          <td>50</td>
+                          <td>0</td>
+                          <td>50</td>
+                          <td>0</td>
                         </tr>
                         <tr>
-                          <th class="is-bg">랩업러시 교환비(GP : XP)</th>
-                          <td colspan="5">
-                            <span>골드해머(GP) <em class="text-primary">10</em></span> :
-                            <span>경험치(XP) <em class="text-primary">30</em></span>
-                          </td>
+                          <th class="is-bg">엔돌캐시(EP)</th>
+                          <td>30</td>
+                          <td>50</td>
+                          <td>0</td>
+                          <td>50</td>
+                          <td>0</td>
+                          <td>50</td>
+                          <td>0</td>
                         </tr>
                       </tbody>
                     </table>
 
                     <table class="tbl-base">
                       <colgroup>
-                        <col style="width: 28.4rem;">
+                        <col>
+                        <col style="width: 20rem;">
+                        <col>
+                        <col style="width: 20rem;">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="is-bg">출석 미션완료권 구매 차감 골드해머(-GP)</th>
+                          <td>500</td>
+                          <th class="is-bg">월 출석 미션완료권 구매 제한(회)</th>
+                          <td>3</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="tbl-base">
+                      <colgroup>
+                        <col style="width: 39.5rem;">
                         <col>
                       </colgroup>
                       <tbody>
@@ -152,7 +177,7 @@
                           <td>%수정자ID%</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_002_L_1" data-modal="open">수정</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_014_L_1" data-modal="open">수정</button>
                             </div>
                           </td>
                         </tr>
@@ -164,7 +189,7 @@
                           <td>-</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -176,7 +201,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -188,7 +213,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -200,7 +225,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -212,7 +237,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -224,7 +249,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -236,7 +261,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -248,7 +273,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -260,7 +285,7 @@
                           <td>endorhappy050</td>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_003_L" data-modal="open">조회</button>
+                              <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_SyPo_015_L" data-modal="open">조회</button>
                             </div>
                           </td>
                         </tr>
@@ -287,17 +312,14 @@
                         <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
                         <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
                       </div>
-                      <button type="button" class="btn is-outline-3 is-h26" data-modal="open" data-url="#Bo_SyPo_002_L">신규등록</button>
+                      <button type="button" class="btn is-outline-3 is-h26" data-modal="open" data-url="#Bo_SyPo_014_L">신규등록</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tab-content" data-tab-content="tab2">
-              Bo_SyPo_004.html
-            </div>
             <div class="tab-content" data-tab-content="tab3">
-              Bo_SyPo_007.html
+              Bo_SyPo_016.html
             </div>
           </div>
         </div>
@@ -306,19 +328,21 @@
     <!-- //base-content -->
 
     <!-- modal -->
-    <!-- 등급혜택 신규등록 -->
-    <div id="Bo_SyPo_002_L" class="modal is-grade" data-modal="target">
+    <!-- 챌린지 설정 신규등록 -->
+    <div id="Bo_SyPo_014_L" class="modal is-grade" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 1114px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">등급혜택 신규등록</strong>
+          <strong class="modal-title">챌린지 설정 신규등록</strong>
         </div>
         <div class="modal-content">
           <div class="wrap-tbl">
             <table class="tbl-base">
               <colgroup>
-                <col style="width: 28.4rem;">
+                <col style="width: 17rem;">
+                <col>
+                <col>
                 <col>
                 <col>
                 <col>
@@ -327,45 +351,68 @@
               </colgroup>
               <thead>
                 <tr>
-                  <th>회원등급</th>
-                  <th>1등급 (소울스타)</th>
-                  <th>2등급 (타임스타)</th>
-                  <th>3등급 (파워스타)</th>
-                  <th>4등급 (마인스타)</th>
-                  <th>5등급 (엔돌스타)</th>
+                  <th>챌린지</th>
+                  <th colspan="3">출석체크</th>
+                  <th colspan="2">걷기</th>
+                  <th colspan="2">기상</th>
+                </tr>
+                <tr>
+                  <th>미션</th>
+                  <th>기본 (일1회)</th>
+                  <th>5회 이상 연속</th>
+                  <th>미션 (월)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th class="is-bg">적립 경험치(XP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <th class="is-bg">경험치(XP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
                 </tr>
                 <tr>
-                  <th class="is-bg">적립 골드해머(GP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <th class="is-bg">골드해머(GP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
                 </tr>
                 <tr>
-                  <th class="is-bg">적립 엔돌캐시(EP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="100"></td>
-                  <td><input type="text" class="inp-base is-md" value="500"></td>
-                  <td><input type="text" class="inp-base is-md" value="1000"></td>
-                  <td><input type="text" class="inp-base is-md" value="1500"></td>
+                  <th class="is-bg">엔돌캐시(EP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
                 </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col>
+                <col style="width: 20rem;">
+                <col>
+                <col style="width: 20rem;">
+              </colgroup>
+              <tbody>
                 <tr>
-                  <th class="is-bg">랩업러시 교환비(GP : XP)</th>
-                  <td colspan="5" class="exchange-fee">
-                    <span>골드해머(GP) <em><input type="text" class="inp-base is-sm" value="10" style="width: 6.7rem;"></em></span> :
-                    <span>경험치(XP) <em><input type="text" class="inp-base is-sm" value="30" style="width: 6.7rem;"></em></span>
-                  </td>
+                  <th class="is-bg">출석 미션완료권 구매 차감 골드해머(-GP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="50"></td>
+                  <th class="is-bg">월 출석 미션완료권 구매 제한(회)</th>
+                  <td><input type="text" class="inp-base is-sm" value="3"></td>
                 </tr>
               </tbody>
             </table>
@@ -392,19 +439,21 @@
       </div>
     </div>
 
-    <!-- 등급혜택 수정 -->
-    <div id="Bo_SyPo_002_L_1" class="modal is-grade" data-modal="target">
+    <!-- 챌린지 설정 수정 -->
+    <div id="Bo_SyPo_014_L_1" class="modal is-grade" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 1114px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">등급혜택 수정</strong>
+          <strong class="modal-title">챌린지 설정 수정</strong>
         </div>
         <div class="modal-content">
           <div class="wrap-tbl">
             <table class="tbl-base">
               <colgroup>
-                <col style="width: 28.4rem;">
+                <col style="width: 17rem;">
+                <col>
+                <col>
                 <col>
                 <col>
                 <col>
@@ -413,45 +462,68 @@
               </colgroup>
               <thead>
                 <tr>
-                  <th>회원등급</th>
-                  <th>1등급 (소울스타)</th>
-                  <th>2등급 (타임스타)</th>
-                  <th>3등급 (파워스타)</th>
-                  <th>4등급 (마인스타)</th>
-                  <th>5등급 (엔돌스타)</th>
+                  <th>챌린지</th>
+                  <th colspan="3">출석체크</th>
+                  <th colspan="2">걷기</th>
+                  <th colspan="2">기상</th>
+                </tr>
+                <tr>
+                  <th>미션</th>
+                  <th>기본 (일1회)</th>
+                  <th>5회 이상 연속</th>
+                  <th>미션 (월)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th class="is-bg">적립 경험치(XP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <th class="is-bg">경험치(XP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
+                  <td><input type="text" class="inp-base is-sm" value="100"></td>
                 </tr>
                 <tr>
-                  <th class="is-bg">적립 골드해머(GP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
+                  <th class="is-bg">골드해머(GP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
                 </tr>
                 <tr>
-                  <th class="is-bg">적립 엔돌캐시(EP)</th>
-                  <td><input type="text" class="inp-base is-md" value="0"></td>
-                  <td><input type="text" class="inp-base is-md" value="100"></td>
-                  <td><input type="text" class="inp-base is-md" value="500"></td>
-                  <td><input type="text" class="inp-base is-md" value="1000"></td>
-                  <td><input type="text" class="inp-base is-md" value="1500"></td>
+                  <th class="is-bg">엔돌캐시(EP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
+                  <td><input type="text" class="inp-base is-sm" value="1"></td>
                 </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col>
+                <col style="width: 20rem;">
+                <col>
+                <col style="width: 20rem;">
+              </colgroup>
+              <tbody>
                 <tr>
-                  <th class="is-bg">랩업러시 교환비(GP : XP)</th>
-                  <td colspan="5" class="exchange-fee">
-                    <span>골드해머(GP) <em><input type="text" class="inp-base is-sm" value="10" style="width: 6.7rem;"></em></span> :
-                    <span>경험치(XP) <em><input type="text" class="inp-base is-sm" value="30" style="width: 6.7rem;"></em></span>
-                  </td>
+                  <th class="is-bg">출석 미션완료권 구매 차감 골드해머(-GP)</th>
+                  <td><input type="text" class="inp-base is-sm" value="50"></td>
+                  <th class="is-bg">월 출석 미션완료권 구매 제한(회)</th>
+                  <td><input type="text" class="inp-base is-sm" value="3"></td>
                 </tr>
               </tbody>
             </table>
@@ -502,19 +574,21 @@
       </div>
     </div>
 
-    <!-- 등급혜택 조회 -->
-    <div id="Bo_SyPo_003_L" class="modal is-grade" data-modal="target">
+    <!-- 챌린지 설정 조회 -->
+    <div id="Bo_SyPo_015_L" class="modal is-grade" data-modal="target">
       <div class="modal-dimmed"></div>
       <div class="modal-inner" style="width: 1114px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
-          <strong class="modal-title">등급혜택 조회</strong>
+          <strong class="modal-title">챌린지 설정 조회</strong>
         </div>
         <div class="modal-content">
           <div class="wrap-tbl">
             <table class="tbl-base">
               <colgroup>
-                <col style="width: 28.4rem;">
+                <col style="width: 17rem;">
+                <col>
+                <col>
                 <col>
                 <col>
                 <col>
@@ -523,45 +597,68 @@
               </colgroup>
               <thead>
                 <tr>
-                  <th>회원등급</th>
-                  <th>1등급 (소울스타)</th>
-                  <th>2등급 (타임스타)</th>
-                  <th>3등급 (파워스타)</th>
-                  <th>4등급 (마인스타)</th>
-                  <th>5등급 (엔돌스타)</th>
+                  <th>챌린지</th>
+                  <th colspan="3">출석체크</th>
+                  <th colspan="2">걷기</th>
+                  <th colspan="2">기상</th>
+                </tr>
+                <tr>
+                  <th>미션</th>
+                  <th>기본 (일1회)</th>
+                  <th>5회 이상 연속</th>
+                  <th>미션 (월)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
+                  <th>기본 (일1회)</th>
+                  <th>미션 (주 5회)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th class="is-bg">적립 경험치(XP)</th>
+                  <th class="is-bg">경험치(XP)</th>
+                  <td>30</td>
+                  <td>50</td>
                   <td>0</td>
+                  <td>50</td>
                   <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <th class="is-bg">적립 골드해머(GP)</th>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
+                  <td>50</td>
                   <td>0</td>
                 </tr>
                 <tr>
-                  <th class="is-bg">적립 엔돌캐시(EP)</th>
+                  <th class="is-bg">골드해머(GP)</th>
                   <td>0</td>
-                  <td>100</td>
+                  <td>0</td>
+                  <td>50</td>
+                  <td>0</td>
+                  <td>50</td>
+                  <td>0</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <th class="is-bg">엔돌캐시(EP)</th>
+                  <td>1</td>
+                  <td>5</td>
                   <td>500</td>
-                  <td>1000</td>
-                  <td>1500</td>
+                  <td>5</td>
+                  <td>500</td>
+                  <td>5</td>
+                  <td>500</td>
                 </tr>
+              </tbody>
+            </table>
+            <table class="tbl-base">
+              <colgroup>
+                <col>
+                <col style="width: 20rem;">
+                <col>
+                <col style="width: 20rem;">
+              </colgroup>
+              <tbody>
                 <tr>
-                  <th class="is-bg">랩업러시 교환비(GP : XP)</th>
-                  <td colspan="5" class="exchange-fee">
-                    <span>골드해머(GP) <em>10</em></span> :
-                    <span>경험치(XP) <em>20</em></span>
-                  </td>
+                  <th class="is-bg">출석 미션완료권 구매 차감 골드해머(-GP)</th>
+                  <td>500</td>
+                  <th class="is-bg">월 출석 미션완료권 구매 제한(회)</th>
+                  <td>3</td>
                 </tr>
               </tbody>
             </table>
@@ -646,7 +743,7 @@
     // lnb active
     window.addEventListener('load', function () {
       setTimeout(function () {
-        lnbActive(9, 0, 1); // 1epth, 2epth, 3dpeth
+        lnbActive(9, 0, 0); // 1epth, 2epth, 3dpeth
       }, 50);
     });
   </script>

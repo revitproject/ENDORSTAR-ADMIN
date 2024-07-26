@@ -28,6 +28,8 @@
 @import "contents/mission.css";
 @import "contents/maketing.css";
 @import "contents/event.css";
+@import "contents/shop.css";
+@import "contents/customer.css";
 
 /* utilities */
 @import "utilities.css";

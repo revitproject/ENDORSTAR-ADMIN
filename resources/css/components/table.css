@@ -135,6 +135,10 @@
 .tbl-base.has-left > tbody > tr > td {
   text-align: left;
 }
+/* .table has-data  */
+.tbl-base.has-data > tbody > tr > td {
+  text-align: left;
+}
 
 /* module-top 박스 내 테이블 */
 .module-top .tbl-base > colgroup + tbody > tr > th {

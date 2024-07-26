@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-grid.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css"> <!-- grid table -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="main"> <!-- [Exclude attr] "data-route" only UI Template -->
+  <!-- base-wrap -->
+  <div class="base-wrap customer">
+    <!-- include -->
+    <header class="base-header"></header>
+    <aside class="base-aside"></aside>
+    <!-- //include -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="content-title">고객지원관리 > 고객센터 > FAQ</h1>
+      <div class="content-inner">
+        <div class="module-top">
+          <div class="form-searchbox dt-length6">
+            <dl class="dl-formbox">
+              <dt><label for="selectDate" class="lb-inp">기간</label></dt>
+              <dd>
+                <select id="selectDate" class="inp-select is-sm">
+                  <option value="">등록일</option>
+                  <option value="">최종수정일</option>
+                </select>
+                <div class="area-datepicker">
+                  <div class="wrap-datepicker">
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="startpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                    <span class="datepicker-to">~</span>
+                    <div class="datePicker">
+                      <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                        <div id="endpicker-div1" class="datepicker-div"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-options">
+                    <button type="button" class="btn is-secondary-1 is-active">전체</button>
+                    <button type="button" class="btn is-secondary-1">오늘</button>
+                    <button type="button" class="btn is-secondary-1">1주일</button>
+                    <button type="button" class="btn is-secondary-1">1개월</button>
+                    <button type="button" class="btn is-secondary-1">3개월</button>
+                    <button type="button" class="btn is-secondary-1">6개월</button>
+                    <button type="button" class="btn is-secondary-1">12개월</button>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="selectSearch" class="lb-inp">검색어</label></dt>
+              <dd>
+                <div class="searchbox-item">
+                  <select id="selectSearch" class="inp-select is-sm">
+                    <option value="" selected>내용</option>
+                    <option value="">제목</option>
+                    <option value="">등록자(이름)</option>
+                    <option value="">수정자(이름)</option>
+                  </select>
+                  <input type="search" id="inp-search" class="inp-base" placeholder="검색어를 입력해주세요." style="width: 43.5rem;">
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt><label for="select2" class="lb-inp">FAQ유형</label></dt>
+              <dd>
+                <select id="select2" class="inp-select">
+                  <option value="" selected>전체</option>
+                  <option value="">골드해머</option>
+                  <option value="">엔돌캐시</option>
+                  <option value="">챌린지</option>
+                  <option value="">핫딜상품</option>
+                  <option value="">친구초대</option>
+                  <option value="">기타</option>
+                </select>
+              </dd>
+              <dt>노출여부</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="rdo1" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="rdo1" class="inp-radio">Y</label>
+                  <label><input type="radio" name="rdo1" class="inp-radio">N</label>
+                </div>
+              </dd>
+            </dl>
+            <dl class="dl-formbox inbtn">
+              <dt>상단고정여부</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="rdo2" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="rdo2" class="inp-radio">Y</label>
+                  <label><input type="radio" name="rdo2" class="inp-radio">N</label>
+                </div>
+              </dd>
+              <dt>디바이스</dt>
+              <dd>
+                <div class="form-radio">
+                  <label><input type="radio" name="appType" class="inp-radio" checked>전체</label>
+                  <label><input type="radio" name="appType" class="inp-radio">AOS</label>
+                  <label><input type="radio" name="appType" class="inp-radio">IOS</label>
+                </div>
+              </dd>
+              <dd class="searchbox-btn">
+                <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+                <button type="submit" class="btn is-search">검색</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+              </div>
+  
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5.6rem;">
+                  <col style="width: 10rem;">
+                  <col>
+                  <col>
+                  <col style="width: 10rem;">
+                  <col style="width: 16rem;">
+                  <col style="width: 14rem;">
+                  <col style="width: 16rem;">
+                  <col style="width: 14rem;">
+                  <col style="width: 10rem;">
+                  <col style="width: 10rem;">
+                  <col style="width: 14rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>FAQ유형</th>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>디바이스</th>
+                    <th>등록일</th>
+                    <th>등록자</th>
+                    <th>최종수정일</th>
+                    <th>수정자</th>
+                    <th>노출여부</th>
+                    <th>상단고정</th>
+                    <th>관리</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>%FAQ유형%</td>
+                    <td>%제목%</td>
+                    <td>%내용%</td>
+                    <td>전체</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>%등록자이름%</td>
+                    <td>YYYY-MM-DD HH:MM</td>
+                    <td>%수정자이름%</td>
+                    <td>Y</td>
+                    <td>N</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_CmCs_002_P2" data-modal="open">수정</button>
+                        <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>%FAQ유형%</td>
+                    <td>%제목...%</td>
+                    <td>%내용%</td>
+                    <td>AOS</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>홍길동</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Y</td>
+                    <td>N</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_CmCs_002_P2" data-modal="open">수정</button>
+                        <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>%FAQ유형%</td>
+                    <td>%제목%</td>
+                    <td>%내용%</td>
+                    <td>IOS</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>홍길동</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Y</td>
+                    <td>N</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_CmCs_002_P2" data-modal="open">수정</button>
+                        <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>%FAQ유형%</td>
+                    <td>%제목%</td>
+                    <td>%내용%</td>
+                    <td>IOS</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>홍길동</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Y</td>
+                    <td>N</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_CmCs_002_P2" data-modal="open">수정</button>
+                        <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>%FAQ유형%</td>
+                    <td>%제목%</td>
+                    <td>%내용%</td>
+                    <td>IOS</td>
+                    <td>2024-02-26 15:00</td>
+                    <td>홍길동</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Y</td>
+                    <td>N</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn is-outline-2 is-h26" data-url="#Bo_CmCs_002_P2" data-modal="open">수정</button>
+                        <button type="button" class="btn is-secondary-1 is-h26" onclick="customAlert.confirm('안내', '삭제 하시겠어요?', trueFn, falseFn);">삭제</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+  
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">10</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+                <button type="button" class="btn is-outline-3 is-h26" data-url="#Bo_CmCs_002_P1" data-modal="open">신규등록</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- modal -->
+    <!-- FAQ 등록 -->
+    <div id="Bo_CmCs_002_P1" class="modal is-notice" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 720px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">FAQ 등록</strong>
+        </div>
+        <div class="modal-content">
+          <table class="tbl-base has-left">
+            <colgroup>
+              <col style="width: 11.1rem;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>FAQ유형</th>
+                <td>
+                  <div class="wrap-group">
+                    <select id="select1" class="inp-select" style="width: 26rem;">
+                      <option value="" selected="">골드해머</option>
+                      <option value="">엔돌캐시</option>
+                      <option value="">챌린지</option>
+                      <option value="">핫딜상품</option>
+                      <option value="">친구초대</option>
+                      <option value="">기타</option>
+                    </select>
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox chk-fixed">상단고정</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>제목<em class="text-red-1">*</em></th>
+                <td>
+                  <input type="text" class="inp-base" maxlength="50" placeholder="이름을 입력해주세요.">
+                </td>
+              </tr>
+              <tr>
+                <th>상세내용<em class="text-red-1">*</em></th>
+                <td>
+                  <div class="wrap-editor">
+                    에디터 영역
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>노출여부</th>
+                <td>
+                  <div class="form-radio">
+                    <label><input type="radio" name="rdo1" class="inp-radio" checked>Y</label>
+                    <label><input type="radio" name="rdo1" class="inp-radio">N</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>디바이스</th>
+                <td>
+                  <div class="form-radio">
+                    <label><input type="radio" name="appType1" class="inp-radio" checked>전체</label>
+                    <label><input type="radio" name="appType1" class="inp-radio">AOS</label>
+                    <label><input type="radio" name="appType1" class="inp-radio">IOS</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" data-modal="close">닫기</button>
+          <button type="button" class="btn is-grays-1 is-footer" onclick="customAlert.confirm('안내', '입력하신 내용으로 등록 하시겠습니까?', trueFn, falseFn);">등록</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 수정 -->
+    <div id="Bo_CmCs_002_P2" class="modal is-notice" data-modal="target">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 720px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">FAQ 수정</strong>
+        </div>
+        <div class="modal-content">
+          <table class="tbl-base has-left">
+            <colgroup>
+              <col style="width: 11.1rem;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>FAQ유형</th>
+                <td>
+                  <div class="wrap-group">
+                    <select id="select1" class="inp-select" style="width: 26rem;">
+                      <option value="" selected="">골드해머</option>
+                      <option value="">엔돌캐시</option>
+                      <option value="">챌린지</option>
+                      <option value="">핫딜상품</option>
+                      <option value="">친구초대</option>
+                      <option value="">기타</option>
+                    </select>
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox chk-fixed">상단고정</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>제목<em class="text-red-1">*</em></th>
+                <td>
+                  <input type="text" class="inp-base" maxlength="50" placeholder="이름을 입력해주세요." value="챌린지 참여는 어떻게 하나요?">
+                </td>
+              </tr>
+              <tr>
+                <th>상세내용<em class="text-red-1">*</em></th>
+                <td>
+                  <div class="wrap-editor">
+                    에디터 영역
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>노출여부</th>
+                <td>
+                  <div class="form-radio">
+                    <label><input type="radio" name="rdo2" class="inp-radio" checked>Y</label>
+                    <label><input type="radio" name="rdo2" class="inp-radio">N</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>디바이스</th>
+                <td>
+                  <div class="form-radio">
+                    <label><input type="radio" name="appType2" class="inp-radio" checked>전체</label>
+                    <label><input type="radio" name="appType2" class="inp-radio">AOS</label>
+                    <label><input type="radio" name="appType2" class="inp-radio">IOS</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-secondary-1 is-footer" data-modal="close">닫기</button>
+          <button type="button" class="btn is-grays-1 is-footer" onclick="customAlert.confirm('안내', '입력하신 내용으로 수정 하시겠습니까?', trueFn, falseFn);">수정</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="modal" data-modal="alert">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner has-alert">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title" id="alert__tit">$알럿 타이틀$</strong>
+        </div>
+        <div class="modal-content">
+          <p class="alert-msg">$알럿 메시지$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn is-footer is-false">취소</button>
+          <button type="button" class="btn is-footer is-true">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/xlsx-full.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script> <!-- grid table -->
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-grid.min.js"></script> <!-- grid table -->
+  <!-- js base -->
+  <script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // lnb active
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        lnbActive(7, 0, 0); // 1epth, 2epth, 3dpeth
+      }, 50);
+    });
+  </script>
+  <script>
+  // DatePicker 초기화
+  const today = new Date();
+    const startpicker1 = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker1 = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    
+    // UI 확인용 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+        case '12개월':  // 새로운 case 추가
+          startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+          break;
+      }
+
+      startpicker1.setDate(startDate);
+      endpicker1.setDate(endDate);
+    });
+
+   // 상단고정 체크박스 변경 이벤트 추가
+   document.querySelectorAll('.chk-fixed').forEach(function (checkbox) {
+      checkbox.addEventListener('change', function (event) {
+        if (event.target.checked) {
+          customAlert.confirm('안내', '기존에 상단고정으로 등록된 FAQ이 있습니다.<br>등록하시는 FAQ를 상단고정으로 설정 하시겠습니까?', trueFn, falseFn, '네', '아니오');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

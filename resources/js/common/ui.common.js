@@ -460,6 +460,85 @@ function initPhotoRegistration(config) {
   updatePhotoCount();
 }
 
+// 이미지 보기 초기화 함수
+function initPhotoView(config) {
+  const thumbnailContainer = document.getElementById(config.thumbnailContainerId);
+  const previewEnabled = config.previewEnabled || false;
+
+  if (!thumbnailContainer) {
+    console.error("Required elements not found. Please check the element ID in the config.");
+    return;
+  }
+
+  let photos = config.photos || []; // 서버에서 받아온 사진 목록
+
+  function updateThumbnails() {
+    thumbnailContainer.innerHTML = photos.map((photo, index) => `
+      <div class="thumbnail" data-index="${index}" style="position: relative;">
+        <img src="${photo.src}" alt="Thumbnail" class="previewable">
+        <span class="file-name">${photo.name}</span>
+        <button class="delete-btn" data-index="${index}"><span class="hidden">삭제</span></button>
+      </div>
+    `).join('');
+
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", handleDeleteButtonClick);
+    });
+
+    if (previewEnabled) {
+      document.querySelectorAll(".previewable").forEach(img => {
+        img.addEventListener("mouseenter", handlePreviewMouseOver);
+        img.addEventListener("mouseleave", handlePreviewMouseOut);
+      });
+    }
+  }
+
+  function handleDeleteButtonClick(event) {
+    const photoToDeleteIndex = event.target.getAttribute("data-index");
+    handleDeletePhoto(photoToDeleteIndex);
+  }
+
+  function handleDeletePhoto(index) {
+    customAlert.confirm('사진 삭제 안내', '등록된 사진을 삭제할까요?', () => {
+      photos.splice(index, 1);
+      updateThumbnails();
+    }, null, '삭제', '닫기');
+  }
+
+  function handlePreviewMouseOver(event) {
+    const imgSrc = event.target.src;
+    const imgRect = event.target.getBoundingClientRect();
+
+    // 미리보기 모달 생성
+    let previewModal = document.createElement('div');
+    previewModal.classList.add('preview-modal');
+    previewModal.style.position = 'absolute';
+    previewModal.style.bottom = `${window.innerHeight - imgRect.top + 10}px`;
+    previewModal.style.left = `${imgRect.left + window.scrollX}px`;
+
+    const imgElement = document.createElement('img');
+    imgElement.src = imgSrc;
+    imgElement.style.maxWidth = '300px'; 
+    imgElement.style.maxHeight = '300px'; 
+
+    previewModal.appendChild(imgElement);
+    document.body.appendChild(previewModal);
+    previewModal.addEventListener('mouseleave', () => {
+      previewModal.remove();
+    });
+  }
+
+  function handlePreviewMouseOut(event) {
+    const previewModal = document.querySelector('.preview-modal');
+    if (previewModal) {
+      previewModal.remove();
+    }
+  }
+
+  // 초기 상태 설정
+  updateThumbnails();
+}
+
 class ApplicationInit {
   constructor() {
     this.registerGlobalFunctions();
