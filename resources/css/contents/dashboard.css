@@ -7,38 +7,39 @@
 .dashboard .content-title {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
-.dashboard .content-title > span {
+.dashboard .content-title p > span {
   display: inline-block;
   margin-left: .8rem;
   color: var(--grays-2);
   font-size: 1.4rem;
   font-weight: 400;
 }
+.dashboard .content-title .btn {
+  min-width: 5.8rem;
+  height: 2.6rem;
+  color: var(--grays-2);
+  font-size: 1.2rem;
+  background: transparent;
+  border: .1rem solid var(--grays-2);
+  border-radius: .4rem;
+}
 .dashboard .dashboard-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
 }
 .dashboard-info .dashboard__card {
-  flex: 1;
-  padding: 2rem 3rem;
-  margin: 0 1rem;
+  width: calc(100% / 3 - 1.4rem);
+  padding: 2.8rem;
   border-radius: 1rem;
   background-color: #fff;
+  box-sizing: border-box;
 }
 .dashboard-info .card-title {
   display: block;
-}
-.dashboard-info .card-count {
-  display: inline-flex;
-  align-items: center;
-  margin-top: .4rem;
-}
-.dashboard-info .card-number {
-  margin-right: .4rem;
-  font-size: 3rem;
+  font-size: 1.6rem;
 }
 .dashboard .chart-form {
   margin-top: 4rem;
@@ -46,12 +47,15 @@
 .dashboard .chart-group {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0;
+  gap: 1.4rem;
+  margin-bottom: 2.8rem;
+}
+.dashboard .chart-group .chart-item {
+  flex: 1;
 }
 .dashboard .chart-group .chart {
   flex: 1;
-  padding: 20px;
-  margin: 0 10px;
-  border-radius: 8px;
+  padding: 2.8rem;
+  border-radius: 1.6rem;
   background-color: #fff;
 }
